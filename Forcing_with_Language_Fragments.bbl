@@ -1,0 +1,637 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global}
+    \entry{cohen1}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3676bd8b5a6758a014b490225ec91475}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{3676bd8b5a6758a014b490225ec91475}
+      \strng{fullhash}{3676bd8b5a6758a014b490225ec91475}
+      \strng{bibnamehash}{3676bd8b5a6758a014b490225ec91475}
+      \strng{authorbibnamehash}{3676bd8b5a6758a014b490225ec91475}
+      \strng{authornamehash}{3676bd8b5a6758a014b490225ec91475}
+      \strng{authorfullhash}{3676bd8b5a6758a014b490225ec91475}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0027-8424}
+      \field{journaltitle}{Proc. Nat. Acad. Sci. U.S.A.}
+      \field{title}{The independence of the continuum hypothesis}
+      \field{volume}{50}
+      \field{year}{1963}
+      \field{pages}{1143\bibrangedash 1148}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1073/pnas.50.6.1143
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1073/pnas.50.6.1143
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1073/pnas.50.6.1143
+      \endverb
+    \endentry
+    \entry{cohen2}{article}{}
+      \name{author}{1}{}{%
+        {{hash=db90b622eba26dc7c0195a3ce34de469}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Paul\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{fullhash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{bibnamehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{authorbibnamehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{authornamehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{authorfullhash}{db90b622eba26dc7c0195a3ce34de469}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0027-8424}
+      \field{journaltitle}{Proc. Nat. Acad. Sci. U.S.A.}
+      \field{title}{The independence of the continuum hypothesis. {II}}
+      \field{volume}{51}
+      \field{year}{1964}
+      \field{pages}{105\bibrangedash 110}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1073/pnas.51.1.105
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1073/pnas.51.1.105
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1073/pnas.51.1.105
+      \endverb
+    \endentry
+    \entry{prikry}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e36e6b61947a9ce5b92c0ba9d7714626}{%
+           family={Prikry},
+           familyi={P\bibinitperiod},
+           given={K.\bibnamedelimi L.},
+           giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{e36e6b61947a9ce5b92c0ba9d7714626}
+      \strng{fullhash}{e36e6b61947a9ce5b92c0ba9d7714626}
+      \strng{bibnamehash}{e36e6b61947a9ce5b92c0ba9d7714626}
+      \strng{authorbibnamehash}{e36e6b61947a9ce5b92c0ba9d7714626}
+      \strng{authornamehash}{e36e6b61947a9ce5b92c0ba9d7714626}
+      \strng{authorfullhash}{e36e6b61947a9ce5b92c0ba9d7714626}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0012-3862}
+      \field{journaltitle}{Dissertationes Math. (Rozprawy Mat.)}
+      \field{title}{Changing measurable into accessible cardinals}
+      \field{volume}{68}
+      \field{year}{1970}
+      \field{pages}{55}
+      \range{pages}{1}
+    \endentry
+    \entry{namba}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5eadf5537d41350dbc31e5c1b0e4492a}{%
+           family={Namba},
+           familyi={N\bibinitperiod},
+           given={Kanji},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{5eadf5537d41350dbc31e5c1b0e4492a}
+      \strng{fullhash}{5eadf5537d41350dbc31e5c1b0e4492a}
+      \strng{bibnamehash}{5eadf5537d41350dbc31e5c1b0e4492a}
+      \strng{authorbibnamehash}{5eadf5537d41350dbc31e5c1b0e4492a}
+      \strng{authornamehash}{5eadf5537d41350dbc31e5c1b0e4492a}
+      \strng{authorfullhash}{5eadf5537d41350dbc31e5c1b0e4492a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0010-258X}
+      \field{journaltitle}{Comment. Math. Univ. St. Paul.}
+      \field{title}{Independence proof of {$(\omega ,\,\omega \sb{\alpha })$}-distributive law in complete {B}oolean algebras}
+      \field{volume}{19}
+      \field{year}{1971}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+    \endentry
+    \entry{keisler}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=8462e0856cc893e2bf292cfd4b5e5ab2}{%
+           family={Keisler},
+           familyi={K\bibinitperiod},
+           given={H.\bibnamedelimi Jerome},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Math. Assoc. America, Buffalo, NY}%
+      }
+      \strng{namehash}{8462e0856cc893e2bf292cfd4b5e5ab2}
+      \strng{fullhash}{8462e0856cc893e2bf292cfd4b5e5ab2}
+      \strng{bibnamehash}{8462e0856cc893e2bf292cfd4b5e5ab2}
+      \strng{authorbibnamehash}{8462e0856cc893e2bf292cfd4b5e5ab2}
+      \strng{authornamehash}{8462e0856cc893e2bf292cfd4b5e5ab2}
+      \strng{authorfullhash}{8462e0856cc893e2bf292cfd4b5e5ab2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Studies in model theory}
+      \field{series}{MAA Stud. Math.}
+      \field{title}{Forcing and the omitting types theorem}
+      \field{volume}{Vol. 8}
+      \field{year}{1973}
+      \field{pages}{96\bibrangedash 133}
+      \range{pages}{38}
+    \endentry
+    \entry{bukovsky}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=67107ec7dcf1a7d424ee510d9246234f}{%
+           family={Bukovský},
+           familyi={B\bibinitperiod},
+           given={Lev},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, Berlin-New York}%
+      }
+      \strng{namehash}{67107ec7dcf1a7d424ee510d9246234f}
+      \strng{fullhash}{67107ec7dcf1a7d424ee510d9246234f}
+      \strng{bibnamehash}{67107ec7dcf1a7d424ee510d9246234f}
+      \strng{authorbibnamehash}{67107ec7dcf1a7d424ee510d9246234f}
+      \strng{authornamehash}{67107ec7dcf1a7d424ee510d9246234f}
+      \strng{authorfullhash}{67107ec7dcf1a7d424ee510d9246234f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Set theory and hierarchy theory ({P}roc. {S}econd {C}onf., {B}ierutowice, 1975)}
+      \field{series}{Lecture Notes in Math.}
+      \field{title}{Changing cofinality of {$\aleph \sb{2}$}}
+      \field{volume}{Vol. 537}
+      \field{year}{1976}
+      \field{pages}{37\bibrangedash 49}
+      \range{pages}{13}
+    \endentry
+    \entry{fmw}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=60d32e5e5c0aeb219b221bc422c03542}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Qi},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=555a2a74b7fb36f7e5a08b35065e3946}{%
+           family={Magidor},
+           familyi={M\bibinitperiod},
+           given={Menachem},
+           giveni={M\bibinitperiod}}}%
+        {{hash=28d462c0ab21d2fdd33a67ac7bb822aa}{%
+           family={Woodin},
+           familyi={W\bibinitperiod},
+           given={Hugh},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, New York}%
+      }
+      \strng{namehash}{93e55cc7150005d3db9cb7189c3a242e}
+      \strng{fullhash}{93e55cc7150005d3db9cb7189c3a242e}
+      \strng{bibnamehash}{93e55cc7150005d3db9cb7189c3a242e}
+      \strng{authorbibnamehash}{93e55cc7150005d3db9cb7189c3a242e}
+      \strng{authornamehash}{93e55cc7150005d3db9cb7189c3a242e}
+      \strng{authorfullhash}{93e55cc7150005d3db9cb7189c3a242e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Set theory of the continuum ({B}erkeley, {CA}, 1989)}
+      \field{series}{Math. Sci. Res. Inst. Publ.}
+      \field{title}{Universally {B}aire sets of reals}
+      \field{volume}{26}
+      \field{year}{1992}
+      \field{pages}{203\bibrangedash 242}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1007/978-1-4613-9754-0_15
+      \endverb
+      \verb{urlraw}
+      \verb https://doi-org.libproxy1.nus.edu.sg/10.1007/978-1-4613-9754-0_15
+      \endverb
+      \verb{url}
+      \verb https://doi-org.libproxy1.nus.edu.sg/10.1007/978-1-4613-9754-0_15
+      \endverb
+    \endentry
+    \entry{kechris}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c20ec70302197b9127746c09db04c836}{%
+           family={Kechris},
+           familyi={K\bibinitperiod},
+           given={Alexander\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag, New York}%
+      }
+      \strng{namehash}{c20ec70302197b9127746c09db04c836}
+      \strng{fullhash}{c20ec70302197b9127746c09db04c836}
+      \strng{bibnamehash}{c20ec70302197b9127746c09db04c836}
+      \strng{authorbibnamehash}{c20ec70302197b9127746c09db04c836}
+      \strng{authornamehash}{c20ec70302197b9127746c09db04c836}
+      \strng{authorfullhash}{c20ec70302197b9127746c09db04c836}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0-387-94374-9}
+      \field{series}{Graduate Texts in Mathematics}
+      \field{title}{Classical descriptive set theory}
+      \field{volume}{156}
+      \field{year}{1995}
+      \field{pages}{xviii+402}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1007/978-1-4612-4190-4
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-1-4612-4190-4
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-1-4612-4190-4
+      \endverb
+    \endentry
+    \entry{jechhrbacek}{book}{}
+      \name{author}{2}{}{%
+        {{hash=6465960b7a58b8c6c880f14ff897bd3d}{%
+           family={Hrbacek},
+           familyi={H\bibinitperiod},
+           given={Karel},
+           giveni={K\bibinitperiod}}}%
+        {{hash=b8ddd852d7bc9bcd5d92f6c9c3251005}{%
+           family={Jech},
+           familyi={J\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Marcel Dekker, Inc., New York}%
+      }
+      \strng{namehash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{fullhash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{bibnamehash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{authorbibnamehash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{authornamehash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{authorfullhash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Third}
+      \field{isbn}{0-8247-7915-0}
+      \field{series}{Monographs and Textbooks in Pure and Applied Mathematics}
+      \field{title}{Introduction to set theory}
+      \field{volume}{220}
+      \field{year}{1999}
+      \field{pages}{xii+291}
+      \range{pages}{-1}
+    \endentry
+    \entry{enderton}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b50c15602a78b51cbc6946ab32488502}{%
+           family={Enderton},
+           familyi={E\bibinitperiod},
+           given={Herbert\bibnamedelima B.},
+           giveni={H\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Harcourt/Academic Press, Burlington, MA}%
+      }
+      \strng{namehash}{b50c15602a78b51cbc6946ab32488502}
+      \strng{fullhash}{b50c15602a78b51cbc6946ab32488502}
+      \strng{bibnamehash}{b50c15602a78b51cbc6946ab32488502}
+      \strng{authorbibnamehash}{b50c15602a78b51cbc6946ab32488502}
+      \strng{authornamehash}{b50c15602a78b51cbc6946ab32488502}
+      \strng{authorfullhash}{b50c15602a78b51cbc6946ab32488502}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Second}
+      \field{isbn}{0-12-238452-0}
+      \field{title}{A mathematical introduction to logic}
+      \field{year}{2001}
+      \field{pages}{xii+317}
+      \range{pages}{-1}
+    \endentry
+    \entry{doebler}{article}{}
+      \name{author}{2}{}{%
+        {{hash=496bf5d78535ad3ff84fa6e108686058}{%
+           family={Doebler},
+           familyi={D\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ed64ae723b8c8488e982ed38c544d137}{%
+           family={Schindler},
+           familyi={S\bibinitperiod},
+           given={Ralf},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{65bf6fdd4072623fb3f79b005d04ff8f}
+      \strng{fullhash}{65bf6fdd4072623fb3f79b005d04ff8f}
+      \strng{bibnamehash}{65bf6fdd4072623fb3f79b005d04ff8f}
+      \strng{authorbibnamehash}{65bf6fdd4072623fb3f79b005d04ff8f}
+      \strng{authornamehash}{65bf6fdd4072623fb3f79b005d04ff8f}
+      \strng{authorfullhash}{65bf6fdd4072623fb3f79b005d04ff8f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1073-2780}
+      \field{journaltitle}{Math. Res. Lett.}
+      \field{number}{5}
+      \field{title}{{$\Pi_2$} consequences of {$\mathsf{BMM}+\mathsf{NS}_{\omega_1}$} is precipitous and the semiproperness of stationary set preserving forcings}
+      \field{volume}{16}
+      \field{year}{2009}
+      \field{pages}{797\bibrangedash 815}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.4310/MRL.2009.v16.n5.a4
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.4310/MRL.2009.v16.n5.a4
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.4310/MRL.2009.v16.n5.a4
+      \endverb
+    \endentry
+    \entry{larson}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=ecaaec26a836018bed7282be07ad408c}{%
+           family={Larson},
+           familyi={L\bibinitperiod},
+           given={Paul\bibnamedelima B.},
+           giveni={P\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, Dordrecht}%
+      }
+      \strng{namehash}{ecaaec26a836018bed7282be07ad408c}
+      \strng{fullhash}{ecaaec26a836018bed7282be07ad408c}
+      \strng{bibnamehash}{ecaaec26a836018bed7282be07ad408c}
+      \strng{authorbibnamehash}{ecaaec26a836018bed7282be07ad408c}
+      \strng{authornamehash}{ecaaec26a836018bed7282be07ad408c}
+      \strng{authorfullhash}{ecaaec26a836018bed7282be07ad408c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Handbook of set theory. {V}ols. 1, 2, 3}
+      \field{title}{Forcing over models of determinacy}
+      \field{year}{2010}
+      \field{pages}{2121\bibrangedash 2177}
+      \range{pages}{57}
+      \verb{doi}
+      \verb 10.1007/978-1-4020-5764-9_25
+      \endverb
+      \verb{urlraw}
+      \verb https://doi-org.libproxy1.nus.edu.sg/10.1007/978-1-4020-5764-9_25
+      \endverb
+      \verb{url}
+      \verb https://doi-org.libproxy1.nus.edu.sg/10.1007/978-1-4020-5764-9_25
+      \endverb
+    \endentry
+    \entry{woodin}{book}{}
+      \name{author}{1}{}{%
+        {{hash=aec46f0a7b0eb765653110262007ad27}{%
+           family={Woodin},
+           familyi={W\bibinitperiod},
+           given={W.\bibnamedelimi Hugh},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Walter de Gruyter GmbH \& Co. KG, Berlin}%
+      }
+      \strng{namehash}{aec46f0a7b0eb765653110262007ad27}
+      \strng{fullhash}{aec46f0a7b0eb765653110262007ad27}
+      \strng{bibnamehash}{aec46f0a7b0eb765653110262007ad27}
+      \strng{authorbibnamehash}{aec46f0a7b0eb765653110262007ad27}
+      \strng{authornamehash}{aec46f0a7b0eb765653110262007ad27}
+      \strng{authorfullhash}{aec46f0a7b0eb765653110262007ad27}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{revised}
+      \field{isbn}{978-3-11-019702-0}
+      \field{series}{De Gruyter Series in Logic and its Applications}
+      \field{title}{The axiom of determinacy, forcing axioms, and the nonstationary ideal}
+      \field{volume}{1}
+      \field{year}{2010}
+      \field{pages}{vi+852}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1515/9783110213171
+      \endverb
+      \verb{urlraw}
+      \verb https://doi-org.libproxy1.nus.edu.sg/10.1515/9783110213171
+      \endverb
+      \verb{url}
+      \verb https://doi-org.libproxy1.nus.edu.sg/10.1515/9783110213171
+      \endverb
+    \endentry
+    \entry{kunen}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9bbbc8091281c78067693611cdfae8a1}{%
+           family={Kunen},
+           familyi={K\bibinitperiod},
+           given={Kenneth},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {College Publications, London}%
+      }
+      \strng{namehash}{9bbbc8091281c78067693611cdfae8a1}
+      \strng{fullhash}{9bbbc8091281c78067693611cdfae8a1}
+      \strng{bibnamehash}{9bbbc8091281c78067693611cdfae8a1}
+      \strng{authorbibnamehash}{9bbbc8091281c78067693611cdfae8a1}
+      \strng{authornamehash}{9bbbc8091281c78067693611cdfae8a1}
+      \strng{authorfullhash}{9bbbc8091281c78067693611cdfae8a1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-84890-050-9}
+      \field{series}{Studies in Logic (London)}
+      \field{title}{Set theory}
+      \field{volume}{34}
+      \field{year}{2011}
+      \field{pages}{viii+401}
+      \range{pages}{-1}
+    \endentry
+    \entry{lforcing}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=0a17f66e1258ef6434363492def1ebaa}{%
+           family={Jensen},
+           familyi={J\bibinitperiod},
+           given={Ronald},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {World Sci. Publ., Hackensack, NJ}%
+      }
+      \strng{namehash}{0a17f66e1258ef6434363492def1ebaa}
+      \strng{fullhash}{0a17f66e1258ef6434363492def1ebaa}
+      \strng{bibnamehash}{0a17f66e1258ef6434363492def1ebaa}
+      \strng{authorbibnamehash}{0a17f66e1258ef6434363492def1ebaa}
+      \strng{authornamehash}{0a17f66e1258ef6434363492def1ebaa}
+      \strng{authorfullhash}{0a17f66e1258ef6434363492def1ebaa}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{{$E$}-recursion, forcing and {$C^*$}-algebras}
+      \field{series}{Lect. Notes Ser. Inst. Math. Sci. Natl. Univ. Singap.}
+      \field{title}{Subcomplete forcing and {$\mathcal{L}$}-forcing}
+      \field{volume}{27}
+      \field{year}{2014}
+      \field{pages}{83\bibrangedash 182}
+      \range{pages}{100}
+      \verb{doi}
+      \verb 10.1142/9789814602648\_0002
+      \endverb
+      \verb{urlraw}
+      \verb https://doi-org.libproxy1.nus.edu.sg/10.1142/9789814602648_0002
+      \endverb
+      \verb{url}
+      \verb https://doi-org.libproxy1.nus.edu.sg/10.1142/9789814602648_0002
+      \endverb
+    \endentry
+    \entry{schindler}{article}{}
+      \name{author}{2}{}{%
+        {{hash=bdb34d52a90d7057b611b5cd2b5b43b3}{%
+           family={Asperó},
+           familyi={A\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ed64ae723b8c8488e982ed38c544d137}{%
+           family={Schindler},
+           familyi={S\bibinitperiod},
+           given={Ralf},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ea3e326ac2933f2746e4616f885fd4d}
+      \strng{fullhash}{9ea3e326ac2933f2746e4616f885fd4d}
+      \strng{bibnamehash}{9ea3e326ac2933f2746e4616f885fd4d}
+      \strng{authorbibnamehash}{9ea3e326ac2933f2746e4616f885fd4d}
+      \strng{authornamehash}{9ea3e326ac2933f2746e4616f885fd4d}
+      \strng{authorfullhash}{9ea3e326ac2933f2746e4616f885fd4d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0003-486X}
+      \field{journaltitle}{Ann. of Math. (2)}
+      \field{number}{3}
+      \field{title}{Martin's {M}aximum{$^{++}$} implies {W}oodin's axiom {$(*)$}}
+      \field{volume}{193}
+      \field{year}{2021}
+      \field{pages}{793\bibrangedash 835}
+      \range{pages}{43}
+      \verb{doi}
+      \verb 10.4007/annals.2021.193.3.3
+      \endverb
+      \verb{urlraw}
+      \verb https://doi-org.libproxy1.nus.edu.sg/10.4007/annals.2021.193.3.3
+      \endverb
+      \verb{url}
+      \verb https://doi-org.libproxy1.nus.edu.sg/10.4007/annals.2021.193.3.3
+      \endverb
+    \endentry
+    \entry{bendb}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f954e39597eff0a6612aac687f5df4db}{%
+           family={De\bibnamedelima Bondt},
+           familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Université Paris Cité}%
+      }
+      \strng{namehash}{f954e39597eff0a6612aac687f5df4db}
+      \strng{fullhash}{f954e39597eff0a6612aac687f5df4db}
+      \strng{bibnamehash}{f954e39597eff0a6612aac687f5df4db}
+      \strng{authorbibnamehash}{f954e39597eff0a6612aac687f5df4db}
+      \strng{authornamehash}{f954e39597eff0a6612aac687f5df4db}
+      \strng{authorfullhash}{f954e39597eff0a6612aac687f5df4db}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{PhD Thesis}
+      \field{title}{Stationary Set Preserving Forcing, Side Conditions and Games}
+      \field{year}{2024}
+    \endentry
+    \entry{lietz}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=92874fe992ed0efaaa78e5160cdbd702}{%
+           family={Lietz},
+           familyi={L\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{92874fe992ed0efaaa78e5160cdbd702}
+      \strng{fullhash}{92874fe992ed0efaaa78e5160cdbd702}
+      \strng{bibnamehash}{92874fe992ed0efaaa78e5160cdbd702}
+      \strng{authorbibnamehash}{92874fe992ed0efaaa78e5160cdbd702}
+      \strng{authornamehash}{92874fe992ed0efaaa78e5160cdbd702}
+      \strng{authorfullhash}{92874fe992ed0efaaa78e5160cdbd702}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.LO}
+      \field{eprinttype}{arXiv}
+      \field{title}{Forcing "$\mathrm{NS}_{\omega_1}$ is $\omega_1$-dense" From Large Cardinals}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2403.09020
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2403.09020
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2403.09020
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
