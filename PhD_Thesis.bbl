@@ -1195,6 +1195,40 @@
       \field{pages}{464\bibrangedash 501}
       \range{pages}{38}
     \endentry
+    \entry{soarebook}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=17c9e267ec5155eabf6b2a1c81719739}{%
+           family={Soare},
+           familyi={S\bibinitperiod},
+           given={R.I.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{17c9e267ec5155eabf6b2a1c81719739}
+      \strng{fullhash}{17c9e267ec5155eabf6b2a1c81719739}
+      \strng{fullhashraw}{17c9e267ec5155eabf6b2a1c81719739}
+      \strng{bibnamehash}{17c9e267ec5155eabf6b2a1c81719739}
+      \strng{authorbibnamehash}{17c9e267ec5155eabf6b2a1c81719739}
+      \strng{authornamehash}{17c9e267ec5155eabf6b2a1c81719739}
+      \strng{authorfullhash}{17c9e267ec5155eabf6b2a1c81719739}
+      \strng{authorfullhashraw}{17c9e267ec5155eabf6b2a1c81719739}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9783642319334}
+      \field{series}{Theory and Applications of Computability}
+      \field{title}{Turing Computability: Theory and Applications}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://books.google.com.sg/books?id=4PZ6DAAAQBAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.sg/books?id=4PZ6DAAAQBAJ
+      \endverb
+    \endentry
     \entry{sygeneric}{inbook}{}{}
       \name{author}{3}{}{%
         {{hash=58b0d36b76519aa1f2d7d4e800502349}{%
