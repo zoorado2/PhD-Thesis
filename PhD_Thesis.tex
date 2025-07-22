@@ -375,8 +375,6 @@ Let $\phi$ be a first-order formula over a signature $\sigma$. We inductively de
 Note that if $k = 0$ in \ref{3292}\ref{3292a} and \ref{3292}\ref{3292b}, then $\phi$ is $\Sigma_m$ and $\Pi_m$ respectively.
 \end{defi}
 
-\section{Basic Computability Theory}
-
 \section{Basic Set Theory}
 
 Unless specified otherwise, we follow the standard definitions of concepts typically encountered in a foundational set theory course, following e.g. \cite{jechhrbacek}.
@@ -538,8 +536,12 @@ Let $Y := trcl(X) \cup \{X\}$. Note that
 \begin{equation}\label{trcluni}
     X \text{ is the unique } \! \in \!\text{-maximal member of } Y
 \end{equation} 
-in any transitive model of $\mathsf{ZFC - Powerset}$ containing $Y$. Choose any bijection $f$ from $Y$ into $\kappa$. Define $$R := \{(f(x), f(y)) \in \kappa \times \kappa : (x, y) \in Y \times Y \text{ and } x \in y\}.$$ Now $R$ can be thought of as a subset $A$ of $\kappa$ via the canonical G\"{o}del numbering of pairs. If $V'$ is a transitive model of $\mathsf{ZFC - Powerset}$ containing $A$, then we can recover $R$ in $V'$. The Mostowski collapse function works on $R$ in $V'$ to give us $Y \in V'$. This implies $X \in V'$ since $X$ definable from $Y$ via (\ref{trcluni}).
+in any transitive model of $\mathsf{ZFC - Powerset}$ containing $Y$. Choose any bijection $f$ from $Y$ into $\kappa$. Define $$R := \{(f(x), f(y)) \in \kappa \times \kappa : (x, y) \in Y \times Y \text{ and } x \in y\}.$$ Now $R$ can be thought of as a subset $A$ of $\kappa$ via the canonical G\"{o}del numbering of pairs. If $V'$ is a transitive model of $\mathsf{ZFC - Powerset}$ containing $A$, then we can recover $R$ in $V'$ by computing the inverse of $A$ along G\"{o}del's pairing function. The Mostowski collapse function works on $R$ in $V'$ to give us $Y \in V'$. This implies $X \in V'$ since $X$ is definable from $Y$ according to (\ref{trcluni}). 
+
+Notice that this decoding process of $A$ to obtain $X$ is absolute for transitive models of $\mathsf{ZF}$, because all of its components are.
 \end{proof}
+
+\section{Basic Computability Theory}
 
 \chapter{Forcing and Genericity}\label{subs24}
 
@@ -6098,7 +6100,7 @@ It can be argued that a robust model of generalised computation should induce a 
     \item\label{d2} \textit{Transitivity}: the relation should be transitive.
     \item\label{d3} \textit{Coherence}: if the relative computability of two sets is witnessed under known computational constraints, then the same should be witnessed after lifting these constraints.
 \end{enumerate}
-The astute reader might ask, ``should universality in \ref{d1} not require the inclusion of literally all sets in the domain of the relation?'' The truth is, \ref{d1} is phrased this way for convenience of analysis. Note that there is little substantive compromise in this apparently weaker presentation, because every set can be simply encoded into a binary string, according to Proposition \ref{prop22}. We shall assume that the designation of \ref{d2} and \ref{d3} as desiderata is intuitive, if not self-evident. Unsurprisingly, each of the well-known models of generalised computation introduced in the previous subsection induces relative computability relation on sets. We shall examine whether these relations satisfy properties \ref{d1} to \ref{d3}. The next three paragraphs contain an elaboration of our examination, and Tables \ref{table1} and \ref{table2}, a summary of its outcomes.
+The astute reader might ask, ``should universality in \ref{d1} not require the inclusion of literally all sets in the domain of the relation?'' The truth is, \ref{d1} is phrased this way for convenience of analysis. Note that there is little substantive compromise in this apparently weaker presentation, because every set can be simply encoded into a binary string, according to Lemma \ref{setcode}. We shall assume that the designation of \ref{d2} and \ref{d3} as desiderata is intuitive, if not self-evident. Unsurprisingly, each of the well-known models of generalised computation introduced in the previous subsection induces relative computability relation on sets. We shall examine whether these relations satisfy properties \ref{d1} to \ref{d3}. The next three paragraphs contain an elaboration of our examination, and Tables \ref{table1} and \ref{table2}, a summary of its outcomes.
 
 The relative computability relation associated with $\alpha$-recursion, written $\leq_{\alpha}$, is only defined on $\mathcal{P}(\alpha)$, the powerset of $\alpha$. As such, it is not universal. Naively, we can define a universal relation $\leq_A$ by referring to $\leq_{\alpha}$ as $\alpha$ ranges over all \textit{admissible} ordinals: $$A \leq_A B \text{ iff there is } \alpha \text{ for which } A \leq_{\alpha} B \text{.}$$ However, if we interpret $\alpha$ to be a measure of the amount of computational resources available, as is natural, Theodore Slaman's answer in \cite{slaman} tells us $\leq_A$ is doomed to be incoherent. It seems, then, that there is no easy fix to the non-universality of the $\leq_{\alpha}$'s.
 
@@ -6183,21 +6185,9 @@ Observe that $A_1$ and $A_2$ both interpret $\ulcorner A \urcorner$ on the base 
 This means $S(\mathfrak{M}(\kappa, A_1, A_2))$, $I(\mathfrak{M}(\kappa, A_1, A_2))$ and $\tau_{\mathfrak{M}(\kappa, A_1, A_2)}$ satisfy \ref{a1} to \ref{a4} in place of $S(\mathfrak{M})$, $I(\mathfrak{M})$ and $\tau_{\mathfrak{M}}$ respectively. Furthermore, $c$ is specifically added to the signature so that the finite set $\{c\}$ witnesses $\mathfrak{M}(\kappa, A_1, A_2)$ satisfy the bounded exploration postulate.
 \end{ex}
 
-Fix subsets $A_1$ and $A_2$ of $\kappa$. The only terminating run of $\mathfrak{M}(\kappa, A_1, A_2)$ is $(s_1, s_2)$. Morally, this is saying that we can algorithmically get from $A_1$ to $A_2$. If we set $A_1$ to be a simply definable set like the empty set, then every subset of $\kappa$ is algorithmically derivable from $A_1$. This seems incredible given the information content of arbitrary sets of ordinals, as exemplified by the next proposition.
+Fix subsets $A_1$ and $A_2$ of $\kappa$. The only terminating run of $\mathfrak{M}(\kappa, A_1, A_2)$ is $(s_1, s_2)$. Morally, this is saying that we can algorithmically get from $A_1$ to $A_2$. If we set $A_1$ to be a simply definable set like the empty set, then every subset of $\kappa$ is algorithmically derivable from $A_1$. This seems incredible given the information content of arbitrary sets of ordinals, as exemplified by Lemma \ref{setcode}.
 
-\begin{prop}\label{prop22}
-Let $M$ be a transitive model of $\mathsf{ZFC}$ and $X \in M$. Then there is a set of ordinals $c \in M$ such that if $N$ is any transitive model of $\mathsf{ZF}$ containing $c$, then $X \in N$. 
-\end{prop}
-
-\begin{proof}
-Let $Y'$ be the transitive closure of $X$ (under the membership relation $\in$) and set $Y := Y' \cup \{X\}$. Then $Y$ is $\in$-transitive. Choose a bijection $f$ from a cardinal $\kappa$ into $Y$. Use $\in'$ to denote the unique binary relation $R$ on $\kappa$ such that
-\begin{equation*}
-    R(\alpha, \beta) \iff f(\alpha) \in f(\beta) \text{.}
-\end{equation*}
-Now apply G\"{o}del's pairing function to code $\in'$ as a subset $c$ of $\kappa$. To recover $X$ from $c$, first apply the inverse of the pairing function followed by the Mostowski collapse to get $Y$. Then $X$ is definable from $Y$ as the unique $\in$-maximal element of $Y$. This decoding process is absolute for transitive models of $\mathsf{ZF}$ because all its components are.
-\end{proof}
-
-Proposition \ref{prop22} allows us to code any set as a set of ordinals such that the decoding can be done in an absolute manner. If we believe that such a decoding scheme (particularly, G\"{o}del's pairing function) is algorithmic, then the definition of ASMs entails that we can algorithmically derive every set in $V$ from just $\emptyset$. Since most set theorists are of the opinion that sets in $V$ can be extremely complicated and far from constructible in a very strong sense, this conclusion is wholly unsatisfactory, if not patently false. In other words, ASMs are \emph{too} encompassing a paradigm for algorithms, and thus should not be used to draw the line for generalised computability.
+The procedure described in the proof of Lemma \ref{setcode} allows us to encode any set as a set of ordinals, such that the decoding can be done in an absolute manner. If we believe that such a decoding scheme (particularly, G\"{o}del's pairing function) is algorithmic, then the definition of ASMs entails that we can algorithmically derive every set in $V$ from just $\emptyset$. Since most set theorists are of the opinion that sets in $V$ can be extremely complicated and far from constructible in a very strong sense, this conclusion is wholly unsatisfactory, if not patently false. In other words, ASMs are \emph{too} encompassing a paradigm for algorithms, and thus should not be used to draw the line for generalised computability.
 
 \begin{rem}
 In Example \ref{ex21}, we can set $A_1$ and $A_2$ to be subsets of $H(\kappa)$, and alter the definition of $\mathfrak{M}(\kappa, A_1, A_2)$ such that 
@@ -6205,7 +6195,7 @@ In Example \ref{ex21}, we can set $A_1$ and $A_2$ to be subsets of $H(\kappa)$, 
     s_1 := (H(\kappa); \in, A_1, 0) \\
     s_2 := (H(\kappa); \in, A_2, 1) \text{.}
 \end{gather*}
-In this way, we obtain a more literal argument that every set is algorithmically derivable from every other set, sidestepping the need for Proposition \ref{prop22} as motivation. Nonetheless, Proposition \ref{prop22} will be invoked in later parts of this section, so it is as good a time now as any to introduce it.
+In this way, we obtain a more literal argument that every set is algorithmically derivable from every other set, sidestepping the need for Lemma \ref{setcode} as motivation. Nonetheless, Lemma \ref{setcode} will be invoked in later parts of this section, so it is as good a time now as any to introduce it.
 \end{rem}
 
 For much of the rest of this section, we will make educated modifications to the definition of an ASM, in an attempt to formulate a philosophically justified notion of algorithms.
@@ -6604,7 +6594,7 @@ This means that our modifications to $\mathfrak{M}$ do not change its essence as
 
 In accordance to the discussion above, we want an ASM $\mathfrak{M}$ to have a signature $\sigma(\mathfrak{M})$ containing two distinguished unary relation symbols $\ulcorner \mathrm{In} \urcorner$ and $\ulcorner \mathrm{Out} \urcorner$, representing the input and output tapes respectively. Moreover, we want the specification of $\mathfrak{M}$ to include a first-order sentence $\phi^d_{\mathfrak{M}}$ over $\sigma(\mathfrak{M}) \setminus \{\ulcorner \mathrm{In} \urcorner, \ulcorner \mathrm{Out} \urcorner\}$ that describes the default ``non-tape'' configuration of $\mathfrak{M}$. As in the case of transition functions, we want the loading function described by $\phi^d_{\mathfrak{M}}$ to be absolute for transitive models of $\mathsf{ZFC}$. To do so, we want to first impose a greater amount of structure on the states of an ASM.
 
-Within the context of Turing computability, a countable set $A$ is computable iff there is a computable subset of $\omega$ coding an isomorphic copy of $A$. By Proposition \ref{prop22}, every set can be similarly coded as a subset of a large enough limit ordinal. It makes sense then to simplify things by requiring the uniform base set of an ASM $\mathfrak{M}$ to be a limit ordinal $\kappa(\mathfrak{M})$. To successfully decode a set of ordinals using the G\"{o}del pairing function, we also need the true membership relation to be a part of each state of $S(\mathfrak{M})$. In other words, $\ulcorner \in \urcorner \in \sigma(\mathfrak{M})$, and whenever $s \in S(\mathfrak{M})$, $s$ interprets $\ulcorner \in \urcorner$ as the true membership relation so that $s$ an expansion of the structure $(\kappa(\mathfrak{M}); \in)$.
+Within the context of Turing computability, a countable set $A$ is computable iff there is a computable subset of $\omega$ coding an isomorphic copy of $A$. By Lemma \ref{setcode}, every set can be similarly coded as a subset of a large enough limit ordinal. It makes sense then to simplify things by requiring the uniform base set of an ASM $\mathfrak{M}$ to be a limit ordinal $\kappa(\mathfrak{M})$. To successfully decode a set of ordinals using the G\"{o}del pairing function, we also need the true membership relation to be a part of each state of $S(\mathfrak{M})$. In other words, $\ulcorner \in \urcorner \in \sigma(\mathfrak{M})$, and whenever $s \in S(\mathfrak{M})$, $s$ interprets $\ulcorner \in \urcorner$ as the true membership relation so that $s$ an expansion of the structure $(\kappa(\mathfrak{M}); \in)$.
 
 Now we can formally state our requirements for $\phi^d_{\mathfrak{M}}$. Taking a leaf from Definition \ref{def220}, for each 
 \begin{equation*}
@@ -7711,7 +7701,7 @@ If $W$ is a small extension of $U$, then for some ordinal $\kappa \in U$, $W$ is
 \end{prop}
 
 \begin{proof}
-Let $x \in W$ be such that $W = U[x]$. By the proof of Proposition \ref{prop22}, for some cardinal $\kappa \in W$ there is an unbounded subset $c$ of $\kappa$ in $W$ coding $x$. Since $U$ is an inner model of $W$, $\kappa$ is also a cardinal in $U$. By Fact \ref{fact34}, $U[c]$ exists. Now, $U[c] \subset W$ as $c \in W$; but also $W \subset U[c]$ because $c$ can be decoded in $U[c]$ to give $x$ and $W = U[x]$.
+Let $x \in W$ be such that $W = U[x]$. By the proof of Lemma \ref{setcode}, for some cardinal $\kappa \in W$ there is an unbounded subset $c$ of $\kappa$ in $W$ coding $x$. Since $U$ is an inner model of $W$, $\kappa$ is also a cardinal in $U$. By Fact \ref{fact34}, $U[c]$ exists. Now, $U[c] \subset W$ as $c \in W$; but also $W \subset U[c]$ because $c$ can be decoded in $U[c]$ to give $x$ and $W = U[x]$.
 \end{proof}
 
 \begin{defi}
