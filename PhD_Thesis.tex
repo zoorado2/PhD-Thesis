@@ -543,6 +543,41 @@ Notice that this decoding process of $A$ to obtain $X$ is absolute for transitiv
 
 \section{Basic Computability Theory}
 
+Unless specified otherwise, we follow the standard definitions of concepts typically encountered in a foundational computability theory course, following e.g. \cite{soarebook}.
+
+\begin{con}\label{comcon}
+\leavevmode
+\begin{enumerate}[label=(\arabic*)]
+    \item\label{cc1} We call a Turing machine equipped with an oracle, an oracle machine. Vanilla Turing machines without oracles can be thought of as oracle machines of which state transition functions do not depend on oracle reads. Further, any oracle machine with trivial (e.g. empty) oracle input can be simulated by a vanilla Turing machine. So for convenience, and since we often require the use of oracles, we do not distinguish between Turing machines and oracle machines. In fact, from now on we will only mention oracle machines.
+    \item\label{ctc} Oracle machines are always assumed to take as input, some natural number. More than that, we shall assume that every natural number is a valid input for every oracle machine. This is obviously an abstraction, but it is an easy one to realise. This is because every natural number can be uniquely represented by a finite binary string, and so by the usual definition of an oracle machine, any machine with alphabet size $2$ is a realisation.
+    \item To follow up on \ref{ctc}, every binary string $\sigma \in 2^{< \omega}$ represents a (unique) natural number, and we write $\langle \sigma \rangle$ to mean the natural number $\sigma$ represents.
+    \item We will, whenever a suitable context arises, use the term ``oracle machine'' to mean ``Turing functional with oracle''. In other words, if an oracle machine halts on any input, it must return either $0$ or $1$. 
+    \item There is a computable enumeration of (the finite codes of) all oracle machines, so that it is always possible to simulate the $e$-th oracle machine for $s$ steps, as long as $e$ and $s$ are natural numbers.
+    \item We fix in advance, a computable enumeration of oracle machines, so that for any $e \in \omega$, $\Phi_e$ refers to the $e$-th oracle machine in this particular enumeration.
+\end{enumerate}
+\end{con}
+
+\begin{defi}
+If $\Phi$ is an oracle machine and $A \subset \omega$, we write $\Phi^A$ to mean the set
+\begin{equation*}
+    \{n \in \omega : \Phi \text{ with oracle input } A \text{ halts on input } n \text{ and returns } 1\} \text{.}
+\end{equation*}
+The appearance of $\Phi^A$ always implicitly implies $\Phi$ with oracle input $A$ halts on every natural number input.
+\end{defi}
+
+\begin{defi}
+If $A \subset \omega$, $X \subset 2^{< \omega}$ and $\Phi$ is an oracle machine, we overload $\Phi^A$ so that also, $\Phi^A = X$ iff
+\begin{equation*}
+    \Phi^A = \{\langle \sigma \rangle : \sigma \in X\} \text{.}
+\end{equation*}
+\end{defi}
+
+\begin{defi}[Relativised halting problem]
+Let $A \subset \omega$. Then $A'$ denotes the relativised halting problem for $A$, i.e. $$A' := \{e \in \omega : \Phi_e \text{ with oracle input } A \text{ halts on input } e\} \text{.}$$ 
+\end{defi}
+
+By \ref{cc1} of Convention \ref{comcon}, $\emptyset'$ is Turing-equivalent to typical definitions of the standard halting problem.
+
 \chapter{Forcing and Genericity}\label{subs24}
 
 Forcing is a technique invented by Cohen in \cite{cohen1} to prove that the continuum hypothesis is independent of $\mathsf{ZFC}$. It has since taken on a life of its own, becoming an indispensable tool in set theory, and even in other branches of logic. The modern treatment of forcing is largely due to Scott, Solovay, Silver, and Rowbottom, as communicated by Shoenfield in \cite{shoenfield}. Towards some semblance of completeness, we shall give a very brief and high-level introduction to forcing here.
