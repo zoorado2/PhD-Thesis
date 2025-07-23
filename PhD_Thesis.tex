@@ -310,10 +310,7 @@ Unless specified otherwise, we follow the standard definitions of concepts relat
     \item We assume the first-order languages we consider to contain only $\neg, \wedge, \vee, \implies, \iff$ as their zeroth-order logical symbols, interpreted semantically in the usual sense. 
     \item Each first-order logical symbol is identified with a unique member of $H(\omega) \setminus \omega$.
     \item Given a first-order language $\mathcal{L}$, let $\mathrm{Ter}(\mathcal{L})$ denote the set of all terms occurring in (some formula in) $\mathcal{L}$.
-    \item A first-order structure $\mathfrak{A}$ is presented in the form $(A; \mathcal{I})$, where $A$ is the base set of $\mathfrak{A}$ and $\mathcal{I}$ is the interpretation of the signature of $\mathfrak{A}$. In this presentation, the signature of $\mathfrak{A}$ is simply $dom(\mathcal{I})$. 
-    
-    Sometimes, when the correspondence between a signature and its interpretation is clear, we might write $(A; \mathcal{I})$ as $(A; \Vec{S})$, where $\Vec{S}$ is some ordering of $ran(\mathcal{I})$.
-    \item The signature of a first-order language or structure can contain only relation symbols of a non-zero finite arity, function symbols of a non-zero finite arity, and constant symbols, identified as follows:
+    \item The signature (in the abstract) can contain only relation symbols of a non-zero finite arity, function symbols of a non-zero finite arity, and constant symbols, identified as follows:
     \begin{itemize}
         \item a $n$-ary relation symbol is a triple of the form $(X, 0, n)$,
         \item a $n$-ary function symbol is a triple of the form $(X, 1, n)$, and
@@ -327,6 +324,28 @@ Unless specified otherwise, we follow the standard definitions of concepts relat
         \item constant symbols are mapped to constant symbols.
     \end{itemize}
     \item\label{227} We will assume that the class of signature-related symbols is disjoint from the set of first-order logical symbols.
+    \item An interpretation of a signature $\sigma$ is a function that maps
+    \begin{itemize}
+        \item each $n$-ary relation symbol in $\sigma$ to an $n$-ary relation,
+        \item each $n$-ary function symbol in $\sigma$ to an $n$-ary function, and
+        \item each constant symbol in $\sigma$ to a set.
+    \end{itemize}
+    Here, 
+    \begin{itemize}
+        \item an $n$-ary relation is formally a function from $A^n$ into $2$, for some set $A$, and
+        \item an $n$-ary function is formally a function from $A^n$ into $A^n$, for some set $A$.
+    \end{itemize}
+    \item A first-order structure $\mathfrak{A}$ is presented in the form $(A; \mathcal{I})$, where $A$ is the base set of $\mathfrak{A}$ and $\mathcal{I}$ is an interpretation of some signature $\sigma$, such that whenever $\dot{X} \in \sigma$, $\mathcal{I}(\dot{X})$ --- which denotes \emph{the interpretation of} $\dot{X}$ \emph{in} $\mathfrak{A}$ --- fulfils the following.
+    \begin{enumerate}[label=(\alph*)]
+        \item If $\dot{X}$ is an $n$-ary relation or function symbol, then $dom(\mathcal{I}(\dot{X})) = A^n$.
+        \item If $\dot{X}$ is a constant symbol, then $\mathcal{I}(\dot{X}) \in A$.
+    \end{enumerate}
+    In this presentation, the signature of $\mathfrak{A}$ --- denoted as $\sigma(\mathfrak{A})$ --- is simply $dom(\mathcal{I})$. Furthermore, we shall \begin{itemize}
+        \item refer to $\mathcal{I}$ as $\mathcal{I}^{\mathfrak{A}}$ when there is no need to mention $A$, and
+        \item refer to $\mathcal{I}(\dot{X})$ as $\dot{X}^{\mathfrak{A}}$ when there is no need to mention $\mathcal{I}$.
+    \end{itemize} 
+    
+    In contexts where the correspondence between a signature and its interpretation is clear, we might write $(A; \mathcal{I})$ as $(A; \Vec{S})$, where $\Vec{S}$ is some ordering of $ran(\mathcal{I})$.
     \item\label{224} The variables occurring in any first-order formula must come from a fixed countably infinite set $\mathrm{Var}$. We will assume that $\mathrm{Var}$ is disjoint from both the set of first-order logical symbols and the class of signature-related symbols.
     \item A string over a vocabulary set $\Sigma$ is a member of $\Sigma^{< \omega}$.
     \item We sometimes define procedures in which subformulas of a first-order formula are replaced by other formulas. In these cases, for convenience's sake, what follows will be adopted.
@@ -403,7 +422,8 @@ Unless specified otherwise, we follow the standard definitions of concepts typic
     \item A first-order formula is \emph{in a possibly expanded language of set theory} iff it is a formula over some signature $\sigma$ satisfying $\ulcorner \in \urcorner \in \sigma$.
     \item We say a structure $\mathfrak{A}$ is \emph{a structure in a possibly expanded language of set theory} iff we omit the cardinality requirement on the signature of $\mathfrak{A}$ in \ref{stcon1}. More formally, $$\mathfrak{A} = (A; \mathcal{I}) \text{ and } \mathcal{I} = \{(\ulcorner \in \urcorner, \in \cap A)\} \cup \Vec{X},$$ where $\Vec{X}$ is some function and $\in$ is the membership relation on $V$. In this case, we can just write $\mathfrak{A} = (A; \in, \Vec{X})$.
     \item\label{idu} We identify a universe of set theory $W$ with the structure $(W; \in)$. This should not cause confusion in the circumstances we find ourselves in.
-    \item A natural number is a member of $\omega$. In other words, we view $\omega$ as the set of all natural numbers.
+    \item When $\alpha$ and $\beta$ are ordinals, we write ``$\alpha < \beta$'' to mean ``$\alpha \in \beta$''.
+    \item A natural number is a member of the ordinal $\omega$. In other words, we view $\omega$ as the set of all natural numbers.
     \item A real is a subset of $\omega$. We identify a real with its characteristic function on $\omega$, as is standard in computability theory. As in \ref{idu}, this ambiguity should not cause any confusion.
 \end{enumerate}
 \end{con}
@@ -545,10 +565,10 @@ Let $Y := trcl(X) \cup \{X\}$. Note that
 \begin{equation}\label{trcluni}
     X \text{ is the unique } \! \in \!\text{-maximal member of } Y
 \end{equation} 
-in any transitive model of $\mathsf{ZFC - Powerset}$ containing $Y$. Choose any bijection $f$ from $Y$ into $\kappa$. Define $$R := \{(f(x), f(y)) \in \kappa \times \kappa : (x, y) \in Y \times Y \text{ and } x \in y\}.$$ Now $R$ can be thought of as a subset $A$ of $\kappa$ via the canonical G\"{o}del numbering of pairs. If $V'$ is a transitive model of $\mathsf{ZFC - Powerset}$ containing $A$, then we can recover $R$ in $V'$ by computing the inverse of $A$ along G\"{o}del's pairing function. The Mostowski collapse function works on $R$ in $V'$ to give us $Y \in V'$. This implies $X \in V'$ since $X$ is definable from $Y$ according to (\ref{trcluni}). 
-
-Notice that this decoding process of $A$ to obtain $X$ is absolute for transitive models of $\mathsf{ZF}$, because all of its components are.
+in any transitive model of $\mathsf{ZFC - Powerset}$ containing $Y$. Choose any bijection $f$ from $Y$ into $\kappa$. Define $$R := \{(f(x), f(y)) \in \kappa \times \kappa : x, y \in Y \text{ and } x \in y\}.$$ Now $R$ can be thought of as a subset $A$ of $\kappa$ via the canonical G\"{o}del numbering of pairs. If $V'$ is a transitive model of $\mathsf{ZFC - Powerset}$ containing $A$, then we can recover $R$ in $V'$ by computing the inverse of $A$ under G\"{o}del's pairing function. The Mostowski collapse function works on $R$ in $V'$ to give us $Y \in V'$. This implies $X \in V'$ since $X$ is definable from $Y$ according to (\ref{trcluni}). 
 \end{proof}
+
+Notice that the decoding process of $A$ to obtain $X$, as described in the proof of Lemma \ref{setcode}, is absolute for transitive models of $\mathsf{ZF}$, because all of its components are. 
 
 \section{Basic Computability Theory}
 
@@ -559,7 +579,7 @@ Unless specified otherwise, we follow the standard definitions of concepts typic
 \begin{enumerate}[label=(\arabic*)]
     \item\label{cc1} We call a Turing machine equipped with an oracle, an oracle machine. Vanilla Turing machines without oracles can be thought of as oracle machines of which state transition functions do not depend on oracle reads. Further, any oracle machine with trivial (e.g. empty) oracle input can be simulated by a vanilla Turing machine. So for convenience, and since we often require the use of oracles, we do not distinguish between Turing machines and oracle machines. In fact, from now on we will only mention oracle machines.
     \item\label{ctc} Oracle machines are always assumed to take as input, some natural number. More than that, we shall assume that every natural number is a valid input for every oracle machine. This is obviously an abstraction, but it is an easy one to realise. This is because every natural number can be uniquely represented by a finite binary string, and so by the usual definition of an oracle machine, any machine with alphabet size $2$ is a realisation.
-    \item To follow up on \ref{ctc}, every binary string $\sigma \in 2^{< \omega}$ represents a (unique) natural number, and we write $\langle \sigma \rangle$ to mean the natural number $\sigma$ represents.
+    \item To follow up on \ref{ctc}, every binary string $\tau \in 2^{< \omega}$ represents a (unique) natural number, and we write $\langle \tau \rangle$ to mean the natural number $\tau$ represents.
     \item We will, whenever a suitable context arises, use the term ``oracle machine'' to mean ``Turing functional with oracle''. In other words, if an oracle machine halts on any input, it must return either $0$ or $1$. 
     \item There is a computable enumeration of (the finite codes of) all oracle machines, so that it is always possible to simulate the $e$-th oracle machine for $s$ steps, as long as $e$ and $s$ are natural numbers.
     \item We fix in advance, a computable enumeration of oracle machines, so that for any $e \in \omega$, $\Phi_e$ refers to the $e$-th oracle machine in this particular enumeration.
@@ -577,7 +597,7 @@ The appearance of $\Phi^A$ always implicitly implies $\Phi$ with oracle input $A
 \begin{defi}
 If $A \subset \omega$, $X \subset 2^{< \omega}$ and $\Phi$ is an oracle machine, we overload $\Phi^A$ so that also, $\Phi^A = X$ iff
 \begin{equation*}
-    \Phi^A = \{\langle \sigma \rangle : \sigma \in X\} \text{.}
+    \Phi^A = \{\langle \tau \rangle : \tau \in X\} \text{.}
 \end{equation*}
 \end{defi}
 
@@ -593,7 +613,7 @@ We call the signature $$\{+, \times, 0, 1, \leq\}$$ \emph{the language of arithm
 
 \begin{defi}
 By the \emph{standard natural number structure} $\mathbb{N}$, we mean the first-order structure with base set $\omega$ interpreting the language of arithmetic such that
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item $+$ is interpreted to mean addition on the natural numbers,
     \item $\times$ is interpreted to mean multiplication on the natural numbers,
     \item $0$ and $1$ are interpreted to mean ordinals $0$ and $1$ respectively, and
@@ -626,34 +646,79 @@ Let $\phi$ be a first-order formula over the language of arithmetic. We inductiv
         \end{itemize}
     \end{enumerate}
 \end{enumerate}
-Note that if $k = 0$ respectively in \ref{2712}\ref{2712a} and \ref{2712}\ref{2712b}, then $\phi$ is $\Sigma_m$ and $\Pi_m$ respectively.
+Note that if $k = 0$ respectively in \ref{2712}\ref{2712a} and \ref{2712}\ref{2712b}, then $\phi$ is $\Sigma^0_m$ and $\Pi^0_m$ respectively.
 \end{defi}
 
 \begin{defi}
-For $X \subset 2^{< \omega}$, we say $X$ is a \emph{tree} iff $X$ is closed under predecessors with respect to the subset relation. More formally, $X$ is a tree iff whenever $\sigma \in X$ and $\tau \in 2^{< \omega}$, 
+For $X \subset 2^{< \omega}$, we say $X$ is a \emph{tree} iff $X$ is closed under predecessors with respect to the subset relation. More formally, $X$ is a tree iff whenever $\tau_1 \in X$ and $\tau_2 \in 2^{< \omega}$, 
 \begin{equation*}
-    \tau \subset \sigma \implies \tau \in X \text{.}
+    \tau_2 \subset \tau_1 \implies \tau_2 \in X \text{.}
 \end{equation*}
 \end{defi}
 
 \begin{defi}
-Let $X \subset 2^{< \omega}$ be a tree. Then $\sigma$ is a splitting node in $X$ iff $\sigma^\frown (0) \in X$ and $\sigma^\frown (1) \in X$.
+Let $X \subset 2^{< \omega}$ be a tree. Then $\tau$ is a splitting node in $X$ iff $\tau^\frown (0) \in X$ and $\tau^\frown (1) \in X$.
 \end{defi}
 
 \begin{defi}
-A set $X \subset 2^{< \omega}$ is a \emph{perfect tree} iff for every $\sigma \in X$ there is $\tau$ such that $\sigma \subset \tau$ and $\tau$ is a splitting node in $X$.
+A set $X \subset 2^{< \omega}$ is a \emph{perfect tree} iff $X$ is a tree, and for every $\tau_1 \in X$ there is $\tau_2$ such that $\tau_1 \subset \tau_2$ and $\tau_2$ is a splitting node in $X$.
 
-A set $X \subset 2^{< \omega}$ is a \emph{uniformly splitting tree} iff for every splitting node $\sigma$ in $X$ and every $\tau \in X$, 
+A set $X \subset 2^{< \omega}$ is a \emph{uniformly splitting tree} iff $X$ is a tree, and for every splitting node $\tau_1$ in $X$ and every $\tau_2 \in X$, 
 \begin{equation*}
-    |\sigma| = |\tau| \implies \tau \text{ is a splitting node in } X \text{.}
+    |\tau_1| = |\tau_2| \implies \tau_2 \text{ is a splitting node in } X \text{.}
 \end{equation*}
 \end{defi}
 
 \begin{defi}
 Let $n < \omega$. A real $A \in 2^{\omega}$ is $n$\emph{-generic} iff for each $\Sigma^0_n$ formula $\phi$ over the language of arithmetic with a single free variable $x$, one of the following holds.
+\begin{enumerate}[label=(\alph*)]
+    \item For some $n < \omega$, $A \restriction n \in D_{\phi}$, where $$D_{\phi} := \{\tau \in 2^{< \omega} : \mathbb{N} \models \phi[x \mapsto \langle \tau \rangle]\} \text{.}$$
+    \item For some $n < \omega$, whenever $A \restriction n \subset \tau \in 2^{< \omega}$, $\tau \not\in D_{\phi}$.
+\end{enumerate}
+\end{defi}
+
+There is an somewhat intuitive way to relativise $n$-genericity to arbitrary reals. We first expand the language of arithmetic to include a new unary relation symbol $\dot{P}$, so that the expanded signature is $\sigma(\mathbb{N}) \cup \{\dot{P}\}$.
+
+\begin{defi}
+Let $X \in 2^{\omega}$. Then $(\mathbb{N}; X)$ denotes the unique expansion $\mathfrak{A}$ of $\mathbb{N}$ such that
+\begin{enumerate}[label=(\alph*)]
+    \item $\mathfrak{A}$ is a ($\sigma(\mathbb{N}) \cup \{\dot{P}\}$)-structure, and
+    \item $\dot{P}^{\mathfrak{A}}= X$.
+\end{enumerate}
+\end{defi}
+
+\begin{defi}
+Let $\phi$ be a first-order formula over the signature $\sigma(\mathbb{N}) \cup \{\dot{P}\}$. We inductively define what it means for $\phi$ to be $\Delta^{0,+}_n$, $\Pi^{0, +}_n$ or $\Sigma^{0, +}_n$ as $n$ ranges over the natural numbers.
 \begin{enumerate}[label=(\arabic*)]
-    \item For some $n < \omega$, $A \restriction n \in X_{\phi}$, where $$X_{\phi} := \{\sigma \in 2^{< \omega} : \mathbb{N} \models \phi[x \mapsto \langle \sigma \rangle\} \text{.}$$
-    \item For some $n < \omega$, whenever $A \restriction n \subset \sigma \in 2^{< \omega}$, $\sigma \not\in X_{\phi}$.
+    \item If $n = 0$, then $\phi$ is $\Delta^{0, +}_n$ iff $\phi$ is $\Pi^{0, +}_n$ iff $\phi$ is $\Sigma^{0, +}_n$ iff every quantifier occurring in $\phi$ is bounded by $\leq$.
+    \item If $n = m + 1$ for some $m < \omega$, then 
+    \begin{enumerate}[label=(\alph*)]
+        \item $\phi$ is $\Pi^{0, +}_n$ iff there is a $\Sigma^{0, +}_m$ formula $\varphi$, a number $k < \omega$, and variable symbols $x_1, \dots, x_k$ not bound in $\varphi$, such that 
+        \begin{equation*}
+            \phi = \ulcorner \forall x_1 \dots \forall x_k \ \varphi \urcorner \text{,}
+        \end{equation*}
+        \item $\phi$ is $\Sigma^{0, +}_n$ iff there is a $\Pi^{0, +}_m$ formula $\varphi$, a number $k < \omega$, and variable symbols $x_1, \dots, x_k$ not bound in $\varphi$, such that 
+        \begin{equation*}
+            \phi = \ulcorner \exists x_1 \dots \exists x_k \ \varphi \urcorner \text{, and}
+        \end{equation*}
+        \item $\phi$ is $\Delta^0_n$ iff 
+        \begin{itemize}[label=$\circ$]
+            \item $\phi$ is $\Pi^{0, +}_n$, and
+            \item for some $\Sigma^{0, +}_n$ formula $\varphi$,
+            \begin{equation*}
+                \mathsf{ZFC} \vdash \phi \iff \varphi \text{.}
+            \end{equation*}
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+Note that if $k = 0$ respectively in \ref{2712}\ref{2712a} and \ref{2712}\ref{2712b}, then $\phi$ is $\Sigma^{0, +}_m$ and $\Pi^{0, +}_m$ respectively.
+\end{defi}
+
+\begin{defi}
+Let $n < \omega$ and $X \in 2^{\omega}$. A real $A \in 2^{\omega}$ is $X$-$n$\emph{-generic} iff for each $\Sigma^{0, +}_n$ formula $\phi$ over the signature $\sigma(\mathbb{N}) \cup \{\dot{P}\}$ with a single free variable $x$, one of the following holds.
+\begin{enumerate}[label=(\alph*)]
+    \item For some $n < \omega$, $A \restriction n \in D^+_{\phi}(X)$, where $$D^+_{\phi}(X) := \{\tau \in 2^{< \omega} : (\mathbb{N}; X) \models \phi[x \mapsto \langle \tau \rangle]\} \text{.}$$
+    \item For some $n < \omega$, whenever $A \restriction n \subset \tau \in 2^{< \omega}$, $\tau \not\in D^+_{\phi}(X)$.
 \end{enumerate}
 \end{defi}
 
@@ -759,7 +824,7 @@ If $\mathbb{P}$ is a forcing notion in $V$, $p \in \mathbb{P}$, $\phi$ is a form
 This theorem, colloquially known as the \emph{forcing theorem}, enables us to reason about truth in generic extensions from within the ground model, and often reduces the argument from one about semantic entailment to one pertaining to combinatorial properties of partial orders. For a technical lowdown of forcing terminology and the proof of the forcing theorem, the reader is encouraged to read Chapter IV of \cite{kunen}. 
 \end{rem}
 
-\section{Miscellaneous Properties of Forcing Notions}
+\section{Miscellaneous Properties of Forcing Notions}\label{sectmpfc}
 
 \begin{defi}
 Let $\mathbb{P} = (P, \leq_{\mathbb{P}})$ be a forcing notion and $X$ be any set. The \emph{upward closure of} $X$ \emph{in} $\mathbb{P}$, denoted $\mathrm{UC}(\mathbb{P}, X)$, is the set $$\{p \in P : \exists q \ (q \in X \text{ and } q \leq_{\mathbb{P}} p)\}.$$
@@ -886,15 +951,6 @@ A forcing notion $\mathbb{P} = (P, \leq_{\mathbb{P}})$ is \emph{atomless} iff no
 \end{defi}
 
 \begin{defi}
-Define
-\begin{align*}
-    C := \ & 2^{< \omega} \text{, and} \\
-    \leq_{\mathbb{C}} \ := \ & \{(p, q) : q \subset p\} \text{.}
-\end{align*}
-Call the forcing notion $\mathbb{C} := (C, \leq_{\mathbb{C}})$ \emph{Cohen forcing}.
-\end{defi}
-
-\begin{defi}
 Let $\mathbb{P} = (P, \leq_{\mathbb{P}})$ and $\mathbb{Q} = (Q, \leq_{\mathbb{Q}})$ be forcing notions. We say $\mathbb{P}$ is a \emph{regular suborder} of $\mathbb{Q}$, denoted $\mathbb{P} \lessdot \mathbb{Q}$, iff 
 \begin{enumerate}[label=(\alph*)]
     \item $\mathbb{P}$ is a suborder of $\mathbb{Q}$, and
@@ -904,6 +960,47 @@ Let $\mathbb{P} = (P, \leq_{\mathbb{P}})$ and $\mathbb{Q} = (Q, \leq_{\mathbb{Q}
 
 \begin{fact}\label{regsubo}
 If $\mathbb{P} = (P, \leq_{\mathbb{P}}) \lessdot \mathbb{Q}$, then for every $\mathbb{Q}$-generic filter $g$ over $V$, $g \cap P$ is a $\mathbb{P}$-generic filter over $V$.
+\end{fact}
+
+By many measures, Cohen forcing is the simplest non-empty atomless forcing notion.
+
+\begin{defi}
+Define
+\begin{align*}
+    C := \ & 2^{< \omega} \text{, and} \\
+    \leq_{\mathbb{C}} \ := \ & \{(p, q) : q \subset p\} \text{.}
+\end{align*}
+Call the forcing notion $\mathbb{C} := (C, \leq_{\mathbb{C}})$ \emph{Cohen forcing}.
+\end{defi}
+
+\begin{defi}\label{cefdef}
+Let $f : H(\omega) \longrightarrow \omega$ be an injection. We say $f$ is a \emph{computable encoding function of} $(H(\omega); \in)$ iff $f$ satisfies all of the following conditions.
+\begin{enumerate}[label=(\alph*)]
+    \item $ran(f)$ is a computable subset of $\omega$.
+    \item The image of the set 
+    \begin{equation*}
+        \{(f(x), f(y)) \in \omega \times \omega : x, y \in H(\omega) \text{ and } x \in y\}
+    \end{equation*}
+    under G\"{o}del's pairing function is a computable subset of $\omega$.
+    \item The graph of $f$, i.e. the set 
+    \begin{equation*}
+        \{(x, f(x)) : x \in H(\omega)\} \text{,}
+    \end{equation*}
+    is $\Delta_1$-definable in the language associated with $(H(\omega); \in)$.
+\end{enumerate}
+\end{defi} 
+
+The next fact will be invoked in Section \ref{sect4.3}, when we deal with generic reals in the context of computability theory.
+
+\begin{fact}\label{f3230}
+Let 
+\begin{enumerate}[label=(\alph*)]
+    \item $n < \omega$,
+    \item $A \in 2^{\omega}$,
+    \item $f$ be a computable encoding function of $(H(\omega); \in)$, and
+    \item $X \subset ran(f)$.
+\end{enumerate}
+Then $A$ is $X$-$n$-generic iff $$\{A \restriction m : m < \omega\}$$ is a $\mathbb{C}$-$\Sigma_n$-generic filter over $(H(\omega); \in, f^{-1}(X))$.
 \end{fact}
 
 \chapter{Other Topics in Set Theory}\label{chap4}
@@ -3337,6 +3434,7 @@ For the rest of this section,
 For any countable set $X$, we say $(r, f)$ \emph{witnesses} $(X; \in)$ \emph{is computable} iff
 \begin{enumerate}[label=(\alph*)] 
     \item $f$ is a bijection from $X$ into $\{n < \omega : n \text{ is even}\}$,
+    \item the graph of $f$ is $\Delta_1$-definable in the language associated with $(H(\omega); \in)$,
     \item
     \!
     $\begin{aligned}[t]
@@ -3361,6 +3459,8 @@ There is a nicely computable code of $(H(\omega); \in)$.
 \begin{fact}\label{uniquecode}
 If $r$ is a nicely computable code of $(H(\omega); \in)$, then there is a unique $f$ for which $(r, f)$ witnesses $(H(\omega); \in)$ is computable.
 \end{fact}
+
+It is obvious that whenever $(r, f)$ witnesses $(H(\omega); \in)$ is computable, $f$ must be a computable encoding function of $(H(\omega); \in)$ in the sense of Definition \ref{cefdef}.
 
 Let $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ be a TCI, and $y$ be such that $\vartheta(\dot{\mathcal{U}}) = (y, z)$ for some $z$.
 
@@ -3645,7 +3745,7 @@ Let $z$ be the subset of $s$ defined by a $\Sigma^{0, s}_1$ formula $\varphi(x)$
 If $c \cap a_z \neq \emptyset$, then by the definition of $a_z$, there are conditions $p \in c$ and $q \in z$ for which $(f" \pi)(p) \leq_s q$, so $\mathrm{UC}(s, (f" \pi)" c)$ meets $z$ with respect to $s$. Otherwise, there is $p \in c$ that cannot be extended in $u$ to a member of $a_z$. Consider any $q \leq_s (f" \pi)(p)$. As $f" \pi$ densely embeds $u$ into $s$, we can find conditions $p' \in u$ and $q' \in s$ for which $q' \leq_s q$ and $(f" \pi)(p') = q'$. Now $p' \leq_u p$, which according to our choice of $p$, means $p' \not\in a_z$. Unfurling the definition of $a_z$ gives us $q \not\in z$. Having thus shown that $(f" \pi)(p)$ cannot be extended in $s$ to a member of $z$, we are done.
 \end{proof}
 
-We can passing the definition of a $s$-$1$-generic real through $f$ to conclude that for every such real $t$, $\ddot{\Phi}^t$ is a subset of $u$ meeting all $\Sigma^{0, s}_1$ subsets of $u$ with respect to $u$. With (\ref{number9}) and (\ref{number10}) in mind, Proposition \ref{lastprop} then tells us that we can combine $\bar{\Phi}$, $\ddot{\Phi}$ and $\Phi$ to get an oracle machine $\Psi$ fulfilling the requirements 
+We can pass the definition of a $s$-$1$-generic real through $f$ and invoke Fact \ref{f3230} as promised earlier on in Section \ref{sectmpfc}, to conclude that for every such real $t$, $\ddot{\Phi}^t$ is a subset of $u$ meeting all $\Sigma^{0, s}_1$ subsets of $u$ with respect to $u$. With (\ref{number9}) and (\ref{number10}) in mind, Proposition \ref{lastprop} then tells us that we can combine $\bar{\Phi}$, $\ddot{\Phi}$ and $\Phi$ to get an oracle machine $\Psi$ fulfilling the requirements 
 \begin{align}\label{lastreq}
     \forall t \ \exists ! \mathcal{M}_t \ (t \text{ is a } s \text{-} 1 \text{-generic} \implies (\mathcal{M}_t \models^* \mathfrak{T} \text{ and } \Psi^{t \oplus s} = f" (\Sigma(\mathfrak{T}, \mathcal{M}_t))))
 \end{align}
