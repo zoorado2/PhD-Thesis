@@ -375,6 +375,14 @@ Let $\phi$ be a first-order formula over a signature $\sigma$. We inductively de
 Note that if $k = 0$ in \ref{3292}\ref{3292a} and \ref{3292}\ref{3292b}, then $\phi$ is $\Sigma_m$ and $\Pi_m$ respectively.
 \end{defi}
 
+\begin{defi}
+Let $X$ and $Y$ be finite tuples. Then $X^\frown Y$ denotes the concatenation of $X$ with $Y$. More formally, 
+\begin{equation*}
+    X^\frown Y := X \cup \{(|X|+i, y) : (i, y) \in Y\} \text{.}
+\end{equation*}
+Notice that the operation $^\frown$ is associative on finite tuples.
+\end{defi}
+
 \section{Basic Set Theory}
 
 Unless specified otherwise, we follow the standard definitions of concepts typically encountered in a foundational set theory course, following e.g. \cite{jechhrbacek}.
@@ -395,13 +403,14 @@ Unless specified otherwise, we follow the standard definitions of concepts typic
     \item A first-order formula is \emph{in a possibly expanded language of set theory} iff it is a formula over some signature $\sigma$ satisfying $\ulcorner \in \urcorner \in \sigma$.
     \item We say a structure $\mathfrak{A}$ is \emph{a structure in a possibly expanded language of set theory} iff we omit the cardinality requirement on the signature of $\mathfrak{A}$ in \ref{stcon1}. More formally, $$\mathfrak{A} = (A; \mathcal{I}) \text{ and } \mathcal{I} = \{(\ulcorner \in \urcorner, \in \cap A)\} \cup \Vec{X},$$ where $\Vec{X}$ is some function and $\in$ is the membership relation on $V$. In this case, we can just write $\mathfrak{A} = (A; \in, \Vec{X})$.
     \item\label{idu} We identify a universe of set theory $W$ with the structure $(W; \in)$. This should not cause confusion in the circumstances we find ourselves in.
+    \item A natural number is a member of $\omega$. In other words, we view $\omega$ as the set of all natural numbers.
     \item A real is a subset of $\omega$. We identify a real with its characteristic function on $\omega$, as is standard in computability theory. As in \ref{idu}, this ambiguity should not cause any confusion.
 \end{enumerate}
 \end{con}
 
 We overload and expand on Definition \ref{def25} when dealing with the special case of set-theoretic languages. 
 
-\begin{defi}\label{def27}
+\begin{defi}[L\'{e}vy hierarchy]\label{def27}
 Let $\phi$ be a first-order formula over a possibly expanded language of set theory. We inductively define what it means for $\phi$ to be $\Delta_n$, $\Pi_n$ or $\Sigma_n$ as $n$ ranges over the natural numbers.
 \begin{enumerate}[label=(\arabic*)]
     \item\label{def271} If $n = 0$, then $\phi$ is $\Delta_n$ iff $\phi$ is $\Pi_n$ iff $\phi$ is $\Sigma_n$ iff every quantifier occurring in $\phi$ is bounded by $\in$.
@@ -409,11 +418,11 @@ Let $\phi$ be a first-order formula over a possibly expanded language of set the
     \begin{enumerate}[label=(\alph*)]
         \item\label{2712a} $\phi$ is $\Pi_n$ iff there is a $\Sigma_m$ formula $\varphi$, a number $k < \omega$, and variable symbols $x_1, \dots, x_k$ not bound in $\varphi$, such that 
         \begin{equation*}
-            \phi = \ulcorner \forall x_1 \dots \forall x_k \ \varphi \urcorner \text{, and}
+            \phi = \ulcorner \forall x_1 \dots \forall x_k \ \varphi \urcorner \text{,}
         \end{equation*}
         \item\label{2712b} $\phi$ is $\Sigma_n$ iff there is a $\Pi_m$ formula $\varphi$, a number $k < \omega$, and variable symbols $x_1, \dots, x_k$ not bound in $\varphi$, such that 
         \begin{equation*}
-            \phi = \ulcorner \exists x_1 \dots \exists x_k \ \varphi \urcorner \text{.}
+            \phi = \ulcorner \exists x_1 \dots \exists x_k \ \varphi \urcorner \text{, and}
         \end{equation*}
         \item $\phi$ is $\Delta_n$ iff 
         \begin{itemize}[label=$\circ$]
@@ -572,11 +581,81 @@ If $A \subset \omega$, $X \subset 2^{< \omega}$ and $\Phi$ is an oracle machine,
 \end{equation*}
 \end{defi}
 
-\begin{defi}[Relativised halting problem]
-Let $A \subset \omega$. Then $A'$ denotes the relativised halting problem for $A$, i.e. $$A' := \{e \in \omega : \Phi_e \text{ with oracle input } A \text{ halts on input } e\} \text{.}$$ 
+\begin{defi}
+Let $A \subset \omega$. Then $A'$ denotes the \emph{relativised halting problem for} $A$, i.e. $$A' := \{e \in \omega : \Phi_e \text{ with oracle input } A \text{ halts on input } e\} \text{.}$$ 
 \end{defi}
 
 By \ref{cc1} of Convention \ref{comcon}, $\emptyset'$ is Turing-equivalent to typical definitions of the standard halting problem.
+
+\begin{defi}
+We call the signature $$\{+, \times, 0, 1, \leq\}$$ \emph{the language of arithmetic}. 
+\end{defi}
+
+\begin{defi}
+By the \emph{standard natural number structure} $\mathbb{N}$, we mean the first-order structure with base set $\omega$ interpreting the language of arithmetic such that
+\begin{enumerate}[label=(\arabic*)]
+    \item $+$ is interpreted to mean addition on the natural numbers,
+    \item $\times$ is interpreted to mean multiplication on the natural numbers,
+    \item $0$ and $1$ are interpreted to mean ordinals $0$ and $1$ respectively, and
+    \item $\leq$ is interpreted to mean the total ordering of the natural numbers.
+\end{enumerate} 
+In other words, we really write $\mathbb{N}$ to mean the standard structure on the natural numbers over the language of arithmetic.
+\end{defi}
+
+\begin{defi}[Arithmetical hierarchy]
+Let $\phi$ be a first-order formula over the language of arithmetic. We inductively define what it means for $\phi$ to be $\Delta^0_n$, $\Pi^0_n$ or $\Sigma^0_n$ as $n$ ranges over the natural numbers.
+\begin{enumerate}[label=(\arabic*)]
+    \item If $n = 0$, then $\phi$ is $\Delta^0_n$ iff $\phi$ is $\Pi^0_n$ iff $\phi$ is $\Sigma^0_n$ iff every quantifier occurring in $\phi$ is bounded by $\leq$.
+    \item If $n = m + 1$ for some $m < \omega$, then 
+    \begin{enumerate}[label=(\alph*)]
+        \item $\phi$ is $\Pi^0_n$ iff there is a $\Sigma^0_m$ formula $\varphi$, a number $k < \omega$, and variable symbols $x_1, \dots, x_k$ not bound in $\varphi$, such that 
+        \begin{equation*}
+            \phi = \ulcorner \forall x_1 \dots \forall x_k \ \varphi \urcorner \text{,}
+        \end{equation*}
+        \item $\phi$ is $\Sigma^0_n$ iff there is a $\Pi^0_m$ formula $\varphi$, a number $k < \omega$, and variable symbols $x_1, \dots, x_k$ not bound in $\varphi$, such that 
+        \begin{equation*}
+            \phi = \ulcorner \exists x_1 \dots \exists x_k \ \varphi \urcorner \text{, and}
+        \end{equation*}
+        \item $\phi$ is $\Delta^0_n$ iff 
+        \begin{itemize}[label=$\circ$]
+            \item $\phi$ is $\Pi^0_n$, and
+            \item for some $\Sigma^0_n$ formula $\varphi$,
+            \begin{equation*}
+                \mathsf{ZFC} \vdash \phi \iff \varphi \text{.}
+            \end{equation*}
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+Note that if $k = 0$ respectively in \ref{2712}\ref{2712a} and \ref{2712}\ref{2712b}, then $\phi$ is $\Sigma_m$ and $\Pi_m$ respectively.
+\end{defi}
+
+\begin{defi}
+For $X \subset 2^{< \omega}$, we say $X$ is a \emph{tree} iff $X$ is closed under predecessors with respect to the subset relation. More formally, $X$ is a tree iff whenever $\sigma \in X$ and $\tau \in 2^{< \omega}$, 
+\begin{equation*}
+    \tau \subset \sigma \implies \tau \in X \text{.}
+\end{equation*}
+\end{defi}
+
+\begin{defi}
+Let $X \subset 2^{< \omega}$ be a tree. Then $\sigma$ is a splitting node in $X$ iff $\sigma^\frown (0) \in X$ and $\sigma^\frown (1) \in X$.
+\end{defi}
+
+\begin{defi}
+A set $X \subset 2^{< \omega}$ is a \emph{perfect tree} iff for every $\sigma \in X$ there is $\tau$ such that $\sigma \subset \tau$ and $\tau$ is a splitting node in $X$.
+
+A set $X \subset 2^{< \omega}$ is a \emph{uniformly splitting tree} iff for every splitting node $\sigma$ in $X$ and every $\tau \in X$, 
+\begin{equation*}
+    |\sigma| = |\tau| \implies \tau \text{ is a splitting node in } X \text{.}
+\end{equation*}
+\end{defi}
+
+\begin{defi}
+Let $n < \omega$. A real $A \in 2^{\omega}$ is $n$\emph{-generic} iff for each $\Sigma^0_n$ formula $\phi$ over the language of arithmetic with a single free variable $x$, one of the following holds.
+\begin{enumerate}[label=(\arabic*)]
+    \item For some $n < \omega$, $A \restriction n \in X_{\phi}$, where $$X_{\phi} := \{\sigma \in 2^{< \omega} : \mathbb{N} \models \phi[x \mapsto \langle \sigma \rangle\} \text{.}$$
+    \item For some $n < \omega$, whenever $A \restriction n \subset \sigma \in 2^{< \omega}$, $\sigma \not\in X_{\phi}$.
+\end{enumerate}
+\end{defi}
 
 \chapter{Forcing and Genericity}\label{subs24}
 
@@ -3411,8 +3490,8 @@ Clearly, $P^*$ is dense in $P(\mathfrak{T})^{\top}$, so $P(\mathfrak{T})^{\top}$
 Finally, we can inductively define $\pi$ on $C$ as such:
 \begin{align*}
     \pi(\emptyset) := \ & \text{the } P^* \text{-least split above } \emptyset \text{,} \\
-    \pi(x^{\frown}\langle 0 \rangle) := \ & \text{the } P^* \text{-least split above } \pi(x) \cup \{\varphi_{|x|, 0}\} \text{, and} \\
-    \pi(x^{\frown}\langle 1 \rangle) := \ & \text{the } P^* \text{-least split above } \pi(x) \cup \{\varphi_{|x|, 1}\} \text{,}
+    \pi(x^{\frown}(0)) := \ & \text{the } P^* \text{-least split above } \pi(x) \cup \{\varphi_{|x|, 0}\} \text{, and} \\
+    \pi(x^{\frown}(1)) := \ & \text{the } P^* \text{-least split above } \pi(x) \cup \{\varphi_{|x|, 1}\} \text{,}
 \end{align*}
 where
 \begin{align*}
@@ -3518,7 +3597,7 @@ Now apply Lemma \ref{main2} with $V$ in place of $W$, as well as the substitutio
 Notice that
 \begin{itemize}
     \item $H(\omega)$ is closed under the function $\chi_{\mathfrak{T}}$ as defined in Remark \ref{subsafe2}, and 
-    \item the $f$-image of $\chi_{\mathfrak{T}}$ is $\Delta^0_0$ (i.e. computable),
+    \item the $f$-image of $\chi_{\mathfrak{T}}$ is $\Delta^0_1$ (i.e. computable),
 \end{itemize} 
 from which we deduce the following:
 \begin{enumerate}[label=(\Roman*)]
@@ -8463,8 +8542,8 @@ The idea is to construct a Cantor scheme differentiating the generic filters in 
 \end{enumerate}
 This can be done by induction on the length of $s$. Choose any condition of $\mathbb{P}$ to be $p_{\emptyset}$. Assume next that $p_s$ has been defined. Since $p_s$ is not an atom of $\mathbb{P}$, we can find $q_0$ and $q_1$ extending $p_s$ in $\mathbb{P}$ such that $q_0 \ \bot_{\mathbb{P}} \ q_1$. The density of $D_{|s|}$ guarantees there are $q'_0, q'_1 \in D_{|s|}$ extending $q_0$ and $q_1$ in $\mathbb{P}$, respectively. Set
 \begin{gather*}
-    p_{s^\frown \langle 0 \rangle} := q'_0 \\
-    p_{s^\frown \langle 1 \rangle} := q'_1 \text{.}
+    p_{s^\frown (0)} := q'_0 \\
+    p_{s^\frown (1)} := q'_1 \text{.}
 \end{gather*}
 It is not hard to verify \ref{3591} to \ref{3594} hold for the $p_s$s defined as such.
 
