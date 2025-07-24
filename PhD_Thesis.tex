@@ -6,10 +6,10 @@
 \usepackage{bbm}
 \usepackage{mathbbol}
 \usepackage[]{enumitem}
-\setlist[enumerate,1]{itemsep=0pt, parsep=0pt, listparindent=\parindent}
-\setlist[enumerate,2]{ref=\theenumii, itemsep=0pt, parsep=0pt, listparindent=\parindent}
-\setlist[itemize,1]{itemsep=0pt, parsep=0pt, listparindent=\parindent}
-\setlist[itemize,2]{itemsep=0pt, parsep=0pt, listparindent=\parindent}
+\setlist[enumerate,1]{itemsep=1pt, parsep=0pt, listparindent=\parindent}
+\setlist[enumerate,2]{ref=\theenumii, itemsep=1pt, parsep=0pt, listparindent=\parindent}
+\setlist[itemize,1]{itemsep=1pt, parsep=0pt, listparindent=\parindent}
+\setlist[itemize,2]{itemsep=1pt, parsep=0pt, listparindent=\parindent}
 \usepackage{titling}
 \usepackage{mathtools}
 \usepackage[backend=biber,
@@ -143,7 +143,7 @@ linkcolor=blue
 
 
 \AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{simple}}} 
-
+\OnehalfSpacing
 
 %%% BEGIN DOCUMENT
 
@@ -1302,6 +1302,8 @@ Lemma \ref{ho2} is a first step towards deriving the $Col(\omega, \omega_2)$-nam
     (H(\omega_2); \in, \mathrm{NS}_{\omega_1}, A)
 \end{equation*}
 is instrumental in the proof of Theorem \ref{notion2}.
+
+\blankpage
 
 \part{Building Our Tools}\label{part2}
 
