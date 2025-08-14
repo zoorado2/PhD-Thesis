@@ -6,10 +6,10 @@
 \usepackage{bbm}
 \usepackage{mathbbol}
 \usepackage[]{enumitem}
-\setlist[enumerate,1]{itemsep=0pt, parsep=0pt, listparindent=\parindent}
-\setlist[enumerate,2]{ref=\theenumii, itemsep=0pt, parsep=0pt, listparindent=\parindent}
-\setlist[itemize,1]{itemsep=0pt, parsep=0pt, listparindent=\parindent}
-\setlist[itemize,2]{itemsep=0pt, parsep=0pt, listparindent=\parindent}
+\setlist[enumerate,1]{itemsep=1pt, parsep=0pt, listparindent=\parindent}
+\setlist[enumerate,2]{ref=\theenumii, itemsep=1pt, parsep=0pt, listparindent=\parindent}
+\setlist[itemize,1]{itemsep=1pt, parsep=0pt, listparindent=\parindent}
+\setlist[itemize,2]{itemsep=1pt, parsep=0pt, listparindent=\parindent}
 \usepackage{titling}
 \usepackage{mathtools}
 \usepackage[backend=biber,
@@ -143,7 +143,7 @@ linkcolor=blue
 
 
 \AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{simple}}} 
-
+\OnehalfSpacing
 
 %%% BEGIN DOCUMENT
 
@@ -226,13 +226,13 @@ We present a forcing framework based on the idea of amalgamating language fragme
 \thispagestyle{simple}
 (Describe the overview of this thesis following the points outlined in Figure \ref{overview}.)
 
-For better compartmentalisation and modularisation of knowledge and techniques, we extract the ideas used in our proofs about generalised computation beyond $V$, and present them in a more general context. These ideas are packaged as technical theorems about TCIs, to be applied in the later part of the thesis, when we seek to answer certain questions regarding the aforementioned model of computation. While technical, these theorems are also interesting in their own right, for they open up intriguing avenues for investigation within the theory of TCIs, some of which we briefly touch upon. As such, our choice of presentation allows us to kill two birds with one stone.
+For better compartmentalisation and modularisation of knowledge and techniques, we extract the key ideas employed in the proofs of theorems about our particular model of generalised computation beyond $V$, and present them in a more general context. These ideas are packaged as technical theorems about TCIs in Chapter \ref{TCIsec}, to be applied rather straightforwardly in Chapter \ref{chap7}, when we seek answers to questions regarding the aforementioned model of computation. While technical, these theorems are also interesting in their own right, for they open up intriguing avenues for investigation within the theory of TCIs, some of which we shall briefly explore. As such, our choice of presentation allows us to kill two birds with one stone. 
 
 \begin{sidewaysfigure}
     \centering
     \centerline{\includegraphics[width=\textwidth]{Overview_Chart.png}}
     \captionsetup{width=0.9\textwidth, format=hang}
-    \caption[Key components of thesis]{An overview of this thesis in the form of a flowchart, or to be more precise --- a summary of the key components of the author's contributions, together with the relations among them.}
+    \caption[Key components of thesis]{An overview of this thesis in the form of a flowchart --- or to be more precise --- a summary of the key components of the author's contributions, together with the relations among them.}
     \label{overview}
 \end{sidewaysfigure}
 
@@ -261,15 +261,15 @@ An application of forcing involves coming up with a partial order (called a \emp
 
 Over the years, set theorists have discovered important relationships between forcing notions and their generic objects\slash extensions. These relationships usually associate higher-order properties of a partial order with its forcing consequences, to the extent that the study of such properties has become a good description of forcing theory. Now, in order to derive a generic extension we desire, we need to construct a forcing notion drawing from forcing theory with our generic object in mind, at the same time easing tensions between requirements. This balancing act can be extremely tough, in part because it sees little in the way of systematic support.
 
-In this paper, we develop a framework in which certain desiderata of a generic object can be naturally realised. Using this framework, requirements on the generic extension are automatically satisfied if they can be translated into appropriately consistent and simple local requirements on the generic object. We see via two non-trivial examples, how this structured approach can make things more convenient and intuitive in practice.
+In this thesis, we develop a framework in which certain desiderata of a generic object can be naturally realised. Using this framework, requirements on the generic extension are automatically satisfied if they can be translated into appropriately consistent and simple local requirements on the generic object. We see via two non-trivial examples, how this structured approach can make things more convenient and intuitive in practice.
 
-It turns out that the bare-bones framework we initially envisioned can be adorned with additional layers of syntactic sugar to capture analogous properties of a specific type of first-order structures. These structures are incidentally models of what we term first-order \emph{theories with constraints in interpretation} (\emph{TCIs}). The concept of a first-order TCI, in some sense, generalises that of a first-order theory in logic, and can be useful in expressing different kinds of objects logicians care about. We devote some space in this paper to the basic theory of TCIs and their models, before relating forcing to generic models of TCIs in a variety of ways that traverses set theory and computability theory. As an aside, we argue for a way to characterise the expressiveness of forcing as a technique, by the kind of truths it is able to impose on generic objects.
+It turns out that the bare-bones framework we initially envisioned can be adorned with additional layers of syntactic sugar to capture analogous properties of a specific type of first-order structures. These structures are incidentally models of what we term first-order \emph{theories with constraints in interpretation} (\emph{TCIs}). The concept of a first-order TCI, in some sense, generalises that of a first-order theory in logic, and can be useful in expressing different kinds of objects logicians care about. We devote some space in this thesis to the basic theory of TCIs and their models, before relating forcing to generic models of TCIs in a variety of ways that traverses set theory and computability theory. As an aside, we argue for a way to characterise the expressiveness of forcing as a technique, by the kind of truths it is able to impose on generic objects.
 
 \section{Chapteral Content and Dependencies}
 
 For a rough dependency chart of the chapters following this one, see Figure \ref{chapteral}. In the next few paragraphs, slightly more details are given.
 
-Chapters \ref{sect15} to \ref{chap4} lay the technical foundation for the rest of the paper. Potential philosophical and meta-theoretic concerns are addressed, prerequisite knowledge highlighted, and background readings recommended. Important definitions and conventions are made explicit, especially those that are more niched, and those that lack community consensus. Consequentially, the topics related to forcing and generic iterations --- found in Chapters \ref{subs24} and \ref{chap4} --- are given more careful and comprehensive treatments than the others. All chapters subsequent to Chapters \ref{sect15} and \ref{subs24} depend on them, whereas the material in Chapter \ref{chap4} is only referenced in Section \ref{ss43}.
+Chapters \ref{sect15} to \ref{chap4} lay the technical foundation for the rest of the thesis. Potential philosophical and meta-theoretic concerns are addressed, prerequisite knowledge highlighted, and background readings recommended. Important definitions and conventions are made explicit, especially those that are more niched, and those that lack community consensus. Consequentially, the topics related to forcing and generic iterations --- found in Chapters \ref{subs24} and \ref{chap4} --- are given more careful and comprehensive treatments than the others. All chapters subsequent to Chapters \ref{sect15} and \ref{subs24} depend on them, whereas the material in Chapter \ref{chap4} is only referenced in Section \ref{ss43}.
 
 Chapter \ref{setupsec} concerns itself with the development of our central framework for forcing. The technical machinery of this chapter is concentrated on Theorem \ref{uni}, which itself is a generalisation of Lemma \ref{main2}. On the other hand, Lemma \ref{main2} is the accessible and more applicable backbone of much of this thesis, a throughline tying all following chapters, short of Chapter \ref{chap6}, together. Other than Chapter \ref{chap6}, Section \ref{subs51} is notable for not depending on Lemma \ref{main2}, nor in fact, on any of Chapter \ref{setupsec}'s technology.
 
@@ -1303,6 +1303,8 @@ Lemma \ref{ho2} is a first step towards deriving the $Col(\omega, \omega_2)$-nam
 \end{equation*}
 is instrumental in the proof of Theorem \ref{notion2}.
 
+\blankpage
+
 \part{Building Our Tools}\label{part2}
 
 \chapter{Forcing with Language Fragments}\label{setupsec}
@@ -1324,7 +1326,7 @@ We attempt to answer the aforementioned question in this chapter. In doing so, w
 
 More precisely, this chapter details a framework for constructing forcing notions with fragments of a language $\mathcal{L}$ as conditions, based on specifications of a theory over $\mathcal{L}$. To state these specifications, a ``meta-language'' dependent on $\mathcal{L}$ is required. Our goal is to ensure that the generic filters of each forcing notion constructed in this way always give rise to theories satisfying the given specifications. We will make the relevant technical terms and concepts precise as we build our framework over the subsequent three sections.
 
-The main result in this chapter is Theorem \ref{uni}, which is stated and proven in greater generality than is needed for our framework. From Theorem \ref{uni} we derive Lemma \ref{main2}, the primary workhorse of the entire paper. Notice that even as a special case of Theorem \ref{uni}, Lemma \ref{main2} already generalises the constructions and much of the analyses of the forcing notions referenced in this chapter so far.
+The main result in this chapter is Theorem \ref{uni}, which is stated and proven in greater generality than is needed for our framework. From Theorem \ref{uni} we derive Lemma \ref{main2}, a primary workhorse of this thesis. Notice that even as a special case of Theorem \ref{uni}, Lemma \ref{main2} already generalises the constructions and much of the analyses of the forcing notions referenced in this chapter so far.
 
 \section{General Languages and Meta-languages}
 
@@ -6300,7 +6302,7 @@ This kind of arguments often lead to unintuitive definitions insofar as computat
 
 Perhaps the most celebrated attempt at amalgamating and formalising useful mental models of computations and algorithms, comes in the form of a series of papers (starting with \cite{gurevich}) by Gurevich on abstract state machines. Abstract state machines far more closely resemble ``high-level'' meta-theoretic representations of Plotkin-style semantics (found e.g. in \cite{plotkin}), than they do anything among \ref{ct1} to \ref{ct3}. That these machines have been adapted for use in fields ranging from software development to systems engineering via (what is now known as) the \textit{ASM method} is testament to the intuitiveness of their design. Historical details regarding the ASM method can be found in \cite{borger} and Chapter 9 of \cite{borgerbook}. Having said all that, how well abstract state machines are equipped to handle the philosophical demands of computing with infinite sets is yet to be vigorously tested, for their applications have so far been finitary in nature.
 
-In this paper, we investigate the promise of abstract state machines in infinitary computations. We make well-meaning restrictions to their definition along the way, so that they are better endowed with our intuition of computation born out of classical computing. 
+In this chapter, we investigate the promise of abstract state machines in infinitary computations. We make well-meaning restrictions to their definition along the way, so that they are better endowed with our intuition of computation born out of classical computing. 
 
 \section{Generalising Computability}\label{subsec22}
 
@@ -7833,7 +7835,7 @@ A convenient realisation at this juncture is that a recipe and its parameters (o
 
 Accompanying the formalisation of local methods, ought to be a notion of relative complexity, a measure which can be utilised to check if one local method is ``more complex'' than another. Akin to relative computability, we want to define relative complexity as a transitive binary relation on the class of all local methods. There is actually a straightforward way to do this: we say method $Y$ is more complex than method $X$ iff the small extensions of $V$ picked out by $Y$ are a non-trivial refinement of those picked out by $X$. Connecting the first-order portion of a TCI with the relative complexity relation we defined, leads to the formulation of a complexity hierarchy --- the local method hierarchy --- very much in line with more notable hierarchies in theoretical computer science (e.g. the arithmetical and polynomial hierarchies).
 
-Leveraging on the forcing framework developed in Section \ref{forframe}, we are able to show that the method of set forcing is exactly $\mathsf{\Sigma_1}$ (or equivalently, as we shall see, $\mathsf{\Pi_2}$) in the local method hierarchy. This is the main takeaway of our work presented here. We follow it up with the analysis of certain witnesses to set forcing being at least as complex as $\mathsf{\Pi_2}$.
+Leveraging on the forcing framework developed in Section \ref{forframe}, we are able to show that the method of set forcing is exactly $\mathsf{\Sigma_1}$ (or equivalently, as we shall see, $\mathsf{\Pi_2}$) in the local method hierarchy. This is the main takeaway of the work presented in the latter part of this chapter. We follow it up with the analysis of certain witnesses to set forcing being at least as complex as $\mathsf{\Pi_2}$.
 
 By applying an analogue of the Cantor-Bendixson derivative on a specific class of forcing notions, we prove that every TCI $\mathfrak{T} \in \mathsf{\Pi_2}$ either singles out $V$ or picks out continuum-many (as evaluated in the meta-theory) small extensions of $V$. The same is long known to be true for forcing notions: a trivial forcing notion gives $V$ as its sole generic extension, whereas a non-trivial one generates continuum-many generic extensions.
 
