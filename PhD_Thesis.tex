@@ -224,7 +224,15 @@ We present a forcing framework based on the idea of amalgamating language fragme
 
 \chapter{Overview}
 \thispagestyle{simple}
-(Describe the overview of this thesis following the points outlined in Figure \ref{overview}.)
+\emph{Just what is a computation?} This thesis seeks to give the most general answers. We first make sense of the notion of generalised computation within our conventional mathematical universe (also known as the \emph{set-theoretic universe}), before using the results thereof to justify a version of computation beyond this universe. 
+
+The reader may refer to Figure \ref{overview} for a summary of the main contributions of this thesis.
+
+\subsection*{Within the Set-theoretic Universe}
+
+\subsection*{Beyond the Set-theoretic Universe}
+
+\subsection*{Our Main Tools}
 
 For better compartmentalisation and modularisation of knowledge and techniques, we extract the key ideas employed in the proofs of theorems about our particular model of generalised computation beyond $V$, and present them in a more general context. These ideas are packaged as technical theorems about TCIs in Chapter \ref{TCIsec}, to be applied rather straightforwardly in Chapter \ref{chap7}, when we seek answers to questions regarding the aforementioned model of computation. While technical, these theorems are also interesting in their own right, for they open up intriguing avenues for investigation within the theory of TCIs, some of which we shall briefly explore. As such, our choice of presentation allows us to kill two birds with one stone. 
 
@@ -242,8 +250,6 @@ For better compartmentalisation and modularisation of knowledge and techniques, 
 \thispagestyle{simple}
 \listoffigures*
 \listoftables*
-
-\blankpage
 
 \clearpage
 
@@ -1791,7 +1797,7 @@ Moreover, if $\phi$ is a $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Delta_0$ sentence, t
 \begin{proof}
 By induction on the length of $\phi$. We work in $W$ throughout.
 \begin{enumerate}[label=Case \arabic*:, leftmargin=50pt]
-    \item $\phi$ is $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Delta_0$. By \ref{p3201} of Proposition \ref{p320}, $$X \models^*_{\mathfrak{A}} \mathsf{DNF}(\nu^*(\phi), \nu')$$ for some (in fact, any) $\mathfrak{A}$-valuation $\nu'$. Next, since $\mathsf{DNF}(\nu^*(\phi), \nu') \in \mathcal{D}$ according to Remark \ref{rem324}, there is a disjunct $\varphi$ of $\mathsf{DNF}(\nu^*(\phi), \nu')$ for which $X \models^*_{\mathfrak{A}} \varphi$. 
+    \item\label{5132c1} $\phi$ is $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Delta_0$. By \ref{p3201} of Proposition \ref{p320}, $$X \models^*_{\mathfrak{A}} \mathsf{DNF}(\nu^*(\phi), \nu')$$ for some (in fact, any) $\mathfrak{A}$-valuation $\nu'$. Next, since $\mathsf{DNF}(\nu^*(\phi), \nu') \in \mathcal{D}$ according to Remark \ref{rem324}, there is a disjunct $\varphi$ of $\mathsf{DNF}(\nu^*(\phi), \nu')$ for which $X \models^*_{\mathfrak{A}} \varphi$. 
     
     Let $(p, q)$ be $\mathsf{set}(\varphi)$. Then $p$ and $q$ are finite sets with $p \subset q \subset \mathcal{L}$. Since $(A; \in)$ models enough set theory and $\mathcal{L} \subset A$, we too have $\{p, q\} \subset A$. As $\varphi$ has all occurrences of literals over $\{E\}$ being conjuncts, due to 
     \begin{itemize}
@@ -1905,10 +1911,10 @@ By the form of $\mathsf{check}(\mathsf{pos}(\phi))$, it is sufficient to prove t
 That $\Sigma \subset \Sigma'$ means $$\Sigma \models^*_{\mathfrak{A}} \varphi \implies \Sigma' \models^*_{\mathfrak{A}} \varphi,$$ so it is sufficient to prove $$\Sigma \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner \implies \Sigma' \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner.$$ We examine the possible cases below.
 \begin{enumerate}[label=Case \arabic*:, leftmargin=50pt]
     \item $x \not\in \mathcal{L}$. Then $x \not\in \Sigma'$, so $\Sigma' \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner$.
-    \item $x \in \mathcal{L}$ and $\varphi$ occurs in $\mathsf{pos}(\phi)$. Then $x$ cannot be a variable symbol. Since $\mathsf{check}(\mathsf{pos}(\phi))$ logically implies $\mathsf{pos}(\phi)$ and $$\Sigma \models^*_{\mathfrak{A}, \nu} \mathsf{check}(\mathsf{pos}(\phi)),$$ also $$\Sigma \models^*_{\mathfrak{A}, \nu} \mathsf{pos}(\phi).$$ By the definition of $\mathsf{pos}$, $\ulcorner \neg \varphi \urcorner$ must not occur in $\mathsf{pos}(\phi)$, so $\varphi$ is a conjunct of $\mathsf{pos}(\phi)$, and $\Sigma \models^*_{\mathfrak{A}} \varphi$. As a result, $$\Sigma \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner \implies \Sigma' \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner$$ trivially holds.
+    \item\label{5136c2} $x \in \mathcal{L}$ and $\varphi$ occurs in $\mathsf{pos}(\phi)$. Then $x$ cannot be a variable symbol. Since $\mathsf{check}(\mathsf{pos}(\phi))$ logically implies $\mathsf{pos}(\phi)$ and $$\Sigma \models^*_{\mathfrak{A}, \nu} \mathsf{check}(\mathsf{pos}(\phi)),$$ also $$\Sigma \models^*_{\mathfrak{A}, \nu} \mathsf{pos}(\phi).$$ By the definition of $\mathsf{pos}$, $\ulcorner \neg \varphi \urcorner$ must not occur in $\mathsf{pos}(\phi)$, so $\varphi$ is a conjunct of $\mathsf{pos}(\phi)$, and $\Sigma \models^*_{\mathfrak{A}} \varphi$. As a result, $$\Sigma \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner \implies \Sigma' \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner$$ trivially holds.
     \item $x \in \mathcal{L}$, $\varphi$ does not occur in $\mathsf{pos}(\phi)$ and moreover, $\ulcorner \neg \varphi \urcorner$ does not occur in $\nu^*(\mathsf{check}(\mathsf{pos}(\phi)))$. 
     
-    If $\varphi$ occurs in $\nu^*(\mathsf{pos}(\phi))$ then by the same argument as in Case 2, $\Sigma \models^*_{\mathfrak{A}} \varphi$ and we have our desired conclusion. Otherwise, $\varphi$ occurs as a subformula of $\nu^*(\varphi')$ for some $\varphi'$ of the form $$\ulcorner (\text{``} x \in \mathcal{L} \text{''} \implies \text{``} E(\neg x) \text{''}) \urcorner \text{,}$$ where $x$ is a variable. By the fact that $$\Sigma \models^*_{\mathfrak{A}, \nu} \mathsf{check}(\mathsf{pos}(\phi)),$$ $\Sigma \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner$ means $x \not \in \mathcal{L}$, in which case also $\Sigma' \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner$.
+    If $\varphi$ occurs in $\nu^*(\mathsf{pos}(\phi))$ then by the same argument as in \hyperref[5136c2]{Case 2}, $\Sigma \models^*_{\mathfrak{A}} \varphi$ and we have our desired conclusion. Otherwise, $\varphi$ occurs as a subformula of $\nu^*(\varphi')$ for some $\varphi'$ of the form $$\ulcorner (\text{``} x \in \mathcal{L} \text{''} \implies \text{``} E(\neg x) \text{''}) \urcorner \text{,}$$ where $x$ is a variable. By the fact that $$\Sigma \models^*_{\mathfrak{A}, \nu} \mathsf{check}(\mathsf{pos}(\phi)),$$ $\Sigma \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner$ means $x \not \in \mathcal{L}$, in which case also $\Sigma' \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner$.
     \item $x \in \mathcal{L}$, $\varphi$ does not occur in $\mathsf{pos}(\phi)$ and moreover, $\ulcorner \neg \varphi \urcorner$ occurs in \\ $\nu^*(\mathsf{check}(\mathsf{pos}(\phi)))$. 
     
     Here $\ulcorner \neg \varphi \urcorner$ must occur in $\nu^*(\mathsf{pos}(\phi))$, so by the definition of $\mathsf{check}$, $$\ulcorner (\text{``} x \in \mathcal{L} \text{''} \implies E(\neg x)) \urcorner$$ occurs in $\nu^*(\mathsf{check}(\mathsf{pos}(\phi)))$. Now $$\Sigma \models^*_{\mathfrak{A}, \nu} \mathsf{check}(\mathsf{pos}(\phi))$$ implies either $x \not \in \mathcal{L}$ or $\neg x \in \Sigma$. 
@@ -1992,7 +1998,7 @@ Then $\bigcup g$ is $\mathcal{L}$-nice and $\bigcup g \models^{*}_{\mathfrak{A}}
 \begin{proof}
 We prove $\bigcup g \models^{*}_{\mathfrak{A}} \phi$ by induction on the length of $\phi$. The proof that $\bigcup g$ is $\mathcal{L}$-nice will surface as a part of the induction argument.
 \begin{enumerate}[label=Case \arabic*:, leftmargin=50pt]
-    \item $\phi$ is $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Delta_0$. By way of contradiction, assume $\bigcup g \models^{*}_{\mathfrak{A}} \neg \phi$. Since $\neg \phi$ is also a $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Delta_0$ sentence, Lemma~\ref{exist} tells us there are finite sets $p^{\dagger} \in A \cap \mathcal{P}(\mathcal{L})$ and $q^{\dagger} \in A \cap \mathcal{P}(\mathcal{L})$ such that $\bigcup g \cap q^{\dagger} = p^{\dagger}$ and $\neg \phi$ is $\models^{*}_{\mathfrak{A}}$-true for $(p^{\dagger}, q^{\dagger})$.
+    \item\label{526c1} $\phi$ is $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Delta_0$. By way of contradiction, assume $\bigcup g \models^{*}_{\mathfrak{A}} \neg \phi$. Since $\neg \phi$ is also a $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Delta_0$ sentence, Lemma~\ref{exist} tells us there are finite sets $p^{\dagger} \in A \cap \mathcal{P}(\mathcal{L})$ and $q^{\dagger} \in A \cap \mathcal{P}(\mathcal{L})$ such that $\bigcup g \cap q^{\dagger} = p^{\dagger}$ and $\neg \phi$ is $\models^{*}_{\mathfrak{A}}$-true for $(p^{\dagger}, q^{\dagger})$.
 
     For each $z \in p^{\dagger} \subset \bigcup g$, pick a $p_z \in g$ such that $z \in p_z$. Since $g$ is a filter, there is some $p^* \in g$ for which $$p^{\dagger} \subset (\bigcup_{z \in p^{\dagger}} p_z) \cup p \subset p^*.$$ If $p' \leq_{P} p^*$, then $p' \leq_{P} p$, so by $\phi$ being $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal for $p$, there is $\Sigma \in \mathcal{F}_{p'}$ with $\Sigma \models^*_{\mathfrak{A}} \phi$. Now, necessarily $p^{\dagger} \subset \Sigma$ and $\Sigma \cap q^{\dagger} \neq p^{\dagger}$, whence $p^{\dagger} \subsetneq \Sigma \cap q^{\dagger}$. By the fact that $\Sigma$ is a $p'$-candidate for $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universality, we can find $q \in P$ with $$p' \cup (\Sigma \cap q^{\dagger}) \subset q.$$ As a consequence, $q \leq_P p'$ and $p^{\dagger} \subsetneq q \cap q^{\dagger}$.
     
@@ -2007,7 +2013,7 @@ We prove $\bigcup g \models^{*}_{\mathfrak{A}} \phi$ by induction on the length 
     
     We first show that $\bigcup g$ is $\mathcal{L}$-nice. Obviously, $\bigcup g \subset \mathcal{L}$, so we need only consider the other two conditions of being $\mathcal{L}$-nice. To that end, define $$\varphi_x := \ulcorner (E(x) \vee E(\neg x)) \wedge (\neg E(x) \vee \neg E(\neg x)) \urcorner$$ for each $x \in \mathcal{L}$. Note that the $\varphi_x$'s are $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Delta_0$ sentences. Moreover, $X \models^{*}_{\mathfrak{A}} \varphi_x$ for every $\mathcal{L}$-nice set $X$ and every $x \in \mathcal{L}$. 
     
-    Let $x \in \mathcal{L}$ and $p' \leq_{P} p$. That $\phi$ is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal for $p$ means $\mathcal{F}_{p'} \neq \emptyset$, so choose any $\Sigma \in \mathcal{F}_{p'}$. We must have $\Sigma \models^{*}_{\mathfrak{A}} \varphi_x$ because $\Sigma$ is $\mathcal{L}$-nice. This allows us to conclude that for all $x \in \mathcal{L}$, $\varphi_x$ is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal for $p$. As Case 1 has been proven, we can apply it to yield $$\bigcup g \models^{*}_{\mathfrak{A}} \varphi_x \text{ for all } x \in \mathcal{L},$$ which is just another way of saying $\bigcup g$ fulfils the last two conditions of Definition \ref{lnice}. We have thus shown that $\bigcup g$ is $\mathcal{L}$-nice. 
+    Let $x \in \mathcal{L}$ and $p' \leq_{P} p$. That $\phi$ is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal for $p$ means $\mathcal{F}_{p'} \neq \emptyset$, so choose any $\Sigma \in \mathcal{F}_{p'}$. We must have $\Sigma \models^{*}_{\mathfrak{A}} \varphi_x$ because $\Sigma$ is $\mathcal{L}$-nice. This allows us to conclude that for all $x \in \mathcal{L}$, $\varphi_x$ is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal for $p$. As \hyperref[526c1]{Case 1} has been proven, we can apply it to yield $$\bigcup g \models^{*}_{\mathfrak{A}} \varphi_x \text{ for all } x \in \mathcal{L},$$ which is just another way of saying $\bigcup g$ fulfils the last two conditions of Definition \ref{lnice}. We have thus shown that $\bigcup g$ is $\mathcal{L}$-nice. 
     
     Once more, let $p' \leq_{P} p$, so that there is $\Sigma \in \mathcal{F}_{p'}$ for which $\Sigma \models^{*}_{\mathfrak{A}} \phi$. By Remark \ref{rem321}, we can safely assume $\phi^* \in ran(\mathsf{WNF})$. Then there is $\nu$ such that $\nu$ is a $\mathfrak{A}$-valuation and $\Sigma \models^{*}_{\mathfrak{A}, \nu} \phi^*$. According to $\ref{p3202}$ of Proposition \ref{p320}, it must be the case that
     \begin{equation}\label{eq32'}
@@ -2049,7 +2055,7 @@ We prove $\bigcup g \models^{*}_{\mathfrak{A}} \phi$ by induction on the length 
 
     \begin{proof}
     Beginning with (\ref{eq32'}), we observe that there ought to be some $\varphi$ for which $\varphi$ is a disjunct of $\phi'$ and $\Sigma \models^{*}_{\mathfrak{A}} \nu^*(\varphi)$. $\Sigma$ being $\mathcal{L}$-nice and Lemma \ref{corr} gives us $\Sigma \models^{*}_{\mathfrak{A}} \mathsf{pos}(\nu^*(\varphi))$. 
-    Since literals of the form $$\ulcorner \neg E(x) \urcorner \text{ for some } x \in \mathcal{L}$$ do not occur in $\mathsf{pos}(\nu^*(\varphi))$, following the proof of Case 1 of Lemma \ref{exist}, there must be a finite set $p^{\dagger} \in A \cap \mathcal{P}(\Sigma)$ such that $$\mathsf{set}(\mathsf{pos}(\nu^*(\varphi))) = (p^{\dagger}, p^{\dagger})$$ and $\mathsf{pos}(\nu^*(\varphi))$ is $\models^{*}_{\mathfrak{A}}$-true for $p^{\dagger}$. By the fact that $\Sigma$ is a $p'$-candidate for $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universality, we can find $q \in P$ with $$p' \cup p^{\dagger} \subset q.$$ In particular, $q \leq_P p'$ and $q \models^{*}_{\mathfrak{A}} \mathsf{pos}(\nu^*(\varphi))$.
+    Since literals of the form $$\ulcorner \neg E(x) \urcorner \text{ for some } x \in \mathcal{L}$$ do not occur in $\mathsf{pos}(\nu^*(\varphi))$, following the proof of \hyperref[5132c1]{Case 1} of Lemma \ref{exist}, there must be a finite set $p^{\dagger} \in A \cap \mathcal{P}(\Sigma)$ such that $$\mathsf{set}(\mathsf{pos}(\nu^*(\varphi))) = (p^{\dagger}, p^{\dagger})$$ and $\mathsf{pos}(\nu^*(\varphi))$ is $\models^{*}_{\mathfrak{A}}$-true for $p^{\dagger}$. By the fact that $\Sigma$ is a $p'$-candidate for $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universality, we can find $q \in P$ with $$p' \cup p^{\dagger} \subset q.$$ In particular, $q \leq_P p'$ and $q \models^{*}_{\mathfrak{A}} \mathsf{pos}(\nu^*(\varphi))$.
     
     That $\phi$ is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal for $p$ tells us that $q$ can be extended to a $\mathcal{L}$-nice set. Necessarily, $q$ must be ``internally consistent'' in the following sense:
     \begin{align*}
@@ -2142,7 +2148,7 @@ We prove $\bigcup g \models^{*}_{\mathfrak{A}} \phi$ by induction on the length 
         \bigcup g \models^{*}_{\mathfrak{A}} \phi \text{.}
     \end{equation*}
     
-    \item $\phi = \ulcorner \forall x \ \varphi(x, \Vec{d}) \urcorner$ for some $x$, $\varphi$ and $\Vec{d}$. Then for each $a \in A$, $\varphi(a, \Vec{d})$ is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal for $p$. By the induction hypothesis, $$\bigcup g \models^{*}_{\mathfrak{A}} \varphi(a, \Vec{d})$$ for all $a \in A$, so also $$\bigcup g \models^{*}_{\mathfrak{A}} \phi.$$ \qedhere
+    \item\label{526c3} $\phi = \ulcorner \forall x \ \varphi(x, \Vec{d}) \urcorner$ for some $x$, $\varphi$ and $\Vec{d}$. Then for each $a \in A$, $\varphi(a, \Vec{d})$ is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal for $p$. By the induction hypothesis, $$\bigcup g \models^{*}_{\mathfrak{A}} \varphi(a, \Vec{d})$$ for all $a \in A$, so also $$\bigcup g \models^{*}_{\mathfrak{A}} \phi.$$ \qedhere
 \end{enumerate}
 \end{proof}
 
@@ -2220,7 +2226,7 @@ Then $\bigcup g$ is $\mathcal{L}$-nice and $\bigcup g \models^{*}_{\mathfrak{A}}
 \end{customlem}
 
 \begin{rem}\label{rem333}
-The astute reader may notice that Case 3 of the inductive step in the inductive proof of Theorem \ref{uni} seems insubstantial and tagged on. Indeed, removing the need to consider said case in Theorem \ref{uni} does not weaken the lemma. More precisely, by arguments similar to the proof of Lemma \ref{univer}, substituting ``$\mathcal{L}^{*}_{\mathfrak{A}}$-$\Sigma_1$'' for ``$\mathcal{L}^{*}_{\mathfrak{A}}$-$\Pi_2$'' in any of Lemmas \ref{uni}, \ref{lem329p}, \ref{lem332} and \ref{lem332p} always returns a statement of equivalent strength.
+The astute reader may notice that \hyperref[526c3]{Case 3} of the inductive step in the inductive proof of Theorem \ref{uni} seems insubstantial and tagged on. Indeed, removing the need to consider said case in Theorem \ref{uni} does not weaken the lemma. More precisely, by arguments similar to the proof of Lemma \ref{univer}, substituting ``$\mathcal{L}^{*}_{\mathfrak{A}}$-$\Sigma_1$'' for ``$\mathcal{L}^{*}_{\mathfrak{A}}$-$\Pi_2$'' in any of Lemmas \ref{uni}, \ref{lem329p}, \ref{lem332} and \ref{lem332p} always returns a statement of equivalent strength.
 \end{rem}
 
 \begin{rem}
@@ -2254,7 +2260,7 @@ But this just means
 We know $\bigcup g$ is $\mathcal{L}$-nice due to Theorem \ref{uni}. That $\bigcup g$ is a $q$-candidate for $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universality then follows from the fact that $g$ is a filter containing $q$. All in all, we have shown that $\bigcup g$ is the $\Sigma$ we are looking for.
 \end{proof}
 
-A natural strengthening of Theorem \ref{uni} is to have $\phi$ be an arbitrary $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Pi_3$ sentence which is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal for $p$. As per Case 3 in the proof of Theorem \ref{uni} (and as noted in Remark \ref{rem333}), we can always get the outermost universal quantification for free, so we only have to prove the strengthened lemma assuming $\phi$ is $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Sigma_2$ instead of $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Pi_3$. However, the nice ``characterisation'' of $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Pi_2$ sentences we will uncover in Section \ref{TCIsec} (brought about by Theorems \ref{genericmodels} and \ref{revgenmodels}) seems to suggest that such a strengthening is impossible. With Remark \ref{endremmain} in mind, it makes sense to ask the following question.
+A natural strengthening of Theorem \ref{uni} is to have $\phi$ be an arbitrary $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Pi_3$ sentence which is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal for $p$. As per \hyperref[526c3]{Case 3} in the proof of Theorem \ref{uni} (and as noted in Remark \ref{rem333}), we can always get the outermost universal quantification for free, so we only have to prove the strengthened lemma assuming $\phi$ is $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Sigma_2$ instead of $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Pi_3$. However, the nice ``characterisation'' of $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Pi_2$ sentences we will uncover in Section \ref{TCIsec} (brought about by Theorems \ref{genericmodels} and \ref{revgenmodels}) seems to suggest that such a strengthening is impossible. With Remark \ref{endremmain} in mind, it makes sense to ask the following question.
 
 \begin{enumerate}[label=(Q\arabic*)]
     \setcounter{enumi}{-1}
@@ -4568,7 +4574,7 @@ For <$k$> $\in \{2, 7, 8\}$, we check that $\Sigma^* \models^*_{j(\mathfrak{A})}
 
 \begin{enumerate}[label=<$k$> $\eq$ \arabic* :, leftmargin=70pt]
     \addtocounter{enumi}{1}
-    \item Let $i \in j(R)$. If $\dot{F}_i$ does not occur in $\Sigma'$, there is nothing to check, because the definition of $\mathfrak{C}$ guarantees $ran(F_i(\Sigma^*))$ is cofinal in $i$. Otherwise, $\dot{F}_i$ occurs in $\Sigma'$, which means $\dot{F}_i$ occurs in $j" \bigcup g$. Then there is $i' \in R$ such that $\dot{F}_i = \dot{F}_{j(i')} = j(\dot{F}_{i'})$. That $\bigcup g \models^*_{\mathfrak{A}} \text{(S2)}_{\nu}$ implies $ran(F_{i'}(\bigcup g))$ is cofinal in $i'$. By a basic property of elementary embeddings associated with generic iterations, we know that for any ordinal $\alpha$ satisfying the inequality $\omega_1^W < cof^{W}(\alpha)$, we must have $j(\alpha) = sup(j" \alpha)$. Thus, $ran(F_i(\Sigma^*)) = j" ran(F_{i'}(\bigcup g))$ is cofinal in $j(i') = i$, and we are done.
+    \item Let $i \in j(R)$. If $\dot{F}_i$ does not occur in $\Sigma'$, there is nothing to check, because the definition of $\mathfrak{C}$ guarantees $ran(F_i(\Sigma^*))$ is cofinal in $i$. Otherwise, $\dot{F}_i$ occurs in $\Sigma'$, which means $\dot{F}_i$ occurs in $j" \bigcup g$. Then there is $i' \in R$ such that $\dot{F}_i = \dot{F}_{j(i')} = j(\dot{F}_{i'})$. That $\bigcup g \models^*_{\mathfrak{A}} \hyperref[c2]{\text{(S2)}_{\nu}}$ implies $ran(F_{i'}(\bigcup g))$ is cofinal in $i'$. By a basic property of elementary embeddings associated with generic iterations, we know that for any ordinal $\alpha$ satisfying the inequality $\omega_1^W < cof^{W}(\alpha)$, we must have $j(\alpha) = sup(j" \alpha)$. Thus, $ran(F_i(\Sigma^*)) = j" ran(F_{i'}(\bigcup g))$ is cofinal in $j(i') = i$, and we are done.
     \addtocounter{enumi}{4}
     \item\label{k7m} Let $\delta$, $\lambda$, $\phi$, $\bar{s}$ and $x$ be such that 
     \begin{enumerate}[label=(K7.\arabic*), leftmargin=50pt]
@@ -4606,7 +4612,7 @@ For <$k$> $\in \{2, 7, 8\}$, we check that $\Sigma^* \models^*_{j(\mathfrak{A})}
             (X_{\delta, \lambda}(\Sigma^*); \in, j(\mathbb{P}_{\lambda'}), j(A_{\lambda'})) \models \exists r \ \phi(r, \bar{s})
         \end{equation*} 
         by invoking the elementarity of $j$ once again.
-        \item $\delta \neq \omega_1^W$. Then $\delta < \omega_1^W$, $\lambda' < \nu$, and $$\ulcorner j^{-1}(\bar{s})(n) \in \dot{X}_{\delta, \lambda'} \urcorner \in \bigcup g$$ for all $n \in dom(j^{-1}(\bar{s}))$. Moreover, $X_{\delta, \lambda}(\Sigma^*) = j" X_{\delta, \lambda'}(\bigcup g)$, so $X_{\delta, \lambda}(\Sigma^*)$ being non-empty implies $X_{\delta, \lambda'}(\bigcup g)$ is non-empty as well. Since $\bigcup g \models^*_{\mathfrak{A}} \text{(S7)}_{\nu}$, we have $$(X_{\delta, \lambda'}(\bigcup g); \in, \mathbb{P}_{\lambda'}, A_{\lambda'}) \models \exists r \ \phi(r, j^{-1}(\bar{s})).$$ As 
+        \item $\delta \neq \omega_1^W$. Then $\delta < \omega_1^W$, $\lambda' < \nu$, and $$\ulcorner j^{-1}(\bar{s})(n) \in \dot{X}_{\delta, \lambda'} \urcorner \in \bigcup g$$ for all $n \in dom(j^{-1}(\bar{s}))$. Moreover, $X_{\delta, \lambda}(\Sigma^*) = j" X_{\delta, \lambda'}(\bigcup g)$, so $X_{\delta, \lambda}(\Sigma^*)$ being non-empty implies $X_{\delta, \lambda'}(\bigcup g)$ is non-empty as well. Since $\bigcup g \models^*_{\mathfrak{A}} \hyperref[c7]{\text{(S7)}_{\nu}}$, we have $$(X_{\delta, \lambda'}(\bigcup g); \in, \mathbb{P}_{\lambda'}, A_{\lambda'}) \models \exists r \ \phi(r, j^{-1}(\bar{s})).$$ As 
         \begin{align*}
             X_{\delta, \lambda}(\Sigma^*) \cap j(\mathbb{P}_{\lambda'}) = j" (X_{\delta, \lambda'}(\bigcup g) \cap \mathbb{P}_{\lambda'})
         \end{align*}
@@ -4616,7 +4622,7 @@ For <$k$> $\in \{2, 7, 8\}$, we check that $\Sigma^* \models^*_{j(\mathfrak{A})}
         \end{align*}
         we can conclude $$(X_{\delta, \lambda}(\Sigma^*); \in, j(\mathbb{P}_{\lambda'}), j(A_{\lambda'})) \models \exists r \ \phi(r, \bar{s})$$ by invoking the elementarity of $j$ yet again.
     \end{enumerate}
-    \item This is similar to the argument in the case of <$k$> $\eq$ 7. We provide details for the sake of completeness, and to elucidate the ample similarity. 
+    \item This is similar to the argument in the case of \hyperref[k7m]{<$k$> $\eq$ 7}. We provide details for the sake of completeness, and to elucidate the ample similarity. 
     
     Let $\delta$, $\lambda$, $\phi$, $\bar{s}$ and $x$ be such that 
     \begin{enumerate}[label=(K8.\arabic*), leftmargin=50pt]
@@ -4642,7 +4648,7 @@ For <$k$> $\in \{2, 7, 8\}$, we check that $\Sigma^* \models^*_{j(\mathfrak{A})}
     so $(\phi, j^{-1}(\bar{s})) \in Df^{\lambda_f}(\lambda')$. Henceforth, there are two possible cases. We will analyse them with reference to the way $\Sigma^*$ is constructed. 
     \begin{enumerate}[label=Case \arabic*:, leftmargin=50pt]
         \item\label{c8c1} $\delta = \omega_1^W$. Then $\lambda' = \nu$ and $X_{\delta, \lambda}(\Sigma^*) = j" Q_{\nu}$. Clearly, $$[\bigcup g]^{< \omega} \cap Q_{\nu} \cap j^{-1}(D) = g \cap j^{-1}(D) \neq \emptyset,$$ as $g$ is $\mathbb{P}_{\nu}$-generic over $W$. That $j" \bigcup g \subset \Sigma^*$ means $$j(p) \in [\Sigma^*]^{< \omega} \cap X_{\delta, \lambda}(\Sigma^*) \cap D \neq \emptyset$$ for any $p \in g \cap j^{-1}(D)$.
-        \item $\delta \neq \omega_1^W$. Then $\delta < \omega_1^W$, $\lambda' < \nu$, and $$\ulcorner j^{-1}(\bar{s})(n) \in \dot{X}_{\delta, \lambda'} \urcorner \in \bigcup g$$ for all $n \in dom(j^{-1}(\bar{s}))$. Moreover, $X_{\delta, \lambda}(\Sigma^*) = j" X_{\delta, \lambda'}(\bigcup g)$, so $X_{\delta, \lambda}(\Sigma^*)$ being non-empty implies $X_{\delta, \lambda'}(\bigcup g)$ is non-empty too. Since $\bigcup g \models^*_{\mathfrak{A}} \text{(S8)}_{\nu}$, we have $$[\bigcup g]^{< \omega} \cap X_{\delta, \lambda'}(\bigcup g) \cap j^{-1}(D) \neq \emptyset.$$ As in Case 1, we can conclude $$[\Sigma^*]^{< \omega} \cap X_{\delta, \lambda}(\Sigma^*) \cap D \neq \emptyset.$$
+        \item $\delta \neq \omega_1^W$. Then $\delta < \omega_1^W$, $\lambda' < \nu$, and $$\ulcorner j^{-1}(\bar{s})(n) \in \dot{X}_{\delta, \lambda'} \urcorner \in \bigcup g$$ for all $n \in dom(j^{-1}(\bar{s}))$. Moreover, $X_{\delta, \lambda}(\Sigma^*) = j" X_{\delta, \lambda'}(\bigcup g)$, so $X_{\delta, \lambda}(\Sigma^*)$ being non-empty implies $X_{\delta, \lambda'}(\bigcup g)$ is non-empty too. Since $\bigcup g \models^*_{\mathfrak{A}} \hyperref[c8]{\text{(S8)}_{\nu}}$, we have $$[\bigcup g]^{< \omega} \cap X_{\delta, \lambda'}(\bigcup g) \cap j^{-1}(D) \neq \emptyset.$$ As in \hyperref[c8c1]{Case 1}, we can conclude $$[\Sigma^*]^{< \omega} \cap X_{\delta, \lambda}(\Sigma^*) \cap D \neq \emptyset.$$
     \end{enumerate}
 \end{enumerate}
 
@@ -6296,7 +6302,7 @@ From the perspective of ``computer as a machine'', we have Koepke's ordinal Turi
 
 In any case, it appears that the models of generalised computation introduced hitherto rely very much on the Church-Turing thesis for justification of properness. Such justification usually goes along the lines of,
 \begin{quote}
-    \emph{if $X$ nicely generalises a model among \ref{ct1} to \ref{ct3} and the Church-Turing thesis says that the object of generalisation is a model of computation, then $X$ should also be a model of (generalised) computation.}
+    \emph{since $X$ nicely generalises a model among \ref{ct1} to \ref{ct3} and the subject of generalisation is a model of computation by the Church-Turing thesis, $X$ should also be a model of (generalised) computation.}
 \end{quote}
 This kind of arguments often lead to unintuitive definitions insofar as computation is concerned, sometimes to the extent of an apology being issued (e.g. \cite{sackserec}). Indeed, modern intuition of computation has evolved to become rather high-level, and the models which motivated the Church-Turing thesis have been relegated to play the roles of convenient mathematical foundations, instead of anything resembling practical mental models of computation.
 
@@ -7662,15 +7668,15 @@ More formally, add to $\sigma(\mathfrak{M})$ fresh constant symbols $\ulcorner c
 \begin{enumerate}[leftmargin=60pt, label=Case \arabic*:]
     \item ``$c_0 = d = 0$''. We increment both $c_0$ and $d$ and set the input tape to display $\langle \emptyset, I \rangle$.
     \item ``$c_0 \neq 0 \wedge d \neq 0$''. We do the dovetailing. In other words, for each $\beta$ satisfying ``$\neg R(\beta) \wedge \beta \leq c_0$'', we use $\mathfrak{M}$ to simulate $M$ on input $\langle \{\beta\}, I \rangle$ for up to $c_0$ steps, using $c_1$ and $c_2$ to keep track of the counts. At the end of every step in simulation, we check if $\mathfrak{M}$ terminates. If so, we set $R(\beta)$ to \texttt{true} and move on to simulate $M$ on input $\langle \{\beta + 1\}, I \rangle$, if $\beta \neq c_0$. At the end of all the simulations and possible updates to $R$, set $c_1$ and $c_2$ to $0$ and increment $c_0$. The constant $d$ is left unchanged.
-    \item ``$c_0 = 0 \wedge d \neq 0$''. We copy the contents of $R$ to the output tape, before terminating.
-    \item ``$c_0 \neq 0 \wedge d = 0$''. Just terminate.
+    \item\label{8340c3} ``$c_0 = 0 \wedge d \neq 0$''. We copy the contents of $R$ to the output tape, before terminating.
+    \item\label{8340c4} ``$c_0 \neq 0 \wedge d = 0$''. Just terminate.
 \end{enumerate}
 Every terminating run of $\mathfrak{M}'$ is of length $\kappa + 2$, and if its input is $I$, then its output will be the set
 \begin{equation*}
     \{\beta < \alpha : M \text{ halts on input } \langle \{\beta\}, I \rangle\} \text{.}
 \end{equation*}This is because
 \begin{enumerate}[label=(\arabic*)]
-    \item no state where Case 4 applies is reachable from an initial state, so a run can only terminate from an initial state as a consequence of Case 3, and
+    \item no state where \hyperref[8340c4]{Case 4} applies is reachable from an initial state, so a run can only terminate from an initial state as a consequence of \hyperref[8340c3]{Case 3}, and
     \item $c_0$ first returns to $0$ in a state other than an initial state after exactly $\kappa + 1$ many steps, at which point $M$ would have been simulated on every input in 
     \begin{equation*}
         \{\langle \{\beta\}, I \rangle : \beta < \kappa\}
@@ -7808,7 +7814,12 @@ linearly ordered by inclusion, for all admissible $\alpha$?
 
 \chapter{Generalised Computation Beyond V}\label{chap7}
 
-According to what is shown in Chapter \ref{chap6}, there is an intuitive notion of generalised computation, definable within the set-theoretic universe $V$, that canonically partitions sets into their degrees of constructibility. This lends credence to the belief that generative power over a model of set theory is a surrogate measure of computational power. When dealing with degrees of constructibility, the relevant model of set theory is G\"{o}del's constructible universe $L$, an inner model of $V$. Switching out $L$ for larger inner models makes sense for coarser degree structures.
+According to what is shown in Chapter \ref{chap6}, there is an intuitive notion of generalised computation, definable within the set-theoretic universe $V$, that canonically partitions sets into their degrees of constructibility. This lends credence to the following beliefs.
+\begin{enumerate}[label=Belief \arabic*:, leftmargin=60pt]
+    \item\label{b1} A generalised computation is but a definition that taps on iterated applications of some definable (with parameters) power set operation. As parameters are involved, the definable power set operation of one model of set theory obviously differs from that of the next. 
+    \item Since new sets can be generated from any given extra parameters via the kind of definitions mentioned in \hyperref[b1]{Belief 1}, generative power over a model of set theory is a surrogate measure of computational power.
+\end{enumerate}
+When dealing with degrees of constructibility, the relevant model of set theory is G\"{o}del's constructible universe $L$, an inner model of $V$. Switching out $L$ for larger inner models makes sense for coarser degree structures.
 
 What if we swop $L$ for $V$ itself? Doing so will obviously result in degrees that are not subclasses of $V$. What then do they comprise? With meta-theoretic assumptions mildly stronger than $\mathsf{ZFC}$, we can view $V$ as a countable transitive model of $\mathsf{ZFC}$, from which such degrees can be naturally defined as degrees of small extensions. Vaguely, each degree of small extensions is associated with (or rather, represented by) an outer model $W$ of $V$ generated by a set in $W$ over $V$: here $W$ is called a small extension of $V$. These degrees, together with the theory of their ordering, seek to capture the spirit of higher-order computations relative to $V$, the way higher recursion theory does for higher-order computations relative to $\mathbb{R}$. In other words, just as higher recursion theory is about the relative computability of sets beyond the domain of classical recursion theory, $\mathbb{R}$, the theory of small extensions pertains to the relative computability of sets beyond $V$. Figure \ref{analogy} summarises this parallel.
 
