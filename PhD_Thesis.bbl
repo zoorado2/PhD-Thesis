@@ -487,6 +487,38 @@
       \verb https://doi-org.libproxy1.nus.edu.sg/10.1007/978-1-4613-9754-0_15
       \endverb
     \endentry
+    \entry{evolvingalg}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d36b6995ab536537094bfe3e5596722b}{%
+           family={Gurevich},
+           familyi={G\bibinitperiod},
+           given={Yuri},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=45b5a94ab326fd7591763c0586c7172c}{%
+           family={Börger},
+           familyi={B\bibinitperiod},
+           given={E},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
+      \strng{fullhash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
+      \strng{fullhashraw}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
+      \strng{bibnamehash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
+      \strng{authorbibnamehash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
+      \strng{authornamehash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
+      \strng{authorfullhash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
+      \strng{authorfullhashraw}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Evolving Algebras}
+      \field{title}{Evolving algebras 1993: Lipari guide}
+      \field{volume}{40}
+      \field{year}{1995}
+      \field{pages}{2}
+      \range{pages}{1}
+    \endentry
     \entry{kechris}{book}{}{}
       \name{author}{1}{}{%
         {{hash=c20ec70302197b9127746c09db04c836}{%
