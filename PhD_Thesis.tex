@@ -239,9 +239,9 @@ The reader may refer to Figure \ref{overview} for a summary of the main contribu
 
 \subsection*{Within the Set-theoretic Universe}
 
-We first analyse Gurevich's original conception of abstract algorithms through the lens of set theory. It must be said that his formal definition of a sequential algorithm is among the most general yet. However, our analysis suggests it might be \emph{too} general an abstraction of computation. More precisely, we discover that it is possible for a sequential algorithm \textit{a la} Gurevich to be \emph{inconstructible} in the sense of being outside G\"{o}del's universe $L$ (Example \ref{ex21}). This seems to go against the common intuition that computations are intrinsically constructive. We are thus morally justified to impose restrictions on what constitutes a sequential algorithm.  
+We first analyse Gurevich's original conception of abstract algorithms as a candidate for generalised computation, through the lens of set-theoretic foundations. It must be acknowledged that his formal definition of a sequential algorithm is among the most general yet for finitary computation. Indeed, its appeal to first-order structures as \textit{abstract states} allows for easy formalisation of pseudocode at varying levels of abstraction. However, attempts at generalising Gurevich's idea to incorporate computations with arbitrarily large input/output sizes have so far been wanting. We thus propose, through a particular sequence of modifications, an adaptation of sequential algorithms for (reasonably intuitive formalisations of) the kind of infinitary computation one might encounter in general mathematics.  
 
-The restrictions we impose are natural and well-motivated; the reader can hopefully verify this by following our thought process as detailed in Section \ref{sect82}. As a result, we obtain two classes of abstract algorithms for set computation, namely \textit{restricted sequential algorithms} (\textit{RSeqAs}, Defintion \ref{def224}) and \textit{restricted sequential algorithms with parameters} (\textit{RSeqAPs}, Definition \ref{def836}). It is straightforward to derive from each class, certain relative computability relations on sets, which are analogous to the Turing reducibility relation on reals. We focus on two such relations derived from RSeqAPs, denoted $\leq^P$ (Definition \ref{def839}) and $\leq^{P, s}$ (Definition \ref{def8329}). These relations are shown to possess nice properties not found in more popular notions of relative computability (follows from Table \ref{table3}). By leveraging on Koepke's analysis of $\alpha$-machines, we then prove that $\leq^P$ is equivalent to the relative constructibility relation in set theory (Theorem \ref{thm275}).
+The modifications we carry out are natural and well-motivated; the reader can hopefully verify this by following our thought process as detailed in Section \ref{sect82}. Consequently, we obtain two classes of abstract algorithms for set computation, namely \textit{generalised sequential algorithms} (\textit{GSeqAs}, Defintion \ref{def224}) and \textit{generalised sequential algorithms with parameters} (\textit{GSeqAPs}, Definition \ref{def836}). It is straightforward to derive from each class, certain relative computability relations on sets, which are analogous to the Turing reducibility relation on reals. We focus on two such relations derived from GSeqAPs, denoted $\leq^P$ (Definition \ref{def839}) and $\leq^{P, s}$ (Definition \ref{def8329}). These relations are shown to possess nice properties not found in more popular notions of relative computability (follows from Table \ref{table3}). By leveraging on Koepke's analysis of $\alpha$-machines, we then prove that $\leq^P$ is equivalent to the relative constructibility relation in set theory (Theorem \ref{thm275}).
 
 \subsection*{Beyond the Set-theoretic Universe}
 
@@ -291,7 +291,7 @@ The entirety of Chapter \ref{sect2} is devoted to applying the forcing framework
 
 Chapters \ref{chap6} and \ref{chap7} are both primary payoffs of the tools we build in Part \ref{part2}, as well as the end product of our programme on generalised computation that is pretty much entirely the subject of this thesis. They are also terminal nodes in the chapteral dependency chart, in the sense that no chapters depend on either of them.
 
-In Chapter \ref{chap6}, we restrict the reach of Gurevich's sequential algorithms to obtain subclasses of abstract algorithms. From each subclass, a relative computability relation on sets is derived. These relative computability relations can be viewed as analogues of the Turing reducibility relation on reals. One such relation is then shown to be equivalent to the relative constructibility relation in set theory. This chapter only assumes the reader is familiar with the basic properties of TCIs, and thus can be read right after Section \ref{subs51}.
+In Chapter \ref{chap6}, we adapt Gurevich's sequential algorithms for the purpose of infinitary computation, to obtain two classes of generalised algorithms. From each class, a relative computability relation on sets is derived. These relative computability relations can be viewed as analogues of the Turing reducibility relation on reals. One such relation is then shown to be equivalent to the relative constructibility relation in set theory. This chapter only assumes the reader is familiar with the basic properties of TCIs, and thus can be read right after Section \ref{subs51}.
 
 In Chapter \ref{chap7}, we define a relative computability relation with the set-theoretic universe $V$ as a basis, before investigating what it means to access subclasses of degrees of this relation from within $V$ itself. We next introduce a paradigm to compare different methods of such access, one of which is (set) forcing. As it turns out, within this paradigm, forcing is exactly $\Sigma_1$ which in turn is exactly $\Pi_2$. It would not be a stretch to say that this chapter is the culmination of the main results of Part \ref{part2}, and is therefore highly dependent on Chapters \ref{setupsec} and \ref{TCIsec}.
 
@@ -6312,13 +6312,13 @@ In any case, it appears that the models of generalised computation introduced hi
 \end{quote}
 This kind of arguments often lead to unintuitive definitions insofar as computation is concerned, sometimes to the extent of an apology being issued (e.g. \cite{sackserec}). Indeed, modern intuition of computation has evolved to become rather high-level, and the models which motivated the Church-Turing thesis have been relegated to play the roles of convenient mathematical foundations, instead of anything resembling practical mental models of computation.
 
-Perhaps the most celebrated attempt at amalgamating and formalising useful mental models of computations and algorithms, comes alongside an attempt to generalise the Church-Turing thesis. In a series of papers (starting with \cite{gurevich}), Gurevich gave (closely related) semantic axiomatisations of abstract algorithms, and showed how these algorithms are captured by sufficiently machine-like models called \textit{abstract state machines}. Abstract state machines were defined by Gurevich himself way back in the 1980s, although more organised literature thereof only became available in the 1990s. A full definition of these machines can be found in e.g. \cite{evolvingalg}.
+Disregarding infinitary computation for a moment, perhaps the most celebrated attempt at amalgamating and formalising useful mental models of computations and algorithms, comes alongside a different kind of generalisation of the Church-Turing thesis. In a series of papers (starting with \cite{gurevich}), Gurevich gave (closely related) semantic axiomatisations of abstract algorithms, and showed how these algorithms are captured by sufficiently machine-like models called \textit{abstract state machines}. Abstract state machines were defined by Gurevich himself way back in the 1980s, although more organised literature thereof only became available in the 1990s. A full definition of these machines can be found in e.g. \cite{evolvingalg}.
 
-Going by the semantic abstraction of Gurevich, algorithms far more closely resemble ``high-level'' meta-theoretic representations of Plotkin-style semantics (found e.g. in \cite{plotkin}), than they do anything among \ref{ct1} to \ref{ct3}. That their syntactic counterparts --- the programming languages associated with abstract state machines --- have been adapted for use in fields ranging from software development to systems engineering via (what is now known as) the \textit{ASM method} is testament to the intuitiveness of Gurevich's design. Historical details regarding the ASM method can be found in \cite{borger} and Chapter 9 of \cite{borgerbook}. Having said all that, how well this abstraction is equipped to handle the philosophical demands of computing with infinite sets is yet to be vigorously tested, for their applications have so far been finitary in nature.
+Going by the semantic abstraction of Gurevich, algorithms far more closely resemble ``high-level'' meta-theoretic representations of Plotkin-style semantics (found e.g. in \cite{plotkin}), than they do anything among \ref{ct1} to \ref{ct3}. That their syntactic counterparts --- the programming languages associated with abstract state machines --- have been adapted for use in fields ranging from software development to systems engineering via (what is now known as) the \textit{ASM method} is testament to the intuitiveness of Gurevich's design. Historical details regarding the ASM method can be found in \cite{borger} and Chapter 9 of \cite{borgerbook}. Having said all that, how well this abstraction is equipped to handle the philosophical demands of computing with infinite sets is yet to be vigorously tested, for its applications have so far been finitary in nature.
 
-In this chapter, we investigate the promise of Gurevich's \textit{sequential algorithms} in infinitary computations. We make well-meaning restrictions to their definition along the way, so that they are better endowed with our intuition of computation born out of classical computing. 
+In this chapter, we adapt Gurevich's \textit{sequential algorithms} for generalised computations. We make well-meaning modifications to their definition along the way, so that their growth in computational power does not contradict our intuition of computation born out of classical computing. 
 
-\section{Generalising Computability}\label{subsec22}
+\section{Generalised (Relative) Computability}\label{subsec22}
 
 A notion of computability is meant to chart the limits of what can and cannot be computed. In the classical case, we hold the Church-Turing thesis responsible for this purpose, a responsibility rooted in its convincing portrayal of computer-hood. Indeed, the hallowed status afforded to the Church-Turing thesis stems from the unlikely convergence in power of what seems to be independently-devised models of computation.
 
@@ -6366,24 +6366,29 @@ Taking a leaf from how classical Turing machines were modified to become classic
     \end{tabular}
 \end{table}
 
-Unlike the previous models of generalised computation, Gurevich's sequential algorithms were not designed with any form of relative computability in mind. In fact, in the name of generality, his definition of an algorithm does not even specify the existence of canonical inputs or outputs, which are typically integral to associating a relative computability relation with a computational model. Further, preliminary investigations into the limits of their computational power quickly uncover something philosophically unsatisfying, if not unsettling. We seek to correct this with our restrictions to the definition of a sequential algorithm.
+Unlike the previous models of generalised computation, Gurevich's sequential algorithms were not designed with any form of relative computability in mind. In fact, in the name of generality, his definition of an algorithm does not even specify the existence of canonical inputs or outputs, which are typically integral to associating a relative computability relation with a computational model. Further, the lack of specifications for infinite terminating runs, coupled with strong finitary bounds to the sizes of updates, suggests that Gurevich's abstraction might be poorly suited for generalised computation. Thankfully, this turns out not to be the case, once certain enhancements are added to the definition of a sequential algorithm.
 
-The way restrictions are added to the notion of sequential algorithms results in a new model of generalised computation called \textit{restricted sequential algorithms with parameters} (abbreviated as \textit{ReqSAPs}). The main draw of RSeqAPs is that they possess more concrete guardrails than the original sequential algorithms without compromising too much of the latter's intuitiveness. Coupled with an input/output paradigm, RSeqAPs naturally induce a relative computability relation, $\leq^P$, on all sets of ordinals. It turns out that $\leq^P$ coincides with both $\preceq_A$ as well as the \textit{relative constructibility} relation. Unlike $\preceq_A$ though, $\leq^P$ tends very much to remain transitive under computational constraints. This makes for interesting comparisons between $\leq^P$ and say, the relations in Table \ref{table1}, when size limitations are imposed.
+The way the notion of sequential algorithms is enhanced results in a new model of generalised computation called \textit{generalised sequential algorithms with parameters} (abbreviated as \textit{GSeqAPs}). The main draw of GSeqAPs is that they possess more concrete guardrails to facilitate generalised computation, compared to the original sequential algorithms, without compromising too much of the latter's intuitiveness. Coupled with an input/output paradigm, GSeqAPs naturally induce a relative computability relation, $\leq^P$, on all sets of ordinals. It turns out that $\leq^P$ coincides with both $\preceq_A$ as well as the \textit{relative constructibility} relation. Unlike $\preceq_A$ though, $\leq^P$ tends very much to remain transitive under computational constraints. This makes for interesting comparisons between $\leq^P$ and say, the relations in Table \ref{table1}, when size limitations are imposed.
 
-\section{Restricting Sequential Algorithms}\label{sect82}
+\section{Adapting Sequential Algorithms for the Infinite}\label{sect82}
 
-In this section, we progressively chip away at the very useful, but very inclusive, definition of a sequential algorithm, to arrive at a more restrictive notion of algorithms which also better captures our intuition of generalised computation. 
+In this section, we progressively modify the definition of a sequential algorithm, to arrive at a more concrete notion of algorithms which also better captures our intuition of generalised computation. 
 
-\subsection{Sequential Algorithms}
+\subsection{Formal Sequential Algorithms}
 
-Gurevich introduced the \textit{ASM thesis} in \cite{gurevich} as a justification of correctness for his definition of (a most general conceptualisation of) a sequential algorithm. He followed it up with a number of collaborations and papers (e.g. \cite{gurevichblass}) on various other classes of algorithms. If we follow the convention of using ``algorithm'' and ``computer program'' interchangeably, then sequential algorithms are natural candidates for capturing a general notion of computability. However, the claim that Gurevich's notion of sequential algorithms is natural seems to have undergone insufficient scrutiny on an infinitary scale. We shall start this section by refuting this claim through a set-theoretic argument. 
+Gurevich introduced the \textit{ASM thesis} in \cite{gurevich} as a justification of correctness for his definition of (a most general conceptualisation of) a sequential algorithm. He followed it up with a number of collaborations and papers (e.g. \cite{gurevichblass}) on various other classes of algorithms. If we follow the convention of using ``algorithm'' and ``computer program'' interchangeably, then sequential algorithms are natural candidates for capturing a general notion of computability. However, it seems that Gurevich himself had not intended for sequential algorithms to capture computation on an infinitary scale. We shall start this section with a brief examination on how ill-equipped his definition is at dealing with generalised computation. 
 
-Briefly, a \emph{sequential algorithm} --- henceforth \textit{SeqA}, to distinguish the formal concept from the colloquial --- $\mathfrak{M}$ comprises a class of states $S(\mathfrak{M})$, a class of initial states $I(\mathfrak{M})$, and a class transition function $\tau_{\mathfrak{M}} : S(\mathfrak{M}) \longrightarrow S(\mathfrak{M})$ such that
+Briefly, a \emph{sequential algorithm} --- henceforth \textit{SeqA}, to distinguish the formal concept from the colloquial --- $\mathfrak{M}$ comprises a class of states $S(\mathfrak{M})$, a class of initial states $I(\mathfrak{M})$, a class transition function $\tau_{\mathfrak{M}} : S(\mathfrak{M}) \longrightarrow S(\mathfrak{M})$, and a finite set $G$ of ground terms over $\sigma(\mathfrak{M})$ such that
 \begin{enumerate}[label=(A\arabic*)]
     \item\label{a1} every $s \in S(\mathfrak{M})$ is a first-order structure with the same finite signature, $\sigma(\mathfrak{M})$,
-    \item\label{a2} $I(\mathfrak{M}) \subset S(\mathfrak{M})$, and
-    \item\label{a3} for all $s \in S(\mathfrak{M})$, $\tau_{\mathfrak{M}}(s)$ has the same base set as $s$, and
-    \item\label{a4} if $s_1, s_2 \in S(\mathfrak{M})$ and $s_1$ and $s_2$ are isomorphic, then $\tau_{\mathfrak{M}}(s_1)$ and $\tau_{\mathfrak{M}}(s_2)$ are isomorphic.
+    \item\label{a2} $I(\mathfrak{M}) \subset S(\mathfrak{M})$,
+    \item\label{a3'} for all $s \in S(\mathfrak{M})$, $\tau_{\mathfrak{M}}(s)$ has the same base set as $s$
+    \item\label{a3} for all $s \in S(\mathfrak{M})$, $\tau_{\mathfrak{M}}(s)$ differs from $s$ on no more than the interpretation of terms in $G$, and
+    \item\label{a4} for all $s, s' \in S(\mathfrak{M})$, letting $G^s$ denote the function $\dot{x} \mapsto \dot{x}^s$ with domain $G$,
+    \begin{itemize}
+        \item $ran(G^{\tau_{\mathfrak{M}}(s)}) \subset ran(G^s)$, and
+        \item if $G^s = G^{s'}$, then $G^{\tau_{\mathfrak{M}}(s)} = G^{\tau_{\mathfrak{M}}(s')}$.
+    \end{itemize}
 \end{enumerate}
 A (finite) terminating run of $\mathfrak{M}$ is a sequence of states $(s_i : i \leq n < \omega)$ for which
 \begin{enumerate}[label=(B\arabic*)]
@@ -6392,47 +6397,42 @@ A (finite) terminating run of $\mathfrak{M}$ is a sequence of states $(s_i : i \
     \item for all $m < n$, $s_{m+1} = \tau_{\mathfrak{M}}(s_m) \neq s_m$.
 \end{enumerate}
 
-For brevity's sake, some details are withheld here. First, Gurevich originally require states to have only function and constant symbols in their signatures. However, this restriction is purely cosmetic because every relation in a structure can be represented as a boolean function. Second, $\tau$ is supposed to satisfy the \emph{bounded exploration postulate}, which vaguely means that $\tau$ must perform the same updates to all states with the same interpretations of ground terms in a particular finite set. We shall keep this requirement (or at least its spirit) in mind for this subsection, even if we need not formally verify it. Finally, our definition above can be generalised so that $\tau_{\mathfrak{M}}$ need only be a binary relation -- resulting in algorithms which might not be sequential -- but that is unnecessary for the point we seek to put across.
+For brevity's sake, some details are withheld here. First, Gurevich originally require states to have only function and constant symbols in their signatures. However, this restriction is purely cosmetic because every relation in a structure can be represented as a boolean function. Second, $S(\mathfrak{M})$ is supposed to be closed under all possible isomorphisms, thus becoming a proper class. This closure property allows one to derive \ref{a3} and \ref{a4} from Gurevich's \emph{bounded exploration postulate} (see \cite{gurevich}, Lemma 6.2 for a derivation). Even though our presentation might seem logically weaker than Gurevich's original, the two are actually provably equivalent, modulo closure under isomorphisms. In fact, going through \ref{a3} and \ref{a4} is standard for proofs equating the computational power of different paradigms through sequential algorithms (in e.g. \cite{dershowitz} or even \cite{gurevich} itself), so our sidestepping of set-theoretic concerns regarding the sizes of state spaces is accompanied by some conveniences. Finally, our definition above can be generalised so that $\tau_{\mathfrak{M}}$ need only be a binary relation -- resulting in algorithms which might not be sequential -- but that is unnecessary if we only want to capture enough of generalised computation for a sufficiently general relative computability relation.
 
-Intuitively, a state of an algorithm is a configuration of some generalised Turing machine. Each initial state corresponds to an initial configuration, from which one can read off the input (or one may take the initial state itself to be the input). The last state of a terminating run, sometimes called a \emph{final state}, corresponds in spirit to an end configuration of a Turing machine run, from which one can read off the output. For example, if we have a specific symbol $\ulcorner X \urcorner$ in the signature to represent an analogue of the Turing machine tape, then a terminating run $\Vec{r} = (s_1, \dots, s_n)$ should give an algorithmic transformation of the input representation $X^{s_1}$ into the output representation $X^{s_n}$.
+Intuitively, a state of an algorithm is a configuration of some generalised Turing machine. Each initial state corresponds to an initial configuration, from which one can read off the input (or one may take the initial state itself to be the input). The last state of a terminating run, sometimes called a \emph{final state}, corresponds in spirit to an end configuration of a Turing machine run, from which one can read off the output. For example, if we have a specific symbol $\ulcorner X \urcorner$ in the signature to represent an analogue of the Turing machine tape, then a terminating run $(s_1, \dots, s_n)$ should give an algorithmic transformation of the input representation $X^{s_1}$ into the output representation $X^{s_n}$.
 
-We argue against SeqAs as a good notion of generalised algorithms. Consider the example below.
+Now, requirements \ref{a3} and \ref{a4} set an \textit{a priori} finite bound to the number of bits that an algorithm can alter in each step of its computational run. Since a terminating run is presumed to be finite, there is no way for an algorithm to make an infinite amount of change before terminating. It is therefore very tempting to just free ourselves from the shackles of \ref{a3} and \ref{a4}, especially since we aim to have as general a definition of an generalised algorithm as possible. Unfortunately, this turns out to be \textit{too} inclusive. Consider the example below, modelled after a Turing machine with a $\kappa$-length tape.
 
 \begin{ex}\label{ex21}
-Let $\kappa$ be an infinite cardinal. Expand the signature of $(\kappa; \in)$ to include a unary relation symbol $\ulcorner A \urcorner$ and a constant symbol $\ulcorner c \urcorner$. Now if $A_1$ and $A_2$ are subsets of $\kappa$, then we can define a SeqA $\mathfrak{M}(\kappa, A_1, A_2)$ as follows:
+Let $\kappa$ be an infinite cardinal. Expand the signature of $(\kappa; \in)$ to include a unary relation symbol $\ulcorner A \urcorner$. Now if $A_1$ and $A_2$ are subsets of $\kappa$, then we can define $\mathfrak{M}(\kappa, A_1, A_2)$ as follows:
 \begin{gather*}
-    s_1 := (\kappa; \in, A_1, 0) \\
-    s_2 := (\kappa; \in, A_2, 1) \\
+    s_1 := (\kappa; \in, A_1) \\
+    s_2 := (\kappa; \in, A_2) \\
     S(\mathfrak{M}(\kappa, A_1, A_2)) := \{s_1, s_2\} \\
     I(\mathfrak{M}(\kappa, A_1, A_2)) := \{s_1\} \\
-    \tau_{\mathfrak{M}(\kappa, A_1, A_2)} := \{(s_1, s_2), (s_2, s_2)\} \text{.}
+    \tau_{\mathfrak{M}(\kappa, A_1, A_2)} := \{(s_1, s_2), (s_2, s_2)\} \text{,}
 \end{gather*}
-Observe that $A_1$ and $A_2$ both interpret $\ulcorner A \urcorner$ on the base set $\kappa$, and that $s_1$ is not isomorphic to $s_2$ because 
-\begin{itemize}
-    \item $s_1$ interprets $\ulcorner c \urcorner$ as $0$ and $s_2$ interprets $\ulcorner c \urcorner$ as $1$, and
-    \item there is no automorphism of $(\kappa; \in)$ other than the identity on $\kappa$.
-\end{itemize}
-This means $S(\mathfrak{M}(\kappa, A_1, A_2))$, $I(\mathfrak{M}(\kappa, A_1, A_2))$ and $\tau_{\mathfrak{M}(\kappa, A_1, A_2)}$ satisfy \ref{a1} to \ref{a4} in place of $S(\mathfrak{M})$, $I(\mathfrak{M})$ and $\tau_{\mathfrak{M}}$ respectively. Furthermore, $c$ is specifically added to the signature so that the finite set $\{c\}$ witnesses $\mathfrak{M}(\kappa, A_1, A_2)$ satisfy the bounded exploration postulate.
+so that $A_1$ and $A_2$ both interpret $\ulcorner A \urcorner$ on the base set $\kappa$ shared between the states $s_1$ and $s_2$. 
 \end{ex}
 
-Fix subsets $A_1$ and $A_2$ of $\kappa$. The only terminating run of $\mathfrak{M}(\kappa, A_1, A_2)$ is $(s_1, s_2)$. Morally, this is saying that we can algorithmically get from $A_1$ to $A_2$. If we set $A_1$ to be a simply definable set like the empty set, then every subset of $\kappa$ is algorithmically derivable from $A_1$. This seems incredible given the information content of arbitrary sets of ordinals, as exemplified by Lemma \ref{setcode}.
+Fix subsets $A_1$ and $A_2$ of $\kappa$. Note that $\mathfrak{M}(\kappa, A_1, A_2)$ satisfies requirements \ref{a1} to \ref{a3'}. Moreover, the only terminating run of $\mathfrak{M}(\kappa, A_1, A_2)$ is $(s_1, s_2)$. As the interpretation of the symbol $\ulcorner A \urcorner$ is the only difference between $s_1$ and $s_2$, the moral implication of this run is that we can algorithmically get from $A_1$ to $A_2$. If we set $A_1$ to be a simply definable set like the empty set, then every subset of $\kappa$ is algorithmically derivable from $A_1$. This seems incredible given the information content of arbitrary sets of ordinals, as exemplified by Lemma \ref{setcode}.
 
-The procedure described in the proof of Lemma \ref{setcode} allows us to encode any set as a set of ordinals, such that the decoding can be done in an absolute manner. If we believe that such a decoding scheme (particularly, G\"{o}del's pairing function) is algorithmic, then the definition of SeqAs entails that we can algorithmically derive every set in $V$ from just $\emptyset$. Since most set theorists are of the opinion that sets in $V$ can be extremely complicated and far from constructible in a very strong sense, this conclusion is wholly unsatisfactory, if not patently false. In other words, SeqAs are \emph{too} encompassing a paradigm for algorithms, and thus should not be used to draw the line for generalised computability.
+The procedure described in the proof of Lemma \ref{setcode} allows us to encode any set as a set of ordinals, such that the decoding can be done in an absolute manner. If we believe that such a decoding scheme (particularly, G\"{o}del's pairing function) is algorithmic, then our aforementioned loosening of the definition of SeqAs entails that we can algorithmically derive every set in $V$ from just $\emptyset$. Since most set theorists are of the opinion that sets in $V$ can be extremely complicated and far from constructible in a very strong sense, this conclusion is wholly unsatisfactory, if not patently false. In other words, just eschewing requirements \ref{a3} and \ref{a4} yields \emph{too} encompassing a paradigm for algorithms, and thus should not be used to draw the line for generalised computability.
 
 \begin{rem}
 In Example \ref{ex21}, we can set $A_1$ and $A_2$ to be subsets of $H(\kappa)$, and alter the definition of $\mathfrak{M}(\kappa, A_1, A_2)$ such that 
 \begin{gather*}
-    s_1 := (H(\kappa); \in, A_1, 0) \\
-    s_2 := (H(\kappa); \in, A_2, 1) \text{.}
+    s_1 := (H(\kappa); \in, A_1) \\
+    s_2 := (H(\kappa); \in, A_2) \text{.}
 \end{gather*}
 In this way, we obtain a more literal argument that every set is algorithmically derivable from every other set, sidestepping the need for Lemma \ref{setcode} as motivation. Nonetheless, Lemma \ref{setcode} will be invoked in later parts of this section, so it is as good a time now as any to introduce it.
 \end{rem}
 
-For much of the rest of this section, we will make educated modifications to the definition of a SeqA, in an attempt to formulate a more philosophically justified notion of algorithms, at least from a set-theoretic viewpoint.
+From now on, and until further notice, let us relax the definition of SeqAs such that they need only satisfy requirements \ref{a1} to \ref{a3'}. For much of the rest of this section, we will make educated modifications and impose suitable restrictions to this relaxed definition of a SeqA, in an attempt to formulate a more philosophically justified notion of generalised algorithms, at least from a set-theoretic viewpoint.
 
 \subsection{Modifying the Satisfaction Relation}
 
-An obvious cause of the triviality identified in the preceding paragraph, is the lack of restriction on the transition function $\tau_{\mathfrak{M}}$ of a SeqA $\mathfrak{M}$. Ideally, $\tau_{\mathfrak{M}}(s)$ should be describable is a way which only depends locally on itself and $s$. One formalisation of a ``describable local property'' applicable to first-order structures is the notion of a \emph{first-order property}. A first-order formula $\phi$ over the signature of a structure $\mathfrak{A}$ is a first-order property of $\mathfrak{A}$ iff $\mathfrak{A} \models \phi$, where $\models$ is Tarski's satisfaction relation. However, in our use case, the formula $\phi$ might need to refer to two different structures, so some slight modifications to the satisfaction relation are in order.
+An obvious cause of the triviality identified in Example \ref{ex21}, is the lack of restriction on the transition function $\tau_{\mathfrak{M}}$ of a SeqA $\mathfrak{M}$. Ideally, $\tau_{\mathfrak{M}}(s)$ should be describable is a way which only depends locally on itself and $s$. One formalisation of a ``describable local property'' applicable to first-order structures is the notion of a \emph{first-order property}. A first-order formula $\phi$ over the signature of a structure $\mathfrak{A}$ is a first-order property of $\mathfrak{A}$ iff $\mathfrak{A} \models \phi$, where $\models$ is Tarski's satisfaction relation. However, in our use case, the formula $\phi$ might need to refer to two different structures, so some slight modifications to the satisfaction relation are in order.
 
 \begin{defi}
 Given an signature $\sigma$, define $2 \cdot \sigma$ to be the disjoint union of $\sigma$ and itself. In other words, for each symbol $\ulcorner X \urcorner \in \sigma$ and each $i < 2$, we choose a fresh symbol $\ulcorner X_{i} \urcorner$ and cast it to be of the same type and arity as $\ulcorner X \urcorner$. We then set
@@ -6478,7 +6478,7 @@ Let $\mathfrak{A}_0$ and $\mathfrak{A}_1$ be first-order structures with the sam
 \end{enumerate}
 \end{defi}
 
-Before adding more requirements to the transition function of a SeqA, let us enforce that every state in a SeqA $\mathfrak{M}$ must have the same base set $b(\mathfrak{M})$. This can be done without loss of generality in the original definition of a SeqA, because we can extend the base set of each state in $\mathfrak{M}$ to be the union of the base sets of states in $\mathfrak{M}$, while arbitrarily extending the interpretation of function and relation symbols in the signature by each state.
+Before adding more requirements to the transition function of a SeqA, let us enforce that every state in a SeqA $\mathfrak{M}$ must have the same base set $b(\mathfrak{M})$. This can be done without loss of generality in the definition of a SeqA, because we can extend the base set of each state in $\mathfrak{M}$ to be the union of the base sets of states in $\mathfrak{M}$, while arbitrarily extending the interpretation of function and relation symbols in the signature by each state.
 
 We stipulate that the transition function $\tau_{\mathfrak{M}}$ of a SeqA $\mathfrak{M}$ must be finitely describable over $2 \cdot \sigma(\mathfrak{M})$. That is, there must exist a first-order sentence $\phi^{\tau}_{\mathfrak{M}}$ over $2 \cdot \sigma(\mathfrak{M})$ such that for all $s_1, s_2 \in S(\mathfrak{M})$, 
 \begin{equation*}
@@ -6516,7 +6516,7 @@ Difficulty \ref{diff29} tells us $S(\mathfrak{M})$ should depend not just on $b(
 
 \subsection{States as Models of TCIs}\label{ssect23}
 
-As TCIs impose natural constraints on first-order theories, they can be easily adapted to constrain the possible states of a SeqA. 
+As TCIs impose natural constraints on first-order theories, they can be easily adapted to constrain the possible states of a SeqA. In fact, TCIs are a generalisation of what Dershowitz and Gurevich call \textit{static functions} in \cite{dershowitz}.
 
 To specify a SeqA $\mathfrak{M}$, we should also specify a TCI $\mathfrak{T}(\mathfrak{M}) = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ such that 
 \begin{gather*}
@@ -6594,7 +6594,7 @@ Finally,
 is a first-order sentence over $2 \cdot \sigma(\mathfrak{M})$ that gives us the representation we want.
 \end{ex}
 
-\subsection{Absoluteness and the Bounded Exploration Postulate}
+\subsection{Absoluteness and the Bounded Exploration Postulate Revisited}
 
 A good notion of algorithm ought to be absolute to a certain degree. In set-theoretic contexts, absoluteness for transitive models of set theory comes up the most often. 
 
@@ -6633,7 +6633,7 @@ where
 \end{equation*}
 However, given any $\mathfrak{T}(\mathfrak{M})$ and $\phi^{\tau}_{\mathfrak{M}}$, it is not immediate that (\ref{eq1}) is absolute for transitive models of $\mathsf{ZFC}$. As a result, it is difficult to ascertain that the definition of $\tau_{\mathfrak{M}}$ from $\mathfrak{T}(\mathfrak{M})$ and $\phi^{\tau}_{\mathfrak{M}}$ is absolute for transitive models of $\mathsf{ZFC}$. This implores us to make the dependency between the current and the next state of a SeqA even more local.
 
-At this point, it is useful to make precise Gurevich's bounded exploration postulate, for it is an example of highly local dependency. Combined with our stipulation that a transition function must be definable, we expect to obtain a level of local definability from which the absoluteness we want can be easily derived. Consequently, abiding by the bounded exploration postulate should net us absoluteness at no additional cost.
+At this point, it is useful to revisit, in a more precise fashion, Gurevich's bounded exploration postulate, for it is an example of highly local dependency even without the closure of the state space under isomorphisms. Combined with our stipulation that a transition function must be definable, we expect to obtain a level of local definability from which the absoluteness we want can be easily derived. Consequently, abiding by the bounded exploration postulate should net us absoluteness at no additional cost.
 
 \begin{defi}
 Let $\mathfrak{M}$ be a SeqA and $s \in S(\mathfrak{M})$. Define $\Delta_{\mathfrak{M}}(s)$ to be the unique function from $\sigma(\mathfrak{M})$ into $\mathcal{P}(b(\mathfrak{M}))$ such that
@@ -6930,7 +6930,7 @@ Due to the fact that every state of $\mathfrak{M}$ is an expansion of $(\kappa(\
 Justifiably, we shall stipulate that whenever $(A, z) \in ran(\vartheta)$, $z = 0$ and $A = \kappa^n$ for some $n < \omega$. We are now ready to formally define our modified version of a SeqA.
 
 \begin{defi}\label{def224}
-A \emph{restricted sequential algorithm} --- henceforth \textit{RSeqA} --- $\mathfrak{M}$ is fully specified by a limit ordinal $\kappa(\mathfrak{M})$, a finite signature $\sigma(\mathfrak{M})$, and sentences $\phi^{\tau}_{\mathfrak{M}}$ and $\phi^d_{\mathfrak{M}}$ such that
+A \emph{generalised sequential algorithm} --- henceforth \textit{GSeqA} --- $\mathfrak{M}$ is fully specified by a limit ordinal $\kappa(\mathfrak{M})$, a finite signature $\sigma(\mathfrak{M})$, and sentences $\phi^{\tau}_{\mathfrak{M}}$ and $\phi^d_{\mathfrak{M}}$ such that
 \begin{enumerate}[label=(D\arabic*)]
     \item $\{\ulcorner \in \urcorner, \ulcorner \mathrm{In} \urcorner, \ulcorner \mathrm{Out} \urcorner\} \subset \sigma(\mathfrak{M})$,
     \item there is a unique $\vartheta_{\mathfrak{M}} : (\sigma(\mathfrak{M}) \cup \{\dot{\mathcal{U}}\}) \longrightarrow V$ with the following properties:
@@ -6958,11 +6958,11 @@ In this case, we say $\mathfrak{M} = (\kappa(\mathfrak{M}), \sigma(\mathfrak{M})
 \end{defi}
 
 \begin{rem}\label{rem225}
-Fix any limit ordinal $\kappa$. Notice that there are only countably many RSeqAs $\mathfrak{M}$ satisfying $\kappa(\mathfrak{M}) = \kappa$. Indeed, this countable set of RSeqAs specifications is absolute for transitive models of $\mathsf{ZFC}$ containing $\kappa$.
+Fix any limit ordinal $\kappa$. Notice that there are only countably many GSeqAs $\mathfrak{M}$ satisfying $\kappa(\mathfrak{M}) = \kappa$. Indeed, this countable set of GSeqAs specifications is absolute for transitive models of $\mathsf{ZFC}$ containing $\kappa$.
 \end{rem}
 
 \begin{defi}
-If $\mathfrak{M} = (\kappa(\mathfrak{M}), \sigma(\mathfrak{M}), \phi^{\tau}_{\mathfrak{M}}, \phi^d_{\mathfrak{M}})$ is an RSeqA, define 
+If $\mathfrak{M} = (\kappa(\mathfrak{M}), \sigma(\mathfrak{M}), \phi^{\tau}_{\mathfrak{M}}, \phi^d_{\mathfrak{M}})$ is a GSeqA, define 
 \begin{enumerate}[label=(\arabic*)]
     \item $S(\mathfrak{M})$ as in Definition \ref{def224},
     \item $\tau_{\mathfrak{M}} := \{(s_0, s_1) \in S(\mathfrak{M})^2 : (s_0, s_1) \models_2 \phi^{\tau}_{\mathfrak{M}}\}$,
@@ -6982,10 +6982,10 @@ If $\mathfrak{M} = (\kappa(\mathfrak{M}), \sigma(\mathfrak{M}), \phi^{\tau}_{\ma
 \end{enumerate}
 \end{defi}
 
-The next proposition highlights the important properties of RSeqAs, based on what we have discussed so far.
+The next proposition highlights the important properties of GSeqAs, based on what we have discussed so far.
 
 \begin{prop}\label{prop226}
-Let $\mathfrak{M}$ be an RSeqA. Then the following are absolute for transitive models of $\mathsf{ZFC}$ containing $\mathfrak{T}(\mathfrak{M})$:
+Let $\mathfrak{M}$ be a GSeqA. Then the following are absolute for transitive models of $\mathsf{ZFC}$ containing $\mathfrak{T}(\mathfrak{M})$:
 \begin{enumerate}[label=(\arabic*)]
     \item the definition of $S(\mathfrak{M})$,
     \item the definition of $\tau_{\mathfrak{M}}$ and $\tau_{\mathfrak{M}}$ being a function from $S(\mathfrak{M})$ into $S(\mathfrak{M})$,
@@ -6995,10 +6995,10 @@ Let $\mathfrak{M}$ be an RSeqA. Then the following are absolute for transitive m
 \end{enumerate}
 \end{prop}
 
-Now that RSeqAs have been officially defined, it is imperative to revisit Example \ref{ex212}, for any notion of generalised algorithm that cannot represent an arbitrary Turing cannot be too useful.
+Now that GSeqAs have been officially defined, it is imperative to revisit Example \ref{ex212}, for any notion of generalised algorithm that cannot represent an arbitrary Turing cannot be too useful.
 
 \begin{ex}[\ref{ex212} revisited]\label{ex228}
-Let us describe changes to the $\mathfrak{M}$ defined in Example \ref{ex212} that would qualify it as an RSeqA. First, an observation: there are formulas $\phi_P$ and $\phi_S$ over $\ulcorner \in \urcorner$, each with two free variables $x$ and $y$, such that for all $s \in S(\mathfrak{M})$,
+Let us describe changes to the $\mathfrak{M}$ defined in Example \ref{ex212} that would qualify it as a GSeqA. First, an observation: there are formulas $\phi_P$ and $\phi_S$ over $\ulcorner \in \urcorner$, each with two free variables $x$ and $y$, such that for all $s \in S(\mathfrak{M})$,
 \begin{equation*}
     s \models \forall x \ \forall y \ ((\mathrm{Pre}(x) = y \iff \phi_P(x, y)) \wedge (\mathrm{Suc}(x) = y \iff \phi_S(x, y))) \text{.}
 \end{equation*}
@@ -7032,19 +7032,19 @@ We are left to define the $\phi^{\ulcorner X \urcorner}$s for $\ulcorner X \urco
 \end{align*}
 where $x = \mathrm{Pre}(h_0)$ and $x = \mathrm{Suc}(h_0)$ are shorthand notations for semantically equivalent formulas over $\{\ulcorner \in_0 \urcorner, \ulcorner h_0 \urcorner\}$. 
 
-A rotuine check would reveal that the aforementioned details are sufficient to specify $\mathfrak{M}$ as an RSeqA, and that they allow $\mathfrak{M}$ to accurately simulate the Turing machine $M$. 
+A routine check would reveal that the aforementioned details are sufficient to specify $\mathfrak{M}$ as a GSeqA, and that they allow $\mathfrak{M}$ to accurately simulate the Turing machine $M$. 
 \end{ex}
 
-From the next subsection onwards, the construction of RSeqAs used in proofs and arguments can be too cumbersome to formally spell out. In such cases, only high-level details will be given. The reader should always try to convince themselves that those details can be properly realised by RSeqAs.
+From the next subsection onwards, the construction of GSeqAs used in proofs and arguments can be too cumbersome to formally spell out. In such cases, only high-level details will be given. The reader should always try to convince themselves that those details can be properly realised by GSeqAs.
 
 \subsection{Transfinite Runs}
 
-Consider a finite terminating run $\Vec{s} = (s_1, \dots, s_n)$ of an RSeqA $\mathfrak{M}$. Then by combining witnesses to $\phi^{\tau}_{\mathfrak{M}}$ being bounded for $\sigma(\mathfrak{M})$, we can conjure witnesses to some sentence $\phi$ being bounded for $\sigma(\mathfrak{M})$, such that using $\phi$ in place of $\phi^{\tau}_{\mathfrak{M}}$ in the definition of $\mathfrak{M}$ gives us an RSeqA $\mathfrak{M}'$ with $\tau_{\mathfrak{M}'}(s_1) = s_n$. Therefore, as far as computability is concerned, allowing finite steps of arbitrary sizes in computations is no more powerful than allowing only one-step computations. This goes to show that
-RSeqAs are in fact built for runs of infinite lengths.
+Consider a finite terminating run $\Vec{s} = (s_1, \dots, s_n)$ of a GSeqA $\mathfrak{M}$. Then by combining witnesses to $\phi^{\tau}_{\mathfrak{M}}$ being bounded for $\sigma(\mathfrak{M})$, we can conjure witnesses to some sentence $\phi$ being bounded for $\sigma(\mathfrak{M})$, such that using $\phi$ in place of $\phi^{\tau}_{\mathfrak{M}}$ in the definition of $\mathfrak{M}$ gives us a GSeqA $\mathfrak{M}'$ with $\tau_{\mathfrak{M}'}(s_1) = s_n$. Therefore, as far as computability is concerned, allowing finite steps of arbitrary sizes in computations is no more powerful than allowing only one-step computations. This goes to show that
+GSeqAs are in fact built for runs of infinite lengths.
 
-Given an infinite ordinal $\delta$, what does it mean to have an RSeqA computation of length $\delta$? Naturally, every state of the computation must depend on the states prior. For successor ordinals $\alpha < \delta$, the $\alpha$-th state of the computation depends solely on its unique previous state, according to the transition function of the RSeqA. But what about limit ordinals less than $\delta$? How do we describe the states associated with these ordinals in terms of states occurring in the computation before them? This is equivalent to asking how we are going to process the limit of a sequence of states.
+Given an infinite ordinal $\delta$, what does it mean to have a GSeqA computation of length $\delta$? Naturally, every state of the computation must depend on the states prior. For successor ordinals $\alpha < \delta$, the $\alpha$-th state of the computation depends solely on its unique previous state, according to the transition function of the GSeqA. But what about limit ordinals less than $\delta$? How do we describe the states associated with these ordinals in terms of states occurring in the computation before them? This is equivalent to asking how we are going to process the limit of a sequence of states.
 
-Fix an RSeqA $\mathfrak{M}$, a limit ordinal $\delta$, and let $Sq$ be a sequence of states of $\mathfrak{M}$. We want to have a uniform definition of $lim(Sq) \in S(\mathfrak{M})$. One natural way to do so is to take ordinal limits point-wise (according to the order topology on $\kappa(\mathfrak{M})$ induced by $\in$), while treating relations as boolean functions. The obvious hindrance to this method is, the limit of a sequence of ordinals does not always exist. However, for various purposes, there are suitable ersatzes.
+Fix a GSeqA $\mathfrak{M}$, a limit ordinal $\delta$, and let $Sq$ be a sequence of states of $\mathfrak{M}$. We want to have a uniform definition of $lim(Sq) \in S(\mathfrak{M})$. One natural way to do so is to take ordinal limits point-wise (according to the order topology on $\kappa(\mathfrak{M})$ induced by $\in$), while treating relations as boolean functions. The obvious hindrance to this method is, the limit of a sequence of ordinals does not always exist. However, for various purposes, there are suitable ersatzes.
 
 \begin{defi}
 Let $T$ be a function from some ordinal into $ORD$. Then $lim \ inf (T)$, $lim \ sup (T)$ and $lim(T)$ refer respectively to the limit inferior, the limit superior and the limit of $T$ as a sequence, with respect to the order topology induced on $\kappa(\mathfrak{M})$ by $\in$.
@@ -7067,18 +7067,18 @@ Point-wise $lim \ inf$ and $lim \ sup$ operations are commonly used to define th
 Hereon, we shall identify relations with boolean functions and constants with $0$-ary functions wherever convenient, in part so that only function symbols need to be considered in definitions and case analyses. 
 
 \begin{defi}
-Let $\mathfrak{M}$ be an RSeqA and $Sq$ be a function from some ordinal into $S(\mathfrak{M})$. Given $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ an $n$-ary function symbol, denote by $\ulcorner R^{\ulcorner X \urcorner} \urcorner$ a distinguished $(n+2)$-ary relation symbol and define the relation 
+Let $\mathfrak{M}$ be a GSeqA and $Sq$ be a function from some ordinal into $S(\mathfrak{M})$. Given $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ an $n$-ary function symbol, denote by $\ulcorner R^{\ulcorner X \urcorner} \urcorner$ a distinguished $(n+2)$-ary relation symbol and define the relation 
 \begin{equation*}
     R_{Sq}^{\ulcorner X \urcorner} := \{(\alpha, \beta_1, \dots, \beta_n, \beta) \in dom(Sq) \times \kappa(\mathfrak{M})^{n+1} : X^{Sq(\alpha)} (\beta_1, \dots, \beta_n) = \beta\} \text{.}
 \end{equation*}
 \end{defi}
 
 \begin{defi}
-Let $\mathfrak{M}$ be an RSeqA. Given $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ an $n$-ary function symbol, we say $\phi$ is a \emph{simple limit formula for} $(\ulcorner X \urcorner, \mathfrak{M})$ iff $\phi$ is a formula over $\{\ulcorner \in \urcorner, \ulcorner R^{\ulcorner X \urcorner} \urcorner\}$ with free variables $x_1, \dots, x_{n+1}$.
+Let $\mathfrak{M}$ be a GSeqA. Given $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ an $n$-ary function symbol, we say $\phi$ is a \emph{simple limit formula for} $(\ulcorner X \urcorner, \mathfrak{M})$ iff $\phi$ is a formula over $\{\ulcorner \in \urcorner, \ulcorner R^{\ulcorner X \urcorner} \urcorner\}$ with free variables $x_1, \dots, x_{n+1}$.
 \end{defi}
 
 \begin{defi}\label{def234c}
-Let $\mathfrak{M}$ be an RSeqA. Given $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ an $n$-ary function symbol and $\phi$ a \emph{simple limit formula for} $(\ulcorner X \urcorner, \mathfrak{M})$, we say $\phi$ \emph{preserves ordinal limits} iff interpreting $\ulcorner \in \urcorner$ as $\in$ and $\ulcorner R^{\ulcorner X \urcorner} \urcorner$ as $R_{Sq}^{\ulcorner X \urcorner}$, 
+Let $\mathfrak{M}$ be a GSeqA. Given $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ an $n$-ary function symbol and $\phi$ a \emph{simple limit formula for} $(\ulcorner X \urcorner, \mathfrak{M})$, we say $\phi$ \emph{preserves ordinal limits} iff interpreting $\ulcorner \in \urcorner$ as $\in$ and $\ulcorner R^{\ulcorner X \urcorner} \urcorner$ as $R_{Sq}^{\ulcorner X \urcorner}$, 
 \begin{equation*}
     (\kappa(\mathfrak{M}); \in, R_{Sq}^{\ulcorner X \urcorner}) \models \phi[x_1 \mapsto \alpha_1, \dots, x_{n+1} \mapsto \alpha_{n+1}]
 \end{equation*}
@@ -7089,7 +7089,7 @@ for all functions $Sq$ from a limit ordinal $< \kappa(\mathfrak{M})$ into $S(\ma
 \end{defi}
 
 \begin{defi}\label{def234}
-Let $\mathfrak{M}$ be an RSeqA and $Sq$ be a function from a limit ordinal $< \kappa(\mathfrak{M})$ into $S(\mathfrak{M})$. A state $s \in S(\mathfrak{M})$ is a \emph{simple limit of} $Sq$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$ such that, interpreting $\ulcorner \in \urcorner$ as $\in$ and $\ulcorner R^{\ulcorner X \urcorner} \urcorner$ as $R_{Sq}^{\ulcorner X \urcorner}$, 
+Let $\mathfrak{M}$ be a GSeqA and $Sq$ be a function from a limit ordinal $< \kappa(\mathfrak{M})$ into $S(\mathfrak{M})$. A state $s \in S(\mathfrak{M})$ is a \emph{simple limit of} $Sq$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$ such that, interpreting $\ulcorner \in \urcorner$ as $\in$ and $\ulcorner R^{\ulcorner X \urcorner} \urcorner$ as $R_{Sq}^{\ulcorner X \urcorner}$, 
 \begin{equation*}
     \ulcorner X \urcorner^s (\alpha_1, \dots, \alpha_n) = \alpha_{n+1} \iff (\kappa(\mathfrak{M}); \in, R_{Sq}^{\ulcorner X \urcorner}) \models \phi[x_1 \mapsto \alpha_1, \dots, x_{n+1} \mapsto \alpha_{n+1}]
 \end{equation*}
@@ -7099,7 +7099,7 @@ whenever $(\alpha_1, \dots, \alpha_{n+1}) \in \kappa(\mathfrak{M})^{n+1}$. In th
 It is immediate from Definition \ref{def234} and our assumption that $\sigma(\mathfrak{M})$ contains only function symbols, that a simple limit of a $< \kappa(\mathfrak{M})$-length ordinal sequence of states of $\mathfrak{M}$ must be unique if it exists. Furthermore, for any such sequence $Sq$ and any set $Y$, whether $Y$ witnesses the existence of a simple limit of $Sq$, as well as the identity of said limit if it exists, is absolute for transitive models of $\mathsf{ZFC}$ containing $Sq$.
 
 \begin{prop}\label{prop233}
-Let $\mathfrak{M}$ be an RSeqA. For each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$ that preserves ordinal limits, such that whenever $Sq$ is a function from $\delta < \kappa(\mathfrak{M})$ into $S(\mathfrak{M})$, $\{\phi_{lim}^{\ulcorner X \urcorner} : \ulcorner X \urcorner \in \sigma(\mathfrak{M})\}$ witnesses the existence of a simple limit $s$ of $Sq$ satisfying 
+Let $\mathfrak{M}$ be a GSeqA. For each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$ that preserves ordinal limits, such that whenever $Sq$ is a function from $\delta < \kappa(\mathfrak{M})$ into $S(\mathfrak{M})$, $\{\phi_{lim}^{\ulcorner X \urcorner} : \ulcorner X \urcorner \in \sigma(\mathfrak{M})\}$ witnesses the existence of a simple limit $s$ of $Sq$ satisfying 
 \begin{gather*}
     \ulcorner X \urcorner^{s} (\alpha_1, ..., \alpha_n) = 
     \begin{cases}
@@ -7111,17 +7111,17 @@ for every $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M}
 \end{prop}
 
 \begin{proof}
-By the definition of an RSeqA and the observation that 
+By the definition of a GSeqA and the observation that 
 \begin{equation*}
     lim \ inf (T) = lim (T)
 \end{equation*}
 whenever $T$ is a function from some ordinal in $ORD$ and $lim (T)$ exists. The reader should check that the $lim \ inf$ values specified by the proposition relative to $\ulcorner X \urcorner$ and $Sq$, in case they exist, are definable over $(\kappa(\mathfrak{M}); \in, R_{Sq}^{\ulcorner X \urcorner})$. In fact, there is one such definition that depends only on $\ulcorner X \urcorner$ and not on $\mathfrak{M}$.
 \end{proof}
 
-Colloquially, Proposition \ref{prop233} tells us that every RSeqA is \emph{strongly closed under limit inferiors}. The following definitions generalise this concept.
+Colloquially, Proposition \ref{prop233} tells us that every GSeqA is \emph{strongly closed under limit inferiors}. The following definitions generalise this concept.
 
 \begin{defi}\label{def237}
-Let $\mathfrak{M}$ be an RSeqA. Then $\mathfrak{M}$ is \emph{strongly closed under} a set $Y$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$, such that 
+Let $\mathfrak{M}$ be a GSeqA. Then $\mathfrak{M}$ is \emph{strongly closed under} a set $Y$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$, such that 
 \begin{equation*}
     Y = \{\phi_{lim}^{\ulcorner X \urcorner} : \ulcorner X \urcorner \in \sigma(\mathfrak{M})\}
 \end{equation*}
@@ -7129,7 +7129,7 @@ and whenever $Sq$ is a function from some limit ordinal $< \kappa(\mathfrak{M})$
 \end{defi}
 
 \begin{defi}\label{def238}
-Let $\mathfrak{M}$ be an RSeqA. Then $\mathfrak{M}$ is \emph{practically closed under} a set $Y$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$, such that 
+Let $\mathfrak{M}$ be a GSeqA. Then $\mathfrak{M}$ is \emph{practically closed under} a set $Y$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$, such that 
 \begin{equation*}
     Y = \{\phi_{lim}^{\ulcorner X \urcorner} : \ulcorner X \urcorner \in \sigma(\mathfrak{M})\}
 \end{equation*}
@@ -7142,15 +7142,15 @@ and whenever $Sq$ is a function from some limit ordinal $\delta < \kappa(\mathfr
 there is $s \in S(\mathfrak{M})$ witnessed by $Y$ to be a simple limit of $Sq$.
 \end{defi}
 
-Clearly, for any RSeqA $\mathfrak{M}$ and any set $Y$,
+Clearly, for any GSeqA $\mathfrak{M}$ and any set $Y$,
 \begin{align*}
     \mathfrak{M} \text{ is strongly closed under } Y \implies \mathfrak{M} \text{ is practically closed under } Y \text{.}
 \end{align*}
 
-We are ready to define transfinite terminating runs of RSeqAs.
+We are ready to define transfinite terminating runs of GSeqAs.
 
 \begin{defi}
-Let $\mathfrak{M}$ be an RSeqA that is practically closed under $Y$. A \emph{short terminating run of} $(\mathfrak{M}, Y)$ \emph{with input} $A$ \emph{and output} $B$ is a function $Sq$ from some successor ordinal $\delta < \kappa(\mathfrak{M})$ into $S(\mathfrak{M})$ such that 
+Let $\mathfrak{M}$ be a GSeqA that is practically closed under $Y$. A \emph{short terminating run of} $(\mathfrak{M}, Y)$ \emph{with input} $A$ \emph{and output} $B$ is a function $Sq$ from some successor ordinal $\delta < \kappa(\mathfrak{M})$ into $S(\mathfrak{M})$ such that 
 \begin{enumerate}[label=(\alph*)]
     \item $A, B \subset \kappa(\mathfrak{M})$,
     \item $Sq(0) = l_{\mathfrak{M}}(A)$,
@@ -7162,12 +7162,12 @@ Let $\mathfrak{M}$ be an RSeqA that is practically closed under $Y$. A \emph{sho
 \end{defi}
 
 \begin{prop}\label{prop239}
-Suppose $\mathfrak{M}$ is an RSeqA practically closed under $Y$. Then for some signature $\sigma'$, as long as $\mathfrak{M}'$ is an RSeqA satisfying 
+Suppose $\mathfrak{M}$ is a GSeqA practically closed under $Y$. Then for some signature $\sigma'$, as long as $\mathfrak{M}'$ is a GSeqA satisfying 
 \begin{itemize}
     \item $\sigma(\mathfrak{M}') = \sigma'$ and
     \item $\kappa(\mathfrak{M}') = \kappa(\mathfrak{M})$,
 \end{itemize}
-and $Z$ is a set of simple limit formulas preserving ordinal limits with $\mathfrak{M}'$ strongly closed under $Z$, there is an RSeqA $\mathfrak{M}^*$ such that
+and $Z$ is a set of simple limit formulas preserving ordinal limits with $\mathfrak{M}'$ strongly closed under $Z$, there is a GSeqA $\mathfrak{M}^*$ such that
 \begin{enumerate}[label=(\alph*)]
     \item\label{2391} $\sigma(\mathfrak{M}^*) = \sigma'$,
     \item\label{2392} $\kappa(\mathfrak{M}^*) = \kappa(\mathfrak{M})$, and
@@ -7209,12 +7209,12 @@ The following definition is now well-motivated.
 Let $\mathfrak{M}$ and $Y_{\mathrm{lf}} := \{\phi_{lim}^{\ulcorner X \urcorner} : \ulcorner X \urcorner \in \sigma(\mathfrak{M})\}$ be as in Proposition \ref{prop233}. A \emph{short terminating run of} $\mathfrak{M}$ \emph{with input} $A$ \emph{and output} $B$ is a short terminating run of $(\mathfrak{M}, Y_{\mathrm{lf}})$ with input $A$ and output $B$.
 \end{defi}
 
-Basically, we are mandating the taking of limit inferiors point-wise wherever possible to be the standard method by which we compute limit states of transfinite runs. This is not a real restriction, for we have established from Propositions \ref{prop233} and \ref{prop239} that our new standard is among the most powerful ways to take limits of an RSeqA's states, while still maintaining absoluteness and the spirit of local definability.
+Basically, we are mandating the taking of limit inferiors point-wise wherever possible to be the standard method by which we compute limit states of transfinite runs. This is not a real restriction, for we have established from Propositions \ref{prop233} and \ref{prop239} that our new standard is among the most powerful ways to take limits of a GSeqA's states, while still maintaining absoluteness and the spirit of local definability.
 
-Until now, we have only considered ``short'' transfinite runs, that is, runs that take less steps than the length of the input/output tape. What about longer runs? After all, the ability for Turing machines to run forever is the reason they can ``output'' non-computable computably enumerable sets. Allowing a Turing machine to run transfinitely (e.g. in \cite{ittm}) allows it to explicitly decide these sets. Through such means, oracle computation becomes more straightforward: the oracle can be incorporated into the input, and the result of the machine being fed that oracle can be directly written on the output tape. We want to have an analogous concept of ``long'' runs on RSeqAs. It turns out that removing the length constraint on terminating runs works just fine; 
+Until now, we have only considered ``short'' transfinite runs, that is, runs that take less steps than the length of the input/output tape. What about longer runs? After all, the ability for Turing machines to run forever is the reason they can ``output'' non-computable computably enumerable sets. Allowing a Turing machine to run transfinitely (e.g. in \cite{ittm}) allows it to explicitly decide these sets. Through such means, oracle computation becomes more straightforward: the oracle can be incorporated into the input, and the result of the machine being fed that oracle can be directly written on the output tape. We want to have an analogous concept of ``long'' runs on GSeqAs. It turns out that removing the length constraint on terminating runs works just fine; 
 
 \begin{defi}\label{def242}
-Let $\mathfrak{M}$ be an RSeqA. A \emph{terminating run of} $\mathfrak{M}$ \emph{with input} $A$ \emph{and output} $B$ is a function $Sq$ from some successor ordinal $\delta$ into $S(\mathfrak{M})$ such that 
+Let $\mathfrak{M}$ be a GSeqA. A \emph{terminating run of} $\mathfrak{M}$ \emph{with input} $A$ \emph{and output} $B$ is a function $Sq$ from some successor ordinal $\delta$ into $S(\mathfrak{M})$ such that 
 \begin{enumerate}[label=(\alph*)]
     \item $A, B \subset \kappa(\mathfrak{M})$,
     \item $Sq(0) = l_{\mathfrak{M}}(A)$,
@@ -7234,23 +7234,23 @@ Let $\mathfrak{M}$ be an RSeqA. A \emph{terminating run of} $\mathfrak{M}$ \emph
 
 A key realisation informing Definition \ref{def242} is that the existence, the uniqueness and the computation of limit inferiors, with regards to sequences of ordinals indexed by ordinals, are absolute. This, coupled with Proposition \ref{prop226}, gives us the absoluteness of terminating runs. More precisely, let $\kappa$ be a limit ordinal and $A, B$ be two sets of ordinals. Due to the absoluteness of taking limit inferior in general, the sets
 \begin{align*}
-    \mathrm{SRuns}_{\kappa}(A, B) := \{(\mathfrak{M}, Sq) : \ & \mathfrak{M} \text{ is an RSeqA with } \kappa(\mathfrak{M}) = \kappa \text{ and } Sq \text{ is a short} \\
+    \mathrm{SRuns}_{\kappa}(A, B) := \{(\mathfrak{M}, Sq) : \ & \mathfrak{M} \text{ is a GSeqA with } \kappa(\mathfrak{M}) = \kappa \text{ and } Sq \text{ is a short} \\
     & \text{terminating run of } \mathfrak{M} \text{ with input } A \text{ and output } B\}
 \end{align*}
 and
 \begin{align*}
-    \mathrm{Runs}_{\kappa}(A, B) := \{(\mathfrak{M}, Sq) : \ & \mathfrak{M} \text{ is an RSeqA with } \kappa(\mathfrak{M}) = \kappa \text{ and } Sq \text{ is a} \\
+    \mathrm{Runs}_{\kappa}(A, B) := \{(\mathfrak{M}, Sq) : \ & \mathfrak{M} \text{ is a GSeqA with } \kappa(\mathfrak{M}) = \kappa \text{ and } Sq \text{ is a} \\
     & \text{terminating run of } \mathfrak{M} \text{ with input } A \text{ and output } B\}
 \end{align*}
 as defined are absolute for transitive models of $\mathsf{ZFC}$ containing $A, B$ and $\kappa$. 
 
 \begin{rem}\label{rem243}
-For a limit ordinal $\kappa$ and two sets of ordinals $A$ and $B$, that $\mathrm{Runs}_{\kappa}(A, B)$ is a set and not a proper class stems from the fact that by our definition of terminating runs, $Sq$ must be an injection into $S(\mathfrak{M})$ whenever $(\mathfrak{M}, Sq) \in \mathrm{Runs}_{\kappa}(A, B)$. The aforementioned fact also means that all terminating runs of an RSeqA $\mathfrak{M}$ must be of length $< (2^{\kappa(\mathfrak{M})})^+$.
+For a limit ordinal $\kappa$ and two sets of ordinals $A$ and $B$, that $\mathrm{Runs}_{\kappa}(A, B)$ is a set and not a proper class stems from the fact that by our definition of terminating runs, $Sq$ must be an injection into $S(\mathfrak{M})$ whenever $(\mathfrak{M}, Sq) \in \mathrm{Runs}_{\kappa}(A, B)$. The aforementioned fact also means that all terminating runs of a GSeqA $\mathfrak{M}$ must be of length $< (2^{\kappa(\mathfrak{M})})^+$.
 \end{rem}
 
 \section{Computability and Comparisons}
 
-In this section, we derive from our restricted sequential algorithms, various notions of generalised (relative) computability. We then compare these notions with existing ones.
+In this section, we derive from our generalised sequential algorithms, various notions of generalised (relative) computability. We then compare these notions with existing ones.
 
 \subsection{Relative Computability}
 
@@ -7260,7 +7260,7 @@ As prefaced in the previous subsection, we aim to use our definition of terminat
 For any limit ordinal $\kappa$ and any two sets of ordinals $A$ and $B$, $B$ is $\kappa$\emph{-computable from} $A$ --- denoted $B \leq^C_{\kappa} A$ --- iff
 \begin{enumerate}[label=(\alph*)]
     \item $A, B \subset \kappa$, and
-    \item for some RSeqA $\mathfrak{M}$ with $\kappa(\mathfrak{M}) = \kappa$, there is a terminating run of $\mathfrak{M}$ with input $A$ and output $B$. 
+    \item for some GSeqA $\mathfrak{M}$ with $\kappa(\mathfrak{M}) = \kappa$, there is a terminating run of $\mathfrak{M}$ with input $A$ and output $B$. 
 \end{enumerate}
 In this case, $\mathfrak{M}$ \emph{witnesses} $B \leq^C_{\kappa} A$.
 \end{defi}
@@ -7288,7 +7288,7 @@ Let $\kappa$ be a limit ordinal. Suppose $A \leq^C_{\kappa} B$ and $B \leq^C_{\k
 \end{prop}
 
 \begin{proof}
-Let $\mathfrak{M}_1$ witness $B \leq^C_{\kappa} C$ and $\mathfrak{M}_2$ witness $A \leq^C_{\kappa} B$. We shall construct an RSeqA $\mathfrak{M}^*$ with $\kappa(\mathfrak{M}^*) = \kappa$ that essentially simulates $\mathfrak{M}_1$ followed by $\mathfrak{M}_2$, so that $\mathfrak{M}^*$ witnesses $A \leq^C_{\kappa} C$. Set $\sigma(\mathfrak{M}^*)$ to be a disjoint union of $\sigma(\mathfrak{M}_1)$ and $\sigma(\mathfrak{M}_2)$, and 
+Let $\mathfrak{M}_1$ witness $B \leq^C_{\kappa} C$ and $\mathfrak{M}_2$ witness $A \leq^C_{\kappa} B$. We shall construct a GSeqA $\mathfrak{M}^*$ with $\kappa(\mathfrak{M}^*) = \kappa$ that essentially simulates $\mathfrak{M}_1$ followed by $\mathfrak{M}_2$, so that $\mathfrak{M}^*$ witnesses $A \leq^C_{\kappa} C$. Set $\sigma(\mathfrak{M}^*)$ to be a disjoint union of $\sigma(\mathfrak{M}_1)$ and $\sigma(\mathfrak{M}_2)$, and 
 \begin{equation*}
     \phi^d_{\mathfrak{M}^*} := \phi^d_{\mathfrak{M}_1} \wedge \phi^d_{\mathfrak{M}_2} \text{.}
 \end{equation*}
@@ -7298,14 +7298,14 @@ At the beginning, the $\mathfrak{M}^*$ simulates $\mathfrak{M}_1$ in its $\mathf
 Checking that $\mathfrak{M}^*$ fulfils our requirement is straightforward.
 \end{proof}
 
-It makes sense that a machine is more powerful when endowed with more space. This might not quite be the case for RSeqAs, but we can get close to this sort of monotonicity with a mild assumption.
+It makes sense that a machine is more powerful when endowed with more space. This might not quite be the case for GSeqAs, but we can get close to this sort of monotonicity with a mild assumption.
 
 \begin{prop}\label{prop246}
 Suppose $\kappa, \kappa'$ are limit ordinals, $\kappa < \kappa'$, $A \leq^C_{\kappa} B$, and $\kappa$ is definable over the structure $(\kappa'; \in)$. Then $A \leq^C_{\kappa'} B$.
 \end{prop}
 
 \begin{proof}
-Let $\mathfrak{M}$ be an RSeqA witnessing $A \leq^C_{\kappa} B$. Define an RSeqA $\mathfrak{M}'$ with $\kappa(\mathfrak{M}') = \kappa'$ and $\sigma(\mathfrak{M}') = \sigma(\mathfrak{M})$. Since $\kappa$ is definable over $(\kappa'; \in)$, we can relativise both $\phi^d_{\mathfrak{M}}$ and $\phi^{\tau}_{\mathfrak{M}}$ to $\kappa'$ so that if $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ is an $n$-ary function symbol and $\alpha_1, \dots, \alpha_n \in \kappa'$, then 
+Let $\mathfrak{M}$ be a GSeqA witnessing $A \leq^C_{\kappa} B$. Define a GSeqA $\mathfrak{M}'$ with $\kappa(\mathfrak{M}') = \kappa'$ and $\sigma(\mathfrak{M}') = \sigma(\mathfrak{M})$. Since $\kappa$ is definable over $(\kappa'; \in)$, we can relativise both $\phi^d_{\mathfrak{M}}$ and $\phi^{\tau}_{\mathfrak{M}}$ to $\kappa'$ so that if $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ is an $n$-ary function symbol and $\alpha_1, \dots, \alpha_n \in \kappa'$, then 
 \begin{enumerate}[label=(\arabic*)]
     \item the default value of $X(\alpha_1, \dots, \alpha_n)$
     \begin{enumerate}[label=(\alph*)]
@@ -7329,27 +7329,27 @@ Moreover, it can be unsatisfactory to see that
 \begin{equation*}
     \{A \subset \kappa : A \leq^C_{\kappa} B\} \text{ is countable}
 \end{equation*}
-for all limit ordinals $\kappa$ and $B \subset \kappa$. An ideal relative computability relation uniformly definable in $\kappa$ should have its predecessor sets grow along with $\kappa$. Towards such a relation, we shall introduce an augmentation to RSeqAs.
+for all limit ordinals $\kappa$ and $B \subset \kappa$. An ideal relative computability relation uniformly definable in $\kappa$ should have its predecessor sets grow along with $\kappa$. Towards such a relation, we shall introduce an augmentation to GSeqAs.
 
 \begin{defi}\label{def836}
-An \emph{RSeqA with parameters} (henceforth \emph{RSeqAP}) 
+An \emph{GSeqA with parameters} (henceforth \emph{GSeqAP}) 
 \begin{equation*}
     \mathfrak{M} = (\kappa(\mathfrak{M}), \sigma(\mathfrak{M}), \phi^{\tau}_{\mathfrak{M}}, \phi^d_{\mathfrak{M}}, \vartheta_{\mathfrak{M}})
 \end{equation*} 
-is defined like an RSeqA, except constants in $\sigma(\mathfrak{M})$ are allowed to evaluate to $(\{\alpha\}, 1)$ under $\vartheta_{\mathfrak{M}}$ for any $\alpha \in \kappa(\mathfrak{M})$. In this case, we call $\alpha$ a \emph{parameter} of $\mathfrak{M}$.
+is defined like a GSeqA, except constants in $\sigma(\mathfrak{M})$ are allowed to evaluate to $(\{\alpha\}, 1)$ under $\vartheta_{\mathfrak{M}}$ for any $\alpha \in \kappa(\mathfrak{M})$. In this case, we call $\alpha$ a \emph{parameter} of $\mathfrak{M}$.
 \end{defi}
 
 \begin{rem}\label{rem248}
-Fix any limit ordinal $\kappa$. There are $|\kappa|$ many RSeqAPs $\mathfrak{M}$ satisfying $\kappa(\mathfrak{M}) = \kappa$. Also, this set of RSeqAP specifications is absolute for transitive models of $\mathsf{ZFC}$ containing $\kappa$ (cf. Remark \ref{rem225}).
+Fix any limit ordinal $\kappa$. There are $|\kappa|$ many GSeqAPs $\mathfrak{M}$ satisfying $\kappa(\mathfrak{M}) = \kappa$. Also, this set of GSeqAP specifications is absolute for transitive models of $\mathsf{ZFC}$ containing $\kappa$ (cf. Remark \ref{rem225}).
 \end{rem}
 
-The definitions and properties so far associated with RSeqAs adapt perfectly to RSeqAPs. We will use the adapted definitions in the context of RSeqAPs without further clarifications.
+The definitions and properties so far associated with GSeqAs adapt perfectly to GSeqAPs. We will use the adapted definitions in the context of GSeqAPs without further clarifications.
 
 \begin{defi}\label{def38}
 For any limit ordinal $\kappa$ and any two sets of ordinals $A$ and $B$, $B$ is $\kappa$\emph{-computable with parameters from} $A$ --- denoted $B \leq^P_{\kappa} A$ --- iff 
 \begin{enumerate}[label=(\alph*)]
     \item $A, B \subset \kappa$, and
-    \item for some RSeqAP $\mathfrak{M}$ with $\kappa(\mathfrak{M}) = \kappa$, there is a terminating run of $\mathfrak{M}$ with input $A$ and output $B$. 
+    \item for some GSeqAP $\mathfrak{M}$ with $\kappa(\mathfrak{M}) = \kappa$, there is a terminating run of $\mathfrak{M}$ with input $A$ and output $B$. 
 \end{enumerate}
 In this case, $\mathfrak{M}$ \emph{witnesses} $B \leq^P_{\kappa} A$.
 \end{defi}
@@ -7368,17 +7368,17 @@ Let $A$ be a set of ordinals.
 
 Let $\kappa$ be a limit ordinal and $A, B$ be two sets of ordinals. Like $\mathrm{SRuns}_{\kappa}(A, B)$ and $\mathrm{Runs}_{\kappa}(A, B)$, the sets
 \begin{align*}
-    \mathrm{SRunsP}_{\kappa}(A, B) := \{(\mathfrak{M}, Sq) : \ & \mathfrak{M} \text{ is an RSeqAP with } \kappa(\mathfrak{M}) = \kappa \text{ and } Sq \text{ is a short} \\
+    \mathrm{SRunsP}_{\kappa}(A, B) := \{(\mathfrak{M}, Sq) : \ & \mathfrak{M} \text{ is a GSeqAP with } \kappa(\mathfrak{M}) = \kappa \text{ and } Sq \text{ is a short} \\
     & \text{terminating run of } \mathfrak{M} \text{ with input } A \text{ and output } B\}
 \end{align*}
 and
 \begin{align*}
-    \mathrm{RunsP}_{\kappa}(A, B) := \{(\mathfrak{M}, Sq) : \ & \mathfrak{M} \text{ is an RSeqAP with } \kappa(\mathfrak{M}) = \kappa \text{ and } Sq \text{ is a} \\
+    \mathrm{RunsP}_{\kappa}(A, B) := \{(\mathfrak{M}, Sq) : \ & \mathfrak{M} \text{ is a GSeqAP with } \kappa(\mathfrak{M}) = \kappa \text{ and } Sq \text{ is a} \\
     & \text{terminating run of } \mathfrak{M} \text{ with input } A \text{ and output } B\}
 \end{align*}
 have absolute definitions for transitive models of $\mathsf{ZFC}$ containing $A, B$ and $\kappa$. 
 
-Adapting Proposition \ref{prop226} to RSeqAPs, in conjunction with Remark \ref{rem248}, the absoluteness of $\kappa^{< \omega}$, and the absoluteness of the definition of the $\mathrm{RunsP}_{\kappa}(A, B)$s, gives us that $\leq^P_{\kappa}$ is absolute for transitive models of $\mathsf{ZFC}$ containing $\kappa$. As a result, like $\leq^C$, $\leq^P$ is absolute for transitive models of $\mathsf{ZFC}$ with the same ordinals. 
+Adapting Proposition \ref{prop226} to GSeqAPs, in conjunction with Remark \ref{rem248}, the absoluteness of $\kappa^{< \omega}$, and the absoluteness of the definition of the $\mathrm{RunsP}_{\kappa}(A, B)$s, gives us that $\leq^P_{\kappa}$ is absolute for transitive models of $\mathsf{ZFC}$ containing $\kappa$. As a result, like $\leq^C$, $\leq^P$ is absolute for transitive models of $\mathsf{ZFC}$ with the same ordinals. 
 
 By Remark \ref{rem248}, the predecessor sets
 \begin{equation*}
@@ -7419,12 +7419,12 @@ The next proposition is immediate from Propositions \ref{prop251} and \ref{prop2
 Suppose $A \leq^P B$ and $B \leq^P C$. Then $A \leq^P C$.
 \end{prop} 
 
-Proposition \ref{prop252}, the transitivity of $\leq^P$, and the nice relationship between limit ordinals $\kappa$ and the sizes of $\leq^P_{\kappa}$ predecessor sets, all point to $\leq^P$, $\leq^P_{\kappa}$ being the superior and more valid notion of relative computability. In fact, they also point to an RSeqAP being a better model of generalised algorithm than an RSeqA. For this reason, the rest of this subsection will focus on $\leq^P$, $\leq^P_{\kappa}$ and RSeqAPs.
+Proposition \ref{prop252}, the transitivity of $\leq^P$, and the nice relationship between limit ordinals $\kappa$ and the sizes of $\leq^P_{\kappa}$ predecessor sets, all point to $\leq^P$, $\leq^P_{\kappa}$ being the superior and more valid notion of relative computability. In fact, they also point to a GSeqAP being a better model of generalised algorithm than a GSeqA. For this reason, the rest of this subsection will focus on $\leq^P$, $\leq^P_{\kappa}$ and GSeqAPs.
 
-We are now able to solidify our case for using point-wise limit inferiors, whenever they exist, to compute limit states of terminating runs which are not short. Let us first generalise the concepts of ordinal limits preservation and simple limit states (Definitions \ref{def234c} and \ref{def234}) to RSeqAPs and sequences of arbitrary lengths.
+We are now able to solidify our case for using point-wise limit inferiors, whenever they exist, to compute limit states of terminating runs which are not short. Let us first generalise the concepts of ordinal limits preservation and simple limit states (Definitions \ref{def234c} and \ref{def234}) to GSeqAPs and sequences of arbitrary lengths.
 
 \begin{defi}\label{257c}
-Let $\mathfrak{M}$ be an RSeqAP. Given $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ an $n$-ary function symbol and $\phi$ a \emph{simple limit formula for} $(\ulcorner X \urcorner, \mathfrak{M})$, we say $\phi$ \emph{preserves ordinal limits} iff interpreting $\ulcorner \in \urcorner$ as $\in$ and $\ulcorner R^{\ulcorner X \urcorner} \urcorner$ as $R_{Sq}^{\ulcorner X \urcorner}$, 
+Let $\mathfrak{M}$ be a GSeqAP. Given $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ an $n$-ary function symbol and $\phi$ a \emph{simple limit formula for} $(\ulcorner X \urcorner, \mathfrak{M})$, we say $\phi$ \emph{preserves ordinal limits} iff interpreting $\ulcorner \in \urcorner$ as $\in$ and $\ulcorner R^{\ulcorner X \urcorner} \urcorner$ as $R_{Sq}^{\ulcorner X \urcorner}$, 
 \begin{equation*}
     (\lambda; \in, R_{Sq}^{\ulcorner X \urcorner}) \models \phi[x_1 \mapsto \alpha_1, \dots, x_{n+1} \mapsto \alpha_{n+1}]
 \end{equation*}
@@ -7439,7 +7439,7 @@ and all $(\alpha_1, \dots, \alpha_{n+1}) \in \kappa(\mathfrak{M})^{n+1}$ such th
 \end{defi}
 
 \begin{defi}\label{def256}
-Let $\mathfrak{M}$ be an RSeqAP and $Sq$ be a function from a limit ordinal into $S(\mathfrak{M})$. A state $s \in S(\mathfrak{M})$ is a \emph{simple limit of} $Sq$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$ such that, interpreting $\ulcorner \in \urcorner$ as $\in$ and $\ulcorner R^{\ulcorner X \urcorner} \urcorner$ as $R_{Sq}^{\ulcorner X \urcorner}$, 
+Let $\mathfrak{M}$ be a GSeqAP and $Sq$ be a function from a limit ordinal into $S(\mathfrak{M})$. A state $s \in S(\mathfrak{M})$ is a \emph{simple limit of} $Sq$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$ such that, interpreting $\ulcorner \in \urcorner$ as $\in$ and $\ulcorner R^{\ulcorner X \urcorner} \urcorner$ as $R_{Sq}^{\ulcorner X \urcorner}$, 
 \begin{equation*}
     \ulcorner X \urcorner^s (\alpha_1, \dots, \alpha_n) = \alpha_{n+1} \iff (\lambda; \in, R_{Sq}^{\ulcorner X \urcorner}) \models \phi[x_1 \mapsto \alpha_1, \dots, x_{n+1} \mapsto \alpha_{n+1}]
 \end{equation*}
@@ -7449,7 +7449,7 @@ whenever $\lambda$ is a limit ordinal $\geq max\{\kappa(\mathfrak{M}), dom(Sq)\}
 Similarly, we can generalise Definitions \ref{def237} and \ref{def238}.
 
 \begin{defi}\label{def257p}
-Let $\mathfrak{M}$ be an RSeqAP. Then $\mathfrak{M}$ is \emph{strongly closed under} a set $Y$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$, such that 
+Let $\mathfrak{M}$ be a GSeqAP. Then $\mathfrak{M}$ is \emph{strongly closed under} a set $Y$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$, such that 
 \begin{equation*}
     Y = \{\phi_{lim}^{\ulcorner X \urcorner} : \ulcorner X \urcorner \in \sigma(\mathfrak{M})\}
 \end{equation*}
@@ -7457,7 +7457,7 @@ and whenever $Sq$ is a function from some limit ordinal into $S(\mathfrak{M})$, 
 \end{defi}
 
 \begin{defi}\label{def258}
-Let $\mathfrak{M}$ be an RSeqAP. Then $\mathfrak{M}$ is \emph{practically closed under} a set $Y$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$, such that 
+Let $\mathfrak{M}$ be a GSeqAP. Then $\mathfrak{M}$ is \emph{practically closed under} a set $Y$ iff for each $n$-ary function symbol $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ there is a simple limit formula $\phi_{lim}^{\ulcorner X \urcorner}$ for $(\ulcorner X \urcorner, \mathfrak{M})$, such that 
 \begin{equation*}
     Y = \{\phi_{lim}^{\ulcorner X \urcorner} : \ulcorner X \urcorner \in \sigma(\mathfrak{M})\}
 \end{equation*}
@@ -7471,25 +7471,25 @@ there is $s \in S(\mathfrak{M})$ witnessed by $Y$ to be a simple limit of $Sq$.
 \end{defi}
 
 Note that Definitions \ref{def257p} and \ref{def258} are almost word-for-word the same as Definitions \ref{def237} and \ref{def238}. This only changes made are \begin{itemize}
-    \item substituting ``RSeqAP'' for ``RSeqA'' and 
+    \item substituting ``GSeqAP'' for ``GSeqA'' and 
     \item removing the requirement for $\delta$ to be $< \kappa(\mathfrak{M})$.
 \end{itemize} 
 
 \begin{prop}\label{prop261c}
-Proposition \ref{prop233} holds with ``RSeqAP'' substituted for ``RSeqA'' and the requirement for $\delta$ to be $< \kappa(\mathfrak{M})$ removed.
+Proposition \ref{prop233} holds with ``GSeqAP'' substituted for ``GSeqA'' and the requirement for $\delta$ to be $< \kappa(\mathfrak{M})$ removed.
 \end{prop}
 
 \begin{proof}
-Any formula that works for all RSeqAs $\mathfrak{M}$ with $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ in the context of proving Proposition \ref{prop233} (such a formula exists by the last sentence of the proof of Proposition \ref{prop233}) also works here.
+Any formula that works for all GSeqAs $\mathfrak{M}$ with $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ in the context of proving Proposition \ref{prop233} (such a formula exists by the last sentence of the proof of Proposition \ref{prop233}) also works here.
 \end{proof}
 
 \begin{prop}\label{prop261}
-Suppose $\mathfrak{M}$ is an RSeqAP practically closed under $Y$. Then for some signature $\sigma'$, as long as $\mathfrak{M}'$ is an RSeqAP satisfying
+Suppose $\mathfrak{M}$ is a GSeqAP practically closed under $Y$. Then for some signature $\sigma'$, as long as $\mathfrak{M}'$ is a GSeqAP satisfying
 \begin{itemize}
     \item $\sigma(\mathfrak{M}') = \sigma'$ and
     \item $\kappa(\mathfrak{M}') = \kappa(\mathfrak{M})$,
 \end{itemize}
-and $Z$ is a set of simple limit formulas preserving ordinal limits with $\mathfrak{M}'$ strongly closed under $Z$, there is an RSeqAP $\mathfrak{M}^*$ such that
+and $Z$ is a set of simple limit formulas preserving ordinal limits with $\mathfrak{M}'$ strongly closed under $Z$, there is a GSeqAP $\mathfrak{M}^*$ such that
 \begin{enumerate}[label=(\alph*)]
     \item $\sigma(\mathfrak{M}^*) = \sigma'$,
     \item $\kappa(\mathfrak{M}^*) = (2^{\kappa(\mathfrak{M})})^+$, and
@@ -7500,7 +7500,7 @@ and $Z$ is a set of simple limit formulas preserving ordinal limits with $\mathf
 \begin{proof}
 Let us try to follow the proof of Proposition \ref{prop239} with $\mathfrak{M}^{\dagger} := \mathcal{G}(\mathfrak{M}, (2^{\kappa(\mathfrak{M})})^+)$ specified in place of the arbitrary ``$\mathfrak{M}$'' given by said proposition. Note that 
 \begin{itemize}
-    \item Remark \ref{rem243} remains true with ``$\mathrm{RunsP}_{\kappa}(A, B)$'' substituted for ``$\mathrm{Runs}_{\kappa}(A, B)$'' and ``RSeqAP'' substituted for ``RSeqA'', and 
+    \item Remark \ref{rem243} remains true with ``$\mathrm{RunsP}_{\kappa}(A, B)$'' substituted for ``$\mathrm{Runs}_{\kappa}(A, B)$'' and ``GSeqAP'' substituted for ``GSeqA'', and 
     \item \ref{2613} holds with $\mathfrak{M}^{\dagger}$ in place of $\mathfrak{M}^*$.
 \end{itemize}
 Also observe that by having $\mathfrak{M}^{\dagger}$ as our starting point and choosing $\sigma'$ to be $\sigma(\mathfrak{M}^{\dagger})$, the argument from the second paragraph onwards in the proof of Proposition \ref{prop239} applies here if we just assume the hypotheses for $\mathfrak{M}'$ and $Z$ to be as stated in this proposition. 
@@ -7524,9 +7524,9 @@ If classical recursion or computability theory is about the study of subsets of 
 
 Emerging later into the scene is the theory of ordinal computability, started by Koepke in \cite{koepke1}. A comparison with $\alpha$-recursion theory is given in \cite{koepke2}. We will drawn on parts of this comparative study to give an equivalent definition of $\leq^P$.
 
-Before that, we need a brief introduction to select set-theoretic concepts, for set theory is unavoidable in the study of sets beyond $\omega$.
-
 \subsection{Associations with Constructibility}
+
+Let us begin this subsection with a recapitulation of selected set-theoretic concepts.
 
 \begin{defi}
 We use $L[A]$ to denote the \emph{constructible universe relative to a set} $A$, and $L$ to denote $L[\emptyset]$. For each ordinal $\alpha$, let $L_{\alpha}[A]$ respectively denote the $\alpha$-th level $L[A]$, so $L_{\alpha}[\emptyset]$ is just $L_{\alpha}$. The reader may refer to Chapter 13 of \cite{jech} for more details.
@@ -7559,7 +7559,7 @@ An admissible ordinal has reasonably strong closure properties. For example, it 
 We require the concept of $\kappa$-computability with short runs for an upcoming lemma.
 
 \begin{defi}\label{def269p}
-Let $\kappa$ be a limit ordinal. We say $B$ is $\kappa$\emph{-computable with parameters from} $A$ \emph{with short runs}, or $B \leq^{P, s}_{\kappa} A$, if there is an RSeqAP $\mathfrak{M}$ witnessing $B \leq^P_{\kappa} A$ and a short terminating run of $\mathfrak{M}$ with input $A$ and output $B$. Here, $\mathfrak{M}$ is said to witness $B \leq^{P, s}_{\kappa} A$.
+Let $\kappa$ be a limit ordinal. We say $B$ is $\kappa$\emph{-computable with parameters from} $A$ \emph{with short runs}, or $B \leq^{P, s}_{\kappa} A$, if there is a GSeqAP $\mathfrak{M}$ witnessing $B \leq^P_{\kappa} A$ and a short terminating run of $\mathfrak{M}$ with input $A$ and output $B$. Here, $\mathfrak{M}$ is said to witness $B \leq^{P, s}_{\kappa} A$.
 \end{defi}
 
 Unsurprisingly, we have $\leq^{P, s}_{\kappa}$-analogues of Propositions \ref{prop251} and \ref{prop252}.
@@ -7607,11 +7607,11 @@ Again, the ``if`` portion is obvious, so assume $B \leq^P A$. By Proposition \re
 For a limit ordinal $\alpha$, an $\alpha$-machine according to Koepke (see \cite{koepke2}) is essentially a Turing machine with tape length $\alpha$, oracle length up to $\alpha$, and finitely many fixed ordinal parameters $< \alpha$. We can think of an input to an $\alpha$-machine as a code $\langle X, O \rangle$ of a pair of sets, where $X$ represents the non-oracle component of the input and $O$ represents the oracle. At limit steps the limit inferiors of previous head and state positions, along with the previous contents of each cell, are taken. The machine \emph{halts} iff it terminates in $< \alpha$ many steps.
 
 \begin{prop}\label{prop270}
-Let $\alpha$ be a limit ordinal. An $\alpha$-machine $M$ can be simulated by an RSeqAP $\mathfrak{M}$ in the sense that for any $A, B \subset \alpha$, $M$ halts on input $A$ with output $B$ iff $\mathfrak{M}$ has a short terminating run with input $A$ and output $B$.
+Let $\alpha$ be a limit ordinal. An $\alpha$-machine $M$ can be simulated by a GSeqAP $\mathfrak{M}$ in the sense that for any $A, B \subset \alpha$, $M$ halts on input $A$ with output $B$ iff $\mathfrak{M}$ has a short terminating run with input $A$ and output $B$.
 \end{prop}
 
 \begin{proof}
-It is not difficult to check that modifying Example \ref{ex228} by substituting $\alpha$ for $\omega$, and adding oracle reads based on how the oracle is coded into the input (through e.g. adding a third tape), works out just fine. The finitely many ordinal parameters of an $\alpha$-machine can be ported wholesale to an RSeqAP as the latter's ordinal parameters; the way an RSeqAP determines the limit states of a computation also perfectly mimicks how limit configurations of an $\alpha$-machine are defined. Moreover, an $\alpha$-machine halting on input $A$ with output $B$ is equivalent to the RSeqAP simulating it having a short terminating run with input $A$ and output $B$.
+It is not difficult to check that modifying Example \ref{ex228} by substituting $\alpha$ for $\omega$, and adding oracle reads based on how the oracle is coded into the input (through e.g. adding a third tape), works out just fine. The finitely many ordinal parameters of an $\alpha$-machine can be ported wholesale to a GSeqAP as the latter's ordinal parameters; the way a GSeqAP determines the limit states of a computation also perfectly mimicks how limit configurations of an $\alpha$-machine are defined. Moreover, an $\alpha$-machine halting on input $A$ with output $B$ is equivalent to the GSeqAP simulating it having a short terminating run with input $A$ and output $B$.
 \end{proof}
 
 \begin{defi}[Koepke, \cite{koepke2}]
@@ -7642,11 +7642,11 @@ Let $B \leq^{P, s}_{\kappa} A$ for some regular ordinal $\kappa$. Then $B \in \m
 \end{lem}
 
 \begin{proof}
-Let $\mathfrak{M}$ be an RSeqAP with parameter set $K$ witnessing $B \leq^{P, s}_{\kappa} A$, and $Sq$ be a short terminating run of $\mathfrak{M}$ with input $A$ and output $B$. Suppose we want to find out whether some $\beta < \kappa$ is a member of $B$. To do so, we draw up a dependency tree of terms of which interpretations among members of $ran(Sq)$ are needed to decide if $\beta \in B$. This tree is finitely branching by the bounded exploration postulate, and it has number of levels no more than $dom(Sq)$. By the regularity of $\kappa$, it has size $< \kappa$. 
+Let $\mathfrak{M}$ be a GSeqAP with parameter set $K$ witnessing $B \leq^{P, s}_{\kappa} A$, and $Sq$ be a short terminating run of $\mathfrak{M}$ with input $A$ and output $B$. Suppose we want to find out whether some $\beta < \kappa$ is a member of $B$. To do so, we draw up a dependency tree of terms of which interpretations among members of $ran(Sq)$ are needed to decide if $\beta \in B$. This tree is finitely branching by the bounded exploration postulate, and it has number of levels no more than $dom(Sq)$. By the regularity of $\kappa$, it has size $< \kappa$. 
 
 Now, the statement $x \in B$ is semantically equivalent over $V$ to a $\Sigma_1$ formula with free variable $x$ and parameters among $K \cup \{dom(Sq)\}$ saying that such a (unique) tree of terms and interpretations exist. The construction of said tree, due to its simplicity, can be carried out correctly in $L[A]$ through transfinite recursion. Moreover, $L[A]$ recognises the tree has size $< \kappa$, so indeed $B \in \mathbf{\Sigma_1}(L_{\kappa}[A])$.
 
-We can define an RSeqAP $\mathfrak{M}'$ that copies what $\mathfrak{M}$ does on each input until $\mathfrak{M}$ terminates, and flips every bit of the output tape thereafter. Now $\mathfrak{M}'$ witnesses $\kappa \setminus B \leq^{P, s}_{\kappa} A$, so by the argument in the preceding paragraph we have $\kappa \setminus B \in \mathbf{\Sigma_1}(L_{\kappa}[A])$.
+We can define a GSeqAP $\mathfrak{M}'$ that copies what $\mathfrak{M}$ does on each input until $\mathfrak{M}$ terminates, and flips every bit of the output tape thereafter. Now $\mathfrak{M}'$ witnesses $\kappa \setminus B \leq^{P, s}_{\kappa} A$, so by the argument in the preceding paragraph we have $\kappa \setminus B \in \mathbf{\Sigma_1}(L_{\kappa}[A])$.
 \end{proof}
 
 \begin{defi}[Koepke, \cite{koepke2}]
@@ -7666,7 +7666,7 @@ Let $B \in \mathbf{\Sigma_1}(L_{\kappa}[A])$ for some admissible ordinal $\kappa
 \end{lem}
 
 \begin{proof}
-By Fact \ref{fact272}, $B$ is $\kappa$-computably enumerable in $A$, as witnessed by some $\kappa$-machine $M$. Let $\mathfrak{M}$ be an RSeqAP simulating $M$ as per Proposition \ref{prop270}. We define an RSeqAP $\mathfrak{M}'$ that, when given input $A$, dovetails and runs $M$ through $\mathfrak{M}$ on each input in
+By Fact \ref{fact272}, $B$ is $\kappa$-computably enumerable in $A$, as witnessed by some $\kappa$-machine $M$. Let $\mathfrak{M}$ be a GSeqAP simulating $M$ as per Proposition \ref{prop270}. We define a GSeqAP $\mathfrak{M}'$ that, when given input $A$, dovetails and runs $M$ through $\mathfrak{M}$ on each input in
 \begin{equation*}
     \{\langle \{\beta\}, A \rangle : \beta < \kappa\}
 \end{equation*}
@@ -7694,7 +7694,7 @@ Every terminating run of $\mathfrak{M}'$ is of length $\kappa + 2$, and if its i
 In particular, there is a terminating run of $\mathfrak{M}'$ with input $A$ and output $B$, whence $B \leq^P A$.
 \end{proof}
 
-Lemmas \ref{lem269} and \ref{lem273} reflect the difference in computability between considering all terminating runs of RSeqAPs and considering only short terminating runs, for regular ordinal tape lengths. In tandem, the lemmas also give us a nice characterisation of the reducibility relation $\leq^P$.
+Lemmas \ref{lem269} and \ref{lem273} reflect the difference in computability between considering all terminating runs of GSeqAPs and considering only short terminating runs, for regular ordinal tape lengths. In tandem, the lemmas also give us a nice characterisation of the reducibility relation $\leq^P$.
 
 \begin{thm}\label{thm275}
 Let $A$ and $B$ be two sets of ordinals. Then $B \leq^P A$ iff $B \in L[A]$.
@@ -7750,12 +7750,12 @@ Philosophically, this seems to indicate that the amount of computing power a set
 --- we can still achieve the same reach. Indeed, the fact that the relative computability relations arising from
 \begin{enumerate}[label=(GCT\arabic*), leftmargin=50pt]
     \item a ``low-level'' machine model of generalised computation such as ordinal Turing machines, 
-    \item a ``high-level'' notion of abstract algorithms such as RSeqAPs, and
+    \item a ``high-level'' notion of abstract algorithms such as GSeqAPs, and
     \item an algebraic model of set generation such as relativised constructibility
 \end{enumerate}
 happen to coincide, is suggestive of a plausible generalised-computability counterpart to the Church-Turing thesis.
 
-Just as practical implementations of finitary SeqAs do not aim to model algorithmic intuition beyond the limits of Church-Turing thesis, RSeqAPs should not allow for algorithms that are non-constructible. We can view RSeqAPs as a paradigm for easy high-level descriptions of algorithms on arbitrary sets, one that gives the user enough structure to organise their ideas, and serves as guardrails to rule out clearly non-algorithmic descriptions.
+Just as practical implementations of finitary SeqAs do not aim to model algorithmic intuition beyond the limits of Church-Turing thesis, GSeqAPs should not allow for algorithms that are non-constructible. We can view GSeqAPs as a paradigm for easy high-level descriptions of algorithms on arbitrary sets, one that gives the user enough structure to organise their ideas, and serves as guardrails to rule out clearly non-algorithmic descriptions.
 
 It is consistent that $(\mathcal{D}_P, \leq_{\mathcal{D}_P})$ is highly non-trivial; in fact, this level of non-triviality is implied by suitable large cardinals.
 
