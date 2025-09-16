@@ -884,6 +884,42 @@
       \field{pages}{867\bibrangedash 884}
       \range{pages}{18}
     \endentry
+    \entry{dershowitz}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4a9d063f235c75642f8349db9004d368}{%
+           family={Dershowitz},
+           familyi={D\bibinitperiod},
+           given={Nachum},
+           giveni={N\bibinitperiod}}}%
+        {{hash=d36b6995ab536537094bfe3e5596722b}{%
+           family={Gurevich},
+           familyi={G\bibinitperiod},
+           given={Yuri},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{1075417fb407d724cd8fa107d6334447}
+      \strng{fullhash}{1075417fb407d724cd8fa107d6334447}
+      \strng{fullhashraw}{1075417fb407d724cd8fa107d6334447}
+      \strng{bibnamehash}{1075417fb407d724cd8fa107d6334447}
+      \strng{authorbibnamehash}{1075417fb407d724cd8fa107d6334447}
+      \strng{authornamehash}{1075417fb407d724cd8fa107d6334447}
+      \strng{authorfullhash}{1075417fb407d724cd8fa107d6334447}
+      \strng{authorfullhashraw}{1075417fb407d724cd8fa107d6334447}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bulletin of symbolic logic}
+      \field{number}{3}
+      \field{title}{A natural axiomatization of computability and proof of Church's Thesis}
+      \field{volume}{14}
+      \field{year}{2008}
+      \field{pages}{299\bibrangedash 350}
+      \range{pages}{52}
+    \endentry
     \entry{doebler}{article}{}{}
       \name{author}{2}{}{%
         {{hash=496bf5d78535ad3ff84fa6e108686058}{%
