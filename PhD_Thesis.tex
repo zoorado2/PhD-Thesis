@@ -6388,13 +6388,21 @@ Briefly, a \emph{sequential algorithm} --- henceforth \textit{SeqA}, to distingu
 \begin{enumerate}[label=(A\arabic*)]
     \item\label{a1} every $s \in S(\mathfrak{M})$ is a first-order structure with the same finite signature, $\sigma(\mathfrak{M})$,
     \item\label{a2} $I(\mathfrak{M}) \subset S(\mathfrak{M})$,
-    \item\label{a3'} for all $s \in S(\mathfrak{M})$, $\tau_{\mathfrak{M}}(s)$ has the same base set as $s$
-    \item\label{a3} for all $s \in S(\mathfrak{M})$, $\tau_{\mathfrak{M}}(s)$ differs from $s$ on no more than the interpretation of terms in $G$, and
-    \item\label{a4} for all $s, s' \in S(\mathfrak{M})$, letting $G^s$ denote the function $\dot{x} \mapsto \dot{x}^s$ with domain $G$,
-    \begin{itemize}
-        \item $ran(G^{\tau_{\mathfrak{M}}(s)}) \subset ran(G^s)$, and
-        \item if $G^s = G^{s'}$, then $G^{\tau_{\mathfrak{M}}(s)} = G^{\tau_{\mathfrak{M}}(s')}$.
-    \end{itemize}
+    \item\label{a3'} for all $s \in S(\mathfrak{M})$, $\tau_{\mathfrak{M}}(s)$ has the same base set $b_{\mathfrak{M}}(s)$ as $s$
+    \item\label{a3} for all $s \in S(\mathfrak{M})$, $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$, $n < \omega$ and $\Vec{a} \in b_{\mathfrak{M}}(s)^n$, if $n$ is the arity of $\ulcorner X \urcorner$, then
+    \begin{equation*}
+        \ulcorner X \urcorner^s(\Vec{a}) \neq \ulcorner X \urcorner^{\tau_{\mathfrak{M}}(s)}(\Vec{a}) \implies \Vec{a}^\frown(\ulcorner X \urcorner^{\tau_{\mathfrak{M}}(s)}(\Vec{a})) \in ran(G^s)^{n+1}
+    \end{equation*}
+    whenever $\ulcorner X \urcorner$ is a function or constant symbol and
+    \begin{equation*}
+        \neg (\ulcorner X \urcorner^s(\Vec{a}) \iff \ulcorner X \urcorner^{\tau_{\mathfrak{M}}(s)}(\Vec{a})) \implies \Vec{a} \in ran(G^s)^n
+    \end{equation*}
+    whenever $\ulcorner X \urcorner$ is a relation symbol, and
+    \item\label{a4} for all $s, s' \in S(\mathfrak{M})$, $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ and $n < \omega$, if $n$ is the arity of $\ulcorner X \urcorner$ and $G^s = G^{s'}$, then whenever $\Vec{a} \in ran(G^s)^n$,
+    \begin{align*}
+        \ulcorner X \urcorner^{s} \text{ agrees with } \ulcorner X \urcorner^{\tau_{\mathfrak{M}}(s)} \text{ at } \Vec{a} \iff \ & \ulcorner X \urcorner^{s'} \text{ agrees with } \ulcorner X \urcorner^{\tau_{\mathfrak{M}}(s')} \text{ at } \Vec{a} \text{, and} \\
+        \ulcorner X \urcorner^{s} \text{ disagrees with } \ulcorner X \urcorner^{\tau_{\mathfrak{M}}(s)} \text{ at } \Vec{a} \implies \ & \ulcorner X \urcorner^{\tau_{\mathfrak{M}}(s)} \text{ agrees with } \ulcorner X \urcorner^{\tau_{\mathfrak{M}}(s')} \text{ at } \Vec{a} \text{.}
+    \end{align*}
 \end{enumerate}
 A (finite) terminating run of $\mathfrak{M}$ is a sequence of states $(s_i : i \leq n < \omega)$ for which
 \begin{enumerate}[label=(B\arabic*)]
