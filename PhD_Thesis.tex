@@ -6336,7 +6336,7 @@ Certain models of computation (perhaps with simple modifications) naturally indu
 
 It can be argued that a robust model of generalised computation should induce a (binary) relative computability relation on arbitrary sets, and that the relative computability relation thus induced should satisfy the following three desiderata.
 \begin{enumerate}[leftmargin=40pt, label=(D\arabic*)]
-    \item\label{d1} \textit{Universality}: the relation should be defined on all sets of ordinals.
+    \item\label{d1} \textit{Universality}: the relation should be reflexive on all sets of ordinals.
     \item\label{d2} \textit{Transitivity}: the relation should be transitive.
     \item\label{d3} \textit{Coherence}: if the relative computability of two sets is witnessed under reasonable computational constraints, then the same should be witnessed after lifting these constraints.
 \end{enumerate}
@@ -6389,7 +6389,7 @@ In this section, we progressively modify the definition of a sequential algorith
 
 \subsection{Formal Sequential Algorithms}\label{ss210}
 
-Gurevich introduced the \textit{ASM thesis} in \cite{gurevich} as a justification of correctness for his definition of (a most general conceptualisation of) a sequential algorithm. He followed it up with a number of collaborations and papers (e.g. \cite{gurevichblass}) on various other classes of algorithms. If we follow the convention of using ``algorithm'' and ``computer program'' interchangeably, then sequential algorithms are natural candidates for capturing a general notion of computability. However, it seems that Gurevich himself had not intended for sequential algorithms to capture computation on an infinitary scale. We shall start this section with a brief examination on how ill-equipped his definition is at dealing with generalised computation. 
+Gurevich introduced the \textit{ASM thesis} in \cite{gurevich} as a justification of correctness for his definition of (a most general conceptualisation of) a sequential algorithm. He followed it up with a number of collaborations and papers (e.g. \cite{gurevichblass}) on various other classes of algorithms. If we follow the convention of using ``algorithm'' and ``computer program'' interchangeably, then sequential algorithms are natural candidates for capturing a general notion of computability. However, it seems that Gurevich himself did not intend for sequential algorithms to capture computation on an infinitary scale. We shall start this section with a brief examination on how his definition might be ill-equipped at dealing with generalised computation. 
 
 Briefly, a \emph{sequential algorithm} --- henceforth \textit{SeqA}, to distinguish the formal concept from the colloquial --- $\mathfrak{M}$ comprises a class of states $S(\mathfrak{M})$, a class of initial states $I(\mathfrak{M})$, a class transition function $\tau_{\mathfrak{M}} : S(\mathfrak{M}) \longrightarrow S(\mathfrak{M})$, and a finite set $G$ of ground terms over $\sigma(\mathfrak{M})$ such that
 \begin{enumerate}[label=(A\arabic*)]
@@ -6453,10 +6453,10 @@ From now on, and until further notice, let us relax the definition of SeqAs such
 
 \subsection{Modifying the Satisfaction Relation}
 
-An obvious cause of the triviality identified in Example \ref{ex21}, is the lack of restriction on the transition function $\tau_{\mathfrak{M}}$ of a SeqA $\mathfrak{M}$. Ideally, $\tau_{\mathfrak{M}}(s)$ should be describable is a way which only depends locally on itself and $s$. One formalisation of a ``describable local property'' applicable to first-order structures is the notion of a \emph{first-order property}. A first-order formula $\phi$ over the signature of a structure $\mathfrak{A}$ is a first-order property of $\mathfrak{A}$ iff $\mathfrak{A} \models \phi$, where $\models$ is Tarski's satisfaction relation. However, in our use case, the formula $\phi$ might need to refer to two different structures, so some slight modifications to the satisfaction relation are in order.
+An obvious cause of the triviality identified in Example \ref{ex21}, is the lack of restriction on the transition function $\tau_{\mathfrak{M}}$ of a SeqA $\mathfrak{M}$. Ideally, $\tau_{\mathfrak{M}}(s)$ should be describable is a way which only depends locally on itself and $s$. One formalisation of a ``describable local property'' applicable to first-order structures is the notion of a \emph{first-order property}. A first-order formula $\phi$ over the signature of a structure $\mathfrak{A}$ is a first-order property of $\mathfrak{A}$ iff $\mathfrak{A} \models \phi$, where $\models$ is Tarski's satisfaction relation. To describe a transition function, we want to isolate a first-order property of the next state that depends solely on the current state. However, because a candidate property should refer to two different structures (the current and next states), some slight modifications to the satisfaction relation are in order.
 
 \begin{defi}
-Given an signature $\sigma$, define $2 \cdot \sigma$ to be the disjoint union of $\sigma$ and itself. In other words, for each symbol $\ulcorner X \urcorner \in \sigma$ and each $i < 2$, we choose a fresh symbol $\ulcorner X_{i} \urcorner$ and cast it to be of the same type and arity as $\ulcorner X \urcorner$. We then set
+Given a signature $\sigma$, define $2 \cdot \sigma$ to be the disjoint union of $\sigma$ and itself. In other words, for each symbol $\ulcorner X \urcorner \in \sigma$ and each $i < 2$, we choose a fresh symbol $\ulcorner X_{i} \urcorner$ and cast it to be of the same type and arity as $\ulcorner X \urcorner$. We then set
 \begin{equation*}
     2 \cdot \sigma := \{\ulcorner X_{i} \urcorner : \ulcorner X \urcorner \in \sigma \text{ and } i < 2\} \text{.}
 \end{equation*}
@@ -6661,7 +6661,7 @@ Let $\mathfrak{M}$ be a SeqA and $s \in S(\mathfrak{M})$. Define $\Delta_{\mathf
 \begin{enumerate}[label=(\alph*)]
     \item if $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ is an $n$-ary function symbol, then 
     \begin{equation*}
-        \Delta_{\mathfrak{M}}(s)(\ulcorner X \urcorner) = \{\Vec{z} \in b(\mathfrak{M})^n : \ulcorner X \urcorner^{s}(\Vec{z}) \neq \ulcorner X \urcorner^{\tau_{\mathfrak{M}}(s)}(\Vec{z})\} \text{,}
+        \Delta_{\mathfrak{M}}(s)(\ulcorner X \urcorner) = \{\Vec{z}^{\frown}(c) \in b(\mathfrak{M})^{n + 1} : \ulcorner X \urcorner^{s}(\Vec{z}) \neq \ulcorner X \urcorner^{\tau_{\mathfrak{M}}(s)}(\Vec{z}) = c \} \text{,}
     \end{equation*}
     \item if $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ is an $n$-ary relation symbol, then 
     \begin{equation*}
@@ -6679,7 +6679,7 @@ Let $\mathfrak{M}$ be a SeqA and $s \in S(\mathfrak{M})$. Define $\Delta_{\mathf
 Note that if $b(\mathfrak{M}) = \emptyset$, then $S(\mathfrak{M})$ is a singleton and for every $s \in S(\mathfrak{M})$, $\tau_{\mathfrak{M}}(s) = s$. Necessarily, any such $\mathfrak{M}$ must have $\Delta_{\mathfrak{M}}(s_0) = \Delta_{\mathfrak{M}}(s_1)$ for all $s_0, s_1 \in S(\mathfrak{M})$.
 \end{defi}
 
-\begin{defi}\label{def217}
+\begin{defi}[Gurevich, \cite{gurevich}]\label{def217}
 Let $\mathfrak{M}$ be a SeqA. Its transition function $\tau_{\mathfrak{M}}$ satisfies the \emph{bounded exploration postulate} iff there is a finite set of ground terms $\mathcal{D}$ over $\sigma(\mathfrak{M})$ such that for all $\ulcorner X \urcorner \in \sigma(\mathfrak{M})$ and $s_0, s_1 \in S(\mathfrak{M})$,
 \begin{equation*}
     \forall t \in \mathcal{D} \ (t^{s_0} = t^{s_1}) \implies \Delta_{\mathfrak{M}}(s_0) = \Delta_{\mathfrak{M}}(s_1) \text{.}
@@ -6758,7 +6758,7 @@ A few things are easily verifiable from Definition \ref{def220}. Let $\sigma$, $
         \forall s_0 \in S(\mathfrak{M}) \ \exists ! s_1 \in S(\mathfrak{M}) \ ((s_0, s_1) \models_2 \phi)
     \end{equation*}
     is absolute for transitive models of $\mathsf{ZFC}$ containing $\mathfrak{T}(\mathfrak{M})$.
-    \item Suppose $\phi = \phi^{\tau}_{\mathfrak{M}}$ for some SeqA $\mathfrak{M}$. Then in the context of $\mathfrak{M}$, for each $\ulcorner X \urcorner \in \sigma$, the value of the next state's interpretation of $\ulcorner X \urcorner$ at a point depends only on finitely many values of the current state's interpretations of symbols in $\sigma$. This agrees in spirit with the requirement of bounded exploration.
+    \item Suppose $\phi = \phi^{\tau}_{\mathfrak{M}}$ for some SeqA $\mathfrak{M}$. Then in the context of $\mathfrak{M}$, for each $\ulcorner X \urcorner \in \sigma$, the value of the next state's interpretation of $\ulcorner X \urcorner$ at a point depends only on finitely many values of the current state's interpretations of symbols in $\sigma$. This agrees in spirit with the requirement of bounded exploration, albeit only locally. The caveat of bounded exploration being local is a reasonable --- even expected --- compromise for generalised computation.
 \end{enumerate}
 
 \subsection{Input and Output}\label{ss250}
@@ -7350,7 +7350,7 @@ Moreover, it can be unsatisfactory to see that
 \begin{equation*}
     \{A \subset \kappa : A \leq^C_{\kappa} B\} \text{ is countable}
 \end{equation*}
-for all limit ordinals $\kappa$ and $B \subset \kappa$. An ideal relative computability relation uniformly definable in $\kappa$ should have its predecessor sets grow along with $\kappa$. Towards such a relation, we shall introduce an augmentation to GSeqAs.
+for all limit ordinals $\kappa$ and $B \subset \kappa$ (which follows from Remark \ref{rem225}). An ideal relative computability relation uniformly definable in $\kappa$ should have its predecessor sets grow along with $\kappa$. Towards such a relation, we shall introduce an augmentation to GSeqAs.
 
 \begin{defi}\label{def836}
 An \emph{GSeqA with parameters} (henceforth \emph{GSeqAP}) 
