@@ -218,7 +218,7 @@ To my friends -- Sudarshan, thank you for all the tea-drinking sessions; Davin a
 
 \chapter{Abstract}
 \thispagestyle{simple}
-We present a forcing framework based on the idea of amalgamating language fragments into a theory with a canonical term model. We then demonstrate the usefulness of this framework by applying it to solve variants of the \textit{Namba extension problem}, as well as to the analysis of models of certain \emph{theories with constraints in interpretation} (\emph{TCIs}). The foundations for a theory of TCIs and their models are laid in parallel to the development of our framework, and are of independent interest.
+In this thesis, we approach generalised computation from a set-theoretic perspective, and argue that in its most general form, computation is just set generation with parameters. Armed with this equivalence, we explore different notions of generalised computation within and without the set-theoretic universe, $V$. It is observed that these notions naturally induce relative computability relations, each giving rise to its own degrees of computability. We then employ tools from set theory to derive non-trivial local and global properties of various classes of degrees of computability arising in this fashion.
 
 \blankpage
 
@@ -233,21 +233,27 @@ We present a forcing framework based on the idea of amalgamating language fragme
 
 \chapter{Overview}
 \thispagestyle{simple}
-\emph{Just what is a computation?} This thesis seeks to give the most general answers. We first make sense of the notion of generalised computation on arbitrary sets within our conventional mathematical universe (also known as the \emph{set-theoretic universe}), before using the results thereof to justify a version of computation beyond this universe. 
+\emph{Just what is a computation?} This thesis seeks to give the most general answers. We first make sense of a generalisation of computation to arbitrary sets within our conventional mathematical universe (also known as the \emph{set-theoretic universe}), before using the results thereof to justify a souped-up version that is applicable beyond this universe. Such generalisations are considered models or notions of \textit{generalised computation}. Generation, the process through which a structure or set is generated from parameters, is an important thread connecting the different notions of generalised computation.
 
 The reader may refer to Figure \ref{overview} for a summary of the main contributions of this thesis.
 
 \subsection*{Within the Set-theoretic Universe}
 
-We first analyse Gurevich's original conception of abstract algorithms as a candidate for generalised computation, through the lens of set-theoretic foundations. It must be acknowledged that his formal definition of a sequential algorithm is among the most general yet for finitary computation. Indeed, its appeal to first-order structures as \textit{abstract states} allows for easy formalisation of pseudocode at varying levels of abstraction. However, attempts at generalising Gurevich's idea to incorporate computations with arbitrarily large input/output sizes have so far been wanting. We thus propose, through a particular sequence of modifications, an adaptation of sequential algorithms for (reasonably intuitive formalisations of) the kind of infinitary computation one might encounter in general mathematics.  
+We analyse Gurevich's original conception of abstract algorithms as a candidate for generalised computation, through the lens of set-theoretic foundations. It must be acknowledged that his formal definition of a sequential algorithm is among the most general yet for finitary computation. Indeed, its appeal to first-order structures as \textit{abstract states} allows for easy formalisation of pseudocode at varying levels of abstraction. However, attempts at generalising Gurevich's idea to incorporate computations with arbitrarily large input/output sizes have so far been wanting. We thus propose, through a particular sequence of modifications, an adaptation of sequential algorithms for (reasonably intuitive formalisations of) the kind of infinitary computation one might encounter in general mathematics.  
 
-The modifications we carry out are natural and well-motivated; the reader can hopefully verify this by following our thought process as detailed in Section \ref{sect82}. Consequently, we obtain two classes of abstract algorithms for set computation, namely \textit{generalised sequential algorithms} (\textit{GSeqAs}, Defintion \ref{def224}) and \textit{generalised sequential algorithms with parameters} (\textit{GSeqAPs}, Definition \ref{def836}). It is straightforward to derive from each class, certain relative computability relations on sets, which are analogous to the Turing reducibility relation on reals. We focus on two such relations derived from GSeqAPs, denoted $\leq^P$ (Definition \ref{def839}) and $\leq^{P, s}$ (Definition \ref{def8329}). These relations are shown to possess nice properties not found in more popular notions of relative computability (Table \ref{table3} and Subsection \ref{subsec22}). By leveraging on Koepke's analysis of $\alpha$-machines, we then prove that $\leq^P$ is equivalent to the relative constructibility relation in set theory (Theorem \ref{thm275}).
+The modifications we carry out are natural and well-motivated; the reader can hopefully verify this by following our thought process as detailed in Section \ref{sect82}. Consequently, we obtain two classes of abstract algorithms for set computation, namely \textit{generalised sequential algorithms} (\textit{GSeqAs}, Defintion \ref{def224}) and \textit{generalised sequential algorithms with parameters} (\textit{GSeqAPs}, Definition \ref{def836}). It is straightforward to derive from each class, certain relative computability relations on sets, which are analogous to the Turing reducibility relation on reals. We focus on two such relations derived from GSeqAPs, denoted $\leq^P$ (Definition \ref{def839}) and $\leq^{P, s}$ (Definition \ref{def8329}). These relations are shown to possess nice properties not found in more popular notions of relative computability (Table \ref{table3} and Subsection \ref{subsec22}). By leveraging on Koepke's analysis of $\alpha$-machines, we then prove that $\leq^P$ is equivalent to the relative constructibility relation in set theory (Theorem \ref{thm275}). 
+
+Theorem \ref{thm275}, as well as Corollary \ref{cor8343}, provides evidence in support of set generation via G\"{o}del's (relativised) $L$-hierarchy as an economical approach to generalised computation.
 
 \subsection*{Beyond the Set-theoretic Universe}
 
+Adopting a multiversal vantage point, we swop out $L$ (the constructible universe) for $V$ (the full universe) in the set generation machinery, and examine the things we can derive definitively about the effected relative computability relation on the relevant sets outside $V$. These sets are exactly the generators of small extensions of $V$ (Definition \ref{def913}). Moreover, they can be naturally stratified into degrees of computability through $V$ (Definition \ref{def9111}). As a collection, the said degrees exhibit structural properties that distinguish them from better-studied set-theoretic multiverses, such as the outward generic multiverse (Definition \ref{def9116}). Past some basic motivating comparisons in Subsection \ref{genmul}, we investigate the accessibility of small extensions of $V$ from within $V$ itself. In some sense, accessible small extensions of this kind correspond to global properties of the ``$V$-degrees'' one can (fuzzily) determine in $V$.
+
+Inspired by the semantics of set-theoretic forcing, we argue that any ``first-order'' method of (non-constructively) accessing outer models of $V$ definable in $V$ ought to be expressible as a class of \textit{theories with constraints in interpretation} (\textit{TCI}s). This tenet is encapsulated by our analysis of \textit{local method definitions} (Definition \ref{def923}), which takes up much of Section \ref{chap7}. The complexity of local method definitions can be compared using $M$-reducibility (Definition \ref{def9210}). Further, bounding the complexity of the first-order components of local method definitions gives rise to a natural hierarchy of definitions with respect to $M$-reducibility. We call this hierarchy the \textit{local method hierarchy} (Definition \ref{def339}). Two key theorems related to the local method hierarchy are then proven. First, it turns out that the hierarchy collapses in a curious manner (Theorem \ref{prop252'}). Second, set forcing is shown to fit into a relatively low rung of the hierarchy, as it is both $\Sigma_1$ and $\Pi_2$ (Theorem \ref{thm351}).
+
 \subsection*{Our Main Tools}
 
-For better compartmentalisation and modularisation of knowledge and techniques, we extract the key ideas employed in the proofs of theorems about our particular model of generalised computation beyond $V$, and present them in a more general context. These ideas are packaged as technical theorems about TCIs in Chapter \ref{TCIsec}, to be applied rather straightforwardly in Chapter \ref{chap7}, when we seek answers to questions regarding the aforementioned model of computation. While technical, these theorems are also interesting in their own right, for they open up intriguing avenues for investigation within the theory of TCIs, some of which we shall briefly explore. As such, our choice of presentation allows us to kill two birds with one stone. 
+Studying general set forcing semantics by framing them as problems in forcing with language fragments, going through TCIs as a conduit, is a major theme of this thesis. In fact, this chain of thought is instrumental in proving the main results of Chapter \ref{chap7}, particularly Theorem \ref{thm351}. For better compartmentalisation and modularisation of knowledge and techniques, we extract the key ideas employed in the proofs of the aforementioned results and present them in a more general context. These ideas are packaged as technical theorems about forcing with language fragments in Chapter \ref{setupsec} and about TCIs in Chapter \ref{TCIsec}, to be applied rather straightforwardly in Chapter \ref{chap7}. While technical, these theorems are also interesting in their own right, for they open up intriguing avenues for investigation within their respective set-theoretic contexts, some of which we shall briefly explore. As such, our choice of presentation allows us to kill two birds with one stone. 
 
 \begin{sidewaysfigure}
     \centering
@@ -258,8 +264,6 @@ For better compartmentalisation and modularisation of knowledge and techniques, 
 \end{sidewaysfigure}
 
 \clearpage
-
-\blankpage
 
 \mainmatter
 
@@ -6316,12 +6320,12 @@ In any case, it appears that the models of generalised computation introduced so
 \end{quote}
 This kind of arguments often lead to unintuitive definitions insofar as computation is concerned, sometimes to the extent of an apology being issued (e.g. \cite{sackserec}). In fact, it can be argued that the said models were formulated with specific properties of relative computability --- instead of intuitiveness --- in mind, to ensure their degrees of computability are equipped with non-trivial structure. 
 
-In this paper, we adapt Gurevich's \textit{sequential algorithms} for generalised computation. In doing so, we bypass the appeal to the Church-Turing thesis, and provide a ``top-down'' counterpart to the typical ``bottom-up'' approach to modelling generalised computation. We make gradual well-meaning modifications to Gurevich's definition, so that even as our algorithms become more encompassing, the growth in their computational power does not contradict our intuition of computation born out of classical computing. In Subsection \ref{ss210}, we see that plainly omitting the \textit{bounded exploration postulate} from the initial definition of sequential algorithms is wholly unsatisfactory from a set-theoretic standpoint. The remainder of Section \ref{sect2} is thus geared towards finding the right properties to endow a generalised sequential algorithm with, properties that can plug the gap left behind by the aforementioned omission. Notable milestones in this search/journey include:
+In this paper, we adapt Gurevich's \textit{sequential algorithms} for generalised computation. In doing so, we bypass the appeal to the Church-Turing thesis, and provide a ``top-down'' counterpart to the typical ``bottom-up'' approach to modelling generalised computation. We make gradual well-meaning modifications to Gurevich's definition, so that even as our algorithms become more encompassing, the growth in their computational power does not contradict our intuition of computation born out of classical computing. In \hyperref[ss210]{this subsection}, we see that plainly omitting the \textit{bounded exploration postulate} from the initial definition of sequential algorithms is wholly unsatisfactory from a set-theoretic standpoint. The remainder of Section \ref{sect2} is thus geared towards finding the right properties to endow a generalised sequential algorithm with, properties that can plug the gap left behind by the aforementioned omission. Notable milestones in this search/journey include:
 \begin{itemize}
-    \item a very much local, yet infinitary, version of the bounded exploration postulate formulated in Subsection \ref{ss240},
-    \item a streamlined method of writing the input and reading the output of a terminating run devised in Subsection \ref{ss250},
-    \item the definition of transfinite runs in Subsection \ref{ss270}, accompanied by an argument about the nigh-universality of our method of taking limits, and
-    \item the addition of ordinal parameters in Subsection \ref{ss320} for a better behaved relative computability relation.
+    \item a very much local, yet infinitary, version of the bounded exploration postulate formulated in \hyperref[ss240]{this subsection},
+    \item a streamlined method of writing the input and reading the output of a terminating run devised in \hyperref[ss250]{this subsection},
+    \item the definition of transfinite runs in \hyperref[ss270]{this subsection}, accompanied by an argument about the nigh-universality of our method of taking limits, and
+    \item the addition of ordinal parameters in \hyperref[ss320]{this subsection} for a better behaved relative computability relation.
 \end{itemize}
 
 The result of our elaborate adaptation process is a new model of generalised computation called \textit{generalised sequential algorithms with parameters} (abbreviated as \textit{GSeqAPs}). The first draw of GSeqAPs is that their more structured templates facilitate the design of generalised algorithms, without compromising too much of the intuitiveness in Gurevich's conception. Coupled with an input/output paradigm, GSeqAPs naturally induce a relative computability relation, $\leq^P$, on sets of ordinals. It turns out that $\leq^P$ possesses a particular suite of desirable traits not found in other relative computability relations associated with generalised computation, especially under computational constraints. This is the second draw of GSeqAPs. 
@@ -7735,7 +7739,7 @@ A set of ordinals $B$ is computable with parameters iff $B \in L$.
 Apply Theorem \ref{thm275} with $\emptyset$ in place of $A$. 
 \end{proof}
 
-\begin{cor}
+\begin{cor}\label{cor8343}
 Let $A$ and $B$ be two sets of ordinals. Then $B \leq^P A$ iff $B \preceq_A A$.
 \end{cor}
 
@@ -7911,7 +7915,7 @@ Given $U$ and $W$, we say $U$ is an \emph{inner model} of $W$ (or equivalently, 
 \end{enumerate}
 \end{defi}
 
-\begin{defi}
+\begin{defi}\label{def913}
 Let $W$ be an outer model of $U$. Then $W$ is a \emph{small extension of} $U$ iff for some $x \in W$, $W$ is the smallest CTM $W'$ satisfying
 \begin{enumerate}[label=(\alph*)]
     \item $U \subset W'$, and
@@ -8012,7 +8016,7 @@ Proposition \ref{prop37} gives us a natural reducibility relation on
 \end{equation*}
 given a CTM $U$. 
 
-\begin{defi}
+\begin{defi}\label{def9111}
 Let $U$ be a CTM. Define the binary relation $\leq_U$ on $\mathbf{N}(U)$ as follows: for $x, y \in \mathbf{N}(U)$,
 \begin{equation*}
     x \leq_U y \iff U[x] \subset U[y] \text{.}
@@ -8064,7 +8068,7 @@ Let $V$ be a CTM. The \emph{(forcing) grounds of} $V$ is the set
 \end{equation*}
 \end{defi}
 
-\begin{defi}
+\begin{defi}\label{def9116}
 Let $V$ be a CTM. The \emph{outward generic multiverse centred at} $V$ is the set
 \begin{equation*}
     \mathbf{M}_F(V) := \{W : W \text{ is a forcing extension of } V\} \text{.}
@@ -8173,7 +8177,7 @@ If $V$ is a CTM and $\mathfrak{T} \in V$ is a TCI, then the \emph{evaluation of}
 \end{equation*}
 \end{defi}
 
-\begin{defi}
+\begin{defi}\label{def923}
 Let $V$ be a CTM. A set $X \subset V$ is a $\mathbf{M}_S(V)$ \emph{local method definition of small extensions} (henceforth, $\mathbf{M}_S(V)$ \emph{local method definition}) iff it is a $\mathbf{M}_S(V)$ method definition and $X$ is definable (possibly as a proper class) in $V$ with parameters in $V$. 
 \end{defi}
 
@@ -8280,7 +8284,7 @@ Let us choose a definable function $F$ as in the proof of Corollary \ref{cor324}
 
 What does it mean for a definition to be complex? Long, overwrought, convoluted. These are just some synonyms that may come to mind. in general, a more complex definition places more requirements on the object, or the class of objects, it defines. In the former scenario, it makes the object it defines \textit{a priori} less likely to exist; in the latter one, it defines a compratively smaller class of objects. Following this intuition, we formalise a way of comparing between two local method definitions.
 
-\begin{defi}
+\begin{defi}\label{def9210}
 Let $X, Y$ be local method definitions of a CTM $V$. We use 
 \begin{enumerate}[label=(\arabic*)]
     \item $X \leq^M_w Y$ to denote the statement
@@ -8404,7 +8408,7 @@ Mathematics and computer science are replete with hierarchies similar to the loc
 
 It turns out that most of the $\mathsf{\Pi^M_n}$'s are unnecessary in this hierarchy. 
 
-\begin{lem}\label{prop252'}
+\begin{thm}\label{prop252'}
 Let $n$ satisfy $1 \leq n < \omega$. For every $\mathfrak{T} \in \mathsf{\Pi^M_{n+1}}$ there are
 \begin{enumerate}[label=(\arabic*)]
     \item $\mathfrak{T}' \in \mathsf{\Sigma^M_n}$, and
@@ -8415,7 +8419,7 @@ such that
     \item $\theta$ is absolute for outer models of $V$, and
     \item in every outer model of $V$, $\theta$ defines a bijection from the set of models of $\mathfrak{T}$ into the set of models of $\mathfrak{T}'$.
 \end{enumerate}
-\end{lem}
+\end{thm}
 
 \begin{proof}
 Let 
@@ -8511,7 +8515,7 @@ so that $\mathfrak{T}' := (T', \sigma', \dot{\mathcal{U}}, \vartheta') \in \math
 It is clear that the transformations involved in \ref{316t1} and \ref{316t2} are absolute for outer models of $V$.
 \end{proof}
 
-An important upshot of Lemma \ref{prop252'} is the corollary below.
+An important upshot of Theorem \ref{prop252'} is the corollary below.
 
 \begin{cor}
 $\mathsf{\Pi^M_{n+1}} \leq^M \mathsf{\Sigma^M_n}$ for all $n$ satisfying $1 \leq n < \omega$.
@@ -8524,7 +8528,7 @@ $\mathsf{Fg} \leq^M \mathsf{\Sigma^M_1}$.
 \end{prop}
 
 \begin{proof}
-For all forcing notions $\mathbb{P}$, the TCI $\mathfrak{T}(\mathbb{P})$ is always a member of $\mathsf{\Pi^M_2}$ by the proof of Theorem \ref{revgenmodels} (and thus of Proposition \ref{prop323}). That $\mathfrak{T}(\cdot)$ is definable in $V$ makes it a witness to $\mathsf{Fg} \leq^M \mathsf{\Pi^M_2}$. Lemma \ref{prop252'} then implies $\mathsf{Fg} \leq^M \mathsf{\Sigma^M_1}$.
+For all forcing notions $\mathbb{P}$, the TCI $\mathfrak{T}(\mathbb{P})$ is always a member of $\mathsf{\Pi^M_2}$ by the proof of Theorem \ref{revgenmodels} (and thus of Proposition \ref{prop323}). That $\mathfrak{T}(\cdot)$ is definable in $V$ makes it a witness to $\mathsf{Fg} \leq^M \mathsf{\Pi^M_2}$. Theorem \ref{prop252'} then implies $\mathsf{Fg} \leq^M \mathsf{\Sigma^M_1}$.
 \end{proof}
 
 \begin{lem}\label{lem344}
@@ -8609,7 +8613,7 @@ Set
 \begin{equation*}
     \mathcal{C} := \{\mathfrak{T} : \mathfrak{T} \text{ is a } \Sigma_1 \text{ TCI}\} \text{.}
 \end{equation*}
-By Lemma \ref{prop252'} and Proposition \ref{prop343}, we can conclude the following:
+By Theorem \ref{prop252'} and Proposition \ref{prop343}, we can conclude the following:
 \begin{enumerate}[label=(\arabic*)]
     \item $\mathcal{C} \subsetneq \{\mathfrak{T} : \mathfrak{T} \text{ is a } \Pi_2 \text{ TCI}\}$, and
     \item for each forcing notion $\mathbb{P}$, there is $\mathfrak{T} \in \mathcal{C}$ for which
