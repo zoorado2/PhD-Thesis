@@ -206,19 +206,13 @@ ALL RIGHTS RESERVED
 
 \chapter{Acknowledgements}
 \thispagestyle{simple}
-I am very grateful to have my supervisor, Dilip Raghavan, dedicate an hour a week out of his hectic schedule to my project. Your ideas for further research and advice on graduate studies are very valuable to me. 
-\par 
-I would like to thank Yang Yue, who taught me in my first set theory course, Kenneth Kunen, for writing such a great introductory textbook, Saharon Shelah, for publishing his wealth of ideas which culminated in this project.
-\par 
-I cannot thank my parents enough, for being understanding of my unusual working habits, tolerant of my absence from home, and for offering to cook for me ever so often.
-\par 
-To my friends -- Sudarshan, thank you for all the tea-drinking sessions; Davin and Yikjiun, our discussions about pop music and our weekly karaoke sessions were such great respites from work; Caitlin, thanks for opening my eyes to so many cool things; Ziyang and the rest of the 'Dealz' clique, you probably didn't know I was working on this, but your presence and the usual pointless banter we had never failed to brighten my day.
+<Insert acknowledgements here>
 
 \blankpage
 
 \chapter{Abstract}
 \thispagestyle{simple}
-In this thesis, we approach generalised computation from a set-theoretic perspective, and argue that in its most general form, computation is just set generation with parameters. Armed with this equivalence, we explore different notions of generalised computation within and without the set-theoretic universe, $V$. It is observed that these notions naturally induce relative computability relations, each giving rise to its own degrees of computability. We then employ tools from set theory to derive non-trivial local and global properties of various classes of degrees of computability arising in this fashion.
+In this thesis, we approach generalised computation from a set-theoretic perspective, and argue that in its most general form, computation is just set generation with parameters. Armed with this equivalence, we explore different notions of generalised computation within and without the set-theoretic universe, $V$. It is observed that these notions naturally induce relative computability relations, each giving rise to its own degrees of computability. Employing methods and tools from set theory, we are able to derive non-trivial local and global properties of various classes of degrees of computability that arise in this fashion.
 
 \blankpage
 
@@ -249,11 +243,15 @@ Theorem \ref{thm275}, as well as Corollary \ref{cor8343}, provides evidence in s
 
 Adopting a multiversal vantage point, we swop out $L$ (the constructible universe) for $V$ (the full universe) in the set generation machinery, and examine the things we can derive definitively about the effected relative computability relation on the relevant sets outside $V$. These sets are exactly the generators of small extensions of $V$ (Definition \ref{def913}). Moreover, they can be naturally stratified into degrees of computability through $V$ (Definition \ref{def9111}). As a collection, the said degrees exhibit structural properties that distinguish them from better-studied set-theoretic multiverses, such as the outward generic multiverse (Definition \ref{def9116}). Past some basic motivating comparisons in Subsection \ref{genmul}, we investigate the accessibility of small extensions of $V$ from within $V$ itself. In some sense, accessible small extensions of this kind correspond to global properties of the ``$V$-degrees'' one can (fuzzily) determine in $V$.
 
-Inspired by the semantics of set-theoretic forcing, we argue that any ``first-order'' method of (non-constructively) accessing outer models of $V$ definable in $V$ ought to be expressible as a class of \textit{theories with constraints in interpretation} (\textit{TCI}s). This tenet is encapsulated by our analysis of \textit{local method definitions} (Definition \ref{def923}), which takes up much of Section \ref{chap7}. The complexity of local method definitions can be compared using $M$-reducibility (Definition \ref{def9210}). Further, bounding the complexity of the first-order components of local method definitions gives rise to a natural hierarchy of definitions with respect to $M$-reducibility. We call this hierarchy the \textit{local method hierarchy} (Definition \ref{def339}). Two key theorems related to the local method hierarchy are then proven. First, it turns out that the hierarchy collapses in a curious manner (Theorem \ref{prop252'}). Second, set forcing is shown to fit into a relatively low rung of the hierarchy, as it is both $\Sigma_1$ and $\Pi_2$ (Theorem \ref{thm351}).
+Inspired by the semantics of set-theoretic forcing, we argue that any ``easily first-order evaluable'' method of (non-constructively) accessing outer models of $V$ definable in $V$ ought to be expressible as a class of \textit{theories with constraints in interpretation} (Definition \ref{TCIdef}). This tenet is encapsulated by our analysis of \textit{local method definitions} (Definition \ref{def923}), which takes up much of Section \ref{chap7}. The complexity of local method definitions can be compared using $M$-reducibility (Definition \ref{def9210}). Further, bounding the complexity of the first-order components of local method definitions gives rise to a natural hierarchy of definitions with respect to $M$-reducibility. We call this hierarchy the \textit{local method hierarchy} (Definition \ref{def339}). Two key theorems related to the local method hierarchy are then proven. First, it turns out that the hierarchy collapses in a curious manner (Theorem \ref{prop252'}). Second, set forcing is shown to fit into a relatively low rung of the hierarchy, as it is both $\Sigma_1$ and $\Pi_2$ (Theorem \ref{thm351}).
 
 \subsection*{Our Main Tools}
 
-Studying general set forcing semantics by framing them as problems in forcing with language fragments, going through TCIs as a conduit, is a major theme of this thesis. In fact, this chain of thought is instrumental in proving the main results of Chapter \ref{chap7}, particularly Theorem \ref{thm351}. For better compartmentalisation and modularisation of knowledge and techniques, we extract the key ideas employed in the proofs of the aforementioned results and present them in a more general context. These ideas are packaged as technical theorems about forcing with language fragments in Chapter \ref{setupsec} and about TCIs in Chapter \ref{TCIsec}, to be applied rather straightforwardly in Chapter \ref{chap7}. While technical, these theorems are also interesting in their own right, for they open up intriguing avenues for investigation within their respective set-theoretic contexts, some of which we shall briefly explore. As such, our choice of presentation allows us to kill two birds with one stone. 
+Studying general set forcing semantics by framing them as problems in forcing with language fragments, going through TCIs as a conduit, is a major theme of this thesis. In fact, this chain of thought is instrumental in proving the main results of Chapter \ref{chap7}, particularly Theorem \ref{thm351}. For better compartmentalisation and modularisation of knowledge and techniques, we extract the key ideas employed in the proofs of the aforementioned results and present them in a more general context. These ideas are packaged as technical theorems about forcing with language fragments in Chapter \ref{setupsec} and about TCIs in Chapter \ref{TCIsec}, which are then applied rather straightforwardly in Chapter \ref{chap7}. While technical, these theorems are also interesting in their own right, for they open up intriguing avenues for investigation within their respective set-theoretic contexts, some of which we shall briefly explore. As such, our choice of presentation allows us to kill two birds with one stone. 
+
+Set-theoretic forcing with language fragments as conditions can be analysed akin to how Robinson forcing is analysed model-theoretically. Sufficiently generic theories produced by such forcing notions turn out to amalgamate sufficiently simple properties, as long as these properties are ``sufficiently possible'' in outer models of $V$ (Theorem \ref{uni}). This discovery spurs us to create a framework (Section \ref{forframe}) for the construction of forcing notions based on certain types of specifications. The primary draw of our framework is a uniform and absolute (Lemma \ref{Pisabs}) method of generating a forcing notion that satisfies a given list of specified properties (modulo some hypotheses), from parameters codifying the said properties (Lemma \ref{main2}). Furthermore, the modularisability of the method --- and thus the framework --- is apparent in its first applications to problems of set-theoretic interest (Section \ref{sect2}). In fact, with only straightforward modifications, iteratively more complicated versions of a (class of) forcing notion can be constructed to prove increasingly stronger theorems incorporating small solutions to the \textit{Namba extension problem} (Theorems \ref{notion1}, \ref{notion2} and \ref{notion3}).
+
+Theories with constraints in interpretation (TCIs) are basically first-order theories with additional set constraints imposed on the interpretation of symbols in their signatures. These constraints are generally not first-order expressible. TCIs are conceived as a means to express and generalise the notion of substructures satisfying a first-order theory. Indeed, for every first-order structure $\mathfrak{A}$ and every first-order theory $T$ over the same language, there is a canonical TCI whose models are exactly the substructures of $\mathfrak{A}$ satisfying $T$. Since the existence of substructures satisfying a particular theory can be independent of $\mathsf{ZFC}$, we appeal to outer models of $V$ when defining the consistency of a TCI (Definition \ref{TCIcon}). A key realisation is that Henkin models of TCIs can be built from canonically associated theories in a uniform and absolute manner: the non-first-order constraints pose no obstacles (Lemmas \ref{mcequiv} and \ref{mcequiv2}). Using the forcing framework of Section \ref{forframe}, we can then construct a canonical forcing notion $\mathbb{P}(\mathfrak{T})$ for every $\Pi_2$ TCI $\mathfrak{T}$, such that sufficiently generic filters of $\mathbb{P}(\mathfrak{T})$ always give rise to Henkin models of $\mathfrak{T}$ (Theorem \ref{genericmodels}). By leveraging on the connection between forcing and generic reals, strong computability-theoretic analogues of this result can be shown (see e.g. Theorem \ref{lastthm} and Corollary \ref{rlcor}).
 
 \begin{sidewaysfigure}
     \centering
@@ -264,6 +262,8 @@ Studying general set forcing semantics by framing them as problems in forcing wi
 \end{sidewaysfigure}
 
 \clearpage
+
+\blankpage
 
 \mainmatter
 
@@ -2520,7 +2520,7 @@ Essentially, a structure can be used to provide additional constraints to a firs
 
 We first make precise the notion of first-order theories with added constraints, so that we can compare these mathematical objects with the first-order theories we are familiar with. 
 
-\begin{defi}
+\begin{defi}\label{TCIdef}
 A \emph{first-order theory with constraints in interpretation} (\emph{first-order TCI}) --- henceforth, just \emph{theory with constraints in interpretation} (\emph{TCI}) --- is a tuple $(T, \sigma, \dot{\mathcal{U}}, \vartheta)$, where
 \begin{enumerate}[label=(\alph*)]
     \item $T$ is a first order theory with signature $\sigma$,
@@ -2599,7 +2599,7 @@ Now $\mathfrak{T} := (T, \{\dot{R}\}, \dot{\mathcal{U}}, \vartheta)$ is a TCI th
 
 Example \ref{3rdex} reminds us that the existence of models for a TCI is not absolute between $V$ and its (weak) outer models. There is thus a fundamental difference between the model existence of a TCI and that of a first-order theory. This should reflect in our definition of what it means for a TCI to be consistent.
 
-\begin{defi}
+\begin{defi}\label{TCIcon}
 A TCI $(T, \sigma, \dot{\mathcal{U}}, \vartheta)$ is \emph{consistent} iff $(T, \sigma, \dot{\mathcal{U}}, \vartheta)$ has a model in some outer model of $V$. 
 \end{defi}
 
@@ -3191,7 +3191,7 @@ The theorem follows directly from Lemmas \ref{main2}, \ref{mcequiv} and \ref{mce
 
 \begin{rem}\label{rem537}
 By the proof of Corollary \ref{cor527}, Theorem \ref{genericmodels} is equivalent to, and can be restated as:
-\begin{customthm}{4.2.20$'$}
+\begin{customthm}{6.2.20$'$}
 Let $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ be a $\Pi_2$ TCI. If $P(\mathfrak{T})$ is not empty, then every $\mathbb{P}(\mathfrak{T})$-generic filter over $V$ witnesses a $(\mathbb{P}(\mathfrak{T}), V)$-generic model of $\mathfrak{T}$.
 \end{customthm}
 \end{rem}
@@ -6116,7 +6116,7 @@ Then there is a stationary-preserving forcing notion $\mathbb{P}$ of size $\leq 
 
 In \cite{lietz}, Lietz modified the Asper\'{o}-Schindler construction to obtain, under the same set of assumptions, a forcing notion that adds a $\Diamond$\emph{-iteration} instead of a generic iteration. Since $\Diamond$-iterations are a special kind of generic iterations (see Definition 5.18 of \cite{lietz}), Lietz's result, like Theorem \ref{notion2}, implies Lemma 2.14 of \cite{schindler}. In fact, by making only minor changes, we can incorporate his modifications into the proof of Theorem \ref{notion2}. The key insight is that $(\Sigma.8)$ in the proof of Theorem 5.20 of \cite{lietz}, parametrised by $\lambda$, is expressible as a $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentence --- call it $\varphi_8(\lambda)$ --- with $\mathfrak{A}$, $\mathcal{L}$ and the definition of parameters by induction as specified in the proof of Theorem \ref{notion2}. Due to the modularisability of our forcing framework, deriving the following ``$\Diamond$-iteration'' version of Theorem \ref{notion2} is straightforward: one just needs to confirm that Lemma \ref{lem452} remains true after substituting $\varphi_8(\lambda)$ for \ref{c8} in the definition of $\Gamma_{\lambda}$ (Definition \ref{defc}).
 
-\begin{thm}
+\begin{thm}\label{notion3}
 Assume
 \begin{enumerate}[label=(\roman*), leftmargin=40pt]
     \item $\Gamma  = \bigcup_{1 \leq k < \omega} \mathcal{P}(\mathbb{R}^{k}) \cap L(\Gamma, \mathbb{R})$,
