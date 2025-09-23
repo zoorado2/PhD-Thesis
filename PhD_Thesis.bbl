@@ -958,6 +958,37 @@
       \field{pages}{867\bibrangedash 884}
       \range{pages}{18}
     \endentry
+    \entry{sieg}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=b01cca24bc230ef30d05934ce138ce9f}{%
+           family={Sieg},
+           familyi={S\bibinitperiod},
+           given={Wilfried},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {OUP}%
+      }
+      \strng{namehash}{b01cca24bc230ef30d05934ce138ce9f}
+      \strng{fullhash}{b01cca24bc230ef30d05934ce138ce9f}
+      \strng{fullhashraw}{b01cca24bc230ef30d05934ce138ce9f}
+      \strng{bibnamehash}{b01cca24bc230ef30d05934ce138ce9f}
+      \strng{authorbibnamehash}{b01cca24bc230ef30d05934ce138ce9f}
+      \strng{authornamehash}{b01cca24bc230ef30d05934ce138ce9f}
+      \strng{authorfullhash}{b01cca24bc230ef30d05934ce138ce9f}
+      \strng{authorfullhashraw}{b01cca24bc230ef30d05934ce138ce9f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophia Mathematica}
+      \field{number}{2}
+      \field{title}{Gödel on computability}
+      \field{volume}{14}
+      \field{year}{2006}
+      \field{pages}{189\bibrangedash 207}
+      \range{pages}{19}
+    \endentry
     \entry{dershowitz}{article}{}{}
       \name{author}{2}{}{%
         {{hash=4a9d063f235c75642f8349db9004d368}{%
