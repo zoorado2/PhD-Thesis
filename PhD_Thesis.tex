@@ -275,9 +275,23 @@ Explicit models of infinitary computation are not new. Well-known exemplars go b
 
 Even older are implicit models of infinitary computation. Many can be traced back to the 1960s, when Takeuti \cite{takeuti}, Kreisel and Sacks \cite{kreiselsacks} and others independently came up with notions of computability and relative computability on arbitrary sets of ordinals. Due to their ample similarities, the ideas associated with these notions eventually coalesced into a field now known as $\alpha$-recursion theory. Another formalisation of computability on infinite classes, formulated in the 1970s by Normann \cite{normann}, went on to become the central subject of study in $E$-recursion theory. The aforementioned notions only implicitly model infinitary computation because they define what it means to be (relatively) computable without explicitly defining what a computation entails. However, since computable classes in both paradigms are exactly those definable by certain types of formulas over a model of set theory, one can argue that it is justifiable to view formulas in general as an analogue of programs. 
 
-In fact, the ``formulas as programs'' viewpoint already arises in classical computability theory, when one is introduced to the (relativised) arithmetical hierarchy. Oft-repeated in this context is the idea that oracle machines, from a functional perspective, are just sufficiently simple parametrised formulas in the language of arithmetic. As an implication, classical computation is but a kind of first-order definition (in the model-theoretic sense), which in turn, is precisely how most sets are generated. Following this line of thought, $\alpha$-recursion theory and $E$-recursion theory appear to be rather natural studies of how classical computation might generalise to the infinite. What if we push such generalisations to their logical extreme? This thesis aims to explore some interesting repercussions of doing so.
+In fact, the ``formulas as programs'' viewpoint already arises in classical computability theory, when one is introduced to the (relativised) arithmetical hierarchy. Oft-repeated in this context is the idea that oracle machines, from a functional perspective, are just sufficiently simple parametrised formulas in the language of arithmetic. As an implication, classical computation is but a kind of first-order definition (in the model-theoretic sense), which in turn, is precisely how most sets are generated. Following this line of thought, $\alpha$-recursion theory and $E$-recursion theory appear to be rather natural studies of how classical computation might generalise to the infinite. This prompts the following question.
+\begin{align}\label{motqn}
+\begin{split}
+    & \textit{What if we take the overarching tenet of ``definable set} \\ 
+    & \textit{generation as computation'' to its logical extreme?}
+\end{split}
+\end{align}
+As the reader will soon discover, (\ref{motqn}) is the motivating question of this thesis.
 
-Of course, some guardrails need to be in order to avoid trivialising and contradicting our intuition about computation in the abstract.
+It is important to note that (\ref{motqn}) is neither a frivolous question nor a purely philosophical musing.
+
+Should the reader remain unconvinced of our premise of ``definable set generation as computation'', we present a higher analogue of the Church-Turing thesis in Section \ref{chap6}, where we identify three apparently unrelated models of generalised computation (\ref{gct1} to \ref{gct3}) as equivalent. Actually, that \ref{gct1} and \ref{gct3} are equivalent (Theorem \ref{thm275} and Corollary \ref{cor8343}) is implied by the results in \cite{koepke1}. Our original contribution is the independent formulation of a witness for \ref{gct2} within the same section. To add weight to our argument, we formalise a version of abstract algorithms while abiding by principles that are deemed necessary in models of classical computation. These principles, namely
+\begin{itemize}
+    \item \textit{boundedness}: ``there is a fixed finite bound on the number of configurations a computor can immediately recognise'', and
+    \item \textit{locality}: ``a computor can change only immediately recognisable (sub)configurations'',
+\end{itemize}
+are isolated by Sieg in \cite{sieg} based on the beliefs espoused by Turing in the latter's works.
 
 Forcing is a technique in mathematical logic, whereby a set is proven to exist through a non-constructive but coherent assembly of known components. It is most often used in relative consistency proofs, and has been so ever since Cohen invented syntactic forcing in 1963, when he proved that the continuum hypothesis is independent of $\mathsf{ZFC}$ in \cite{cohen1} and \cite{cohen2}.
 
@@ -7782,9 +7796,9 @@ Philosophically, this seems to indicate that the amount of computing power a set
 \end{itemize}
 --- we can still achieve the same reach. Indeed, the fact that the relative computability relations arising from
 \begin{enumerate}[label=(GCT\arabic*), leftmargin=50pt]
-    \item a ``low-level'' machine model of generalised computation such as ordinal Turing machines, 
-    \item a ``high-level'' notion of abstract algorithms such as GSeqAPs, and
-    \item an algebraic model of set generation such as relativised constructibility
+    \item\label{gct1} a ``low-level'' machine model of generalised computation such as ordinal Turing machines, 
+    \item\label{gct2} a ``high-level'' notion of abstract algorithms such as GSeqAPs, and
+    \item\label{gct3} an algebraic model of set generation such as relativised constructibility
 \end{enumerate}
 happen to coincide, is suggestive of a plausible generalised-computability counterpart to the Church-Turing thesis.
 
