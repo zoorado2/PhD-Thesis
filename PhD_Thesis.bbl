@@ -19,6 +19,29 @@
 
 \refsection{0}
   \datalist[entry]{ynt/global//global/global/global}
+    \entry{kleene}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=6434a399c2a8d759b93b6e4868299e63}{%
+           family={Kleene},
+           familyi={K\bibinitperiod},
+           given={Stephen\bibnamedelima Cole},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{6434a399c2a8d759b93b6e4868299e63}
+      \strng{fullhash}{6434a399c2a8d759b93b6e4868299e63}
+      \strng{fullhashraw}{6434a399c2a8d759b93b6e4868299e63}
+      \strng{bibnamehash}{6434a399c2a8d759b93b6e4868299e63}
+      \strng{authorbibnamehash}{6434a399c2a8d759b93b6e4868299e63}
+      \strng{authornamehash}{6434a399c2a8d759b93b6e4868299e63}
+      \strng{authorfullhash}{6434a399c2a8d759b93b6e4868299e63}
+      \strng{authorfullhashraw}{6434a399c2a8d759b93b6e4868299e63}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Introduction to metamathematics}
+      \field{year}{1952}
+    \endentry
     \entry{takeuti}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9a6f44fd63be15b0b390d3447a3f47e7}{%
@@ -66,7 +89,6 @@
       \strng{authornamehash}{3676bd8b5a6758a014b490225ec91475}
       \strng{authorfullhash}{3676bd8b5a6758a014b490225ec91475}
       \strng{authorfullhashraw}{3676bd8b5a6758a014b490225ec91475}
-      \field{extraname}{1}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -86,44 +108,6 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1073/pnas.50.6.1143
-      \endverb
-    \endentry
-    \entry{cohen2}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=db90b622eba26dc7c0195a3ce34de469}{%
-           family={Cohen},
-           familyi={C\bibinitperiod},
-           given={Paul\bibnamedelima J.},
-           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \strng{namehash}{db90b622eba26dc7c0195a3ce34de469}
-      \strng{fullhash}{db90b622eba26dc7c0195a3ce34de469}
-      \strng{fullhashraw}{db90b622eba26dc7c0195a3ce34de469}
-      \strng{bibnamehash}{db90b622eba26dc7c0195a3ce34de469}
-      \strng{authorbibnamehash}{db90b622eba26dc7c0195a3ce34de469}
-      \strng{authornamehash}{db90b622eba26dc7c0195a3ce34de469}
-      \strng{authorfullhash}{db90b622eba26dc7c0195a3ce34de469}
-      \strng{authorfullhashraw}{db90b622eba26dc7c0195a3ce34de469}
-      \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{0027-8424}
-      \field{journaltitle}{Proc. Nat. Acad. Sci. U.S.A.}
-      \field{title}{The independence of the continuum hypothesis. {II}}
-      \field{volume}{51}
-      \field{year}{1964}
-      \field{pages}{105\bibrangedash 110}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.1073/pnas.51.1.105
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1073/pnas.51.1.105
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1073/pnas.51.1.105
       \endverb
     \endentry
     \entry{kreiselsacks}{article}{}{}
@@ -438,6 +422,33 @@
       \field{title}{Coding the universe}
       \field{volume}{47}
       \field{year}{1982}
+    \endentry
+    \entry{godelcw2}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=741b5eae8f0486fe4cfb19725eb596a0}{%
+           family={Gödel},
+           familyi={G\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{location}{2}{%
+        {Oxford, England}%
+        {New York, NY, USA}%
+      }
+      \strng{namehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{fullhash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{fullhashraw}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{bibnamehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authorbibnamehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authornamehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authorfullhash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authorfullhashraw}{741b5eae8f0486fe4cfb19725eb596a0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Collected Works, Volume 2: Publications 1938-1974}
+      \field{year}{1986}
     \endentry
     \entry{bss}{article}{}{}
       \name{author}{3}{}{%
@@ -1514,6 +1525,37 @@
       \verb https://doi.org/10.1142/S021906131750009X
       \endverb
     \endentry
+    \entry{grigor}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=22a8da8d120e318d26655d7c2a0acfca}{%
+           family={(https://mathoverflow.net/users/20584/grigor)},
+           familyi={(\bibinitperiod},
+           given={Grigor},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{22a8da8d120e318d26655d7c2a0acfca}
+      \strng{fullhash}{22a8da8d120e318d26655d7c2a0acfca}
+      \strng{fullhashraw}{22a8da8d120e318d26655d7c2a0acfca}
+      \strng{bibnamehash}{22a8da8d120e318d26655d7c2a0acfca}
+      \strng{authorbibnamehash}{22a8da8d120e318d26655d7c2a0acfca}
+      \strng{authornamehash}{22a8da8d120e318d26655d7c2a0acfca}
+      \strng{authorfullhash}{22a8da8d120e318d26655d7c2a0acfca}
+      \strng{authorfullhashraw}{22a8da8d120e318d26655d7c2a0acfca}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{MathOverflow}
+      \field{note}{(version: 2021-04-18)}
+      \field{title}{Does inner model theory seek canonical models for large cardinals?}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://mathoverflow.net/q/390513
+      \endverb
+      \verb{url}
+      \verb https://mathoverflow.net/q/390513
+      \endverb
+    \endentry
     \entry{schindler}{article}{}{}
       \name{author}{2}{}{%
         {{hash=bdb34d52a90d7057b611b5cd2b5b43b3}{%
@@ -1610,6 +1652,37 @@
       \verb https://doi.org/10.1093/logcom/exab042
       \endverb
     \endentry
+    \entry{slaman}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=1109cde7f649f549146b6a5fe0dfcc91}{%
+           family={(https://mathoverflow.net/users/31026/theodore-slaman)},
+           familyi={(\bibinithyphendelim s\bibinitperiod},
+           given={Theodore\bibnamedelima Slaman},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{1109cde7f649f549146b6a5fe0dfcc91}
+      \strng{fullhash}{1109cde7f649f549146b6a5fe0dfcc91}
+      \strng{fullhashraw}{1109cde7f649f549146b6a5fe0dfcc91}
+      \strng{bibnamehash}{1109cde7f649f549146b6a5fe0dfcc91}
+      \strng{authorbibnamehash}{1109cde7f649f549146b6a5fe0dfcc91}
+      \strng{authornamehash}{1109cde7f649f549146b6a5fe0dfcc91}
+      \strng{authorfullhash}{1109cde7f649f549146b6a5fe0dfcc91}
+      \strng{authorfullhashraw}{1109cde7f649f549146b6a5fe0dfcc91}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{MathOverflow}
+      \field{note}{(version: 2024-03-07)}
+      \field{title}{Does $A \leq_{\alpha} B$ imply $A \leq_{\beta} B$ for admissible ordinals $\alpha < \beta$?}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://mathoverflow.net/q/466596
+      \endverb
+      \verb{url}
+      \verb https://mathoverflow.net/q/466596
+      \endverb
+    \endentry
     \entry{bendb}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=f954e39597eff0a6612aac687f5df4db}{%
@@ -1669,36 +1742,6 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/abs/2403.09020
-      \endverb
-    \endentry
-    \entry{slaman}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=1a00feeb646a4050a84813e081c685a9}{%
-           family={(https://mathoverflow.net/users/29231/zoorado)},
-           familyi={(\bibinitperiod},
-           given={Zoorado},
-           giveni={Z\bibinitperiod}}}%
-      }
-      \strng{namehash}{1a00feeb646a4050a84813e081c685a9}
-      \strng{fullhash}{1a00feeb646a4050a84813e081c685a9}
-      \strng{fullhashraw}{1a00feeb646a4050a84813e081c685a9}
-      \strng{bibnamehash}{1a00feeb646a4050a84813e081c685a9}
-      \strng{authorbibnamehash}{1a00feeb646a4050a84813e081c685a9}
-      \strng{authornamehash}{1a00feeb646a4050a84813e081c685a9}
-      \strng{authorfullhash}{1a00feeb646a4050a84813e081c685a9}
-      \strng{authorfullhashraw}{1a00feeb646a4050a84813e081c685a9}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{MathOverflow}
-      \field{note}{(version: 2024-02-17)}
-      \field{title}{Does $A \leq_{\alpha} B$ imply $A \leq_{\beta} B$ for admissible ordinals $\alpha$ [and] $\beta$?}
-      \verb{urlraw}
-      \verb https://mathoverflow.net/q/464328
-      \endverb
-      \verb{url}
-      \verb https://mathoverflow.net/q/464328
       \endverb
     \endentry
   \enddatalist
