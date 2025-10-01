@@ -3846,8 +3846,7 @@ For any $X \in 2^{\omega}$, a $\Pi^0_1(X)$ \emph{class} is the set of branches t
 
 \begin{defi}
 Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable, and $X \in 2^{\omega}$. We say an oracle machine $\Phi$ \emph{witnesses} $A$ \emph{is a} $\Pi^0_1(X)$ \emph{class with respect to} $f_r$ iff 
-\begin{enumerate}[label=(\arabic*)]
-    \item $A$ is a $\Pi^0_1(X)$ class, 
+\begin{enumerate}[label=(\arabic*)] 
     \item $f_r^{-1}(\Phi^X)$ is an infinite subtree of $2^{<\omega}$, and
     \item $A$ the set of branches through $f_r^{-1}(\Phi^X)$.
 \end{enumerate} 
@@ -3861,18 +3860,22 @@ There is an oracle machine $\Theta$ such that whenever $X \in 2^{\omega}$, $\The
 Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable. Then there is an oracle machine $\Phi$ for which, whenever $\mathfrak{T}$ is a $\Pi_2$ TCI, one of the following must hold:
 \begin{enumerate}[label=(\arabic*)]
     \item $|\{\mathcal{M} : \mathcal{M} \models^* \mathfrak{T}\}| \leq \aleph_0$.
-    \item\label{rlcor2} There is a perfect subset $A$ of $2^{\omega}$ such that $$A \subset \{f_r" \mathcal{M} : \mathcal{M} \models^* \mathfrak{T}\}$$ and $\Phi$ witnesses $A$ is a $\Pi^0_1(X)$ class for some $X \in 2^{\omega}$.
+    \item\label{rlcor2} There is a perfect subset $A$ of $2^{\omega}$ such that $$A \subset \{f_r" \mathcal{M} : \mathcal{M} \models^* \mathfrak{T}\}$$ and $\Phi$ witnesses $A$ is a 
+    \begin{equation*}
+        \Pi^0_1((f_r" (P(\mathfrak{T})^{\top}))' \oplus f_r" (P(\mathfrak{T})^{\top}))
+    \end{equation*}
+    class with respect to $f_r$.
 \end{enumerate}
 \end{cor}
 
 \begin{proof}
-Follows from a straightforward combination of Theorem \ref{lastthm} and Fact \ref{2ndlf}. Note that we can always choose $X$ in \ref{rlcor2} to be $((f_r" (P(\mathfrak{T})^{\top}))' \oplus f_r" (P(\mathfrak{T})^{\top}))$.
+Follows from a straightforward combination of Theorem \ref{lastthm} and Fact \ref{2ndlf}.
 \end{proof}
 
-Corollary \ref{rlcor} trivially implies the next corollary.
+The next corollary is hence implied.
 
 \begin{cor}\label{rlcor2nd}
-Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable. Then there is an oracle machine $\Phi$ for which, whenever 
+Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable. Then there is a function $\mathbf{F}_r$ definable in the language associated with $(H(\omega_1); \in)$, for which whenever 
 \begin{enumerate}[label=(\alph*)]
     \item $\mathfrak{A} = (A; \mathcal{I})$ and $T$ are respectively a countable structure and a first-order $\Pi_2$ theory over the same signature, and
     \item generating $\mathfrak{T}$ from $\mathfrak{A}$ and $T$ via the procedure outlined in Example \ref{2ndex} results in $\mathfrak{T}$ being code-friendly,
@@ -3880,9 +3883,21 @@ Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable. Then there is an oracle
 one of the following must hold:
 \begin{enumerate}[label=(\arabic*)]
     \item $|\mathrm{Sub}(\mathfrak{A}, T)| \leq \aleph_0$.
-    \item There is a perfect subset $A$ of $2^{\omega}$ such that $$A \subset \{f_r" \mathcal{M} : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\}$$ and $\Phi$ witnesses $A$ is a $\Pi^0_1(X)$ class for some $X \in 2^{\omega}$.
+    \item $\mathbf{F}_r(\mathfrak{A}, T)$ is a perfect subset of $2^{\omega}$ such that 
+    \begin{equation*}
+        \mathbf{F}_r(\mathfrak{A}, T) \subset \{f_r" \mathcal{M} : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\} \text{.}
+    \end{equation*}
 \end{enumerate}
 \end{cor}
+
+\begin{proof}
+This is a consequence of
+\begin{itemize}
+    \item the procedure outlined in Example \ref{2ndex} being definable in $(H(\omega_1); \in)$ using only $\mathfrak{A}$ and $T$ as parameters,
+    \item $(f_r" (P(\mathfrak{T})^{\top}))' \oplus f_r" (P(\mathfrak{T})^{\top})$ being definable in $(H(\omega_1); \in)$ using only $f_r$ and $\mathfrak{T}$ as parameters, and
+    \item Corollary \ref{rlcor}. \qedhere
+\end{itemize}
+\end{proof}
 
 Corollary \ref{lastcor} --- indeed, that $\mathrm{Sub}(\mathfrak{A}, T)$ of the corollary has the perfect set property with respect to some topological space --- also follows from a well-known fact in descriptive set theory (see e.g. \cite{kechris} for its proof), via the Cantor-Bendixson theorem. 
 
@@ -3890,7 +3905,7 @@ Corollary \ref{lastcor} --- indeed, that $\mathrm{Sub}(\mathfrak{A}, T)$ of the 
 Let $\mathfrak{A} = (A; \mathcal{I})$ and $T$ be a countable structure and a first-order theory respectively, over the same signature. Then $\mathrm{Sub}(\mathfrak{A}, T)$ is a closed set in some Polish space.
 \end{fact}
 
-What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond the results of classical descriptive set theory --- in particular, beyond Fact \ref{lastfact} --- is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is uniformly $\Pi^0_1$ in a single real parameter, so its uniform component is of very low complexity.
+What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond the results of classical descriptive set theory --- in particular, beyond Fact \ref{lastfact} --- is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is definable in second-order arithmetic, and is therefore of low complexity.
 
 Precisely because Corollary \ref{rlcor} establishes a very strong version of the perfect set property, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets which contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}.
 
