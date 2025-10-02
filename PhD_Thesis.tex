@@ -686,6 +686,14 @@ For $X \subset 2^{< \omega}$, we say $X$ is a \emph{tree} iff $X$ is closed unde
 \begin{equation*}
     \tau_2 \subset \tau_1 \implies \tau_2 \in X \text{.}
 \end{equation*}
+Often, we say $X$ \textit{is a subtree of} $2^{<\omega}$ when we mean $X \subset 2^{< \omega}$ and $X$ is a tree.
+\end{defi}
+
+\begin{defi}
+If $X \subset 2^{< \omega}$ is a tree, then
+\begin{equation*}
+    [X] := \{x \in 2^{\omega} : x \text{ is a branch through } X\} \text{.}
+\end{equation*}
 \end{defi}
 
 \begin{defi}
@@ -700,6 +708,8 @@ A set $X \subset 2^{< \omega}$ is a \emph{uniformly splitting tree} iff $X$ is a
     |\tau_1| = |\tau_2| \implies \tau_2 \text{ is a splitting node in } X \text{.}
 \end{equation*}
 \end{defi}
+
+Notice that whenever $X$ is a perfect tree, $[X]$ is a perfect set in the Cantor space $2^{\omega}$.
 
 \begin{defi}
 Let $n < \omega$. A real $A \in 2^{\omega}$ is $n$\emph{-generic} iff for each $\Sigma^0_n$ formula $\phi$ over the language of arithmetic with a single free variable $x$, one of the following holds.
@@ -3838,22 +3848,18 @@ Clearly $\mathrm{Sub}(\mathfrak{A}, T)$ is invariant under isomorphisms, so with
 If all models of $\mathfrak{T}$ are almost finitely generated, then Lemma \ref{afdinV} tells us that the number of models of $\mathfrak{T}$ is bounded above by $$max\{|P(\mathfrak{T})|, |[\mathcal{L}_{\mathfrak{T}}]^{< \omega}|\} \leq \aleph_0,$$ which means $|\mathrm{Sub}(\mathfrak{A}, T)| \leq \aleph_0$. Otherwise, by Theorem \ref{lastthm}, for some real $X$ there is an injection from the set of $X$-$1$-generic reals into the set of models of $\mathfrak{T}$. As there are continuum many $X$-$1$-generic reals, $|\mathrm{Sub}(\mathfrak{A}, T)| = 2^{\aleph_0}$.
 \end{proof}
 
-We can, in fact, strengthen Corollary \ref{lastcor} so that when a countable structure is presented in a certain manner, the perfect set property holds for its $T$-substructures given any sufficiently simple $T$. Let us first recall some basic definitions in effective descriptive set theory.
-
-\begin{defi}
-For any $X \in 2^{\omega}$, a $\Pi^0_1(X)$ \emph{class} is the set of branches through some $X$-computable (under a canonical encoding of $2^{<\omega}$) infinite subtree of $2^{<\omega}$.
-\end{defi}
+We can, in fact, strengthen Corollary \ref{lastcor} so that when a countable structure is presented in a certain manner, the perfect set property holds for its $T$-substructures given any sufficiently simple $T$. 
 
 \begin{defi}
 Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable, and $X \in 2^{\omega}$. We say an oracle machine $\Phi$ \emph{witnesses} $A$ \emph{is a} $\Pi^0_1(X)$ \emph{class with respect to} $f_r$ iff 
 \begin{enumerate}[label=(\arabic*)] 
-    \item $f_r^{-1}(\Phi^X)$ is an infinite subtree of $2^{<\omega}$, and
-    \item $A$ the set of branches through $f_r^{-1}(\Phi^X)$.
+    \item $f_r^{-1}(\Phi^X)$ is a perfect subtree of $2^{<\omega}$, and
+    \item $A$ = $[f_r^{-1}(\Phi^X)]$.
 \end{enumerate} 
 \end{defi}
 
 \begin{fact}\label{2ndlf}
-There is an oracle machine $\Theta$ such that whenever $X \in 2^{\omega}$, $\Theta^{X' \oplus X}$ is a uniformly splitting perfect tree $T$ on $2^{<\omega}$, all of which branches are $X$-$1$-generic.
+There is an oracle machine $\Theta$ such that whenever $X \in 2^{\omega}$, $\Theta^{X' \oplus X}$ is a uniformly splitting perfect subtree of $2^{<\omega}$, all of which branches are $X$-$1$-generic.
 \end{fact}
 
 \begin{cor}\label{rlcor}
@@ -3883,9 +3889,9 @@ Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable. Then there is a functio
 one of the following must hold:
 \begin{enumerate}[label=(\arabic*)]
     \item $|\mathrm{Sub}(\mathfrak{A}, T)| \leq \aleph_0$.
-    \item $\mathbf{F}_r(\mathfrak{A}, T)$ is a perfect subset of $2^{\omega}$ such that 
+    \item $\mathbf{F}_r(\mathfrak{A}, T)$ is a perfect subtree of $2^{< \omega}$ and
     \begin{equation*}
-        \mathbf{F}_r(\mathfrak{A}, T) \subset \{f_r" \mathcal{M} : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\} \text{.}
+        [\mathbf{F}_r(\mathfrak{A}, T)] \subset \{f_r" \mathcal{M} : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\} \text{.}
     \end{equation*}
 \end{enumerate}
 \end{cor}
