@@ -3885,14 +3885,14 @@ There is a $\Sigma_1$ formula $\psi_{ps}$ in four free variables in the language
 \begin{enumerate}[label=(\alph*)]
     \item $r$ is a nicely computable code of $H(\omega)$,
     \item $\mathfrak{A} = (A; \mathcal{I})$ and $T$ are respectively a countable structure and a first-order $\Pi_2$ theory over the same signature, and
-    \item generating $\mathfrak{T}$ from $\mathfrak{A}$ and $T$ via the procedure outlined in Example \ref{2ndex} results in $\mathfrak{T}$ being code-friendly,
+    \item generating $\mathfrak{T}(\mathfrak{A}, T) := \mathfrak{T}$ from $\mathfrak{A}$ and $T$ via the procedure outlined in Example \ref{2ndex} results in $\mathfrak{T}$ being code-friendly,
 \end{enumerate} 
 one of the following must hold:
 \begin{enumerate}[label=(\arabic*)]
     \item $|\mathrm{Sub}(\mathfrak{A}, T)| \leq \aleph_0$.
     \item $\mathrm{Tr}(r, \mathfrak{A}, T)$ is a perfect subtree of $2^{< \omega}$ and
     \begin{equation*}
-        [\mathrm{Tr}(r, \mathfrak{A}, T)] \subset \{f_r" \mathcal{M} : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\} \text{.}
+        [\mathrm{Tr}(r, \mathfrak{A}, T)] \subset \{f_r" (\Sigma(\mathfrak{T}(\mathfrak{A}, T), \mathcal{M})) : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\} \text{.}
     \end{equation*}
 \end{enumerate}
 \end{cor}
@@ -3900,10 +3900,10 @@ one of the following must hold:
 \begin{proof}
 This is a consequence of
 \begin{itemize}
-    \item the procedure outlined in Example \ref{2ndex} being a $\Delta_0$ definition of $\mathfrak{T} \in H(\omega_1)$ from $\mathfrak{A}$ and $T$,
+    \item the procedure outlined in Example \ref{2ndex} being a $\Delta_0$ definition of $\mathfrak{T}(\mathfrak{A}, T) \in H(\omega_1)$ from $\mathfrak{A}$ and $T$,
     \item $f_r \in H(\omega_1)$ being uniformly $\Delta_0$-definable from $r$,
     \item code-friendliness being a $\Delta_0$ property,
-    \item $(f_r" (P(\mathfrak{T})^{\top}))' \oplus f_r" (P(\mathfrak{T})^{\top})$ being uniformly $\Sigma_1$-definable in $(H(\omega_1); \in)$ from $f_r$ and $\mathfrak{T}$, and
+    \item $(f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top}))' \oplus f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top})$ being uniformly $\Sigma_1$-definable in \\ $(H(\omega_1); \in)$ from $f_r$ and $\mathfrak{T}(\mathfrak{A}, T)$, and
     \item Corollary \ref{rlcor},
 \end{itemize}
 noting that for every oracle machine $\Phi$ and all $A, X \in 2^{\omega}$, if $\Phi$ witnesses $A$ is a $\Pi^0_1(X)$ class with respect to $f_r$, then $f_r^{-1}(\Phi^X) \in H(\omega_1)$ is uniformly $\Delta_0$-definable from $f_r$ and $X$.
@@ -3915,7 +3915,7 @@ Corollary \ref{lastcor} --- indeed, that $\mathrm{Sub}(\mathfrak{A}, T)$ of the 
 Let $\mathfrak{A} = (A; \mathcal{I})$ and $T$ be a countable structure and a first-order theory respectively, over the same signature. Then $\mathrm{Sub}(\mathfrak{A}, T)$ is a closed set in some Polish space.
 \end{fact}
 
-What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond the results of classical descriptive set theory --- in particular, beyond Fact \ref{lastfact} --- is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is essentially $\mathbf{\Sigma^1_1}$-definable in second-order arithmetic, and is therefore of a very low complexity.
+What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond the results of classical descriptive set theory --- in particular, beyond Fact \ref{lastfact} --- is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is essentially $\Sigma^1_1$-definable in the analytical hierarchy, and is therefore of very low complexity.
 
 Precisely because Corollary \ref{rlcor} establishes a very strong version of the perfect set property, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets which contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}.
 
