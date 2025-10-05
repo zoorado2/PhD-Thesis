@@ -3430,7 +3430,12 @@ Two important, yet perhaps surprising, properties of $\Pi_2$ TCIs follow from th
 \begin{cor}\label{cor549}
 The following statements hold.
 \begin{enumerate}[label=(\arabic*)]
-    \item Let $\mathfrak{T}$ be a $\Pi_2$ TCI. Every model of $\mathfrak{T}$ can be found in $V$ iff every model of $\mathfrak{T}$ is almost finitely determined (see also Lemma \ref{afdinV}).
+    \item\label{cor5491} Let $\mathfrak{T}$ be a $\Pi_2$ TCI. Then
+    \begin{align*}
+        & \text{every model of } \mathfrak{T} \text{ can be found in } V \\
+        \iff \ & \text{every model of } \mathfrak{T} \text{ is almost finitely determined (see also Lemma \ref{afdinV})} \\
+        \iff \ & \mathbb{P}(\mathfrak{T})^{\top} = \emptyset \text{.}
+    \end{align*}
     \item\label{cor5492} There is a procedure to uniformly decide in $V$, whether every model of any given $\Pi_2$ TCI $\mathfrak{T}$ is definable in $V$ with parameters from $$\mathrm{PS}(\mathfrak{T}) := trcl(\mathfrak{T}) \cup |trcl(\mathfrak{T})|^+ \cup H(\omega) \text{,}$$ or equivalently, whether every model of $\mathfrak{T}$ can be found in $V$.
     
     Moreover, for some $n < \omega$ there is a $(n+2)$-ary formula $\psi$ in the language of set theory such that, given any $\Pi_2$ TCI $\mathfrak{T}$,
@@ -3889,7 +3894,7 @@ There is a $\Sigma_1$ formula $\psi_{ps}$ in four free variables in the language
 \end{enumerate} 
 one of the following must hold:
 \begin{enumerate}[label=(\arabic*)]
-    \item $|\mathrm{Sub}(\mathfrak{A}, T)| \leq \aleph_0$.
+    \item $|\mathrm{Sub}(\mathfrak{A}, T)| \leq \aleph_0$ and $\mathrm{Tr}(r, \mathfrak{A}, T) = \emptyset$.
     \item $\mathrm{Tr}(r, \mathfrak{A}, T)$ is a perfect subtree of $2^{< \omega}$ and
     \begin{equation*}
         [\mathrm{Tr}(r, \mathfrak{A}, T)] \subset \{f_r" (\Sigma(\mathfrak{T}(\mathfrak{A}, T), \mathcal{M})) : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\} \text{.}
@@ -3903,7 +3908,8 @@ This is a consequence of
     \item the procedure outlined in Example \ref{2ndex} being a $\Delta_0$ definition of $\mathfrak{T}(\mathfrak{A}, T) \in H(\omega_1)$ from $\mathfrak{A}$ and $T$,
     \item $f_r \in H(\omega_1)$ being uniformly $\Delta_0$-definable from $r$,
     \item code-friendliness being a $\Delta_0$ property,
-    \item $(f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top}))' \oplus f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top})$ being uniformly $\Sigma_1$-definable in \\ $(H(\omega_1); \in)$ from $f_r$ and $\mathfrak{T}(\mathfrak{A}, T)$, and
+    \item $(f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top}))' \oplus f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top})$ being uniformly $\Sigma_1$-definable in \\ $(H(\omega_1); \in)$ from $f_r$ and $\mathfrak{T}(\mathfrak{A}, T)$, 
+    \item \ref{cor5491} of Corollary \ref{cor549}, and
     \item Corollary \ref{rlcor},
 \end{itemize}
 noting that for every oracle machine $\Phi$ and all $A, X \in 2^{\omega}$, if $\Phi$ witnesses $A$ is a $\Pi^0_1(X)$ class with respect to $f_r$, then $f_r^{-1}(\Phi^X) \in H(\omega_1)$ is uniformly $\Delta_0$-definable from $f_r$ and $X$.
