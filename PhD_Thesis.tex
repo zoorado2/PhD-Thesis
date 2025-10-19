@@ -450,9 +450,9 @@ Unless specified otherwise, we follow the standard definitions of concepts typic
         \item the signature of $\mathfrak{A}$ is the singleton set $\{\ulcorner \in \urcorner\}$, and
         \item $\mathfrak{A}$ interprets $\ulcorner \in \urcorner$ as the membership relation on $V$ restricted to the base set of $\mathfrak{A}$.
     \end{itemize}
-    More formally, $$\mathfrak{A} = (A; \mathcal{I}) \text{ and } \mathcal{I} = \{(\ulcorner \in \urcorner, \in \cap A)\},$$ where $\in$ is the membership relation on $V$. In this case, we can just write $\mathfrak{A} = (A; \in)$.
+    More formally, $$\mathfrak{A} = (A; \mathcal{I}) \text{ and } \mathcal{I} = \{(\ulcorner \in \urcorner, \in \cap \ A)\},$$ where $\in$ is the membership relation on $V$. In this case, we can just write $\mathfrak{A} = (A; \in)$.
     \item A first-order formula is \emph{in a possibly expanded language of set theory} iff it is a formula over some signature $\sigma$ satisfying $\ulcorner \in \urcorner \in \sigma$.
-    \item We say a structure $\mathfrak{A}$ is \emph{a structure in a possibly expanded language of set theory} iff we omit the cardinality requirement on the signature of $\mathfrak{A}$ in \ref{stcon1}. More formally, $$\mathfrak{A} = (A; \mathcal{I}) \text{ and } \mathcal{I} = \{(\ulcorner \in \urcorner, \in \cap A)\} \cup \Vec{X},$$ where $\Vec{X}$ is some function and $\in$ is the membership relation on $V$. In this case, we can just write $\mathfrak{A} = (A; \in, \Vec{X})$.
+    \item We say a structure $\mathfrak{A}$ is \emph{a structure in a possibly expanded language of set theory} iff we omit the cardinality requirement on the signature of $\mathfrak{A}$ in \ref{stcon1}. More formally, $$\mathfrak{A} = (A; \mathcal{I}) \text{ and } \mathcal{I} = \{(\ulcorner \in \urcorner, \in \cap \ A)\} \cup \Vec{X},$$ where $\Vec{X}$ is some function and $\in$ is the membership relation on $V$. In this case, we can just write $\mathfrak{A} = (A; \in, \Vec{X})$.
     \item\label{idu} We identify a universe of set theory $W$ with the structure $(W; \in)$. This should not cause confusion in the circumstances we find ourselves in.
     \item When $\alpha$ and $\beta$ are ordinals, we write ``$\alpha < \beta$'' to mean ``$\alpha \in \beta$''.
     \item A natural number is a member of the ordinal $\omega$. In other words, we view $\omega$ as the set of all natural numbers.
@@ -3533,6 +3533,15 @@ A TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ is \emph{code-f
     \item $\mathcal{L}_{\mathfrak{T}} \subset H(\omega)$.
 \end{enumerate}
 \end{defi}
+
+\begin{rem}\label{rem6318}
+Due to the fact that universes of code-friendly TCIs only contain finite sets, we can assume for the rest of this section without loss of generality --- through a minor and straightforward addendum to the proof of Lemma \ref{mcequiv} --- that every code-friendly $\Pi_2$ TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ satisfies the following:
+\begin{itemize}
+    \item $\ulcorner \in \urcorner \in \sigma$,
+    \item $\vartheta(\ulcorner \in \urcorner) \in \{\in \cap \ y\} \times 2$ whenever $\vartheta(\dot{\mathcal{U}}) \in \{y\} \times 2$, and
+    \item $T$ is a set of $\Pi_2$ sentences within the L\'{e}vy hierarchy as per Definition \ref{def27}.
+\end{itemize}
+\end{rem}
 
 Code-friendly TCIs are relatively well-behaved and easy to reason about, especially when it comes to things like absoluteness. Notice that given any code-friendly TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ and any ordinal $\alpha$,
 \begin{enumerate}[leftmargin=40pt, label=(CF\arabic*)]
