@@ -1459,7 +1459,7 @@
       \verb https://www.worldscientific.com/doi/abs/10.1142/9789813223523_0003
       \endverb
     \endentry
-    \entry{sacks}{book}{}{}
+    \entry{higherrt}{book}{}{}
       \name{author}{1}{}{%
         {{hash=227b74c2ef35ef2de30d1af50e56c315}{%
            family={Sacks},
@@ -1479,6 +1479,34 @@
       \strng{authorfullhash}{227b74c2ef35ef2de30d1af50e56c315}
       \strng{authorfullhashraw}{227b74c2ef35ef2de30d1af50e56c315}
       \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Higher recursion theory}
+      \field{volume}{2}
+      \field{year}{2017}
+    \endentry
+    \entry{sacks}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=227b74c2ef35ef2de30d1af50e56c315}{%
+           family={Sacks},
+           familyi={S\bibinitperiod},
+           given={Gerald\bibnamedelima E},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{fullhash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{fullhashraw}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{bibnamehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authorbibnamehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authornamehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authorfullhash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authorfullhashraw}{227b74c2ef35ef2de30d1af50e56c315}
+      \field{extraname}{3}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
