@@ -633,7 +633,7 @@ If $\Phi$ is an oracle machine and $A \subset \omega$, we write $\Phi^A$ to mean
 \begin{equation*}
     \{n \in \omega : \Phi \text{ with oracle input } A \text{ halts on input } n \text{ and returns } 1\} \text{.}
 \end{equation*}
-The appearance of $\Phi^A$ always implicitly implies $\Phi$ with oracle input $A$ halts on every natural number input.
+The appearance of $\Phi^A$ always implicitly implies $\Phi$ with oracle input $A$ halts on every natural number input. 
 \end{defi}
 
 \begin{defi}
@@ -3847,7 +3847,7 @@ Fix any nicely computable code $r$ of $H(\omega)$. Check that the following stat
 The verity of \ref{ss53a} to \ref{ss53c} implies that our proof of Lemma \ref{ctblegeneric2} essentially functions as a proof of a more general statement, which we formally present as a theorem below.
 
 \begin{thm}\label{lastthm}
-There is a formula $\psi_{gmc}$ in four free variables in the language of set theory, absolute for transitive models of $\mathsf{ZFC - Powerset}$, such that $\psi_{gmc}(r, f_r, \Psi_r, \bar{\Psi}_{r})$ defines a function $$r \mapsto (f_r, \Psi_r, \bar{\Psi}_{r})$$ on the set of all nicely computable codes of $H(\omega)$, wherewith
+There is a $\Delta_0$ formula $\psi_{gmc}$ in four free variables in the language of set theory such that $\psi_{gmc}(r, f_r, \Psi_r, \bar{\Psi}_{r})$ defines a function $$r \mapsto (f_r, \Psi_r, \bar{\Psi}_{r})$$ on the set of all nicely computable codes of $H(\omega)$, wherewith
 \begin{enumerate}[label=(\arabic*)]
     \item $(r, f_r)$ witnesses $(H(\omega); \in)$ is computable,
     \item $\Psi_r$ and $\bar{\Psi}_{r}$ are oracle machines, and
@@ -3862,6 +3862,7 @@ There is a formula $\psi_{gmc}$ in four free variables in the language of set th
         In particular, for each such pair $(t, \mathcal{M}_t)$, $$t \oplus (f_r" (P(\mathfrak{T})^{\top})) \equiv_{T} (f_r" (\Sigma(\mathfrak{T}, \mathcal{M}_t))) \oplus (f_r" (P(\mathfrak{T})^{\top})).$$
 \end{enumerate}
 \end{enumerate}
+Moreover, there is an oracle machine $\Xi$ such that for all $e < \omega$, $\Xi$ with empty oracle halts on input $e$ and $\Xi^{\emptyset}(e) = \langle \Psi_r, \bar{\Psi}_{r} \rangle$ if $\Phi^{\emptyset}_e = r$ for some nicely computable code $r$.
 \end{thm}
 
 From Theorem \ref{lastthm}, we can prove that a version of Continuum Hypothesis holds for $T$-substructures of a countable structure when $T$ is sufficiently simple.
@@ -3881,7 +3882,7 @@ We can, in fact, strengthen Corollary \ref{lastcor} so that when a countable str
 \begin{defi}
 Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable, and $X \in 2^{\omega}$. We say an oracle machine $\Phi$ \emph{witnesses} $A$ \emph{is a} $\Pi^0_1(X)$ \emph{class with respect to} $f_r$ iff 
 \begin{enumerate}[label=(\arabic*)] 
-    \item $f_r^{-1}(\Phi^X)$ is a perfect subtree of $2^{<\omega}$, and
+    \item $f_r^{-1}(\Phi^X)$ is a pruned subtree of $2^{<\omega}$, and
     \item $A$ = $[f_r^{-1}(\Phi^X)]$.
 \end{enumerate} 
 \end{defi}
@@ -3894,7 +3895,7 @@ There is an oracle machine $\Theta$ such that whenever $X \in 2^{\omega}$, $\The
 There is an oracle machine $\Phi$ for which, whenever $(r, f_r)$ witnesses $(H(\omega); \in)$ is computable and $\mathfrak{T}$ is a code-friendly $\Pi_2$ TCI, one of the following must hold:
 \begin{enumerate}[label=(\arabic*)]
     \item $|\{\mathcal{M} : \mathcal{M} \models^* \mathfrak{T}\}| \leq \aleph_0$.
-    \item\label{rlcor2} There is a perfect subset $A$ of $2^{\omega}$ such that $$A \subset \{f_r" \mathcal{M} : \mathcal{M} \models^* \mathfrak{T}\}$$ and $\Phi$ witnesses $A$ is a 
+    \item\label{rlcor2} There is a perfect subset $A$ of $2^{\omega}$ such that $$A \subset \{f_r" (\Sigma(\mathfrak{T}, \mathcal{M})) : \mathcal{M} \models^* \mathfrak{T}\}$$ and $\Phi$ witnesses $A$ is a 
     \begin{equation*}
         \Pi^0_1((f_r" (P(\mathfrak{T})^{\top}))' \oplus f_r" (P(\mathfrak{T})^{\top}))
     \end{equation*}
@@ -3909,7 +3910,7 @@ Follows from a straightforward combination of Theorem \ref{lastthm} and Fact \re
 The next corollary is hence implied.
 
 \begin{cor}\label{rlcor2nd}
-There is a $\Sigma_1$ formula $\psi_{ps}$ in four free variables in the language of set theory, such that $\psi_{ps}(r, \mathfrak{A}, T, \mathrm{Tr}(r, \mathfrak{A}, T))$ defines a ternary function $$(r, \mathfrak{A}, T) \mapsto \mathrm{Tr}(r, \mathfrak{A}, T)$$ on $H(\omega_1)$, for which whenever 
+There is a $\Sigma_1$ formula $\psi_{ps}$ in four free variables in the language of set theory, such that $\psi_{ps}(r, \mathfrak{A}, T, \mathrm{Tr}(r, \mathfrak{A}, T))$ defines in $(H(\omega_1); \in)$ a ternary function $$(r, \mathfrak{A}, T) \mapsto \mathrm{Tr}(r, \mathfrak{A}, T)$$ on $H(\omega_1)$, for which whenever 
 \begin{enumerate}[label=(\alph*)]
     \item $r$ is a nicely computable code of $H(\omega)$,
     \item $\mathfrak{A} = (A; \mathcal{I})$ and $T$ are respectively a countable structure and a first-order $\Pi_2$ theory over the same signature, and
