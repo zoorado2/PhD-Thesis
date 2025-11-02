@@ -2999,7 +2999,7 @@ There is a formula $\psi_{trans}$ in three free variables, absolute for transiti
 \end{lem}
 
 \begin{proof}
-Let $U$ be the unique $y$ for which there exists $z$ such that $\vartheta(\dot{\mathcal{U}}) = (y, z)$. Given a model $\mathcal{M} = (M; \mathcal{I})$ of $\mathfrak{T}$, define $$U(\mathcal{M}) := \{\ulcorner \dot{\mathcal{U}}(x) \urcorner : x \in M\} \cup \{\ulcorner \neg \ \dot{\mathcal{U}}(x) \urcorner : x \in U \setminus M\}.$$ Now define $\psi_{trans}$ as follows: $$\psi_{trans}(\mathfrak{T}, \mathcal{M}, \Sigma) \iff (\mathcal{M} \models^* \mathfrak{T} \wedge \Sigma = (U(\mathcal{M}) \cup Diag(\mathcal{M})) \cap \mathcal{L}_{\mathfrak{T}}),$$ where $Diag(\mathcal{M})$ is the atomic diagram of $\mathcal{M}$. Verily, $\psi_{trans}$ is a $\Delta_1$ formula in the language of set theory (according to Definition \ref{def27}), because the binary relation $\models^*$ is $\Delta_1$-definable and the set $\mathcal{L}_{\mathfrak{T}}$ is $\Delta_1$-definable in $\mathfrak{T}$. As such, $\psi_{trans}$ must be absolute for transitive models of $\mathsf{ZFC - Powerset}$. We can then straightforwardly check that $\psi_{trans}$ defines a bijection as required by the lemma for any fixed $\mathfrak{T}$, based on how the triple $(\mathfrak{A}_{\mathfrak{T}}, \mathcal{L}_{\mathfrak{T}}, \Gamma_{\mathfrak{T}})$ is constructed from $\mathfrak{T}$. 
+Let $U$ be the unique $y$ for which there exists $z$ such that $\vartheta(\dot{\mathcal{U}}) = (y, z)$. Given a model $\mathcal{M} = (M; \mathcal{I})$ of $\mathfrak{T}$, define $$U(\mathcal{M}) := \{\ulcorner \dot{\mathcal{U}}(x) \urcorner : x \in M\} \cup \{\ulcorner \neg \ \dot{\mathcal{U}}(x) \urcorner : x \in U \setminus M\}.$$ Now define $\psi_{trans}$ as follows: $$\psi_{trans}(\mathfrak{T}, \mathcal{M}, \Sigma) \iff (\mathcal{M} \models^* \mathfrak{T} \wedge \Sigma = (U(\mathcal{M}) \cup Diag(\mathcal{M})) \cap \mathcal{L}_{\mathfrak{T}}),$$ where $Diag(\mathcal{M})$ stands for the atomic diagram of $\mathcal{M}$. Verily, $\psi_{trans}$ is a $\Delta_1$ formula in the language of set theory (according to Definition \ref{def27}), because the binary relation $\models^*$ is $\Delta_1$-definable and the set $\mathcal{L}_{\mathfrak{T}}$ is $\Delta_1$-definable in $\mathfrak{T}$. As such, $\psi_{trans}$ must be absolute for transitive models of $\mathsf{ZFC - Powerset}$. We can then straightforwardly check that $\psi_{trans}$ defines a bijection as required by the lemma for any fixed $\mathfrak{T}$, based on how the triple $(\mathfrak{A}_{\mathfrak{T}}, \mathcal{L}_{\mathfrak{T}}, \Gamma_{\mathfrak{T}})$ is constructed from $\mathfrak{T}$. 
 \end{proof}
 
 \begin{rem}\label{swapA}
@@ -3910,33 +3910,46 @@ Follows from a straightforward combination of Theorem \ref{lastthm} and Fact \re
 The next corollary is hence implied.
 
 \begin{cor}\label{rlcor2nd}
-There is a $\Sigma_1$ formula $\psi_{ps}$ in four free variables in the language of set theory, such that $\psi_{ps}(r, \mathfrak{A}, T, \mathrm{Tr}(r, \mathfrak{A}, T))$ defines in $(H(\omega_1); \in)$ a ternary function $$(r, \mathfrak{A}, T) \mapsto \mathrm{Tr}(r, \mathfrak{A}, T)$$ on $H(\omega_1)$, for which whenever 
-\begin{enumerate}[label=(\alph*)]
-    \item $r$ is a nicely computable code of $H(\omega)$,
-    \item $\mathfrak{A} = (A; \mathcal{I})$ and $T$ are respectively a countable structure and a first-order $\Pi_2$ theory over the same signature, and
-    \item $\mathfrak{T}(\mathfrak{A}, T)$ is code-friendly,
-\end{enumerate} 
-one of the following must hold:
-\begin{enumerate}[label=(\arabic*)]
-    \item $|\mathrm{Sub}(\mathfrak{A}, T)| \leq \aleph_0$ and $\mathrm{Tr}(r, \mathfrak{A}, T) = \emptyset$.
-    \item $\mathrm{Tr}(r, \mathfrak{A}, T)$ is a perfect subtree of $2^{< \omega}$ and
+\leavevmode
+\begin{enumerate}[label=(\Roman*)]
+    \item There is a $\Sigma_1$ formula $\psi_{ps}$ in four free variables in the language of set theory, such that $\psi_{ps}(r, \mathfrak{A}, T, \mathrm{Tr}(r, \mathfrak{A}, T))$ defines in $(H(\omega_1); \in)$ a ternary function $$(r, \mathfrak{A}, T) \mapsto \mathrm{Tr}(r, \mathfrak{A}, T)$$ on $H(\omega_1)$, for which whenever 
+    \begin{enumerate}[label=(\alph*)]
+        \item $r$ is a nicely computable code of $H(\omega)$,
+        \item $\mathfrak{A} = (A; \mathcal{I})$ and $T$ are respectively a countable structure and a first-order $\Pi_2$ theory over the same signature, and
+        \item $\mathfrak{T}(\mathfrak{A}, T)$ is code-friendly,
+    \end{enumerate} 
+    one of the following must hold:
+    \begin{enumerate}[label=(\arabic*)]
+        \item $|\mathrm{Sub}(\mathfrak{A}, T)| \leq \aleph_0$ and $\mathrm{Tr}(r, \mathfrak{A}, T) = \emptyset$.
+        \item $\mathrm{Tr}(r, \mathfrak{A}, T)$ is a perfect subtree of $2^{< \omega}$ and
+        \begin{equation*}
+            [\mathrm{Tr}(r, \mathfrak{A}, T)] \subset \{f_r" (\Sigma(\mathfrak{T}(\mathfrak{A}, T), \mathcal{M})) : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\} \text{.}
+        \end{equation*}
+    \end{enumerate}
+    \item\label{6330ii} Fix a nicely computable code $r^*$ of $H(\omega)$. Then the ternary relation
     \begin{equation*}
-        [\mathrm{Tr}(r, \mathfrak{A}, T)] \subset \{f_r" (\Sigma(\mathfrak{T}(\mathfrak{A}, T), \mathcal{M})) : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\} \text{.}
+        \{(f_{r^*}" (Diag(\mathfrak{A})), f_{r^*}" T, f_{r^*}" (\mathrm{Tr}(r^*, \mathfrak{A}, T))) : \psi_{ps}(r^*, \mathfrak{A}, T, \mathrm{Tr}(r^*, \mathfrak{A}, T))\}
     \end{equation*}
+    on the reals, where $Diag(\mathfrak{A})$ refers to the atomic diagram of $\mathfrak{A}$, is $\Delta^1_2$ in the analytical hierarchy.
 \end{enumerate}
 \end{cor}
 
 \begin{proof}
-This is a consequence of
-\begin{itemize}
-    \item the procedure outlined in Example \ref{2ndex} being a $\Delta_0$ definition of $\mathfrak{T}(\mathfrak{A}, T) \in H(\omega_1)$ from $\mathfrak{A}$ and $T$,
-    \item $f_r \in H(\omega_1)$ being uniformly $\Delta_0$-definable from $r$,
-    \item code-friendliness being a $\Delta_0$ property,
-    \item $(f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top}))' \oplus f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top})$ being uniformly $\Sigma_1$-definable in \\ $(H(\omega_1); \in)$ from $f_r$ and $\mathfrak{T}(\mathfrak{A}, T)$, 
-    \item \ref{cor5491} of Corollary \ref{cor549}, and
-    \item Corollary \ref{rlcor},
-\end{itemize}
-noting that for every oracle machine $\Phi$ and all $A, X \in 2^{\omega}$, if $\Phi$ witnesses $A$ is a $\Pi^0_1(X)$ class with respect to $f_r$, then $f_r^{-1}(\Phi^X) \in H(\omega_1)$ is uniformly $\Delta_0$-definable from $f_r$ and $X$.
+\leavevmode
+\begin{enumerate}[label=(\Roman*)]
+    \item\label{6330ip} This is a consequence of
+    \begin{itemize}
+        \item the procedure outlined in Example \ref{2ndex} being a $\Delta_0$ definition of $\mathfrak{T}(\mathfrak{A}, T) \in H(\omega_1)$ from $\mathfrak{A}$ and $T$,
+        \item $f_r \in H(\omega_1)$ being uniformly $\Delta_0$-definable from $r$,
+        \item code-friendliness being a $\Delta_0$ property,
+        \item $(f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top}))' \oplus f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top})$ being uniformly $\Sigma_1$-definable in \\ $(H(\omega_1); \in)$ from $f_r$ and $\mathfrak{T}(\mathfrak{A}, T)$, 
+        \item \ref{cor5491} of Corollary \ref{cor549}, and
+        \item Corollary \ref{rlcor},
+    \end{itemize}
+    noting that for every oracle machine $\Phi$ and all $A, X \in 2^{\omega}$, if $\Phi$ witnesses $A$ is a $\Pi^0_1(X)$ class with respect to $f_r$, then $f_r^{-1}(\Phi^X) \in H(\omega_1)$ is uniformly $\Delta_0$-definable from $f_r$ and $X$.
+    \item The proof of this part is basically (implied by) a translation of the \hyperref[6330ip]{proof of (I)} via $f_{r^*}$. The reason the relation in question is not $\Sigma^1_1$ lies in how the derivation of $(P(\mathfrak{T}(\mathfrak{A}, T))^{\top}$ from $(\mathfrak{A}, T)$ is represented as a real. This derivation crucially involves some possibly large countable ordinal, and verifying whether a real codes an ordinal is generally a $\Pi^1_1$ process. \qedhere
+\end{enumerate}
+
 \end{proof}
 
 Corollary \ref{lastcor} --- indeed, that $\mathrm{Sub}(\mathfrak{A}, T)$ of the corollary has the perfect set property with respect to some topological space --- also follows from a well-known fact in descriptive set theory (see e.g. \cite{kechris} for its proof), via the Cantor-Bendixson theorem. 
@@ -3945,7 +3958,7 @@ Corollary \ref{lastcor} --- indeed, that $\mathrm{Sub}(\mathfrak{A}, T)$ of the 
 Let $\mathfrak{A} = (A; \mathcal{I})$ and $T$ be a countable structure and a first-order theory respectively, over the same signature. Then $\mathrm{Sub}(\mathfrak{A}, T)$ is a closed set in some Polish space.
 \end{fact}
 
-What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond what Fact \ref{lastfact} does, is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is essentially $\Delta^1_2$-definable in the analytical hierarchy, and is therefore of very low complexity. However, Corollary \ref{rlcor2nd} should not be mistaken for new knowledge, as it is implied by classical work on hyperarithmetic sets (see e.g. Chapter III of \cite{sacks}). We merely provided an alternative --- and arguably simpler --- proof.
+What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond what Fact \ref{lastfact} does, is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is essentially $\Delta^1_2$-definable, and is therefore of very low complexity. However, \ref{6330ii} of Corollary \ref{rlcor2nd} should not be mistaken for new knowledge, as it is implied by classical work on hyperarithmetic sets (see e.g. Chapter III of \cite{sacks}). We merely provided an alternative --- and arguably simpler --- proof.
 
 Precisely because Corollary \ref{rlcor} establishes a very strong version of the perfect set property, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets which contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}.
 
@@ -4085,6 +4098,8 @@ Is there a ``naturally definable'' class $\mathcal{C}$ of TCIs such that
     \end{align*}
 \end{enumerate} 
 \end{ques}
+
+\blankpage
 
 \part{\texorpdfstring{  Applying Our Tools}{Applying Our Tools}}
 
