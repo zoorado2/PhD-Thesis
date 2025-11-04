@@ -380,7 +380,7 @@ Unless specified otherwise, we follow the standard definitions of concepts relat
     \end{itemize} 
     
     In contexts where the correspondence between a signature and its interpretation is clear, we might write $(A; \mathcal{I})$ as $(A; \Vec{S})$, where $\Vec{S}$ is some ordering of $ran(\mathcal{I})$.
-    \item\label{224} The variables occurring in any first-order formula must come from a fixed countably infinite set $\mathrm{Var}$. We will assume that $\mathrm{Var}$ is disjoint from both the set of first-order logical symbols and the class of signature-related symbols.
+    \item\label{224} The variable symbols occurring in any first-order formula must come from a fixed countably infinite set $\mathrm{Var}$. We will assume that $\mathrm{Var}$ is disjoint from both the set of first-order logical symbols and the class of signature-related symbols.
     \item A string over a vocabulary set $\Sigma$ is a member of $\Sigma^{< \omega}$.
     \item We sometimes define procedures in which subformulas of a first-order formula are replaced by other formulas. In these cases, for convenience's sake, what follows will be adopted.
     \begin{quote}
@@ -429,6 +429,27 @@ Note that if $k = 0$ in \ref{3292}\ref{3292a} and \ref{3292}\ref{3292b}, then $\
 \end{defi}
 
 \begin{defi}
+For each $n < \omega$, fix a different unary relation symbol $A_n$. Define
+\begin{align*}
+    \mathrm{2Var} := \ & \{A_n : n < \omega\}  \text{ and} \\
+    \mathrm{Var^+} := \ & \mathrm{Var} \cup \mathrm{2Var} \text{.}
+\end{align*}
+A \emph{monadic second-order formula} over a signature $\sigma$ is a first-order formula over the signature $\sigma \cup \mathrm{2Var}$ with its variable symbols coming from the enlarged variable set $\mathrm{Var^+}$. 
+\end{defi}
+
+\begin{defi}[Semantics of monadic second-order logic]
+Let $\mathfrak{A} = (A; \mathcal{I})$ be a first-order structure.
+\begin{enumerate}[label=(\arabic*)]
+    \item A monadic second-order formula $\phi$ is \emph{interpretable} in $\mathfrak{A}$ iff every member of $\mathrm{Var}$ occurring free in $\phi$ has been assigned an interpretation in $A$ and every member of $\mathrm{2Var}$ occurring free in $\phi$ has been assigned an interpretation in $\mathcal{P}(A)$.
+    \item If $\phi$ is a monadic second-order formula interpretable in $\mathfrak{A}$, we say $\mathfrak{A} \models \phi$ iff 
+    \begin{enumerate}[label=(\alph*)]
+        \item the ``first-order portion'' of $\phi$ concerning $\sigma'$ and $\mathrm{Var}$ holds in $\mathfrak{A}$, and
+        \item the ``second-order portion'' of $\phi$ concerning quantified variable symbols in $\mathrm{2Var}$ holds when the quantifiers are interpreted to range over $\mathcal{P}(A)$.
+    \end{enumerate}
+\end{enumerate}
+\end{defi}
+
+\begin{defi}
 Let $X$ and $Y$ be finite tuples. Then $X^\frown Y$ denotes the concatenation of $X$ with $Y$. More formally, 
 \begin{equation*}
     X^\frown Y := X \cup \{(|X|+i, y) : (i, y) \in Y\} \text{.}
@@ -458,7 +479,7 @@ Unless specified otherwise, we follow the standard definitions of concepts typic
     \item\label{idu} We identify a universe of set theory $W$ with the structure $(W; \in)$. This should not cause confusion in the circumstances we find ourselves in.
     \item When $\alpha$ and $\beta$ are ordinals, we write ``$\alpha < \beta$'' to mean ``$\alpha \in \beta$''.
     \item A natural number is a member of the ordinal $\omega$. In other words, we view $\omega$ as the set of all natural numbers.
-    \item A real is a subset of $\omega$. We identify a real with its characteristic function on $\omega$, as is standard in computability theory. As in \ref{idu}, this ambiguity should not cause any confusion.
+    \item A real is a subset of $\omega$. We identify a real with its characteristic function on $\omega$ so that $\mathcal{P}(\omega)$ is identified with $2^{\omega}$, as is standard in (descriptive) set theory. As in \ref{idu}, this ambiguity should not cause any confusion.
 \end{enumerate}
 \end{con}
 
@@ -494,7 +515,7 @@ Note that if $k = 0$ respectively in \ref{2712}\ref{2712a} and \ref{2712}\ref{27
 Most of the time, the context should indicate clearly which interpretation to adopt. Nevertheless, we shall try as much as possible to disambiguate things in this respect, and highlight each time Definition \ref{def27} is used instead of Definition \ref{def25}.
 
 \begin{defi}
-Let $X$ be a set and $\mathfrak{A}$ be a structure in a possibly expanded language of set theory with base set $A$. We say $X$ is \emph{definable in the language associated with} $\mathfrak{A}$ iff $$X = \{y \in A : \mathfrak{A} \models \phi(y)\}$$ for some formula $\phi$ with one free variable in the language associated with $\mathfrak{A}$.
+Let $X$ be a set and $\mathfrak{A}$ be a structure in a possibly expanded language of set theory with base set $A$. We say $X$ is \emph{definable in the language associated with} $\mathfrak{A}$ iff $$X = \{y \in A : \mathfrak{A} \models \phi[x \mapsto y]\}$$ for some formula $\phi$ with one free variable $x$ in the language associated with $\mathfrak{A}$.
 \end{defi}
 
 \begin{defi}\label{def29}
@@ -504,7 +525,7 @@ Let
     \item $\mathfrak{A}$ be a structure in a possibly expanded language of set theory with base set $A$, and
     \item $n < \omega$. 
 \end{itemize} 
-We say $X$ is $\Sigma_n$\emph{-definable} (resp. $\Pi_n$\emph{-definable} and $\Delta_n$\emph{-definable}) \emph{in the language associated with} $\mathfrak{A}$ iff $$X = \{y \in A : \mathfrak{A} \models \phi(y)\}$$ for some $\Sigma_n$ (resp. $\Pi_n$ and $\Delta_n$) formula (in accordance with Definition \ref{def27}) $\phi$ with one free variable in the language associated with $\mathfrak{A}$.
+We say $X$ is $\Sigma_n$\emph{-definable} (resp. $\Pi_n$\emph{-definable} and $\Delta_n$\emph{-definable}) \emph{in the language associated with} $\mathfrak{A}$ iff $$X = \{y \in A : \mathfrak{A} \models \phi[x \mapsto y]\}$$ for some $\Sigma_n$ (resp. $\Pi_n$ and $\Delta_n$) formula (in accordance with Definition \ref{def27}) $\phi$ with one free variable $x$ in the language associated with $\mathfrak{A}$.
 \end{defi}
 
 We can generalise Definition \ref{def29} by relaxing the language requirement.
@@ -520,7 +541,7 @@ Let
     \end{itemize}
     \item $n < \omega$.
 \end{itemize}
-We say $X$ is $\Sigma_n$\emph{-definable} (resp. $\Pi_n$\emph{-definable} and $\Delta_n$\emph{-definable}) \emph{in} $\mathfrak{A}$ iff $$X = \{y \in A : \mathfrak{A} \models \phi(y)\}$$ for some $\Sigma_n$ (resp. $\Pi_n$ and $\Delta_n$) formula (in the sense of Definition \ref{def27}) $\phi$ with one free variable over $\sigma$.
+We say $X$ is $\Sigma_n$\emph{-definable} (resp. $\Pi_n$\emph{-definable} and $\Delta_n$\emph{-definable}) \emph{in} $\mathfrak{A}$ iff $$X = \{y \in A : \mathfrak{A} \models \phi[x \mapsto y]\}$$ for some $\Sigma_n$ (resp. $\Pi_n$ and $\Delta_n$) formula (in the sense of Definition \ref{def27}) $\phi$ with one free variable $x$ over $\sigma$.
 
 If in addition,
 \begin{itemize}
@@ -688,7 +709,7 @@ Let $\phi$ be a first-order formula over the language of arithmetic. We inductiv
         \end{itemize}
     \end{enumerate}
 \end{enumerate}
-Note that if $k = 0$ respectively in \ref{2712}\ref{2712a} and \ref{2712}\ref{2712b}, then $\phi$ is $\Sigma^0_m$ and $\Pi^0_m$ respectively.
+Note that if $k = 0$ respectively in \ref{2712}\ref{2712a} and \ref{2712}\ref{2712b}, then $\phi$ is $\Sigma^0_m$ and $\Pi^0_m$ respectively. We say $\phi$ is \emph{arithmetical} iff $\phi$ is $\Pi^0_n$ for some $n < \omega$.
 \end{defi}
 
 \begin{defi}
@@ -772,6 +793,37 @@ Let $n < \omega$ and $X \in 2^{\omega}$. A real $A \in 2^{\omega}$ is $X$-$n$\em
     \item For some $n < \omega$, $A \restriction n \in D^+_{\phi}(X)$, where $$D^+_{\phi}(X) := \{\tau \in 2^{< \omega} : (\mathbb{N}; X) \models \phi[x \mapsto \langle \tau \rangle]\} \text{.}$$
     \item For some $n < \omega$, whenever $A \restriction n \subset \tau \in 2^{< \omega}$, $\tau \not\in D^+_{\phi}(X)$.
 \end{enumerate}
+\end{defi}
+
+\begin{defi}[Analytical hierarchy]
+Let $\phi$ be a monadic second-order formula over the language of arithmetic. We inductively define what it means for $\phi$ to be $\Delta^1_n$, $\Pi^1_n$ or $\Sigma^1_n$ as $n$ ranges over the natural numbers.
+\begin{enumerate}[label=(\arabic*)]
+    \item If $n = 0$, then $\phi$ is $\Delta^1_n$ iff $\phi$ is $\Pi^1_n$ iff $\phi$ is $\Sigma^1_n$ iff $\phi$ is arithmetical.
+    \item If $n = m + 1$ for some $m < \omega$, then 
+    \begin{enumerate}[label=(\alph*)]
+        \item $\phi$ is $\Pi^1_n$ iff there is a $\Sigma^1_m$ formula $\varphi$, a number $k < \omega$, and variable (as well as unary relation) symbols $A_1, \dots, A_k \in \mathrm{2Var}$ not bound in $\varphi$, such that 
+        \begin{equation*}
+            \phi = \ulcorner \forall A_1 \dots \forall A_k \ \varphi \urcorner \text{,}
+        \end{equation*}
+        \item $\phi$ is $\Sigma^1_n$ iff there is a $\Pi^1_m$ formula $\varphi$, a number $k < \omega$, and variable (as well as unary relation) symbols $A_1, \dots, A_k \in \mathrm{2Var}$ not bound in $\varphi$, such that 
+        \begin{equation*}
+            \phi = \ulcorner \exists A_1 \dots \exists A_k \ \varphi \urcorner \text{, and}
+        \end{equation*}
+        \item $\phi$ is $\Delta^1_n$ iff 
+        \begin{itemize}[label=$\circ$]
+            \item $\phi$ is $\Pi^1_n$, and
+            \item for some $\Sigma^1_n$ formula $\varphi$,
+            \begin{equation*}
+                \mathsf{ZFC} \vdash \phi \iff \varphi \text{.}
+            \end{equation*}
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+Note that if $k = 0$ respectively in \ref{2712}\ref{2712a} and \ref{2712}\ref{2712b}, then $\phi$ is $\Sigma^1_m$ and $\Pi^1_m$ respectively.
+\end{defi}
+
+\begin{defi}
+Let $k, n < \omega$. A $k$-ary relation on $\mathcal{P}(\omega)$ is $\Sigma^1_n$\emph{-definable} (resp. $\Pi^1_n$\emph{-definable} and $\Delta^1_n$\emph{-definable}) iff $$X = \{\bar{y} \in \mathcal{P}(\omega)^k : \mathbb{N} \models \phi[\bar{A} \mapsto \bar{y}]\}$$ for some $\Sigma^1_n$ (resp. $\Pi^1_n$ and $\Delta^1_n$) formula $\phi$ with $k$ many free variables arranged into a $k$-tuple $\bar{A} \in \mathrm{2Var}^k$.
 \end{defi}
 
 \chapter{Forcing and Genericity}\label{subs24}
@@ -3888,7 +3940,7 @@ Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable, and $X \in 2^{\omega}$.
 \end{defi}
 
 \begin{fact}\label{2ndlf}
-There is an oracle machine $\Theta$ such that whenever $X \in 2^{\omega}$, $\Theta^{X' \oplus X}$ is a uniformly splitting perfect subtree of $2^{<\omega}$, all of which branches are $X$-$1$-generic.
+There is an oracle machine $\Theta$ such that whenever $X \in 2^{\omega}$, $\Theta^{X'}$ is a uniformly splitting perfect subtree of $2^{<\omega}$, all of which branches are $X$-$1$-generic.
 \end{fact}
 
 \begin{cor}\label{rlcor}
@@ -3897,7 +3949,7 @@ There is an oracle machine $\Phi$ for which, whenever $(r, f_r)$ witnesses $(H(\
     \item $|\{\mathcal{M} : \mathcal{M} \models^* \mathfrak{T}\}| \leq \aleph_0$.
     \item\label{rlcor2} There is a perfect subset $A$ of $2^{\omega}$ such that $$A \subset \{f_r" (\Sigma(\mathfrak{T}, \mathcal{M})) : \mathcal{M} \models^* \mathfrak{T}\}$$ and $\Phi$ witnesses $A$ is a 
     \begin{equation*}
-        \Pi^0_1((f_r" (P(\mathfrak{T})^{\top}))' \oplus f_r" (P(\mathfrak{T})^{\top}))
+        \Pi^0_1((f_r" (P(\mathfrak{T})^{\top}))')
     \end{equation*}
     class with respect to $f_r$.
 \end{enumerate}
@@ -3942,12 +3994,12 @@ The next corollary is hence implied.
         \item the procedure outlined in Example \ref{2ndex} being a $\Delta_0$ definition of $\mathfrak{T}(\mathfrak{A}, T) \in H(\omega_1)$ from $\mathfrak{A}$ and $T$,
         \item $f_r \in H(\omega_1)$ being uniformly $\Delta_0$-definable from $r$,
         \item code-friendliness being a $\Delta_0$ property,
-        \item $(f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top}))' \oplus f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top})$ being uniformly $\Sigma_1$-definable in \\ $(H(\omega_1); \in)$ from $f_r$ and $\mathfrak{T}(\mathfrak{A}, T)$, 
+        \item $(f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top}))'$ being uniformly $\Sigma_1$-definable in $(H(\omega_1); \in)$ from $f_r$ and $\mathfrak{T}(\mathfrak{A}, T)$, 
         \item \ref{cor5491} of Corollary \ref{cor549}, and
         \item Corollary \ref{rlcor},
     \end{itemize}
     noting that for every oracle machine $\Phi$ and all $A, X \in 2^{\omega}$, if $\Phi$ witnesses $A$ is a $\Pi^0_1(X)$ class with respect to $f_r$, then $f_r^{-1}(\Phi^X) \in H(\omega_1)$ is uniformly $\Delta_0$-definable from $f_r$ and $X$.
-    \item The proof of this part is basically (implied by) a translation of the \hyperref[6330ip]{proof of (I)} via $f_{r^*}$. The reason the relation in question is not $\Sigma^1_1$ lies in how the derivation of $(P(\mathfrak{T}(\mathfrak{A}, T))^{\top}$ from $(\mathfrak{A}, T)$ is represented as a real. This derivation crucially involves some possibly large countable ordinal, and verifying whether a real codes an ordinal is generally a $\Pi^1_1$ process. \qedhere
+    \item The proof of this part is basically (implied by) a translation of the \hyperref[6330ip]{proof of (I)} via $f_{r^*}$. The reason the relation in question is not $\Sigma^1_1$ lies in how the derivation of $P(\mathfrak{T}(\mathfrak{A}, T))^{\top}$ from $(\mathfrak{A}, T)$ is represented as a real. This derivation crucially involves some possibly large countable ordinal, and verifying whether a real codes an ordinal is generally a $\Pi^1_1$ process. \qedhere
 \end{enumerate}
 
 \end{proof}
