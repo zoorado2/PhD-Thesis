@@ -4012,7 +4012,19 @@ Let $\mathfrak{A} = (A; \mathcal{I})$ and $T$ be a countable structure and a fir
 
 What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond what Fact \ref{lastfact} does, is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is essentially $\Delta^1_2$-definable, and is therefore of very low complexity. However, \ref{6330ii} of Corollary \ref{rlcor2nd} should not be mistaken for new knowledge, as it is implied by classical work on hyperarithmetic sets (see e.g. Chapter III of \cite{sacks}). We merely provided an alternative --- and arguably simpler --- proof.
 
-Precisely because Corollary \ref{rlcor} establishes a very strong version of the perfect set property, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets which contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}.
+Precisely because Corollary \ref{rlcor} establishes a very strong version of the perfect set property, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets which contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}. Further extending these parallels and arguably cementing the legitimacy of calling $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ ``the $\alpha$-th-order Cantor-Bendixson derivative of $\mathbb{P}(\mathfrak{T})$'', is the following fact, implicit in the proof of Theorem \ref{lastthm}.
+
+\begin{fact}
+Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable and $\mathfrak{T}$ be a code-friendly $\Pi_2$ TCI. Set
+\begin{align*}
+    \mathrm{CL}(\mathfrak{T}) := \ & \text{the closure of } \{f_r" (\Sigma(\mathfrak{T}, \mathcal{M})) : \mathcal{M} \models^* \mathfrak{T}\} \text{ in Cantor space, and} \\
+    \mathrm{Tr}(\mathfrak{T}) := \ & \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{CL}(\mathfrak{T}) \text{.}
+\end{align*}
+Then there is a canonical dense embedding $\pi$ from $\mathrm{Tr}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})$ such that for all ordinals $\alpha$, $\pi \restriction \mathrm{Tr}(\mathfrak{T})^{(\alpha)}$ is a dense embedding from $\mathrm{Tr}(\mathfrak{T})^{(\alpha)}$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$, where
+\begin{equation*}
+    \mathrm{Tr}(\mathfrak{T})^{(\alpha)} := \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{CL}(\mathfrak{T})^{(\alpha)} \text{.}
+\end{equation*}
+\end{fact}
 
 \section{Open Questions}
 
