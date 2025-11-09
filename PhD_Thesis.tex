@@ -3964,7 +3964,7 @@ The next corollary is hence implied.
 \begin{cor}\label{rlcor2nd}
 \leavevmode
 \begin{enumerate}[label=(\Roman*)]
-    \item There is a $\Sigma_1$ formula $\psi_{ps}$ in four free variables in the language of set theory, such that $\psi_{ps}(r, \mathfrak{A}, T, \mathrm{Tr}(r, \mathfrak{A}, T))$ defines in $(H(\omega_1); \in)$ a ternary function $$(r, \mathfrak{A}, T) \mapsto \mathrm{Tr}(r, \mathfrak{A}, T)$$ on $H(\omega_1)$, for which whenever 
+    \item There is a $\Delta_2$ formula $\psi_{ps}$ in four free variables in the language of set theory, such that $\psi_{ps}(r, \mathfrak{A}, T, \mathrm{Tr}(r, \mathfrak{A}, T))$ defines in $(H(\omega_1); \in)$ a ternary function $$(r, \mathfrak{A}, T) \mapsto \mathrm{Tr}(r, \mathfrak{A}, T)$$ on $H(\omega_1)$, for which whenever 
     \begin{enumerate}[label=(\alph*)]
         \item $r$ is a nicely computable code of $H(\omega)$,
         \item $\mathfrak{A} = (A; \mathcal{I})$ and $T$ are respectively a countable structure and a first-order $\Pi_2$ theory over the same signature, and
@@ -3979,9 +3979,10 @@ The next corollary is hence implied.
         \end{equation*}
     \end{enumerate}
     \item\label{6330ii} Fix a nicely computable code $r^*$ of $H(\omega)$. Then the ternary relation
-    \begin{equation*}
-        \{(f_{r^*}" (Diag(\mathfrak{A})), f_{r^*}" T, f_{r^*}" (\mathrm{Tr}(r^*, \mathfrak{A}, T))) : \psi_{ps}(r^*, \mathfrak{A}, T, \mathrm{Tr}(r^*, \mathfrak{A}, T))\}
-    \end{equation*}
+    \begin{align*}
+        \mathrm{PfW} := \{ & (f_{r^*}" (Diag(\mathfrak{A})), f_{r^*}" T, f_{r^*}" (\mathrm{Tr}(r^*, \mathfrak{A}, T))) \\
+        & : \psi_{ps}(r^*, \mathfrak{A}, T, \mathrm{Tr}(r^*, \mathfrak{A}, T))\}
+    \end{align*}
     on the reals, where $Diag(\mathfrak{A})$ refers to the atomic diagram of $\mathfrak{A}$, is $\Delta^1_2$ in the analytical hierarchy.
 \end{enumerate}
 \end{cor}
@@ -3994,12 +3995,12 @@ The next corollary is hence implied.
         \item the procedure outlined in Example \ref{2ndex} being a $\Delta_0$ definition of $\mathfrak{T}(\mathfrak{A}, T) \in H(\omega_1)$ from $\mathfrak{A}$ and $T$,
         \item $f_r \in H(\omega_1)$ being uniformly $\Delta_0$-definable from $r$,
         \item code-friendliness being a $\Delta_0$ property,
-        \item $(f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top}))'$ being uniformly $\Sigma_1$-definable in $(H(\omega_1); \in)$ from $f_r$ and $\mathfrak{T}(\mathfrak{A}, T)$, 
+        \item $(f_r" (P(\mathfrak{T}(\mathfrak{A}, T))^{\top}))'$ being uniformly $\Delta_2$-definable in $(H(\omega_1); \in)$ from $f_r$ and $\mathfrak{T}(\mathfrak{A}, T)$, 
         \item \ref{cor5491} of Corollary \ref{cor549}, and
         \item Corollary \ref{rlcor},
     \end{itemize}
     noting that for every oracle machine $\Phi$ and all $A, X \in 2^{\omega}$, if $\Phi$ witnesses $A$ is a $\Pi^0_1(X)$ class with respect to $f_r$, then $f_r^{-1}(\Phi^X) \in H(\omega_1)$ is uniformly $\Delta_0$-definable from $f_r$ and $X$.
-    \item The proof of this part is basically (implied by) a translation of the \hyperref[6330ip]{proof of (I)} via $f_{r^*}$. The reason the relation in question is not $\Sigma^1_1$ lies in how the derivation of $P(\mathfrak{T}(\mathfrak{A}, T))^{\top}$ from $(\mathfrak{A}, T)$ is represented as a real. This derivation crucially involves some possibly large countable ordinal, and verifying whether a real codes an ordinal is generally a $\Pi^1_1$ process. \qedhere
+    \item The proof of this part is basically (implied by) a translation of the \hyperref[6330ip]{proof of (I)} via $f_{r^*}$. There is an additional consideration concerning how the derivation of $P(\mathfrak{T}(\mathfrak{A}, T))^{\top}$ from $(\mathfrak{A}, T)$ is represented as a real. This derivation crucially involves some possibly large countable ordinal, and verifying whether a real codes an ordinal is generally a $\Pi^1_1$ process. One can however check, in a rather straightforward fashion, that the inclusion of ordinal verification does not make $\mathrm{PfW}$ more complex to define. \qedhere
 \end{enumerate}
 
 \end{proof}
@@ -4010,7 +4011,9 @@ Corollary \ref{lastcor} --- indeed, that $\mathrm{Sub}(\mathfrak{A}, T)$ of the 
 Let $\mathfrak{A} = (A; \mathcal{I})$ and $T$ be a countable structure and a first-order theory respectively, over the same signature. Then $\mathrm{Sub}(\mathfrak{A}, T)$ is a closed set in some Polish space.
 \end{fact}
 
-What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond what Fact \ref{lastfact} does, is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is essentially $\Delta^1_2$-definable, and is therefore of very low complexity. However, \ref{6330ii} of Corollary \ref{rlcor2nd} should not be mistaken for new knowledge, as it is implied by classical work on hyperarithmetic sets (see e.g. Chapter III of \cite{sacks}). We merely provided an alternative --- and arguably simpler --- proof.
+What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond what Fact \ref{lastfact} does, is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is essentially $\Delta^1_2$-definable, and is therefore of very low complexity. 
+
+It is standard knowledge in effective descriptive set theory (see e.g. Chapter III of \cite{sacks}) that for any real $A$, a $\Sigma^1_1(A)$-definable set of reals contains a perfect set iff it contains a $\Delta^1_2(A)$-definable perfect set. However, it is non-trivial to derive from this knowledge a $\Delta^1_2$ definition for a perfect set witness that uniformly applies to all real codes of even a simple class of sets of reals. Corollary \ref{rlcor2nd} provides one such definition --- an easily verifiable one at that --- uniform on all $G_{\delta}$ sets of reals. 
 
 Precisely because Corollary \ref{rlcor} establishes a very strong version of the perfect set property, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets which contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}. Further extending these parallels and arguably cementing the legitimacy of calling $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ ``the $\alpha$-th-order Cantor-Bendixson derivative of $\mathbb{P}(\mathfrak{T})$'', is the following fact, implicit in the proof of Theorem \ref{lastthm}.
 
