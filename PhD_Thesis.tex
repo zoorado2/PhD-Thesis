@@ -3917,6 +3917,16 @@ There is a $\Delta_0$ formula $\psi_{gmc}$ in four free variables in the languag
 Moreover, there is an oracle machine $\Xi$ such that for all $e < \omega$, $\Xi$ with empty oracle halts on input $e$ and $\Xi^{\emptyset}(e) = \langle \Psi_r, \bar{\Psi}_{r} \rangle$ if $\Phi^{\emptyset}_e = r$ for some nicely computable code $r$.
 \end{thm}
 
+Fix a $\Delta_0$ formula $\psi_{gmc}$ as in Theorem \ref{lastthm}.
+
+\begin{defi}
+Let $r$ be a nicely computable code of $H(\omega)$. Denote by $f_r$ the unique $f$ such that 
+\begin{equation*}
+    \exists X \ \exists Y \ \psi_{gmc}(r, f, X, Y) \text{.}
+\end{equation*}
+Equivalently, $f_r$ is the unique $f$ for which $(r, f)$ witnesses $(H(\omega); \in)$ is computable. 
+\end{defi}
+
 From Theorem \ref{lastthm}, we can prove that a version of Continuum Hypothesis holds for $T$-substructures of a countable structure when $T$ is sufficiently simple.
 
 \begin{cor}\label{lastcor}
@@ -3932,7 +3942,7 @@ If all models of $\mathfrak{T}$ are almost finitely generated, then Lemma \ref{a
 We can, in fact, strengthen Corollary \ref{lastcor} so that when a countable structure is presented in a certain manner, the perfect set property holds for its $T$-substructures given any sufficiently simple $T$. 
 
 \begin{defi}
-Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable, and $X \in 2^{\omega}$. We say an oracle machine $\Phi$ \emph{witnesses} $A$ \emph{is a} $\Pi^0_1(X)$ \emph{class with respect to} $f_r$ iff 
+Let $r$ be a nicely computable code of $H(\omega)$, and $X \in 2^{\omega}$. We say an oracle machine $\Phi$ \emph{witnesses} $A$ \emph{is a} $\Pi^0_1(X)$ \emph{class with respect to} $r$ iff 
 \begin{enumerate}[label=(\arabic*)] 
     \item $f_r^{-1}(\Phi^X)$ is a pruned subtree of $2^{<\omega}$, and
     \item $A$ = $[f_r^{-1}(\Phi^X)]$.
@@ -3944,14 +3954,14 @@ There is an oracle machine $\Theta$ such that whenever $X \in 2^{\omega}$, $\The
 \end{fact}
 
 \begin{cor}\label{rlcor}
-There is an oracle machine $\Phi$ for which, whenever $(r, f_r)$ witnesses $(H(\omega); \in)$ is computable and $\mathfrak{T}$ is a code-friendly $\Pi_2$ TCI, one of the following must hold:
+There is an oracle machine $\Phi$ for which, whenever $r$ is a nicely computable code of $H(\omega)$ and $\mathfrak{T}$ is a code-friendly $\Pi_2$ TCI, one of the following must hold:
 \begin{enumerate}[label=(\arabic*)]
     \item $|\{\mathcal{M} : \mathcal{M} \models^* \mathfrak{T}\}| \leq \aleph_0$.
     \item\label{rlcor2} There is a perfect subset $A$ of $2^{\omega}$ such that $$A \subset \{f_r" (\Sigma(\mathfrak{T}, \mathcal{M})) : \mathcal{M} \models^* \mathfrak{T}\}$$ and $\Phi$ witnesses $A$ is a 
     \begin{equation*}
         \Pi^0_1((f_r" (P(\mathfrak{T})^{\top}))')
     \end{equation*}
-    class with respect to $f_r$.
+    class with respect to $r$.
 \end{enumerate}
 \end{cor}
 
@@ -3999,7 +4009,7 @@ The next corollary is hence implied.
         \item \ref{cor5491} of Corollary \ref{cor549}, and
         \item Corollary \ref{rlcor},
     \end{itemize}
-    noting that for every oracle machine $\Phi$ and all $A, X \in 2^{\omega}$, if $\Phi$ witnesses $A$ is a $\Pi^0_1(X)$ class with respect to $f_r$, then $f_r^{-1}(\Phi^X) \in H(\omega_1)$ is uniformly $\Delta_0$-definable from $f_r$ and $X$.
+    noting that for every oracle machine $\Phi$ and all $A, X \in 2^{\omega}$, if $\Phi$ witnesses $A$ is a $\Pi^0_1(X)$ class with respect to $r$, then $f_r^{-1}(\Phi^X) \in H(\omega_1)$ is uniformly $\Delta_0$-definable from $f_r$ and $X$.
     \item The proof of this part is basically (implied by) a translation of the \hyperref[6330ip]{proof of (I)} via $f_{r^*}$. There is an additional consideration concerning how the derivation of $P(\mathfrak{T}(\mathfrak{A}, T))^{\top}$ from $(\mathfrak{A}, T)$ is represented as a real. This derivation crucially involves some possibly large countable ordinal, and verifying whether a real codes an ordinal is generally a $\Pi^1_1$ process. One can however check, in a rather straightforward fashion, that the inclusion of ordinal verification does not make $\mathrm{PfW}$ more complex to define. \qedhere
 \end{enumerate}
 
@@ -4015,10 +4025,10 @@ What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond wha
 
 It is standard knowledge in effective descriptive set theory (see e.g. Chapter III of \cite{sacks}) that for any real $A$, a $\Sigma^1_1(A)$-definable set of reals contains a perfect set iff it contains a $\Delta^1_2(A)$-definable perfect set. However, it is non-trivial to derive from this knowledge a $\Delta^1_2$ definition for a perfect set witness (whenever it exists) that uniformly applies to real codes of even a relatively simple class of sets of reals. Corollary \ref{rlcor2nd} provides one such definition --- an easily verifiable one at that --- uniform on a $\Pi^0_2$-definable set of reals coding all $G_{\delta}$ subsets of $2^{\omega}$. 
 
-Precisely because Corollary \ref{rlcor} establishes a very strong version of the perfect set property, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets which contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}. Further extending these parallels and arguably cementing the legitimacy of calling $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ ``the $\alpha$-th-order Cantor-Bendixson derivative of $\mathbb{P}(\mathfrak{T})$'', is the following fact, implicit in the proof of Theorem \ref{lastthm}.
+Precisely because Corollary \ref{rlcor} establishes a very strong version of the perfect set property, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets which contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}. Further extending these parallels and arguably cementing the legitimacy of calling $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ ``the $\alpha$-th-order Cantor-Bendixson derivative of $\mathbb{P}(\mathfrak{T})$'', is the following corollary, implicit in the proof of Theorem \ref{lastthm}.
 
-\begin{fact}
-Let $(r, f_r)$ witness $(H(\omega); \in)$ is computable and $\mathfrak{T}$ be a code-friendly $\Pi_2$ TCI. Set
+\begin{cor}
+Let $r$ be a nicely computable code of $H(\omega)$ and $\mathfrak{T}$ be a code-friendly $\Pi_2$ TCI. Set
 \begin{align*}
     \mathrm{CL}(\mathfrak{T}) := \ & \text{the closure of } \{f_r" (\Sigma(\mathfrak{T}, \mathcal{M})) : \mathcal{M} \models^* \mathfrak{T}\} \text{ in Cantor space, and} \\
     \mathrm{Tr}(\mathfrak{T}) := \ & \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{CL}(\mathfrak{T}) \text{.}
@@ -4027,7 +4037,7 @@ Then there is a canonical dense embedding $\pi$ from $\mathrm{Tr}(\mathfrak{T})$
 \begin{equation*}
     \mathrm{Tr}(\mathfrak{T})^{(\alpha)} := \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{CL}(\mathfrak{T})^{(\alpha)} \text{.}
 \end{equation*}
-\end{fact}
+\end{cor}
 
 \section{Open Questions}
 
