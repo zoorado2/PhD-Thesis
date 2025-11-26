@@ -685,7 +685,7 @@ By the \emph{standard natural number structure} $\mathbb{N}$, we mean the first-
 In other words, we really write $\mathbb{N}$ to mean the standard structure on the natural numbers over the language of arithmetic.
 \end{defi}
 
-\begin{defi}[Arithmetical hierarchy]
+\begin{defi}[Arithmetical hierarchy]\label{def247}
 Let $\phi$ be a first-order formula over the language of arithmetic. We inductively define what it means for $\phi$ to be $\Delta^0_n$, $\Pi^0_n$ or $\Sigma^0_n$ as $n$ ranges over the natural numbers.
 \begin{enumerate}[label=(\arabic*)]
     \item If $n = 0$, then $\phi$ is $\Delta^0_n$ iff $\phi$ is $\Pi^0_n$ iff $\phi$ is $\Sigma^0_n$ iff every quantifier occurring in $\phi$ is bounded by $\leq$.
@@ -794,6 +794,35 @@ Let $n < \omega$ and $X \in 2^{\omega}$. A real $A \in 2^{\omega}$ is $X$-$n$\em
     \item For some $n < \omega$, whenever $A \restriction n \subset \tau \in 2^{< \omega}$, $\tau \not\in D^+_{\phi}(X)$.
 \end{enumerate}
 \end{defi}
+
+\begin{defi}[Second-order arithmetical hierarchy]\label{def2416}
+Let $\phi$ be a monadic second-order formula over the language of arithmetic. We inductively define what it means for $\phi$ to be $\Delta^0_n$, $\Pi^0_n$ or $\Sigma^0_n$ as $n$ ranges over the natural numbers.
+\begin{enumerate}[label=(\arabic*)]
+    \item If $n = 0$, then $\phi$ is $\Delta^0_n$ iff $\phi$ is $\Pi^0_n$ iff $\phi$ is $\Sigma^0_n$ iff every quantifier occurring in $\phi$ is bounded by $\leq$, so that every variable bound in $\phi$ is necessarily a member of $\mathrm{Var}$.
+    \item If $n = m + 1$ for some $m < \omega$, then 
+    \begin{enumerate}[label=(\alph*)]
+        \item $\phi$ is $\Pi^0_n$ iff there is a $\Sigma^0_m$ formula $\varphi$, a number $k < \omega$, and variable symbols $x_1, \dots, x_k \in \mathrm{Var}$ not bound in $\varphi$, such that 
+        \begin{equation*}
+            \phi = \ulcorner \forall x_1 \dots \forall x_k \ \varphi \urcorner \text{,}
+        \end{equation*}
+        \item $\phi$ is $\Sigma^0_n$ iff there is a $\Pi^0_m$ formula $\varphi$, a number $k < \omega$, and variable symbols $x_1, \dots, x_k \in \mathrm{Var}$ not bound in $\varphi$, such that 
+        \begin{equation*}
+            \phi = \ulcorner \exists x_1 \dots \exists x_k \ \varphi \urcorner \text{, and}
+        \end{equation*}
+        \item $\phi$ is $\Delta^0_n$ iff 
+        \begin{itemize}[label=$\circ$]
+            \item $\phi$ is $\Pi^0_n$, and
+            \item for some $\Sigma^0_n$ formula $\varphi$,
+            \begin{equation*}
+                \mathsf{ZFC} \vdash \phi \iff \varphi \text{.}
+            \end{equation*}
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+Note that if $k = 0$ respectively in \ref{2712}\ref{2712a} and \ref{2712}\ref{2712b}, then $\phi$ is $\Sigma^0_m$ and $\Pi^0_m$ respectively. We say $\phi$ is \emph{arithmetical} iff $\phi$ is $\Pi^0_n$ for some $n < \omega$.
+\end{defi}
+
+Note that Definition \ref{def2416} and Definition \ref{def247} share one set of descriptors --- $\Delta^0_n$, $\Pi^0_n$ and $\Sigma^0_n$ for $n < \omega$, as well as ``arithmetical''. In fact, Definition \ref{def2416} generalises Definition \ref{def247}. In terms of usage, these descriptors in the sense of Definition \ref{def247} describe reals, whereas the same descriptors in the sense of Definition \ref{def2416} can describe both reals and sets of reals. We do not disambiguate between the two definitions should we deem the context clear, as is typically the case.
 
 \begin{defi}[Analytical hierarchy]
 Let $\phi$ be a monadic second-order formula over the language of arithmetic. We inductively define what it means for $\phi$ to be $\Delta^1_n$, $\Pi^1_n$ or $\Sigma^1_n$ as $n$ ranges over the natural numbers.
@@ -3974,16 +4003,16 @@ The next corollary is hence implied.
 \begin{cor}\label{rlcor2nd}
 \leavevmode
 \begin{enumerate}[label=(\Roman*)]
-    \item There is a $\Delta_2$ formula $\psi_{ps}$ in four free variables in the language of set theory, such that $\psi_{ps}(r, \mathfrak{A}, T, \mathrm{Tr}(r, \mathfrak{A}, T))$ defines in $(H(\omega_1); \in)$ a ternary function $$(r, \mathfrak{A}, T) \mapsto \mathrm{Tr}(r, \mathfrak{A}, T)$$ on $H(\omega_1)$, for which whenever 
+    \item\label{6330i} There is a $\Delta_2$ formula $\psi_{ps}$ in four free variables in the language of set theory, such that $\psi_{ps}(r, \mathfrak{A}, T, \mathrm{Tr}(r, \mathfrak{A}, T))$ defines in $(H(\omega_1); \in)$ a ternary function $$(r, \mathfrak{A}, T) \mapsto \mathrm{Tr}(r, \mathfrak{A}, T)$$ on $H(\omega_1)$, for which whenever 
     \begin{enumerate}[label=(\alph*)]
-        \item $r$ is a nicely computable code of $H(\omega)$,
+        \item\label{6330ia} $r$ is a nicely computable code of $H(\omega)$,
         \item $\mathfrak{A} = (A; \mathcal{I})$ and $T$ are respectively a countable structure and a first-order $\Pi_2$ theory over the same signature, and
-        \item $\mathfrak{T}(\mathfrak{A}, T)$ is code-friendly,
+        \item\label{6330ic} $\mathfrak{T}(\mathfrak{A}, T)$ is code-friendly,
     \end{enumerate} 
     one of the following must hold:
     \begin{enumerate}[label=(\arabic*)]
-        \item $|\mathrm{Sub}(\mathfrak{A}, T)| \leq \aleph_0$ and $\mathrm{Tr}(r, \mathfrak{A}, T) = \emptyset$.
-        \item $\mathrm{Tr}(r, \mathfrak{A}, T)$ is a perfect subtree of $2^{< \omega}$ and
+        \item\label{6330i1} $|\mathrm{Sub}(\mathfrak{A}, T)| \leq \aleph_0$ and $\mathrm{Tr}(r, \mathfrak{A}, T) = \emptyset$.
+        \item\label{6330i2} $\mathrm{Tr}(r, \mathfrak{A}, T)$ is a perfect subtree of $2^{< \omega}$ and
         \begin{equation*}
             [\mathrm{Tr}(r, \mathfrak{A}, T)] \subset \{f_r" (\Sigma(\mathfrak{T}(\mathfrak{A}, T), \mathcal{M})) : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\} \text{.}
         \end{equation*}
@@ -4012,7 +4041,6 @@ The next corollary is hence implied.
     noting that for every oracle machine $\Phi$ and all $A, X \in 2^{\omega}$, if $\Phi$ witnesses $A$ is a $\Pi^0_1(X)$ class with respect to $r$, then $f_r^{-1}(\Phi^X) \in H(\omega_1)$ is uniformly $\Delta_0$-definable from $f_r$ and $X$.
     \item The proof of this part is basically (implied by) a translation of the \hyperref[6330ip]{proof of (I)} via $f_{r^*}$. There is an additional consideration concerning how the derivation of $P(\mathfrak{T}(\mathfrak{A}, T))^{\top}$ from $(\mathfrak{A}, T)$ is represented as a real. This derivation crucially involves some possibly large countable ordinal, and verifying whether a real codes an ordinal is generally a $\Pi^1_1$ process. One can however check, in a rather straightforward fashion, that the inclusion of ordinal verification does not make $\mathrm{PfW}$ more complex to define. \qedhere
 \end{enumerate}
-
 \end{proof}
 
 Corollary \ref{lastcor} --- indeed, that $\mathrm{Sub}(\mathfrak{A}, T)$ of the corollary has the perfect set property with respect to some topological space --- also follows from a well-known fact in descriptive set theory (see e.g. \cite{kechris} for its proof), via the Cantor-Bendixson theorem. 
@@ -4023,9 +4051,45 @@ Let $\mathfrak{A} = (A; \mathcal{I})$ and $T$ be a countable structure and a fir
 
 What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond what Fact \ref{lastfact} does, is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is essentially $\Delta^1_2$-definable, and is therefore of very low complexity. 
 
-It is standard knowledge in effective descriptive set theory (see e.g. Chapter III of \cite{sacks}) that for any real $A$, a $\Sigma^1_1(A)$-definable set of reals contains a perfect set iff it contains a $\Delta^1_2(A)$-definable perfect set. However, it is non-trivial to derive from this knowledge a $\Delta^1_2$ definition for a perfect set witness (whenever it exists) that uniformly applies to real codes of even a relatively simple class of sets of reals. Corollary \ref{rlcor2nd} provides one such definition --- an easily verifiable one at that --- uniform on a $\Pi^0_2$-definable set of reals coding all $G_{\delta}$ subsets of $2^{\omega}$. 
+\begin{defi}
+A \emph{definable real coding of} $G_{\delta}$ \emph{subsets of} $2^{\omega}$ is a monadic second-order formula $\phi$ over the language of arithmetic such that $\phi$ has exactly $2$ free variables, both members of $\mathrm{2Var}$, and
+\begin{equation*}
+    x \mapsto A^{\phi}_x := \{y \in 2^{\omega} : \phi(x, y)\}
+\end{equation*}
+is a function from $2^{\omega}$ onto the set of all $G_{\delta}$ subsets of $2^{\omega}$.
+\end{defi}
 
-Precisely because Corollary \ref{rlcor} establishes a very strong version of the perfect set property, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets which contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}. Further extending these parallels and arguably cementing the legitimacy of calling $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ ``the $\alpha$-th-order Cantor-Bendixson derivative of $\mathbb{P}(\mathfrak{T})$'', is the following corollary, implicit in the proof of Theorem \ref{lastthm}.
+\begin{defi}
+For $i < 2$ and $n < \omega$, a formula $\phi$ is a $\Sigma^i_n$ (resp. $\Pi^i_n$ and $\Delta^i_n$) \emph{real coding of} $G_{\delta}$ \emph{subsets of} $2^{\omega}$ iff 
+\begin{enumerate}[label=(\alph*)]
+    \item $\phi$ is a definable real coding of $G_{\delta}$ subsets of $2^{\omega}$, and
+    \item $\phi$ is $\Sigma^i_n$ (resp. $\Pi^i_n$ and $\Delta^i_n$).
+\end{enumerate}
+\end{defi}
+
+Notice that 
+\begin{equation*}
+    \{f_r" (\Sigma(\mathfrak{T}(\mathfrak{A}, T), \mathcal{M})) : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\} \text{,}
+\end{equation*}
+as specified in \ref{6330i}\ref{6330i2} of Corollary \ref{rlcor2nd}, is always a $G_{\delta}$ subset of $2^{\omega}$. On the other hand, for every $G_{\delta}$ subset $X$ of $2^{\omega}$, there are $r$, $\mathfrak{A}$, $T$, $\Phi$ such that
+\begin{itemize}
+    \item $r$, $\mathfrak{A}$ and $T$ satisfy conditions \ref{6330ia} to \ref{6330ic} of \ref{6330i} of Corollary \ref{rlcor2nd},
+    \item $\Phi$ is an oracle machine, and
+    \item $\{\Phi^x : x \in \{f_r" (\Sigma(\mathfrak{T}(\mathfrak{A}, T), \mathcal{M})) : \mathcal{M} \in \mathrm{Sub}(\mathfrak{A}, T)\}\} = X$.
+\end{itemize}
+Thus \ref{6330ii} of Corollary \ref{rlcor2nd} essentially provides a $\Delta^1_2$-definable way of selecting perfect set witnesses for uncountable $G_{\delta}$ subsets of $2^{\omega}$, given particular (sufficiently simple) real codes of the said subsets. By analysing the aforementioned $\Delta^1_2$ definition, we can conclude something stronger.
+
+\begin{cor}\label{cor6335}
+Let $\phi$ be a $\Sigma^1_1$ real coding of $G_{\delta}$ subsets of $2^{\omega}$. Then there is a $\Delta^1_2$-definable function $F$ on $2^{\omega}$ such that for each $x \in 2^{\omega}$, 
+\begin{enumerate}[label=(\arabic*)]
+    \item $F(x) = \omega \times 1$ if $A^{\phi}_x$ is countable, and
+    \item $A^{\phi}_{F(x)}$ is a perfect subset of $A^{\phi}_x$ otherwise.
+\end{enumerate}
+\end{cor}
+
+It is standard knowledge in effective descriptive set theory (see e.g. Chapter III of \cite{sacks}) that for any real $A$, a $\Sigma^1_1(A)$-definable set of reals contains a perfect set iff it contains a $\Delta^1_2(A)$-definable perfect set. However, it is non-trivial to derive from this knowledge a $\Delta^1_2$ definition for a perfect set witness (whenever it exists) that uniformly applies to real codes of even a relatively simple class of sets of reals. Corollary \ref{cor6335} provides one such definition uniform with respect to any $\Sigma^1_1$ real coding of $G_{\delta}$ subsets of $2^{\omega}$. 
+
+Precisely because Corollary \ref{rlcor} helps establish a very strong version of the perfect set property in Corollary \ref{cor6335}, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets that contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}. Further extending these parallels and arguably cementing the legitimacy of calling $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ ``the $\alpha$-th-order Cantor-Bendixson derivative of $\mathbb{P}(\mathfrak{T})$'', is our final corollary of this section, implicit in the proof of Theorem \ref{lastthm}.
 
 \begin{cor}
 Let $r$ be a nicely computable code of $H(\omega)$ and $\mathfrak{T}$ be a code-friendly $\Pi_2$ TCI. Set
@@ -4175,8 +4239,6 @@ Is there a ``naturally definable'' class $\mathcal{C}$ of TCIs such that
     \end{align*}
 \end{enumerate} 
 \end{ques}
-
-\blankpage
 
 \part{\texorpdfstring{  Applying Our Tools}{Applying Our Tools}}
 
