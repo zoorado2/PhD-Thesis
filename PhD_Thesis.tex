@@ -3459,7 +3459,7 @@ By a simple cardinality argument, there must exist some $\alpha < |[\mathcal{L}_
 Let $\Gamma_{\mathfrak{T}}^{\top}$ denote the unique $\Gamma$ such that $\Gamma = \Gamma_{\mathfrak{T}}^{(\alpha)} = \Gamma_{\mathfrak{T}}^{(\alpha + 1)}$ for some $\alpha < |[\mathcal{L}_{\mathfrak{T}}]^{< \omega}|^+$. Similarly, $\mathbb{P}(\mathfrak{T})^{\top}$ shall denote the unique $\mathbb{P}$ such that $\mathbb{P} = \mathbb{P}(\mathfrak{T})^{(\alpha)} = \mathbb{P}(\mathfrak{T})^{(\alpha + 1)}$ for some $\alpha < |[\mathcal{L}_{\mathfrak{T}}]^{< \omega}|^+$.
 \end{defi}
 
-It is not hard to see that $P(\mathfrak{T})^{\top}$ is an atomless upward closed subset of $\mathbb{P}(\mathfrak{T})$ and $\Gamma_{\mathfrak{T}} \subset \Gamma_{\mathfrak{T}}^{\top}$.
+It is not hard to see that $P(\mathfrak{T})^{\top}$ is an atomless upward closed subset of $\mathbb{P}(\mathfrak{T})$ and $\Gamma_{\mathfrak{T}} \subset \Gamma_{\mathfrak{T}}^{\top}$. Furthermore, $P(\mathfrak{T})^{(\alpha)}$ is absolute for transitive models of $\mathsf{ZFC}$ for every ordinal $\alpha$, because of Lemma \ref{Pisabs}. This means $\mathbb{P}(\mathfrak{T})^{\top}$ is absolute for transitive models of $\mathsf{ZFC}$ as well.
 
 \begin{rem}\label{CBrem}
 In constructing the $\mathbb{P}(\mathfrak{T})^{(\alpha)}$'s, we are inductively removing atoms of $\mathbb{P}(\mathfrak{T})$. These atoms are representatives of isolated models of a TCI. By looking at Definition \ref{CB1} in this way, we can draw obvious parallels between $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ and the $\alpha$-th-order Cantor-Bendixson derivative of a set. Such parallels culminate in $\mathbb{P}(\mathfrak{T})^{\top}$ being analogous to the ``perfect core'' of $\mathbb{P}(\mathfrak{T})$.
@@ -3640,11 +3640,10 @@ Due to the fact that universes of code-friendly TCIs only contain finite sets, w
 
 Code-friendly TCIs are relatively well-behaved and easy to reason about, especially when it comes to things like absoluteness. Notice that given any code-friendly TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ and any ordinal $\alpha$,
 \begin{enumerate}[leftmargin=40pt, label=(CF\arabic*)]
-    \item\label{cf1} $\mathcal{L}_{\mathfrak{T}}$ and $\Gamma_{\mathfrak{T}}$ are definable subsets of $H(\omega)$ over the structure $$\mathfrak{A}^*_{\mathfrak{T}} := \mathfrak(H(\omega); \in, T, \sigma, \dot{\mathcal{U}}, \vartheta),$$
+    \item\label{cf1} $\mathcal{L}_{\mathfrak{T}}$ and $\Gamma_{\mathfrak{T}}$ are $\Delta_0$-definable subsets of $H(\omega)$ over the structure $$\mathfrak{A}^*_{\mathfrak{T}} := \mathfrak(H(\omega); \in, T, \sigma, \dot{\mathcal{U}}, \vartheta),$$
     \item $P(\mathfrak{T})^{(\alpha)} = \{p \in [\mathcal{L}_{\mathfrak{T}}]^{< \omega} : \exists \Sigma \ (``\Sigma \ \Gamma_{\mathfrak{T}}^{(\alpha)} (\mathcal{L}_{\mathfrak{T}}, \mathfrak{A}^*_{\mathfrak{T}})\text{-certifies } p")\}$ by straightforward induction incorporating an argument similar to that which proved Lemma \ref{inout}, and hence
     \item $P(\mathfrak{T})^{\top}$ is $\Delta_1$-definable in $\mathfrak{A}^*_{\mathfrak{T}}$.
 \end{enumerate}
-This means that the definition of $\mathbb{P}(\mathfrak{T})^{\top}$ from a code-friendly TCI $\mathfrak{T}$ is absolute for transitive models of $\mathsf{ZFC - Powerset}$.
 
 Recall Cohen forcing $\mathbb{C} = (C; \leq_{\mathbb{C}})$. We will use this labelling in the statements and proofs of the subsequent lemmas.
 
