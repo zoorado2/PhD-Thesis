@@ -4100,7 +4100,22 @@ Let $\phi$ be a $\Sigma^1_1$ real coding of $G_{\delta}$ subsets of $2^{\omega}$
 
 It is standard knowledge in effective descriptive set theory (see e.g. Chapter III of \cite{sacks}) that for any real $A$, a $\Sigma^1_1(A)$-definable set of reals contains a perfect set iff it contains a $\Delta^1_2(A)$-definable perfect set. However, it is not immediately obvious how one can derive from this knowledge a $\Delta^1_2$ definition for a perfect set witness (whenever it exists) that uniformly applies to real codes of even a relatively simple class of sets of reals. Corollary \ref{cor6335}, obtained through a wholly different approach, offers us one such uniform definition for each $\Sigma^1_1$ real coding of $G_{\delta}$ subsets of $2^{\omega}$. 
 
-Precisely because Corollary \ref{rlcor} helps establish a very strong version of the perfect set property in Corollary \ref{cor6335}, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets that contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}. 
+Precisely because Corollary \ref{rlcor} helps establish a very strong version of the perfect set property in Corollary \ref{cor6335}, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets that contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}. Further extending these parallels and arguably cementing the legitimacy of calling $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ ``the $\alpha$-th-order Cantor-Bendixson derivative of $\mathbb{P}(\mathfrak{T})$'', is our final corollary of this section, implicit in the proof of Theorem \ref{lastthm}.
+
+\begin{cor}
+Let $r$ be a nicely computable code of $H(\omega)$ and $\mathfrak{T}$ be a code-friendly $\Pi_2$ TCI. Set
+\begin{align*}
+    \mathrm{Cd}(\mathfrak{T}) := \ & \{f_r" (\Sigma(\mathfrak{T}, \mathcal{M})) : \mathcal{M} \models^* \mathfrak{T}\} \text{,} \\
+    \mathrm{Cl}(\mathfrak{T}) := \ & \text{the closure of } \mathrm{Cd}(\mathfrak{T}) \text{ in Cantor space, and} \\
+    \mathrm{Tr}(\mathfrak{T}) := \ & \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{CL}(\mathfrak{T}) \text{.}
+\end{align*}
+Then there is a canonical dense embedding $\pi$ from $\mathrm{Tr}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})$ such that for all ordinals $\alpha$, $\pi \restriction \mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ is a dense embedding from $\mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$, where
+\begin{align*}
+    \mathrm{Tr}^{(\alpha)}(\mathfrak{T}) := \ & \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{Cl}^{(\alpha)}(\mathfrak{T}) \text{, and} \\ 
+    \mathrm{Cl}^{(\alpha)}(\mathfrak{T}) := \ & \text{the closure of } \mathrm{Cd}(\mathfrak{T})^{(\alpha)} \text{ (the } \alpha \text{-th-order Cantor-Bendixson derivative} \\
+    & \text{of } \mathrm{Cd}(\mathfrak{T}) \text{ as a Polish subspace of Cantor space) in Cantor space.}
+\end{align*}
+\end{cor}
 
 \section{Open Questions}
 
