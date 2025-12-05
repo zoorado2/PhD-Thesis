@@ -3640,9 +3640,19 @@ Due to the fact that universes of code-friendly TCIs only contain finite sets, w
 
 Code-friendly TCIs are relatively well-behaved and easy to reason about, especially when it comes to things like absoluteness. Notice that given any code-friendly TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ and any ordinal $\alpha$,
 \begin{enumerate}[leftmargin=40pt, label=(CF\arabic*)]
-    \item\label{cf1} $\mathcal{L}_{\mathfrak{T}}$ and $\Gamma_{\mathfrak{T}}$ are $\Delta_0$-definable subsets of $H(\omega)$ over the structure $$\mathfrak{A}^*_{\mathfrak{T}} := \mathfrak(H(\omega); \in, T, \sigma, \dot{\mathcal{U}}, \vartheta),$$
-    \item $P(\mathfrak{T})^{(\alpha)} = \{p \in [\mathcal{L}_{\mathfrak{T}}]^{< \omega} : \exists \Sigma \ (``\Sigma \ \Gamma_{\mathfrak{T}}^{(\alpha)} (\mathcal{L}_{\mathfrak{T}}, \mathfrak{A}^*_{\mathfrak{T}})\text{-certifies } p")\}$ by straightforward induction incorporating an argument similar to that which proved Lemma \ref{inout}, and hence
-    \item $P(\mathfrak{T})^{\top}$ is $\Delta_1$-definable in $\mathfrak{A}^*_{\mathfrak{T}}$.
+    \item\label{cf1} $\mathcal{L}_{\mathfrak{T}}$ and $\Gamma_{\mathfrak{T}}$ are $\Delta_0$-definable subsets of $H(\omega)$ over the structure 
+    \begin{equation*}
+        (H(\omega); \in, T, \sigma, \dot{\mathcal{U}}, \vartheta) \text{,}
+    \end{equation*}
+    \item\label{cf2} Over any model of sufficiently strong set theory, $\mathcal{L}_{\mathfrak{T}}$ can be defined from $P(\mathfrak{T})^{\top}$ as follows:
+    \begin{equation*}
+        \forall x \ (x \in \mathcal{L}_{\mathfrak{T}} \iff (\{x\} \in P(\mathfrak{T})^{\top} \vee \{\neg x\} \in P(\mathfrak{T})^{\top})) \text{,}
+    \end{equation*}
+    and hence in particular,
+    \item\label{cf3} $\mathcal{L}_{\mathfrak{T}}$ is $\Delta_1$-definable over the structure 
+    \begin{equation*}
+        (H(\omega); \in, P(\mathfrak{T})^{\top}) \text{.}
+    \end{equation*}
 \end{enumerate}
 
 Recall Cohen forcing $\mathbb{C} = (C; \leq_{\mathbb{C}})$. We will use this labelling in the statements and proofs of the subsequent lemmas.
@@ -3669,7 +3679,7 @@ We shall identify $s$ with $(s, \leq_s)$ whenever contextually necessary. This c
 
 Going forward, even beyond this proof, we would often argue about things in $H(\omega)$ even though our intended domain of discourse is the set of natural numbers. This is because first-order truths about $(H(\omega); \in)$ are uniformly propagated by $f$ onto its range, so that specific versions of them hold there as well. If one such truth is sufficiently simple, then $r$ knows the version of it on $ran(f)$ and can then relay that to the appropriate machines for further processing. 
 
-Let $\mathfrak{A} = (A; \in)$ be any countable elementary substructure of $\mathfrak{A}_{\mathfrak{T}}$ with $P(\mathfrak{T})^{\top} \in A$. Then $A$ is finitely transitive because $\mathfrak{A}_{\mathfrak{T}}$ is a transitive model of $\mathsf{ZFC - Powerset}$. Since $\mathcal{L}_{\mathfrak{T}}$ is just the closure of $\bigcup P(\mathfrak{T})^{\top}$ under negation in $\mathfrak{A}_{\mathfrak{T}}$, we have $\mathcal{L}_{\mathfrak{T}} \in A$. That $\mathfrak{T}$ is code-friendly and $H(\omega) \subset A$ implies $\mathcal{L}_{\mathfrak{T}} \subset A$ too, so $\mathfrak{A}$ is $\mathcal{L}_{\mathfrak{T}}$-suitable. The members of $\Gamma_{\mathfrak{T}}^{\top}$ are $(\mathcal{L}_{\mathfrak{T}})^*_{\mathfrak{A}_{\mathfrak{T}}}$-$\Pi_2$ sentences with a single parameter $P(\mathfrak{T})^{\top}$ and quantification exclusively over $H(\omega)$, entailing that $\Gamma_{\mathfrak{T}}^{\top}$ is also a set of $(\mathcal{L}_{\mathfrak{T}})^*_{\mathfrak{A}}$-$\Pi_2$ sentences. 
+Let $\mathfrak{A} = (A; \in)$ be any countable elementary substructure of $\mathfrak{A}_{\mathfrak{T}}$ with $P(\mathfrak{T})^{\top} \in A$. Then $A$ is finitely transitive because $\mathfrak{A}_{\mathfrak{T}}$ is a transitive model of $\mathsf{ZFC - Powerset}$. Since $\mathcal{L}_{\mathfrak{T}}$ is definable from $P(\mathfrak{T})^{\top}$ in $\mathfrak{A}_{\mathfrak{T}}$ by \ref{cf2}, we have $\mathcal{L}_{\mathfrak{T}} \in A$. That $\mathfrak{T}$ is code-friendly and $H(\omega) \subset A$ implies $\mathcal{L}_{\mathfrak{T}} \subset A$ too, so $\mathfrak{A}$ is $\mathcal{L}_{\mathfrak{T}}$-suitable. The members of $\Gamma_{\mathfrak{T}}^{\top}$ are $(\mathcal{L}_{\mathfrak{T}})^*_{\mathfrak{A}_{\mathfrak{T}}}$-$\Pi_2$ sentences with a single parameter $P(\mathfrak{T})^{\top}$ and quantification exclusively over $H(\omega)$, entailing that $\Gamma_{\mathfrak{T}}^{\top}$ is also a set of $(\mathcal{L}_{\mathfrak{T}})^*_{\mathfrak{A}}$-$\Pi_2$ sentences. 
 
 In this vein, similar to what we did in the proof of Theorem \ref{genericdichom}, check that all except the last two points in the hypothesis of Lemma \ref{main2} are satisfied with 
 \begin{itemize}
@@ -3721,7 +3731,7 @@ There is a dense embedding $\pi$ of $\mathbb{C}$ into $\mathbb{P}(\mathfrak{T})^
 \end{prop}
 
 \begin{proof}
-First, $C$ is a $\Delta_0$ subset of $H(\omega)$. That $(r, f)$ witnesses $H(\omega)$ is computable means $f$ and $g := f^{-1}$ are functions of which graphs are $\Delta_1$-definable over $$\mathfrak{B} := (H(\omega); \in, P(\mathfrak{T})^{\top}).$$ Also, $\mathcal{L}_{\mathfrak{T}}$ is $\Delta_1$-definable over $\mathfrak{B}$ because $$x \in \mathcal{L}_{\mathfrak{T}} \iff \{x\} \in P(\mathfrak{T})^{\top} \text{ or } \{\neg x\} \in P(\mathfrak{T})^{\top}.$$  
+First, $C$ is a $\Delta_0$ subset of $H(\omega)$. That $(r, f)$ witnesses $H(\omega)$ is computable means $f$ and $g := f^{-1}$ are functions of which graphs are $\Delta_1$-definable over the structure $$\mathfrak{B} := (H(\omega); \in, P(\mathfrak{T})^{\top}).$$ Also, recall that $\mathcal{L}_{\mathfrak{T}}$ is $\Delta_1$-definable over $\mathfrak{B}$ as we have concluded in \ref{cf3}.  
 
 Inductively define sequences $\{a_n : n < \omega\}$ and $\{k_n : n < \omega\}$ as follows:
 \begin{align*}
@@ -3829,10 +3839,10 @@ Choose an arbitrary a code-friendly $\Pi_2$ TCI $\mathfrak{T}$ with not all mode
 \end{align*}
 and identify $s$ with $(s, \leq_s)$ whenever contextually necessary. We will modify the proof of Lemma \ref{ctblegeneric} to get an oracle machine $\Psi$ witnessing \ref{4532}, before checking that a very slightly modified version of Remark \ref{lastrem} applies to $\Psi$. 
 
-Let $\mathfrak{A} = (H(\omega); \in, P(\mathfrak{T})^{\top})$, so that 
+Let $\mathfrak{A} := (H(\omega); \in, P(\mathfrak{T})^{\top})$, so that 
 \begin{itemize}
     \item $(H(\omega); \in)$ is a transitive model of a sufficiently strong set theory, and
-    \item $\mathcal{L}_{\mathfrak{T}}$ is a $\Delta_1$-definable subset of $H(\omega)$ over the $\mathfrak{A}$,
+    \item $\mathcal{L}_{\mathfrak{T}}$ is a $\Delta_1$-definable subset of $H(\omega)$ over the structure $\mathfrak{A}$,
 \end{itemize}
 whence $\mathfrak{A}$ is $\mathcal{L}_{\mathfrak{T}}$-suitable. We argue as in the proof of Lemma \ref{ctblegeneric} to conclude 
 \begin{enumerate}[label=(\Roman*)]
@@ -4090,19 +4100,7 @@ Let $\phi$ be a $\Sigma^1_1$ real coding of $G_{\delta}$ subsets of $2^{\omega}$
 
 It is standard knowledge in effective descriptive set theory (see e.g. Chapter III of \cite{sacks}) that for any real $A$, a $\Sigma^1_1(A)$-definable set of reals contains a perfect set iff it contains a $\Delta^1_2(A)$-definable perfect set. However, it is not immediately obvious how one can derive from this knowledge a $\Delta^1_2$ definition for a perfect set witness (whenever it exists) that uniformly applies to real codes of even a relatively simple class of sets of reals. Corollary \ref{cor6335}, obtained through a wholly different approach, offers us one such uniform definition for each $\Sigma^1_1$ real coding of $G_{\delta}$ subsets of $2^{\omega}$. 
 
-Precisely because Corollary \ref{rlcor} helps establish a very strong version of the perfect set property in Corollary \ref{cor6335}, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets that contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}. Further extending these parallels and arguably cementing the legitimacy of calling $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ ``the $\alpha$-th-order Cantor-Bendixson derivative of $\mathbb{P}(\mathfrak{T})$'', is our final corollary of this section, implicit in the proof of Theorem \ref{lastthm}.
-
-\begin{cor}
-Let $r$ be a nicely computable code of $H(\omega)$ and $\mathfrak{T}$ be a code-friendly $\Pi_2$ TCI. Set
-\begin{align*}
-    \mathrm{CL}(\mathfrak{T}) := \ & \text{the closure of } \{f_r" (\Sigma(\mathfrak{T}, \mathcal{M})) : \mathcal{M} \models^* \mathfrak{T}\} \text{ in Cantor space, and} \\
-    \mathrm{Tr}(\mathfrak{T}) := \ & \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{CL}(\mathfrak{T}) \text{.}
-\end{align*}
-Then there is a canonical dense embedding $\pi$ from $\mathrm{Tr}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})$ such that for all ordinals $\alpha$, $\pi \restriction \mathrm{Tr}(\mathfrak{T})^{(\alpha)}$ is a dense embedding from $\mathrm{Tr}(\mathfrak{T})^{(\alpha)}$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$, where
-\begin{equation*}
-    \mathrm{Tr}(\mathfrak{T})^{(\alpha)} := \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{CL}(\mathfrak{T})^{(\alpha)} \text{.}
-\end{equation*}
-\end{cor}
+Precisely because Corollary \ref{rlcor} helps establish a very strong version of the perfect set property in Corollary \ref{cor6335}, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets that contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}. 
 
 \section{Open Questions}
 
