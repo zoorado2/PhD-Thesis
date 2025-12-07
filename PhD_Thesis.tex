@@ -380,7 +380,7 @@ Unless specified otherwise, we follow the standard definitions of concepts relat
     \end{itemize} 
     
     In contexts where the correspondence between a signature and its interpretation is clear, we might write $(A; \mathcal{I})$ as $(A; \Vec{S})$, where $\Vec{S}$ is some ordering of $ran(\mathcal{I})$.
-    \item\label{224} The variable symbols occurring in any first-order formula must come from a fixed countably infinite set $\mathrm{Var}$. We will assume that $\mathrm{Var}$ is disjoint from both the set of first-order logical symbols and the class of signature-related symbols.
+    \item\label{224} The variable symbols occurring in any first-order formula must come from a fixed countably infinite set $\mathrm{Var} \subset H(\omega)$. We will assume that $\mathrm{Var}$ is disjoint from both the set of first-order logical symbols and the class of signature-related symbols.
     \item A string over a vocabulary set $\Sigma$ is a member of $\Sigma^{< \omega}$.
     \item We sometimes define procedures in which subformulas of a first-order formula are replaced by other formulas. In these cases, for convenience's sake, what follows will be adopted.
     \begin{quote}
@@ -429,12 +429,12 @@ Note that if $k = 0$ in \ref{3292}\ref{3292a} and \ref{3292}\ref{3292b}, then $\
 \end{defi}
 
 \begin{defi}
-For each $n < \omega$, fix a different unary relation symbol $A_n$. Define
+For each $n < \omega$, fix a different unary relation symbol $A_n \in H(\omega)$. Define
 \begin{align*}
     \mathrm{2Var} := \ & \{A_n : n < \omega\}  \text{ and} \\
-    \mathrm{Var^+} := \ & \mathrm{Var} \cup \mathrm{2Var} \text{.}
+    \mathrm{Var^+} := \ & \mathrm{Var} \cup \mathrm{2Var} \text{,}
 \end{align*}
-A \emph{monadic second-order formula} over a signature $\sigma$ is a first-order formula over the signature $\sigma \cup \mathrm{2Var}$ with its variable symbols coming from the enlarged variable set $\mathrm{Var^+}$. 
+so that $\mathrm{Var^+} \subset H(\omega)$. A \emph{monadic second-order formula} over a signature $\sigma$ is a first-order formula over the signature $\sigma \cup \mathrm{2Var}$ with its variable symbols coming from the enlarged variable set $\mathrm{Var^+}$. 
 \end{defi}
 
 \begin{defi}[Semantics of monadic second-order logic]
@@ -643,6 +643,7 @@ Unless specified otherwise, we follow the standard definitions of concepts typic
     \item\label{cc1} We call a Turing machine equipped with an oracle, an oracle machine. Vanilla Turing machines without oracles can be thought of as oracle machines of which state transition functions do not depend on oracle reads. Further, any oracle machine with trivial (e.g. empty) oracle input can be simulated by a vanilla Turing machine. So for convenience, and since we often require the use of oracles, we do not distinguish between Turing machines and oracle machines. In fact, from now on we will only mention oracle machines.
     \item\label{ctc} Oracle machines are always assumed to take as input, some natural number. More than that, we shall assume that every natural number is a valid input for every oracle machine. This is obviously an abstraction, but it is an easy one to realise. This is because every natural number can be uniquely represented by a finite binary string, and so by the usual definition of an oracle machine, any machine with alphabet size $2$ is a realisation.
     \item To follow up on \ref{ctc}, every binary string $\tau \in 2^{< \omega}$ represents a (unique) natural number, and we write $\langle \tau \rangle$ to mean the natural number $\tau$ represents.
+    \item Fix bijections $\mathrm{Pr1}$ and $\mathrm{Pr2}$ from $\omega \times \omega$ into $\omega$ and from $\omega \times 2^{\omega}$ into $2^{\omega}$ respectively, such that their projection functions are all computable. Given any $(m, n) \in \omega \times \omega$, we use $\langle m, n \rangle$ to denote $\mathrm{Pr1}(m, n)$. Given any $(m, x) \in \omega \times 2^{\omega}$, we use $\langle m, x \rangle$ to denote $\mathrm{Pr2}(m, x)$.
     \item We will, whenever a suitable context arises, use the term ``oracle machine'' to mean ``Turing functional with oracle''. In other words, if an oracle machine halts on any input, it must return either $0$ or $1$. 
     \item There is a computable enumeration of (the finite codes of) all oracle machines, so that it is always possible to simulate the $e$-th oracle machine for $s$ steps, as long as $e$ and $s$ are natural numbers.
     \item We fix in advance, a computable enumeration of oracle machines, so that for any $e \in \omega$, $\Phi_e$ refers to the $e$-th oracle machine in this particular enumeration.
@@ -4062,7 +4063,7 @@ Corollary \ref{lastcor} --- indeed, that $\mathrm{Sub}(\mathfrak{A}, T)$ of the 
 Let $\mathfrak{A} = (A; \mathcal{I})$ and $T$ be a countable structure and a first-order theory respectively, over the same signature. Then $\mathrm{Sub}(\mathfrak{A}, T)$ is a closed set in some Polish space.
 \end{fact}
 
-What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond what Fact \ref{lastfact} does, is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is of very low complexity. 
+What Corollary \ref{rlcor2nd} (and thus Corollary \ref{rlcor}) offers beyond what Fact \ref{lastfact} does, is a constructive method to uniformly pick out perfect set witnesses for the perfect set property of $\mathrm{Sub}(\mathfrak{A}, T)$ insofar as such witnesses exist, over all possible $\mathfrak{A}$ and $T$ within the confines of the corollary's assumptions. Moreover, said method is of very low complexity in the grand scheme of things. To offer another perspective, it is standard knowledge in effective descriptive set theory (see e.g. Chapter III of \cite{sacks}) that for any real $A$, a $\Sigma^1_1(A)$-definable set of reals contains a perfect set iff it contains a $\Delta^1_2(A)$-definable perfect set. However, it is not immediately obvious how one can derive from this knowledge a $\Delta^1_2$ definition for a perfect set witness (whenever it exists) that uniformly applies to real codes of even a relatively simple class of sets of reals. Corollary \ref{rlcor2nd} seems to break new ground in this respect through a wholly different approach. But is it really something novel?
 
 \begin{defi}
 A \emph{definable real coding of} $G_{\delta}$ \emph{subsets of} $2^{\omega}$ is a monadic second-order formula $\phi$ over the language of arithmetic such that $\phi$ has exactly $2$ free variables, both members of $\mathrm{2Var}$, and
@@ -4098,23 +4099,42 @@ Let $\phi$ be a $\Sigma^1_1$ real coding of $G_{\delta}$ subsets of $2^{\omega}$
 \end{enumerate}
 \end{cor}
 
-It is standard knowledge in effective descriptive set theory (see e.g. Chapter III of \cite{sacks}) that for any real $A$, a $\Sigma^1_1(A)$-definable set of reals contains a perfect set iff it contains a $\Delta^1_2(A)$-definable perfect set. However, it is not immediately obvious how one can derive from this knowledge a $\Delta^1_2$ definition for a perfect set witness (whenever it exists) that uniformly applies to real codes of even a relatively simple class of sets of reals. Corollary \ref{cor6335}, obtained through a wholly different approach, offers us one such uniform definition for each $\Sigma^1_1$ real coding of $G_{\delta}$ subsets of $2^{\omega}$. 
+Now, Corollary \ref{cor6335} is easily derivable from classical results. Indeed, iteratively applying the Cantor-Bendixson derivative on any real under some fixed $\Sigma^1_1$ real coding of $G_{\delta}$ subsets of $2^{\omega}$ can be done in a uniform $\Delta^1_2$ manner. We have thus come full circle from the parallels we drew in Remark \ref{CBrem}. At this point, the next corollary, implicit in the proof of Theorem \ref{lastthm}, hopefully becomes clear.
 
-Precisely because Corollary \ref{rlcor} helps establish a very strong version of the perfect set property in Corollary \ref{cor6335}, it makes sense to treat it like a souped-up variant of the Cantor-Bendixson theorem, subject to restrictions on use cases. Instead of being applicable to arbitrary closed subsets of some Polish space, Corollary \ref{rlcor} only applies to sets that contain exactly all the models of some $\Pi_2$ TCI. This treatment comes off as a natural extension of the parallels we drew in Remark \ref{CBrem}. Further extending these parallels and arguably cementing the legitimacy of calling $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ ``the $\alpha$-th-order Cantor-Bendixson derivative of $\mathbb{P}(\mathfrak{T})$'', is our final corollary of this section, implicit in the proof of Theorem \ref{lastthm}.
-
-\begin{cor}
-Let $r$ be a nicely computable code of $H(\omega)$ and $\mathfrak{T}$ be a code-friendly $\Pi_2$ TCI. Set
+\begin{defi}
+Let $r$ be a nicely computable code of $H(\omega)$ and $\mathfrak{T}$ be a code-friendly $\Pi_2$ TCI. Define
 \begin{align*}
     \mathrm{Cd}(\mathfrak{T}) := \ & \{f_r" (\Sigma(\mathfrak{T}, \mathcal{M})) : \mathcal{M} \models^* \mathfrak{T}\} \text{,} \\
-    \mathrm{Cl}(\mathfrak{T}) := \ & \text{the closure of } \mathrm{Cd}(\mathfrak{T}) \text{ in Cantor space, and} \\
-    \mathrm{Tr}(\mathfrak{T}) := \ & \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{CL}(\mathfrak{T}) \text{.}
-\end{align*}
-Then there is a canonical dense embedding $\pi$ from $\mathrm{Tr}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})$ such that for all ordinals $\alpha$, $\pi \restriction \mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ is a dense embedding from $\mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$, where
-\begin{align*}
-    \mathrm{Tr}^{(\alpha)}(\mathfrak{T}) := \ & \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{Cl}^{(\alpha)}(\mathfrak{T}) \text{, and} \\ 
     \mathrm{Cl}^{(\alpha)}(\mathfrak{T}) := \ & \text{the closure of } \mathrm{Cd}(\mathfrak{T})^{(\alpha)} \text{ (the } \alpha \text{-th-order Cantor-Bendixson derivative} \\
-    & \text{of } \mathrm{Cd}(\mathfrak{T}) \text{ as a Polish subspace of Cantor space) in Cantor space.}
+    & \text{of } \mathrm{Cd}(\mathfrak{T}) \text{ as a Polish subspace of Cantor space) in Cantor space, and} \\
+    \mathrm{Tr}^{(\alpha)}(\mathfrak{T}) := \ & \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{Cl}^{(\alpha)}(\mathfrak{T}) \text{.}    
 \end{align*}
+\end{defi}
+
+\begin{cor}\label{cor6337}
+Let $r$ be a nicely computable code of $H(\omega)$ and $\mathfrak{T}$ be a code-friendly $\Pi_2$ TCI. Then there is a canonical dense embedding $\pi$ from $\mathrm{Tr}^{(0)}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})$ such that for all ordinals $\alpha$, $\pi \restriction \mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ is a dense embedding from $\mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$.
+\end{cor}
+
+Corollary \ref{cor6337} arguably cements the legitimacy of calling $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ ``the $\alpha$-th-order Cantor-Bendixson derivative of $\mathbb{P}(\mathfrak{T})$''. In fact, based on the meandering journey we took to obtain Corollary \ref{cor6335}, a far greater amount of uniformity can be uncovered from the correspondence --- the ``Cantor-Bendixson connection'' if you will --- on display in Corollary \ref{cor6337}. This is exhibited in the final corollary of this section.
+
+\begin{cor}
+There are an oracle machine $\Xi$ and a set $\mathcal{L}$ such that whenever 
+\begin{enumerate}[label=(\alph*)]
+    \item $e, n < \omega$,
+    \item $\Phi^{\emptyset}_e = r$ is a nicely computable code of $H(\omega)$,
+    \item $\phi$ is a $\Pi^0_2$ real coding of $G_{\delta}$ subsets of $2^{\omega}$,
+    \item $f_r(\phi) = n$, and
+    \item $x \in 2^{\omega}$,
+\end{enumerate}
+for some $\mathfrak{T}$ and $\pi$ satisfying
+\begin{enumerate}[label=(\arabic*)]
+    \item $\mathfrak{T}$ is a code-friendly $\Pi_2$ TCI,
+    \item $\mathcal{L}_{\mathfrak{T}} = \mathcal{L}$,
+    \item $\pi$ is an injection from $f_r" (2^{\omega})$ into $\omega$,
+    \item $\Phi^{\emptyset}_{e'} = \{\langle m, n \rangle : (m, n) \in \pi\}$, and
+    \item for all ordinals $\alpha$, $(f_r^{-1} \circ \pi \circ f_r) \restriction \mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ is a dense embedding from $\mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$,
+\end{enumerate}
+we have $\Xi^{\langle \langle e, n \rangle, x \rangle} = \langle e', f_r" (\Gamma_{\mathfrak{T}}) \rangle$.
 \end{cor}
 
 \section{Open Questions}
@@ -4253,6 +4273,8 @@ Is there a ``naturally definable'' class $\mathcal{C}$ of TCIs such that
     \end{align*}
 \end{enumerate} 
 \end{ques}
+
+\blankpage
 
 \part{\texorpdfstring{  Applying Our Tools}{Applying Our Tools}}
 
