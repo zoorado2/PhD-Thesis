@@ -628,7 +628,7 @@ Let $Y := trcl(X) \cup \{X\}$. Note that
 \begin{equation}\label{trcluni}
     X \text{ is the unique } \! \in \!\text{-maximal member of } Y
 \end{equation} 
-in any transitive model of $\mathsf{ZFC - Powerset}$ containing $Y$. Choose any bijection $f$ from $Y$ into $\kappa$. Define $$R := \{(f(x), f(y)) \in \kappa \times \kappa : x, y \in Y \text{ and } x \in y\}.$$ Now $R$ can be thought of as a subset $A$ of $\kappa$ via the canonical G\"{o}del numbering of pairs. If $V'$ is a transitive model of $\mathsf{ZFC - Powerset}$ containing $A$, then we can recover $R$ in $V'$ by computing the inverse of $A$ under G\"{o}del's pairing function. The Mostowski collapse function works on $R$ in $V'$ to give us $Y \in V'$. This implies $X \in V'$ since $X$ is definable from $Y$ according to (\ref{trcluni}). 
+in any transitive model of $\mathsf{ZFC - Powerset}$ containing $Y$. Choose any bijection $f$ from $Y$ into $\kappa$. Define $$R := \{(f(x), f(y)) \in \kappa \times \kappa : x, y \in Y \text{ and } x \in y\}.$$ Now $R$ can be thought of as a subset $A$ of $\kappa$ via the canonical G\"{o}del numbering of pairs. If $V'$ is a transitive model of $\mathsf{ZFC - Powerset}$ containing $A$, then we can recover $R$ in $V'$ by computing the inverse of $A$ under the G\"{o}del pairing function. The Mostowski collapse function works on $R$ in $V'$ to give us $Y \in V'$. This implies $X \in V'$ since $X$ is definable from $Y$ according to (\ref{trcluni}). 
 \end{proof}
 
 Notice that the decoding process of $A$ to obtain $X$, as described in the proof of Lemma \ref{setcode}, is absolute for transitive models of $\mathsf{ZF}$, because all of its components are. 
@@ -643,7 +643,6 @@ Unless specified otherwise, we follow the standard definitions of concepts typic
     \item\label{cc1} We call a Turing machine equipped with an oracle, an oracle machine. Vanilla Turing machines without oracles can be thought of as oracle machines of which state transition functions do not depend on oracle reads. Further, any oracle machine with trivial (e.g. empty) oracle input can be simulated by a vanilla Turing machine. So for convenience, and since we often require the use of oracles, we do not distinguish between Turing machines and oracle machines. In fact, from now on we will only mention oracle machines.
     \item\label{ctc} Oracle machines are always assumed to take as input, some natural number. More than that, we shall assume that every natural number is a valid input for every oracle machine. This is obviously an abstraction, but it is an easy one to realise. This is because every natural number can be uniquely represented by a finite binary string, and so by the usual definition of an oracle machine, any machine with alphabet size $2$ is a realisation.
     \item To follow up on \ref{ctc}, every binary string $\tau \in 2^{< \omega}$ represents a (unique) natural number, and we write $\langle \tau \rangle$ to mean the natural number $\tau$ represents.
-    \item Fix bijections $\mathrm{Pr1}$ and $\mathrm{Pr2}$ from $\omega \times \omega$ into $\omega$ and from $\omega \times 2^{\omega}$ into $2^{\omega}$ respectively, such that their projection functions are all computable. Given any $(m, n) \in \omega \times \omega$, we use $\langle m, n \rangle$ to denote $\mathrm{Pr1}(m, n)$. Given any $(m, x) \in \omega \times 2^{\omega}$, we use $\langle m, x \rangle$ to denote $\mathrm{Pr2}(m, x)$.
     \item We will, whenever a suitable context arises, use the term ``oracle machine'' to mean ``Turing functional with oracle''. In other words, if an oracle machine halts on any input, it must return either $0$ or $1$. 
     \item There is a computable enumeration of (the finite codes of) all oracle machines, so that it is always possible to simulate the $e$-th oracle machine for $s$ steps, as long as $e$ and $s$ are natural numbers.
     \item We fix in advance, a computable enumeration of oracle machines, so that for any $e \in \omega$, $\Phi_e$ refers to the $e$-th oracle machine in this particular enumeration.
@@ -663,6 +662,17 @@ If $A \subset \omega$, $X \subset 2^{< \omega}$ and $\Phi$ is an oracle machine,
 \begin{equation*}
     \Phi^A = \{\langle \tau \rangle : \tau \in X\} \text{.}
 \end{equation*}
+\end{defi}
+
+\begin{defi}
+Fix bijections $\mathrm{Pr1}$ and $\mathrm{Pr2}$ from $\omega \times \omega$ into $\omega$ and from $\omega \times 2^{\omega}$ into $2^{\omega}$ respectively, such that their projection functions are all computable. In other words, there are $e_i$ for $i < 4$, such that
+\begin{enumerate}[label=(\alph*)]
+    \item $\Phi^{\emptyset}_{e_0}(\mathrm{Pr1}(m, n)) = m$ for all $m, n < \omega$, 
+    \item $\Phi^{\emptyset}_{e_1}(\mathrm{Pr1}(m, n)) = n$ for all $m, n < \omega$, 
+    \item $\Phi^{\mathrm{Pr2}(m, x)}_{e_2}(n) = m$ for all $m, n < \omega$ and $x \in 2^{\omega}$, and
+    \item $\Phi^{\mathrm{Pr2}(m, x)}_{e_3} = x$ for all $m < \omega$ and $x \in 2^{\omega}$.
+\end{enumerate}
+Given any $(m, n) \in \omega \times \omega$, we use $\langle m, n \rangle$ to denote $\mathrm{Pr1}(m, n)$. Given any $(m, x) \in \omega \times 2^{\omega}$, we use $\langle m, x \rangle$ to denote $\mathrm{Pr2}(m, x)$.
 \end{defi}
 
 \begin{defi}
@@ -1115,14 +1125,14 @@ Call the forcing notion $\mathbb{C} := (C, \leq_{\mathbb{C}})$ \emph{Cohen forci
 Let $f : H(\omega) \longrightarrow \omega$ be an injection. We say $f$ is a \emph{computable encoding function of} $(H(\omega); \in)$ iff $f$ satisfies all of the following conditions.
 \begin{enumerate}[label=(\alph*)]
     \item $ran(f)$ is a computable subset of $\omega$.
-    \item The image of the set 
+    \item The set 
     \begin{equation*}
-        \{(f(x), f(y)) \in \omega \times \omega : x, y \in H(\omega) \text{ and } x \in y\}
+        \{n \in \omega : \exists x, y \in H(\omega) \ (x \in y \text{ and } n = \langle f(x), f(y) \rangle)\}
     \end{equation*}
-    under G\"{o}del's pairing function is a computable subset of $\omega$.
+    is a computable subset of $\omega$.
     \item The graph of $f$, i.e. the set 
     \begin{equation*}
-        \{(x, f(x)) : x \in H(\omega)\} \text{,}
+        \{n \in \omega : \exists x \in H(\omega) \ (n = \langle x, f(x) \rangle )\} \text{,}
     \end{equation*}
     is $\Delta_1$-definable in the language associated with $(H(\omega); \in)$.
 \end{enumerate}
@@ -3568,34 +3578,15 @@ As a consequence, we can assume $\mathfrak{T}$ has a countable transitive closur
 
 Ideally, in the spirit of Lemmas \ref{genericls} and \ref{genericlscor}, we want to prove a generic version of Lemma \ref{modelinV}. This can be done through a relatively effective version of Theorem \ref{genericdichom} for a certain class of countable TCIs, so as to kill two birds with one stone. Some definitions and facts are prerequisites.
 
-For the rest of this section,
-\begin{itemize}
-    \item fix a bijection 
-    \begin{align*}
-        f^{\dagger} : \ & \mathrm{Var} \cup \{x : x \text{ is a first-order logical symbol}\} \cup \{\ulcorner \in \urcorner\} \\
-        & \longrightarrow \{n < \omega : n \text{ is odd}\} \text{,}
-    \end{align*}
-    and
-    \item interpret $\Delta_n$, $\Pi_n$ and $\Sigma_n$ formulas the way they are defined in Definition \ref{def27}.
-\end{itemize}
-
 \begin{defi}
-For any countable set $X$, we say $(r, f)$ \emph{witnesses} $(X; \in)$ \emph{is computable} iff
-\begin{enumerate}[label=(\alph*)] 
-    \item $f$ is a bijection from $X$ into $\{n < \omega : n \text{ is even}\}$,
-    \item the graph of $f$ is $\Delta_1$-definable in the language associated with $(H(\omega); \in)$,
-    \item
-    \!
-    $\begin{aligned}[t]
-        r = \{\langle (f \cup f^{\dagger})^*(\varphi) \rangle : \varphi \text{ is a member of the } \Delta_0 \text{-elementary diagram of } (X; \in)\}, 
-    \end{aligned}$
-    \medskip
-    \\
-    where 
-    \begin{itemize}
-        \item $\langle \cdot \rangle$ is the standard computable G\"odel numbering of strings over $\omega$, and
-        \item $(f \cup f^{\dagger})^*$ is the canonical bijection from the set of finite strings over $dom(f \cup f^{\dagger})$ into the set of finite strings over $\omega$, induced by $f \cup f^{\dagger}$, and
-    \end{itemize}
+Let $X \subset H(\omega)$. We say $(r, f)$ \emph{witnesses} $(X; \in)$ \emph{is computable} iff there are $e$ and $g$ such that
+\begin{enumerate}[label=(\alph*)]
+    \item $e < \omega$,
+    \item $g$ is a function from $\omega$ into $\omega$,
+    \item $f$ is a bijection from $X$ into $\omega$,
+    \item for all $x, y \in X$, $x \in y$ implies $f(x) < g(f(y))$,
+    \item $\Phi^{\emptyset}_e = \{m \in \omega : \exists n < \omega \ (m = \langle n, g(n) \rangle)\}$,
+    \item $r = \langle e, \{n \in \omega : \exists x, y \in H(\omega) \ (x \in y \text{ and } n = \langle f(x), f(y) \rangle)\} \rangle$, and
     \item $r$ is computable.
 \end{enumerate}
 We say $r$ is a \emph{nicely computable code of} $(X; \in)$ iff there is $f$ for which $(r, f)$ witnesses $(X; \in)$ is computable.
@@ -4121,7 +4112,8 @@ Corollary \ref{cor6337} arguably cements the legitimacy of calling $\mathbb{P}(\
 There are an oracle machine $\Xi$ and a set $\mathcal{L}$ such that whenever 
 \begin{enumerate}[label=(\alph*)]
     \item $e, n < \omega$,
-    \item $\Phi^{\emptyset}_e = r$ is a nicely computable code of $H(\omega)$,
+    \item $r$ is a nicely computable code of $H(\omega)$,
+    \item $\Phi^{\emptyset}_e = r$,
     \item $\phi$ is a $\Pi^0_2$ real coding of $G_{\delta}$ subsets of $2^{\omega}$,
     \item $f_r(\phi) = n$, and
     \item $x \in 2^{\omega}$,
@@ -4130,8 +4122,8 @@ for some $\mathfrak{T}$, $e'$ and $\pi$ satisfying
 \begin{enumerate}[label=(\arabic*)]
     \item $\mathfrak{T}$ is a code-friendly $\Pi_2$ TCI,
     \item $\mathcal{L}_{\mathfrak{T}} = \mathcal{L}$,
-    \item $\pi$ is an injection from $f_r" (2^{\omega})$ into $\omega$,
-    \item $\Phi^{\emptyset}_{e'} = \{\langle m, n \rangle : (m, n) \in \pi\}$, and
+    \item $\pi$ is an injective function from $f_r" (2^{\omega})$ into $\omega$,
+    \item $\Phi^{\emptyset}_{e'} = \{n \in \omega : \exists m \in dom (\pi) \ (n = \langle m, \pi(m) \rangle)\}$, and
     \item for all ordinals $\alpha$, $(f_r^{-1} \circ \pi \circ f_r) \restriction \mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ is a dense embedding from $\mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$,
 \end{enumerate}
 we have $\Xi^{\langle \langle e, n \rangle, x \rangle} = \langle e', f_r" (\Gamma_{\mathfrak{T}}) \rangle$.
@@ -4273,8 +4265,6 @@ Is there a ``naturally definable'' class $\mathcal{C}$ of TCIs such that
     \end{align*}
 \end{enumerate} 
 \end{ques}
-
-\blankpage
 
 \part{\texorpdfstring{  Applying Our Tools}{Applying Our Tools}}
 
@@ -6701,7 +6691,7 @@ so that $A_1$ and $A_2$ both interpret $\ulcorner A \urcorner$ on the base set $
 
 Fix subsets $A_1$ and $A_2$ of $\kappa$. Note that $\mathfrak{M}(\kappa, A_1, A_2)$ satisfies requirements \ref{a1} to \ref{a3'}. Moreover, the only terminating run of $\mathfrak{M}(\kappa, A_1, A_2)$ is $(s_1, s_2)$. As the interpretation of the symbol $\ulcorner A \urcorner$ is the only difference between $s_1$ and $s_2$, the moral implication of this run is that we can algorithmically get from $A_1$ to $A_2$. If we set $A_1$ to be a simply definable set like the empty set, then every subset of $\kappa$ is algorithmically derivable from $A_1$. This seems incredible given the information content of arbitrary sets of ordinals, as exemplified by Lemma \ref{setcode}.
 
-The procedure described in the proof of Lemma \ref{setcode} allows us to encode any set as a set of ordinals, such that the decoding can be done in an absolute manner. If we believe that such a decoding scheme (particularly, G\"{o}del's pairing function) is algorithmic, then our aforementioned loosening of the definition of SeqAs entails that we can algorithmically derive every set in $V$ from just $\emptyset$. Since most set theorists are of the opinion that sets in $V$ can be extremely complicated and far from constructible in a very strong sense, this conclusion is wholly unsatisfactory, if not patently false. In other words, just eschewing requirements \ref{a3} and \ref{a4} yields \emph{too} encompassing a paradigm for algorithms, and thus should not be used to draw the line for generalised computability.
+The procedure described in the proof of Lemma \ref{setcode} allows us to encode any set as a set of ordinals, such that the decoding can be done in an absolute manner. If we believe that such a decoding scheme (particularly, the G\"{o}del pairing function) is algorithmic, then our aforementioned loosening of the definition of SeqAs entails that we can algorithmically derive every set in $V$ from just $\emptyset$. Since most set theorists are of the opinion that sets in $V$ can be extremely complicated and far from constructible in a very strong sense, this conclusion is wholly unsatisfactory, if not patently false. In other words, just eschewing requirements \ref{a3} and \ref{a4} yields \emph{too} encompassing a paradigm for algorithms, and thus should not be used to draw the line for generalised computability.
 
 \begin{rem}
 In Example \ref{ex21}, we can set $A_1$ and $A_2$ to be subsets of $H(\kappa)$, and alter the definition of $\mathfrak{M}(\kappa, A_1, A_2)$ such that 
