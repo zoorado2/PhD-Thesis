@@ -1521,7 +1521,7 @@ A structure $\mathfrak{A} = (A; \in, \Vec{R})$ in a possibly expanded language o
     \end{equation*}
     whenever $x \in A$, 
     \item $\mathcal{L} \subset A$, and
-    \item $\mathcal{L}$ is $\Pi_1$-definable in the language associated with $\mathfrak{A}$.
+    \item\label{def210e} $\mathcal{L}$ is $\Pi_1$-definable in the language associated with $\mathfrak{A}$.
 \end{enumerate}
 \end{defi}
 
@@ -1713,7 +1713,7 @@ Let $\phi$ be a $\mathcal{L}^{*}_{\mathfrak{A}}$ formula. Define $\mathrm{QA}(\p
 \end{defi}
 
 \begin{defi}
-Given any $\mathcal{L}^{*}_{\mathfrak{A}}$ formula $\phi$, a $\phi$\emph{-max peeling} is a maximal member of $\mathrm{QA}(\phi)$ with respect to set inclusion.
+Given any $\mathcal{L}^{*}_{\mathfrak{A}}$ formula $\phi$, a $\phi$\emph{-max peeling} is a maximal member of $\mathrm{QA}(\phi)$ with respect to the binary relation ``is a subformula of''.
 \end{defi}
 
 \begin{rem}\label{rem320}
@@ -2091,7 +2091,7 @@ For the rest of this section, unless otherwise stated, we fix a forcing notion $
     \item $\mathbb{P}$ is $\Sigma_1$-definable in the language associated with $\mathfrak{A}$, and
     \item $(\mathfrak{A}, \mathbb{P})$ is good for $\mathcal{L}$.
 \end{itemize}
-Similar in motivation to the final bullet point in Definition \ref{lsuitable}, the requirement for $\mathbb{P}$ to be $\Sigma_1$-definable in the language associated with $\mathfrak{A}$ is only there so that the proof of Theorem \ref{uni} can go through given its hypothesis.
+Similar in motivation to \ref{def210e} of Definition \ref{lsuitable}, the requirement for $\mathbb{P}$ to be $\Sigma_1$-definable in the language associated with $\mathfrak{A}$ is only there so that the proof of Theorem \ref{uni} can go through given its hypothesis.
 
 \begin{defi}
 For $p \in P$, a $p$\emph{-candidate for} $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$\emph{-universality} is a set $\Sigma$ for which
@@ -4123,10 +4123,10 @@ for some $\mathfrak{T}$, $e'$ and $\pi$ satisfying
     \item $\mathfrak{T}$ is a code-friendly $\Pi_2$ TCI,
     \item $\mathcal{L}_{\mathfrak{T}} = \mathcal{L}$,
     \item $\pi$ is an injective function from $f_r" (2^{\omega})$ into $\omega$,
-    \item $\Phi^{\emptyset}_{e'} = \{n \in \omega : \exists m \in dom (\pi) \ (n = \langle m, \pi(m) \rangle)\}$, and
+    \item $\Phi^{x}_{e'} = \{n \in \omega : \exists m \in dom (\pi) \ (n = \langle m, \pi(m) \rangle)\}$, and
     \item for all ordinals $\alpha$, $(f_r^{-1} \circ \pi \circ f_r) \restriction \mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ is a dense embedding from $\mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$,
 \end{enumerate}
-we have $\Xi^{\langle \langle e, n \rangle, x \rangle} = \langle e', f_r" (\Gamma_{\mathfrak{T}}) \rangle$.
+we have $\Xi^{\langle \langle e, n \rangle, x \rangle} = \langle e', x \oplus f_r" (\Gamma_{\mathfrak{T}}) \rangle$.
 \end{cor}
 
 \section{Open Questions}
@@ -6394,7 +6394,7 @@ Then there is a stationary-preserving forcing notion $\mathbb{P}$ of size $2^{< 
 
 \section{Open Questions}
 
-Working in the universe $W$ as defined in the proof of Theorem \ref{notion1} and thinning $C$ if necessary, fix any $\theta$ such that $[Q_{\lambda}]^{< \theta} \subset Q_{\lambda}$ for all $\lambda \in C$. Should we then alter the definition of $\Gamma_{\lambda}$ and $P_{\lambda}$ for each $\lambda \in C \cup \{\lambda_f\}$ as follows:
+Working in the universe $W$ as defined in the proof of Theorem \ref{notion1} and thinning out $C$ if necessary, fix any $\theta$ such that $[Q_{\lambda}]^{< \theta} \subset Q_{\lambda}$ for all $\lambda \in C$. Should we then alter the definition of $\Gamma_{\lambda}$ and $P_{\lambda}$ for each $\lambda \in C \cup \{\lambda_f\}$ as follows:
 \begin{align*}
     \Gamma_{\lambda}(\theta) := \ & \text{the set } \Gamma_{\lambda} \text{ defined according to Definition \ref{defc},} \\
     & \text{but with } \mathbb{P}_{\lambda'}(\theta) \text{ in place of the parameter } \mathbb{P}_{\lambda'} \text{ for each } \lambda' \in \lambda \cap C \\
