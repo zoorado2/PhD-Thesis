@@ -4089,13 +4089,23 @@ Let $\phi$ be a $\Sigma^1_1$ real coding of $G_{\delta}$ subsets of $2^{\omega}$
 
 Now, Corollary \ref{cor6335} is easily derivable from classical results. Indeed, iteratively applying the Cantor-Bendixson derivative on any real under some fixed $\Sigma^1_1$ real coding of $G_{\delta}$ subsets of $2^{\omega}$ can be done in a uniform $\Delta^1_2$ manner. We have thus come full circle from the parallels we drew in Remark \ref{CBrem}. At this point, the next corollary, implicit in the proof of Theorem \ref{lastthm}, hopefully becomes clear.
 
+\begin{defi}\label{def6336}
+Let $X$ be a subset of $2^{\omega}$. Define
+\begin{align*}
+    \mathrm{Cl}^{(\alpha)}(X) := \ & \text{the closure of } X^{(\alpha)} \text{ (the } \alpha \text{-th-order Cantor-Bendixson derivative} \\
+    & \text{of } X \text{ as a subspace of Cantor space) in Cantor space, and} \\
+    \mathrm{Tr}^{(\alpha)}(X) := \ & \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{Cl}^{(\alpha)}(X) \text{.}    
+\end{align*}
+\end{defi}
+
+We can adapt Definition \ref{def6336} to the context of TCIs by associating each TCI with a $G_{\delta}$ subset of $2^{\omega}$, as we have been doing so far.
+
 \begin{defi}
 Let $r$ be a nicely computable code of $H(\omega)$ and $\mathfrak{T}$ be a code-friendly $\Pi_2$ TCI. Define
 \begin{align*}
     \mathrm{Cd}(\mathfrak{T}) := \ & \{f_r" (\Sigma(\mathfrak{T}, \mathcal{M})) : \mathcal{M} \models^* \mathfrak{T}\} \text{,} \\
-    \mathrm{Cl}^{(\alpha)}(\mathfrak{T}) := \ & \text{the closure of } \mathrm{Cd}(\mathfrak{T})^{(\alpha)} \text{ (the } \alpha \text{-th-order Cantor-Bendixson derivative} \\
-    & \text{of } \mathrm{Cd}(\mathfrak{T}) \text{ as a Polish subspace of Cantor space) in Cantor space, and} \\
-    \mathrm{Tr}^{(\alpha)}(\mathfrak{T}) := \ & \text{the unique subtree } \mathrm{Tr} \text{ of } 2^{< \omega} \text{ such that } [\mathrm{Tr}] = \mathrm{Cl}^{(\alpha)}(\mathfrak{T}) \text{.}    
+    \mathrm{Cl}^{(\alpha)}(\mathfrak{T}) := \ & \mathrm{Cl}^{(\alpha)}(\mathrm{Cd}(\mathfrak{T})) \text{, and} \\
+    \mathrm{Tr}^{(\alpha)}(\mathfrak{T}) := \ & \mathrm{Tr}^{(\alpha)}(\mathrm{Cd}(\mathfrak{T})) \text{.}    
 \end{align*}
 \end{defi}
 
@@ -4121,10 +4131,12 @@ for some $\mathfrak{T}$, $e'$ and $\pi$ satisfying
     \item $\mathcal{L}_{\mathfrak{T}} = \mathcal{L}$,
     \item $\pi$ is an injective function from $f_r" (2^{< \omega})$ into $\omega$,
     \item $\Phi^{x}_{e'} = \{n \in \omega : \exists m \in dom (\pi) \ (n = \langle m, \pi(m) \rangle)\}$, and
-    \item for all ordinals $\alpha$, $(f_r^{-1} \circ \pi \circ f_r) \restriction \mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ is a dense embedding from $\mathrm{Tr}^{(\alpha)}(\mathfrak{T})$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$,
+    \item for all ordinals $\alpha$, $(f_r^{-1} \circ \pi \circ f_r) \restriction \mathrm{Tr}^{(\alpha)}(A^{\phi}_x)$ is a dense embedding from $\mathrm{Tr}^{(\alpha)}(A^{\phi}_x)$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$,
 \end{enumerate}
-we have $\Xi^{\langle \langle e, n \rangle, x \rangle} = \langle e', x \oplus f_r" (\Gamma_{\mathfrak{T}}) \rangle$.
+we have $\Xi^{\langle \langle e, n \rangle, x \rangle} = \langle e', f_r" (\Gamma_{\mathfrak{T}}) \rangle$. 
 \end{cor}
+
+Intuitively, Corollary \ref{cor6338} tells us we can derive from each $G_{\delta}$ subset an ``equivalent'' code-friendly $\Pi_2$ TCI, in a manner that is uniformly computable across all $\Pi^0_2$ real codings of $G_{\delta}$ subsets of $2^{\omega}$.
 
 \section{Open Questions}
 
