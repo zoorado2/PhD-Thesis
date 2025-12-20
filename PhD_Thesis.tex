@@ -4128,15 +4128,16 @@ There are an oracle machine $\Xi$ and a set $\mathcal{L}$ such that whenever
 for some $\mathfrak{T}$, $e'$ and $\pi$ satisfying
 \begin{enumerate}[label=(\arabic*)]
     \item $\mathfrak{T}$ is a code-friendly $\Pi_2$ TCI,
+    \item $f_r" (\mathcal{L}_{\mathfrak{T}})$ is computable,
     \item $\mathcal{L}_{\mathfrak{T}} = \mathcal{L}$,
     \item $\pi$ is an injective function from $f_r" (2^{< \omega})$ into $\omega$,
     \item $\Phi^{x}_{e'} = \{n \in \omega : \exists m \in dom (\pi) \ (n = \langle m, \pi(m) \rangle)\}$, and
     \item for all ordinals $\alpha$, $(f_r^{-1} \circ \pi \circ f_r) \restriction \mathrm{Tr}^{(\alpha)}(A^{\phi}_x)$ is a dense embedding from $\mathrm{Tr}^{(\alpha)}(A^{\phi}_x)$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$,
 \end{enumerate}
-we have $\Xi^{\langle \langle e, n \rangle, x \rangle} = \langle e', f_r" (\Gamma_{\mathfrak{T}}) \rangle$. 
+we have $\Xi^{\langle \langle e, n \rangle, x \rangle} = \langle e', f_r" (\mathcal{L}_{\mathfrak{T}}) \oplus f_r" (\Gamma_{\mathfrak{T}}) \rangle$. 
 \end{cor}
 
-Intuitively, Corollary \ref{cor6338} tells us we can derive from each $G_{\delta}$ subset an ``equivalent'' code-friendly $\Pi_2$ TCI, in a manner that is uniformly computable across all $\Pi^0_2$ real codings of $G_{\delta}$ subsets of $2^{\omega}$.
+Intuitively, Corollary \ref{cor6338} tells us we can choose for each $G_{\delta}$ subset of $2^{\omega}$ an ``equivalent'' code-friendly $\Pi_2$ TCI, in a manner that is uniformly computable across all $\Pi^0_2$ real codings of $G_{\delta}$ subsets of $2^{\omega}$. In addition, this choice can be made such that it ``preserves'' all iterated Cantor-Bendixson derivatives of any given $G_{\delta}$ subset of $2^{\omega}$.
 
 \section{Open Questions}
 
