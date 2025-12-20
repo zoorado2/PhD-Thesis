@@ -4116,28 +4116,37 @@ Let $r$ be a nicely computable code of $H(\omega)$ and $\mathfrak{T}$ be a code-
 Corollary \ref{cor6337} arguably cements the legitimacy of calling $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ ``the $\alpha$-th-order Cantor-Bendixson derivative of $\mathbb{P}(\mathfrak{T})$''. In fact, based on the meandering journey we took to obtain Corollary \ref{cor6335}, a far greater amount of uniformity can be uncovered from the correspondence --- the ``Cantor-Bendixson connection'' if you will --- on display in Corollary \ref{cor6337}. This is exhibited in the final corollary of this section.
 
 \begin{cor}\label{cor6338}
-There are an oracle machine $\Xi$ and a set $\mathcal{L}$ such that whenever 
+There are an oracle machine $\Xi$, a set $\mathcal{L}$ and ternary functions
+\begin{equation*}
+    \mathfrak{T}^*, e^*, \pi^* : \omega \times \omega \times 2^{\omega} \longrightarrow H(\omega_1)
+\end{equation*}
+wherewith whenever $e$, $n$, $r$, $\phi$, $x$ are such that
 \begin{enumerate}[label=(\alph*)]
-    \item $e, n < \omega$,
+    \item\label{6339a} $e, n < \omega$,
     \item $r$ is a nicely computable code of $H(\omega)$,
     \item $\Phi^{\emptyset}_e = r$,
     \item $\phi$ is a $\Pi^0_2$ real coding of $G_{\delta}$ subsets of $2^{\omega}$,
     \item $f_r(\phi) = n$, and
-    \item $x \in 2^{\omega}$,
+    \item\label{6339f} $x \in 2^{\omega}$,
 \end{enumerate}
-for some $\mathfrak{T}$, $e'$ and $\pi$ satisfying
+we have
 \begin{enumerate}[label=(\arabic*)]
-    \item $\mathfrak{T}$ is a code-friendly $\Pi_2$ TCI,
-    \item $f_r" (\mathcal{L}_{\mathfrak{T}})$ is computable,
-    \item $\mathcal{L}_{\mathfrak{T}} = \mathcal{L}$,
-    \item $\pi$ is an injective function from $f_r" (2^{< \omega})$ into $\omega$,
-    \item $\Phi^{x}_{e'} = \{n \in \omega : \exists m \in dom (\pi) \ (n = \langle m, \pi(m) \rangle)\}$, and
-    \item for all ordinals $\alpha$, $(f_r^{-1} \circ \pi \circ f_r) \restriction \mathrm{Tr}^{(\alpha)}(A^{\phi}_x)$ is a dense embedding from $\mathrm{Tr}^{(\alpha)}(A^{\phi}_x)$ into $\mathbb{P}(\mathfrak{T})^{(\alpha)}$,
-\end{enumerate}
-we have $\Xi^{\langle \langle e, n \rangle, x \rangle} = \langle e', f_r" (\mathcal{L}_{\mathfrak{T}}) \oplus f_r" (\Gamma_{\mathfrak{T}}) \rangle$. 
+    \item $\mathfrak{T}^*(e, n, x)$ is a code-friendly $\Pi_2$ TCI,
+    \item $f_r" (\mathcal{L}_{\mathfrak{T}^*(e, n, x)})$ is computable,
+    \item $\mathcal{L}_{\mathfrak{T}^*(e, n, x)} = \mathcal{L}$,
+    \item $\pi^*(e, n, x)$ is an injective function from $f_r" (2^{< \omega})$ into $\omega$,
+    \item $\Phi^{x}_{e^*(e, n, x)} = \{n \in \omega : \exists m \in dom (\pi^*(e, n, x)) \ (n = \langle m, \pi^*(e, n, x)(m) \rangle)\}$,
+    \item for all ordinals $\alpha$, $(f_r^{-1} \circ \pi^*(e, n, x) \circ f_r) \restriction \mathrm{Tr}^{(\alpha)}(A^{\phi}_x)$ is a dense embedding from $\mathrm{Tr}^{(\alpha)}(A^{\phi}_x)$ into $\mathbb{P}(\mathfrak{T}^*(e, n, x))^{(\alpha)}$,
+    \item $\Xi^{\langle \langle e, n \rangle, x \rangle} = \langle e^*(e, n, x), f_r" (\mathcal{L}_{\mathfrak{T}^*(e, n, x)}) \oplus f_r" (\Gamma_{\mathfrak{T}^*(e, n, x)}) \rangle$, and
+    \item for all ordinals $\alpha$ and all $e'$, $n'$, $r'$, $\phi'$, $x'$ satisfying \ref{6339a} to \ref{6339f} in place of $e$, $n$, $r$, $\phi$, $x$ respectively, 
+    \begin{enumerate}[label=(\roman*)]
+        \item\label{63398i} if $(A^{\phi}_x)^{(\alpha)} = A^{\phi'}_{x'}$, then $\mathbb{P}(\mathfrak{T}^*(e, n, x))^{(\alpha)} = \mathbb{P}(\mathfrak{T}^*(e', n', x'))$, and
+        \item if in addition to \ref{63398i}, $e = e'$, then $e^*(e, n, x) = e^*(e', n', x')$.
+    \end{enumerate}
+\end{enumerate} 
 \end{cor}
 
-Intuitively, Corollary \ref{cor6338} tells us we can choose for each $G_{\delta}$ subset of $2^{\omega}$ an ``equivalent'' code-friendly $\Pi_2$ TCI, in a manner that is uniformly computable across all $\Pi^0_2$ real codings of $G_{\delta}$ subsets of $2^{\omega}$. In addition, this choice can be made such that it ``preserves'' all iterated Cantor-Bendixson derivatives of any given $G_{\delta}$ subset of $2^{\omega}$.
+Intuitively, Corollary \ref{cor6338} tells us we can choose for each $G_{\delta}$ subset of $2^{\omega}$ an ``equivalent'' code-friendly $\Pi_2$ TCI, in a manner that is uniformly computable across all $\Pi^0_2$ real codings of $G_{\delta}$ subsets of $2^{\omega}$. Moreover, this choice can be made such that it commutes with Cantor-Bendixson derivatives of all orders and of any given $G_{\delta}$ subset of $2^{\omega}$.
 
 \section{Open Questions}
 
