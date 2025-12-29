@@ -16,7 +16,7 @@
 style=numeric,
 %style=alphabetic,
 %style=reading,
-sorting=ynt
+sorting=nty
 ]{biblatex}
 \addbibresource{PhD_Thesis.bib}
 \usepackage{tocbibind}
@@ -1522,8 +1522,9 @@ A structure $\mathfrak{A} = (A; \in, \Vec{R})$ in a possibly expanded language o
     \end{equation*}
     whenever $x \in A$, 
     \item $\mathcal{L} \subset A$, and
-    \item\label{def210e} $\mathcal{L}$ is $\Pi_1$-definable in the language associated with $\mathfrak{A}$.
+    \item\label{def210e} $\mathcal{L}$ is $\Pi_1$-definable in the language associated with $\mathfrak{A}$, as witnessed by some $\Pi_1$ formula $\varphi_{\mathcal{L}}$ with a single free variable.
 \end{enumerate}
+Where appropriate, we shall use $``x \in \mathcal{L}"$ to represent $\varphi_{\mathcal{L}}(x)$.
 \end{defi}
 
 We can think of $\mathfrak{A}$ as a first-order structure expanding on $(A; \in)$, for constants and functions interpreted over the base set $A$ can be represented by relations on $A$. In typical scenarios, $\mathfrak{A}$ is
@@ -2085,10 +2086,13 @@ A pair $(\mathfrak{A} = (A; \in, \Vec{R}), \mathbb{P} = (P, \leq_P))$ is \emph{g
 
 For the rest of this section, unless otherwise stated, we fix a forcing notion $\mathbb{P} = (P, \leq_P))$ for which
 \begin{itemize}
-    \item $\mathbb{P}$ is $\Sigma_1$-definable in the language associated with $\mathfrak{A}$, and
+    \item $P$ is $\Sigma_1$-definable in the language associated with $\mathfrak{A}$, as witnessed by some $\Sigma_1$ formula $\varphi_{P}$ with a single free variable,
+    \item $\leq_P$ is $\Sigma_1$-definable in the language associated with $\mathfrak{A}$, as witnessed by some $\Sigma_1$ formula $\varphi_{\leq_P}$ with two free variables, and
     \item $(\mathfrak{A}, \mathbb{P})$ is good for $\mathcal{L}$.
 \end{itemize}
-Similar in motivation to \ref{def210e} of Definition \ref{lsuitable}, the requirement for $\mathbb{P}$ to be $\Sigma_1$-definable in the language associated with $\mathfrak{A}$ is only there so that the proof of Theorem \ref{uni} can go through given its hypothesis.
+Where appropriate, we shall use $``x \in P"$ and $``x \leq_P y"$ to represent $\varphi_{P}(x)$ and $\varphi_{\leq_P}(x, y)$ respectively.
+
+Similar in motivation to \ref{def210e} of Definition \ref{lsuitable}, the requirements for $P$ and $\leq_P$ to be $\Sigma_1$-definable in the language associated with $\mathfrak{A}$ are only there so that the proof of Theorem \ref{uni} can go through given its hypothesis.
 
 \begin{defi}
 For $p \in P$, a $p$\emph{-candidate for} $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$\emph{-universality} is a set $\Sigma$ for which
