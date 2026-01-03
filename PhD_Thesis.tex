@@ -2092,7 +2092,7 @@ For the rest of this section, unless otherwise stated, we fix a forcing notion $
 \end{itemize}
 Where appropriate, we shall use $``x \in P"$ and $``x \leq_P y"$ to represent $\varphi_{P}(x)$ and $\varphi_{\leq_P}(x, y)$ respectively.
 
-Similar in motivation to \ref{def210e} of Definition \ref{lsuitable}, the requirements for $P$ and $\leq_P$ to be $\Sigma_1$-definable in the language associated with $\mathfrak{A}$ are only there so that the proof of Theorem \ref{uni} can go through given its hypothesis.
+Similar in motivation to \ref{def210e} of Definition \ref{lsuitable}, the requirements for $P$ and $\leq_P$ to be $\Sigma_1$-definable in the language associated with $\mathfrak{A}$ are only there so that the proof of Theorem \ref{uni} can go through given its hypothesis. For brevity, we say $\mathbb{P}$ is $\Sigma_1$-definable in the language associated with $\mathfrak{A}$ exactly when both $P$ and $\leq_P$ are as such.
 
 \begin{defi}
 For $p \in P$, a $p$\emph{-candidate for} $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$\emph{-universality} is a set $\Sigma$ for which
@@ -4438,7 +4438,7 @@ Assume $\mathsf{GCH}$ holds below $\omega_2$. Then Namba forcing witnesses $Nb'_
 The next theorem, also the main one in this chapter, tells us $Nb'_1(\lambda)$ holds for all but set many regular cardinals $\lambda$, under stronger assumptions.
 
 \begin{thm}\label{notion1}
-Assume $\mathrm{NS}_{\omega_1}$ is precipitous. Then $Nb'_1(\lambda^{\dagger})$ holds for all regular cardinals $\lambda^{\dagger} > 2^{\omega_1}$. In other words, whenever $\lambda^{\dagger} > 2^{\omega_1}$ is a regular cardinal, there is a stationary-preserving forcing notion $\mathbb{P}'$ such that 
+Assume $\mathrm{NS}_{\omega_1}$ is precipitous. Then $Nb'_1(\lambda^{\dagger})$ holds for each regular cardinal $\lambda^{\dagger} > 2^{\omega_1}$, and is witnessed by a forcing notion of size $2^{< \lambda^{\dagger}}$. In other words, whenever $\lambda^{\dagger} > 2^{\omega_1}$ is a regular cardinal, there is a stationary-preserving forcing notion $\mathbb{P}'$ of size $2^{< \lambda^{\dagger}}$ such that 
 \begin{enumerate}[label=(\arabic*)]
     \item\label{cond1} $\Vdash_{\mathbb{P}'} ``cof(\alpha) = \omega"$ for all regular cardinals $\alpha$ satisfying $\omega_2 \leq \alpha < \lambda^{\dagger}$,
     \item\label{cond2} $\Vdash_{\mathbb{P}'} ``cof(\gamma) = \omega_1"$ for all regular cardinals $\gamma$ satisfying $\lambda^{\dagger} \leq \gamma \leq 2^{< \lambda^{\dagger}}$, and
@@ -4458,24 +4458,25 @@ Let $h$ be a generic filter on $Col(\lambda^{\dagger}, \lambda^{\dagger})$, so t
 \end{itemize}
 
 \begin{lem}\label{lem26}
-If in $V[h]$ there is a stationary-preserving forcing notion $\mathbb{P}$ of size $\leq \lambda^{\dagger}$ fulfilling 
+If in $V[h]$ there is a stationary-preserving forcing notion $\mathbb{P} = (P, \leq_P)$ fulfilling 
 \begin{enumerate}[label=(\arabic*')]
+    \item\label{4100} $P \subset H(\lambda^{\dagger})$, 
     \item\label{4101} $\Vdash_{\mathbb{P}} ``cof(\alpha) = \omega"$ for all regular cardinals $\alpha$ satisfying $\omega_2 \leq \alpha < \lambda^{\dagger}$, and
     \item\label{4102} $\Vdash_{\mathbb{P}} ``cof(\lambda^{\dagger}) = \omega_1"$,
 \end{enumerate}
 then for some $Col(\lambda^{\dagger}, \lambda^{\dagger})$-name $\dot{\mathbb{P}}$ for $\mathbb{P}$,
 \begin{equation*}
-    Col(\lambda^{\dagger}, \lambda^{\dagger}) * \dot{\mathbb{P}} \text{,}
+    Col(\lambda^{\dagger}, \lambda^{\dagger}) * \dot{\mathbb{P}}
 \end{equation*} 
-is a stationary-preserving forcing notion fulfilling \ref{cond1} to \ref{cond3} of Theorem \ref{notion1} in $V$.
+is a stationary-preserving forcing notion that contains a dense subset of size $2^{< \lambda^{\dagger}}$ and fulfils \ref{cond1} to \ref{cond3} of Theorem \ref{notion1} in $V$.
 \end{lem}
 
 \begin{proof}
 Working in $V$, we set $$\mathbb{P}' := Col(\lambda^{\dagger}, \lambda^{\dagger}) * \dot{\mathbb{P}} \text{,}$$ and note the following facts:
 \begin{enumerate}[label=(\arabic*')]
-    \setcounter{enumi}{2}
+    \setcounter{enumi}{3}
     \item\label{4103} $|Col(\lambda^{\dagger}, \lambda^{\dagger})| = 2^{< \lambda^{\dagger}}$,
-    \item\label{4104} $\Vdash_{Col(\lambda^{\dagger}, \lambda^{\dagger})} ``2^{< \lambda^{\dagger}} = \lambda^{\dagger}"$
+    \item\label{4104} $\Vdash_{Col(\lambda^{\dagger}, \lambda^{\dagger})} ``H(\lambda^{\dagger}) = H(\lambda^{\dagger})^V"$.
 \end{enumerate}
 $\mathbb{P}'$ is a stationary-preserving forcing notion fulfilling \ref{cond1} of Theorem \ref{notion1} because 
 \begin{itemize}
@@ -4484,14 +4485,14 @@ $\mathbb{P}'$ is a stationary-preserving forcing notion fulfilling \ref{cond1} o
     \item \ref{4101} holds.
 \end{itemize}
 
-In $V^{Col(\lambda^{\dagger}, \lambda^{\dagger})}$, we are given $|\mathbb{P}| \leq \lambda^{\dagger}$, so $\mathbb{P}$ preserves cofinalities $\geq (\lambda^{\dagger})^+$. But $(\lambda^{\dagger})^+$ in $V^{Col(\lambda^{\dagger}, \lambda^{\dagger})}$ is exactly $(2^{< \lambda^{\dagger}})^+$ in $V$, by \ref{4103} and \ref{4104}, so $\mathbb{P}'$ preserves cofinalities $\geq (2^{< \lambda^{\dagger}})^+$ in $V$. This implies \ref{cond3} of Theorem  \ref{notion1}.
+By \ref{4100}, \ref{4103}, \ref{4104} and the fact that $|H(\lambda^{\dagger})| = 2^{< \lambda^{\dagger}}$, $\mathbb{P}'$ has a dense subset of size $2^{< \lambda^{\dagger}}$ in $V$. This implies $\mathbb{P}'$ preserves cofinalities $\geq (2^{< \lambda^{\dagger}})^+$ in $V$, and thus \ref{cond3} of Theorem  \ref{notion1} holds.
 
-Now let $\gamma \geq \lambda^{\dagger}$ be regular in $V$. Then $cof^{Col(\lambda^{\dagger}, \lambda^{\dagger})} (\gamma) \geq \lambda^{\dagger}$ because $Col(\lambda^{\dagger}, \lambda^{\dagger})$ is $\lambda^{\dagger}$-closed. That $\mathbb{P}$ both preserves cofinalities $\geq (\lambda^{\dagger})^+$ and fulfils \ref{4102} implies it forces $cof(\gamma) \geq \omega_1$. We have thus shown
+Now let $\gamma \geq \lambda^{\dagger}$ be regular in $V$. Then $cof^{Col(\lambda^{\dagger}, \lambda^{\dagger})} (\gamma) \geq \lambda^{\dagger}$ because $Col(\lambda^{\dagger}, \lambda^{\dagger})$ is $\lambda^{\dagger}$-closed. Since $|H(\lambda^{\dagger})| = \lambda^{\dagger}$ in $V^{Col(\lambda^{\dagger}, \lambda^{\dagger})}$, \ref{4100} tells us that $\mathbb{P}$ preserves cofinalities $\geq (\lambda^{\dagger})^+$. This, together with \ref{4102}, ensures $cof(\gamma) \geq \omega_1$. We have thus shown
 \begin{enumerate}[label=(\arabic*')]
-    \setcounter{enumi}{4}
+    \setcounter{enumi}{5}
     \item\label{4105} $\Vdash_{\mathbb{P}'} ``cof(\gamma) \geq \omega_1"$ for all regular cardinals $\gamma$ satisfying $\lambda^{\dagger} \leq \gamma$.
 \end{enumerate}
-As \ref{4102}, \ref{4104} and \ref{cond1} of Theorem \ref{notion1} give us $$\Vdash_{\mathbb{P}'} ``cof(\gamma) \leq |\gamma| \leq \omega_1"$$ for all ordinals $\gamma$ satisfying $\lambda^{\dagger} \leq \gamma \leq 2^{< \lambda^{\dagger}}$, \ref{cond2} of Theorem \ref{notion1} must hold.
+As \ref{4102}, \ref{4104} and \ref{cond1} of Theorem \ref{notion1} give us $$\Vdash_{\mathbb{P}'} ``cof(\gamma) \leq |\gamma| \leq \omega_1"$$ for all ordinals $\gamma$ satisfying $\lambda^{\dagger} \leq \gamma \leq 2^{< \lambda^{\dagger}}$, \ref{cond2} of Theorem \ref{notion1} must hold in view of \ref{4105}.
 \end{proof}
 
 Allow $W$ to denote $V[h]$. Unless otherwise stated, we work in $W$ from now on, towards a forcing notion $\mathbb{P}$ as in Lemma \ref{lem26}. For brevity, we write $\omega_1^V$ as just $\omega_1$. Let 
@@ -4730,18 +4731,17 @@ Now we can define $\mathbb{P}_{\lambda} := (P_{\lambda}, \leq_{\lambda})$, where
 We let $\mathbb{P}$ denote $\mathbb{P}_{\lambda^{\dagger}}$. 
 
 \begin{lem}\label{size}
-$|\mathbb{P}| \leq \lambda^{\dagger}$.
+$P_{\lambda^{\dagger}} \subset H(\lambda^{\dagger})$, i.e. $\mathbb{P}$ fulfils \ref{4100} of Lemma \ref{lem26}.
 \end{lem}
 
 \begin{proof}
-This follows immediately from the observation that $$\mathbb{P} \subset [\mathcal{L}]^{<\omega} \subset H(\lambda^{\dagger})$$ and 
+This follows immediately from the observation that
 \begin{equation*}
-    \pushQED{\qed} 
-    |H(\lambda^{\dagger})| = \lambda^{\dagger} \text{.} \qedhere
+    P_{\lambda^{\dagger}} \subset [\mathcal{L}]^{<\omega} \subset H(\lambda^{\dagger}) \text{.} \qedhere
 \end{equation*}
 \end{proof}
 
-By Proposition \ref{certgood} and the lemma below, $(\mathfrak{A}, \mathbb{P})$ is good for $\mathcal{L}$. Obviously, $\mathbb{P}$ is definable in the language associated with $\mathfrak{A}$ because $\mathbb{P} \in H(\kappa)$.
+By Proposition \ref{certgood} and the lemma below, $(\mathfrak{A}, \mathbb{P})$ is good for $\mathcal{L}$. Obviously, $\mathbb{P}$ is $\Sigma_1$-definable in the language associated with $\mathfrak{A}$ because $\mathbb{P} \in H(\kappa)$.
 
 \begin{lem}\label{nonemp}
 For all $\lambda \in C \cup \{\lambda^{\dagger}\}$, $\emptyset \in P_{\lambda}$.
@@ -5292,9 +5292,9 @@ Note also that the following hold in $W$:
 The truths \ref{33a} to \ref{33g} in $W$ are all we need to proceed, aided by the next fact, which can be viewed as an extension of Lemma \ref{lem26}.
 
 \begin{fact}\label{fact436}
-The theorem holds if in $W$, we can define a forcing notion $\mathbb{P}$ with the following properties: 
+The theorem holds if in $W$, we can define a forcing notion $\mathbb{P} = (P, \leq_P)$ with the following properties: 
 \begin{enumerate}[label=(K\arabic*), leftmargin=40pt]
-    \item\label{K1} $\mathbb{P} \subset H(\lambda^{\dagger})$, so that $|\mathbb{P}| \leq \lambda^{\dagger}$ by the proof of Lemma \ref{size},
+    \item\label{K1} $P \subset H(\lambda^{\dagger})$,
     \item\label{K2} $\mathbb{P}$ is stationary-preserving, 
     \item\label{K3} in $V^{\mathbb{P}}$ there is a generic iteration $$\langle \bar{N}_i = (N_i; \in, I_i, a_i), \sigma_{ij} : i \leq j \leq \omega_1^V \rangle$$ satisfying 
     \begin{enumerate}[label=(\arabic*), leftmargin=40pt]
