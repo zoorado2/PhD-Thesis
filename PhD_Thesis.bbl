@@ -125,39 +125,34 @@
       \endverb
     \endentry
     \entry{jensencoding}{book}{}{}
-      \name{author}{4}{}{%
+      \name{author}{3}{}{%
         {{hash=72caf39e4c7c05aff7168e88f61ceced}{%
            family={Beller},
            familyi={B\bibinitperiod},
            given={Aaron},
            giveni={A\bibinitperiod}}}%
-        {{hash=0a17f66e1258ef6434363492def1ebaa}{%
-           family={Jensen},
-           familyi={J\bibinitperiod},
-           given={Ronald},
-           giveni={R\bibinitperiod}}}%
         {{hash=151df93042ebd4b62ec5e1f780b87f25}{%
            family={Jensen},
            familyi={J\bibinitperiod},
            given={Ronald\bibnamedelima Björn},
            giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-        {{hash=d6b5383c0d96f4b170a0e76076616dad}{%
+        {{hash=94bc9447d8f889f5a1033b63ce859778}{%
            family={Welch},
            familyi={W\bibinitperiod},
-           given={P},
+           given={Philip},
            giveni={P\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Cambridge University Press}%
       }
-      \strng{namehash}{e321bb642bd541a79f5e4f67b5b567eb}
-      \strng{fullhash}{995d3dc377617c2b52978bb2a34bbab1}
-      \strng{fullhashraw}{995d3dc377617c2b52978bb2a34bbab1}
-      \strng{bibnamehash}{e321bb642bd541a79f5e4f67b5b567eb}
-      \strng{authorbibnamehash}{e321bb642bd541a79f5e4f67b5b567eb}
-      \strng{authornamehash}{e321bb642bd541a79f5e4f67b5b567eb}
-      \strng{authorfullhash}{995d3dc377617c2b52978bb2a34bbab1}
-      \strng{authorfullhashraw}{995d3dc377617c2b52978bb2a34bbab1}
+      \strng{namehash}{53fd07ab18beba63d57556d722c515fc}
+      \strng{fullhash}{53fd07ab18beba63d57556d722c515fc}
+      \strng{fullhashraw}{53fd07ab18beba63d57556d722c515fc}
+      \strng{bibnamehash}{53fd07ab18beba63d57556d722c515fc}
+      \strng{authorbibnamehash}{53fd07ab18beba63d57556d722c515fc}
+      \strng{authornamehash}{53fd07ab18beba63d57556d722c515fc}
+      \strng{authorfullhash}{53fd07ab18beba63d57556d722c515fc}
+      \strng{authorfullhashraw}{53fd07ab18beba63d57556d722c515fc}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
@@ -279,37 +274,6 @@
       \verb https://arxiv.org/abs/2510.24634
       \endverb
     \endentry
-    \entry{borgerbook}{book}{}{}
-      \name{author}{2}{}{%
-        {{hash=2fe2b99de0ab569878c11e56a6b8695c}{%
-           family={Borger},
-           familyi={B\bibinitperiod},
-           given={E},
-           giveni={E\bibinitperiod}}}%
-        {{hash=cebf378d36a71eaa6175d54ff3154a25}{%
-           family={Stark},
-           familyi={S\bibinitperiod},
-           given={Robert\bibnamedelima F},
-           giveni={R\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer-Verlag}%
-      }
-      \strng{namehash}{e6bbac438cc7562e4a66309c272f557f}
-      \strng{fullhash}{e6bbac438cc7562e4a66309c272f557f}
-      \strng{fullhashraw}{e6bbac438cc7562e4a66309c272f557f}
-      \strng{bibnamehash}{e6bbac438cc7562e4a66309c272f557f}
-      \strng{authorbibnamehash}{e6bbac438cc7562e4a66309c272f557f}
-      \strng{authornamehash}{e6bbac438cc7562e4a66309c272f557f}
-      \strng{authorfullhash}{e6bbac438cc7562e4a66309c272f557f}
-      \strng{authorfullhashraw}{e6bbac438cc7562e4a66309c272f557f}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Abstract State Machines: A Method for High-Level System Design and Analysis}
-      \field{year}{2003}
-    \endentry
     \entry{borger}{article}{}{}
       \name{author}{1}{}{%
         {{hash=f4869689997fda797de4babd7c46dd0a}{%
@@ -340,6 +304,37 @@
       \field{year}{2002}
       \field{pages}{2\bibrangedash 74}
       \range{pages}{73}
+    \endentry
+    \entry{borgerbook}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=f4869689997fda797de4babd7c46dd0a}{%
+           family={Börger},
+           familyi={B\bibinitperiod},
+           given={Egon},
+           giveni={E\bibinitperiod}}}%
+        {{hash=cebf378d36a71eaa6175d54ff3154a25}{%
+           family={Stark},
+           familyi={S\bibinitperiod},
+           given={Robert\bibnamedelima F.},
+           giveni={R\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{df5746279bdb754b8fd5c6b0599a8f15}
+      \strng{fullhash}{df5746279bdb754b8fd5c6b0599a8f15}
+      \strng{fullhashraw}{df5746279bdb754b8fd5c6b0599a8f15}
+      \strng{bibnamehash}{df5746279bdb754b8fd5c6b0599a8f15}
+      \strng{authorbibnamehash}{df5746279bdb754b8fd5c6b0599a8f15}
+      \strng{authornamehash}{df5746279bdb754b8fd5c6b0599a8f15}
+      \strng{authorfullhash}{df5746279bdb754b8fd5c6b0599a8f15}
+      \strng{authorfullhashraw}{df5746279bdb754b8fd5c6b0599a8f15}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Abstract State Machines: A Method for High-Level System Design and Analysis}
+      \field{year}{2003}
     \endentry
     \entry{bukovsky}{incollection}{}{}
       \name{author}{1}{}{%
@@ -720,20 +715,20 @@
            familyi={G\bibinitperiod},
            given={Yuri},
            giveni={Y\bibinitperiod}}}%
-        {{hash=45b5a94ab326fd7591763c0586c7172c}{%
+        {{hash=f4869689997fda797de4babd7c46dd0a}{%
            family={Börger},
            familyi={B\bibinitperiod},
-           given={E},
+           given={Egon},
            giveni={E\bibinitperiod}}}%
       }
-      \strng{namehash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
-      \strng{fullhash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
-      \strng{fullhashraw}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
-      \strng{bibnamehash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
-      \strng{authorbibnamehash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
-      \strng{authornamehash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
-      \strng{authorfullhash}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
-      \strng{authorfullhashraw}{2a5416fe18d9ddf77dfe1b898cd2e7e0}
+      \strng{namehash}{5729dc03e694e489fe646f5ea3b37081}
+      \strng{fullhash}{5729dc03e694e489fe646f5ea3b37081}
+      \strng{fullhashraw}{5729dc03e694e489fe646f5ea3b37081}
+      \strng{bibnamehash}{5729dc03e694e489fe646f5ea3b37081}
+      \strng{authorbibnamehash}{5729dc03e694e489fe646f5ea3b37081}
+      \strng{authornamehash}{5729dc03e694e489fe646f5ea3b37081}
+      \strng{authorfullhash}{5729dc03e694e489fe646f5ea3b37081}
+      \strng{authorfullhashraw}{5729dc03e694e489fe646f5ea3b37081}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
@@ -976,23 +971,23 @@
     \endentry
     \entry{keisler}{incollection}{}{}
       \name{author}{1}{}{%
-        {{hash=8462e0856cc893e2bf292cfd4b5e5ab2}{%
+        {{hash=2dc2ab8f72e3b85874f3ab2d18a9281f}{%
            family={Keisler},
            familyi={K\bibinitperiod},
-           given={H.\bibnamedelimi Jerome},
+           given={Howard\bibnamedelima Jerome},
            giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Math. Assoc. America, Buffalo, NY}%
       }
-      \strng{namehash}{8462e0856cc893e2bf292cfd4b5e5ab2}
-      \strng{fullhash}{8462e0856cc893e2bf292cfd4b5e5ab2}
-      \strng{fullhashraw}{8462e0856cc893e2bf292cfd4b5e5ab2}
-      \strng{bibnamehash}{8462e0856cc893e2bf292cfd4b5e5ab2}
-      \strng{authorbibnamehash}{8462e0856cc893e2bf292cfd4b5e5ab2}
-      \strng{authornamehash}{8462e0856cc893e2bf292cfd4b5e5ab2}
-      \strng{authorfullhash}{8462e0856cc893e2bf292cfd4b5e5ab2}
-      \strng{authorfullhashraw}{8462e0856cc893e2bf292cfd4b5e5ab2}
+      \strng{namehash}{2dc2ab8f72e3b85874f3ab2d18a9281f}
+      \strng{fullhash}{2dc2ab8f72e3b85874f3ab2d18a9281f}
+      \strng{fullhashraw}{2dc2ab8f72e3b85874f3ab2d18a9281f}
+      \strng{bibnamehash}{2dc2ab8f72e3b85874f3ab2d18a9281f}
+      \strng{authorbibnamehash}{2dc2ab8f72e3b85874f3ab2d18a9281f}
+      \strng{authornamehash}{2dc2ab8f72e3b85874f3ab2d18a9281f}
+      \strng{authorfullhash}{2dc2ab8f72e3b85874f3ab2d18a9281f}
+      \strng{authorfullhashraw}{2dc2ab8f72e3b85874f3ab2d18a9281f}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
@@ -1105,7 +1100,7 @@
         {{hash=227b74c2ef35ef2de30d1af50e56c315}{%
            family={Sacks},
            familyi={S\bibinitperiod},
-           given={Gerald\bibnamedelima E},
+           given={Gerald\bibnamedelima E.},
            giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
@@ -1304,7 +1299,7 @@
            given={Keng\bibnamedelima Meng},
            giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
         {{hash=0be034e1049d7575eed1f9eecf85c837}{%
-           family={R\bibnamedelima Tavana},
+           family={R.\bibnamedelimi Tavana},
            familyi={R\bibinitperiod\bibinitdelim T\bibinitperiod},
            given={Nazanin},
            giveni={N\bibinitperiod}}}%
@@ -1384,7 +1379,7 @@
         {{hash=89f698d393d48350aa3ea0e444adcfdd}{%
            family={Plotkin},
            familyi={P\bibinitperiod},
-           given={Gordon\bibnamedelima D},
+           given={Gordon\bibnamedelima D.},
            giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
       }
       \strng{namehash}{89f698d393d48350aa3ea0e444adcfdd}
@@ -1405,20 +1400,20 @@
     \endentry
     \entry{prikry}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=e36e6b61947a9ce5b92c0ba9d7714626}{%
+        {{hash=bed48db52ccdbe5fa8cffe05a37bebe4}{%
            family={Prikry},
            familyi={P\bibinitperiod},
-           given={K.\bibnamedelimi L.},
+           given={Karel\bibnamedelima Libor},
            giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
       }
-      \strng{namehash}{e36e6b61947a9ce5b92c0ba9d7714626}
-      \strng{fullhash}{e36e6b61947a9ce5b92c0ba9d7714626}
-      \strng{fullhashraw}{e36e6b61947a9ce5b92c0ba9d7714626}
-      \strng{bibnamehash}{e36e6b61947a9ce5b92c0ba9d7714626}
-      \strng{authorbibnamehash}{e36e6b61947a9ce5b92c0ba9d7714626}
-      \strng{authornamehash}{e36e6b61947a9ce5b92c0ba9d7714626}
-      \strng{authorfullhash}{e36e6b61947a9ce5b92c0ba9d7714626}
-      \strng{authorfullhashraw}{e36e6b61947a9ce5b92c0ba9d7714626}
+      \strng{namehash}{bed48db52ccdbe5fa8cffe05a37bebe4}
+      \strng{fullhash}{bed48db52ccdbe5fa8cffe05a37bebe4}
+      \strng{fullhashraw}{bed48db52ccdbe5fa8cffe05a37bebe4}
+      \strng{bibnamehash}{bed48db52ccdbe5fa8cffe05a37bebe4}
+      \strng{authorbibnamehash}{bed48db52ccdbe5fa8cffe05a37bebe4}
+      \strng{authornamehash}{bed48db52ccdbe5fa8cffe05a37bebe4}
+      \strng{authorfullhash}{bed48db52ccdbe5fa8cffe05a37bebe4}
+      \strng{authorfullhashraw}{bed48db52ccdbe5fa8cffe05a37bebe4}
       \field{sortinit}{P}
       \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
       \field{labelnamesource}{author}
@@ -1433,20 +1428,20 @@
     \endentry
     \entry{sackserec}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=ddbf657eaaac05567ddfbcb38603aac7}{%
+        {{hash=227b74c2ef35ef2de30d1af50e56c315}{%
            family={Sacks},
            familyi={S\bibinitperiod},
-           given={GE},
-           giveni={G\bibinitperiod}}}%
+           given={Gerald\bibnamedelima E.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
       }
-      \strng{namehash}{ddbf657eaaac05567ddfbcb38603aac7}
-      \strng{fullhash}{ddbf657eaaac05567ddfbcb38603aac7}
-      \strng{fullhashraw}{ddbf657eaaac05567ddfbcb38603aac7}
-      \strng{bibnamehash}{ddbf657eaaac05567ddfbcb38603aac7}
-      \strng{authorbibnamehash}{ddbf657eaaac05567ddfbcb38603aac7}
-      \strng{authornamehash}{ddbf657eaaac05567ddfbcb38603aac7}
-      \strng{authorfullhash}{ddbf657eaaac05567ddfbcb38603aac7}
-      \strng{authorfullhashraw}{ddbf657eaaac05567ddfbcb38603aac7}
+      \strng{namehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{fullhash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{fullhashraw}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{bibnamehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authorbibnamehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authornamehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authorfullhash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authorfullhashraw}{227b74c2ef35ef2de30d1af50e56c315}
       \field{extraname}{1}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
@@ -1463,7 +1458,7 @@
         {{hash=227b74c2ef35ef2de30d1af50e56c315}{%
            family={Sacks},
            familyi={S\bibinitperiod},
-           given={Gerald\bibnamedelima E},
+           given={Gerald\bibnamedelima E.},
            giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
@@ -1491,7 +1486,7 @@
         {{hash=cf3b63c577143e7ddf272693c8301798}{%
            family={Scott},
            familyi={S\bibinitperiod},
-           given={Dana\bibnamedelima S},
+           given={Dana\bibnamedelima S.},
            giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
         {{hash=cbbad7395e46410132fa077aee3efcd6}{%
            family={Strachey},
@@ -1523,7 +1518,7 @@
         {{hash=03459e076830692bd4e7b5ff86e8f109}{%
            family={Shoenfield},
            familyi={S\bibinitperiod},
-           given={Joseph\bibnamedelima R},
+           given={Joseph\bibnamedelima R.},
            giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
       }
       \list{organization}{1}{%
@@ -1582,23 +1577,23 @@
     \endentry
     \entry{soarebook}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=17c9e267ec5155eabf6b2a1c81719739}{%
+        {{hash=44e91051976de07ef7699c7f8cd5cfa0}{%
            family={Soare},
            familyi={S\bibinitperiod},
-           given={R.I.},
-           giveni={R\bibinitperiod}}}%
+           given={Robert\bibnamedelima I.},
+           giveni={R\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Springer Berlin Heidelberg}%
       }
-      \strng{namehash}{17c9e267ec5155eabf6b2a1c81719739}
-      \strng{fullhash}{17c9e267ec5155eabf6b2a1c81719739}
-      \strng{fullhashraw}{17c9e267ec5155eabf6b2a1c81719739}
-      \strng{bibnamehash}{17c9e267ec5155eabf6b2a1c81719739}
-      \strng{authorbibnamehash}{17c9e267ec5155eabf6b2a1c81719739}
-      \strng{authornamehash}{17c9e267ec5155eabf6b2a1c81719739}
-      \strng{authorfullhash}{17c9e267ec5155eabf6b2a1c81719739}
-      \strng{authorfullhashraw}{17c9e267ec5155eabf6b2a1c81719739}
+      \strng{namehash}{44e91051976de07ef7699c7f8cd5cfa0}
+      \strng{fullhash}{44e91051976de07ef7699c7f8cd5cfa0}
+      \strng{fullhashraw}{44e91051976de07ef7699c7f8cd5cfa0}
+      \strng{bibnamehash}{44e91051976de07ef7699c7f8cd5cfa0}
+      \strng{authorbibnamehash}{44e91051976de07ef7699c7f8cd5cfa0}
+      \strng{authornamehash}{44e91051976de07ef7699c7f8cd5cfa0}
+      \strng{authorfullhash}{44e91051976de07ef7699c7f8cd5cfa0}
+      \strng{authorfullhashraw}{44e91051976de07ef7699c7f8cd5cfa0}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
@@ -1683,57 +1678,26 @@
       \verb https://doi.org/10.1142/S021906131750009X
       \endverb
     \endentry
-    \entry{woodingen}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=aec46f0a7b0eb765653110262007ad27}{%
-           family={Woodin},
-           familyi={W\bibinitperiod},
-           given={W\bibnamedelima Hugh},
-           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Citeseer}%
-      }
-      \strng{namehash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{fullhash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{fullhashraw}{aec46f0a7b0eb765653110262007ad27}
-      \strng{bibnamehash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{authorbibnamehash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{authornamehash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{authorfullhash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{authorfullhashraw}{aec46f0a7b0eb765653110262007ad27}
-      \field{extraname}{1}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Set theory, arithmetic, and foundations of mathematics: theorems, philosophies}
-      \field{title}{The continuum hypothesis, the generic-multiverse of sets, and the Omega conjecture}
-      \field{volume}{36}
-      \field{year}{2011}
-      \field{pages}{13\bibrangedash 42}
-      \range{pages}{30}
-    \endentry
     \entry{woodin}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=aec46f0a7b0eb765653110262007ad27}{%
+        {{hash=123e8bd44d5e6e050bb2d8f0e6cfb69f}{%
            family={Woodin},
            familyi={W\bibinitperiod},
-           given={W.\bibnamedelimi Hugh},
+           given={William\bibnamedelima Hugh},
            giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Walter de Gruyter GmbH \& Co. KG, Berlin}%
       }
-      \strng{namehash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{fullhash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{fullhashraw}{aec46f0a7b0eb765653110262007ad27}
-      \strng{bibnamehash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{authorbibnamehash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{authornamehash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{authorfullhash}{aec46f0a7b0eb765653110262007ad27}
-      \strng{authorfullhashraw}{aec46f0a7b0eb765653110262007ad27}
-      \field{extraname}{2}
+      \strng{namehash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{fullhash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{fullhashraw}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{bibnamehash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{authorbibnamehash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{authornamehash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{authorfullhash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{authorfullhashraw}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \field{extraname}{1}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
       \field{labelnamesource}{author}
@@ -1755,6 +1719,37 @@
       \verb{url}
       \verb https://doi-org.libproxy1.nus.edu.sg/10.1515/9783110213171
       \endverb
+    \endentry
+    \entry{woodingen}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=123e8bd44d5e6e050bb2d8f0e6cfb69f}{%
+           family={Woodin},
+           familyi={W\bibinitperiod},
+           given={William\bibnamedelima Hugh},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Citeseer}%
+      }
+      \strng{namehash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{fullhash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{fullhashraw}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{bibnamehash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{authorbibnamehash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{authornamehash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{authorfullhash}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \strng{authorfullhashraw}{123e8bd44d5e6e050bb2d8f0e6cfb69f}
+      \field{extraname}{2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Set theory, arithmetic, and foundations of mathematics: theorems, philosophies}
+      \field{title}{The continuum hypothesis, the generic-multiverse of sets, and the Omega conjecture}
+      \field{volume}{36}
+      \field{year}{2011}
+      \field{pages}{13\bibrangedash 42}
+      \range{pages}{30}
     \endentry
   \enddatalist
 \endrefsection
