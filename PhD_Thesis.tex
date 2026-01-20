@@ -8640,18 +8640,18 @@ Let us choose a definable function $F$ as in the proof of Corollary \ref{cor324}
 
 \subsection{Complexity of Local Method Definitions}\label{ss32}
 
-What does it mean for a definition to be complex? Long, overwrought, convoluted. These are just some synonyms that may come to mind. in general, a more complex definition places more requirements on the object, or the class of objects, it defines. In the former scenario, it makes the object it defines \textit{a priori} less likely to exist; in the latter one, it defines a compratively smaller class of objects. Following this intuition, we formalise a way of comparing between two local method definitions.
+What does it mean for a definition to be complex? Long, overwrought, convoluted. These are just some synonyms that may come to mind. In general, a more complex definition places more requirements on the object, or the class of objects, it defines. In the former scenario, it makes the object it defines \textit{a priori} less likely to exist; in the latter one, it defines a comparatively smaller class of objects. Following this intuition, we formalise a way of comparing between two local method definitions.
 
 \begin{defi}\label{def9210}
 Let $X, Y$ be local method definitions of a CTM $V$. We use 
 \begin{enumerate}[label=(\arabic*)]
-    \item $X \leq^M_w Y$ to denote the statement
+    \item\label{92101} $X \leq^M_w Y$ to denote the statement
     \begin{gather*}
         \text{``for each consistent } \mathfrak{T} \in X \text{ there is } \mathfrak{T}' \in Y \text{ such that} \\
         \emptyset \neq \mathrm{Eval}^V(\mathfrak{T}') \subset \mathrm{Eval}^V(\mathfrak{T}) \text{'',}
     \end{gather*}
     and
-    \item $X \leq^M Y$ to denote the statement
+    \item\label{92102} $X \leq^M Y$ to denote the statement
     \begin{align*}
         \text{``} & \text{there is a function } F : X \longrightarrow Y \text{ definable in } V \text{ such that} \\ 
         & \emptyset \neq \mathrm{Eval}^V(F(\mathfrak{T})) \subset \mathrm{Eval}^V(\mathfrak{T}) \text{ for all consistent } \mathfrak{T} \in X \text{''.}
@@ -8659,6 +8659,24 @@ Let $X, Y$ be local method definitions of a CTM $V$. We use
     When said statement is true, we say $F$ \emph{witnesses} $X \leq^M Y$.
 \end{enumerate}
 \end{defi}
+
+\begin{rem}
+Instead of specifying $\mathrm{Eval}^V(\mathfrak{T}') \subset \mathrm{Eval}^V(\mathfrak{T})$ and $\mathrm{Eval}^V(F(\mathfrak{T})) \subset \mathrm{Eval}^V(\mathfrak{T})$ in \ref{92101} and \ref{92102} of Definition \ref{def9210} respectively, we can respectively have a subset of $\mathrm{Eval}^V(\mathfrak{T})$ being reducible to $\mathrm{Eval}^V(\mathfrak{T}')$ and $\mathrm{Eval}^V(F(\mathfrak{T}))$. The latter approach takes into account the ``minimal computational power'' of local method definitions when talking about their complexity. To wit, let
+\begin{enumerate}[label=(\arabic*)]
+    \item $X \leq^N_w Y$ denote the statement
+    \begin{gather*}
+        \text{``for each consistent } \mathfrak{T} \in X \text{ there is a consistent } \mathfrak{T}' \in Y \text{ such that} \\ 
+        \text{whenever } W \in \mathrm{Eval}^V(\mathfrak{T}') \text{ there is } W' \in \mathrm{Eval}^V(\mathfrak{T}) \text{ satisfying } W' \subset W \text{'',}
+    \end{gather*}
+    and
+    \item $X \leq^N Y$ denote the statement
+    \begin{gather*}
+        \text{``there is a function } F : X \longrightarrow Y \text{ definable in } V \text{ such that} \\
+        \text{for each consistent } \mathfrak{T} \in X \text{, } F(\mathfrak{T}) \text{ is consistent and} \\ \text{whenever } W \in \mathrm{Eval}^V(F(\mathfrak{T})) \text{ there is } W' \in \mathrm{Eval}^V(\mathfrak{T}) \text{ satisfying } W' \subset W \text{''.}
+    \end{gather*}
+\end{enumerate}
+Obviously, $\leq^M_w \subset \leq^N_w$ and $\leq^M \subset \leq^N$ as partial orders on local method definitions. In fact, it can be easily verified that the identity map is both a dense embedding of $\leq^M_w$ into $\leq^N_w$ and a dense embedding of $\leq^M$ into $\leq^N$. As the results in this and the next sections are positive with respect to the relation $\leq^M$, they also hold should we substitute $\leq^N$ for $\leq^M$ when stating them.
+\end{rem}
 
 \begin{defi}
 Let $X, Y$ be local method definitions. We say
@@ -9285,6 +9303,8 @@ Let $n > 2$. Is there a local method definition $X$ comprising only consistent T
 \end{ques}
 
 Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
+
+\blankpage
 
 \part{\texorpdfstring{ References}{References}}
 
