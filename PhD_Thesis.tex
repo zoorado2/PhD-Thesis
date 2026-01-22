@@ -9255,7 +9255,7 @@ Is the downward directed small grounds hypothesis true?
 
 Notice that the counter-example to the naive downward directed small grounds hypothesis constructed in the proof of Proposition \ref{nddgfalse} --- namely, the triple $(L, W, W')$ --- fails to be a counter-example to the downward directed small grounds hypothesis, since obviously $L \subset L \cap W$. So far, it seems that the construction of a counter-example to the downward directed small grounds hypothesis by any means similar to the aforementioned proof, hinges on the ability to amalgamate two universes incomparable with respect to inclusion through a scheme akin to Jensen's coding-the-universe forcing.
 
-Let us now turn our attention to the relation $\leq^M$ and the local method hierarchy. For each of the remaining questions in this section, one can also ask a variant thereof in which we swop out every (explicit or otherwise) instance of the relation $\leq^M$ for an instance of the relation $\leq^N$.
+Let us now turn our attention to the relation $\leq^M$ and the local method hierarchy. Naturally, one can also ask a variant of each of the remaining questions in this section, in which we swop out every (explicit or otherwise) instance of the relation $\leq^M$ for an instance of the relation $\leq^N$.
 
 So far, every small extension of $V$ we know how to construct either
 \begin{itemize}
@@ -9268,13 +9268,19 @@ Naturally, we might wonder if it is possible to generate small extensions of $V$
 Is there a TCI $\mathfrak{T}$ such that $\{\mathfrak{T}\} \not\leq^M \mathsf{Fg}$?
 \end{ques}
 
-Note that the $\leq^N$-variant of Question \ref{q843} has a negative answer. Indeed, $\{\mathfrak{T}\} \leq^N \mathsf{Fg}$ for every TCI $\mathfrak{T}$ because of Lemma \ref{conalt}.
+\begin{rem}\label{rem9414}
+Note that the $\leq^N$-variant of Question \ref{q843} has a negative answer. Indeed, $X \leq^N \mathsf{Fg}$ for every local method definition $X$ because of Lemma \ref{conalt}.
+\end{rem}
 
 Should Question \ref{q843} be answered in the affirmative, non-trivial separation of the local method hierarchy would become more hopeful. In this case, the following question could serve as our guide towards such a separation.
 
 \begin{ques}\label{q841}
 Are there $m, n < \omega$ for which $\mathsf{\Sigma^M_m} \not\equiv^M \mathsf{\Sigma^M_n}$?
 \end{ques}
+
+\begin{rem}
+By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q841} reduces to the question of whether $\mathsf{\Sigma^M_0} \equiv^N \mathsf{\Sigma^M_1}$ holds.
+\end{rem}
 
 Should Question \ref{q843} be answered in the negative, $\mathsf{Fg}$ would become a greatest local method definition with respect to $\leq^M$, and the local method hierarchy would stop at $\mathsf{\Sigma^M_1}$. In this case, the following question would be key towards fully understanding $\leq^M$.
 
@@ -9310,9 +9316,11 @@ Let $n > 2$. Is there a local method definition $X$ comprising only consistent T
 \end{enumerate}
 \end{ques}
 
-Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
+\begin{rem}
+By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to the $\leq^N$-variant of Question \ref{q417}.
+\end{rem}
 
-\blankpage
+Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
 
 \part{\texorpdfstring{ References}{References}}
 
