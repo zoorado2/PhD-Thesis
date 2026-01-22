@@ -43,6 +43,9 @@ sorting=nty
 \usepackage{caption}
 \usepackage{float}
 
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
 \allowdisplaybreaks
 
 \hypersetup{
@@ -8660,8 +8663,10 @@ Let $X, Y$ be local method definitions of a CTM $V$. We use
 \end{enumerate}
 \end{defi}
 
-\begin{rem}
-Instead of specifying $\mathrm{Eval}^V(\mathfrak{T}') \subset \mathrm{Eval}^V(\mathfrak{T})$ and $\mathrm{Eval}^V(F(\mathfrak{T})) \subset \mathrm{Eval}^V(\mathfrak{T})$ in \ref{92101} and \ref{92102} of Definition \ref{def9210} respectively, we can respectively require every member of  $\mathrm{Eval}^V(\mathfrak{T}')$ and $\mathrm{Eval}^V(F(\mathfrak{T}))$ to extend some member of $\mathrm{Eval}^V(\mathfrak{T})$. The latter approach takes into account the ``computational power'' of member TCIs when talking about the complexity of local method definitions. To wit, let
+Instead of specifying $\mathrm{Eval}^V(\mathfrak{T}') \subset \mathrm{Eval}^V(\mathfrak{T})$ and $\mathrm{Eval}^V(F(\mathfrak{T})) \subset \mathrm{Eval}^V(\mathfrak{T})$ in \ref{92101} and \ref{92102} of Definition \ref{def9210} respectively, we can respectively require every member of  $\mathrm{Eval}^V(\mathfrak{T}')$ and $\mathrm{Eval}^V(F(\mathfrak{T}))$ to extend some member of $\mathrm{Eval}^V(\mathfrak{T})$. The latter approach takes into account the ``computational power'' of member TCIs when talking about the complexity of local method definitions. To wit, we have the following definition.
+
+\begin{defi}
+Given local method definitions $X, Y$ of a CTM $V$, let
 \begin{enumerate}[label=(\arabic*)]
     \item $X \leq^N_w Y$ denote the statement
     \begin{gather*}
@@ -8675,8 +8680,9 @@ Instead of specifying $\mathrm{Eval}^V(\mathfrak{T}') \subset \mathrm{Eval}^V(\m
         \text{for each consistent } \mathfrak{T} \in X \text{, } F(\mathfrak{T}) \text{ is consistent and} \\ \text{whenever } W \in \mathrm{Eval}^V(F(\mathfrak{T})) \text{ there is } W' \in \mathrm{Eval}^V(\mathfrak{T}) \text{ satisfying } W' \subset W \text{''.}
     \end{gather*}
 \end{enumerate}
-Obviously, $\leq^M_w \subset \leq^N_w$ and $\leq^M \subset \leq^N$ as partial orders on local method definitions. In fact, it can be easily verified that the identity map is both a dense embedding of $\leq^M_w$ into $\leq^N_w$ and a dense embedding of $\leq^M$ into $\leq^N$. As the results in this and the next sections are positive with respect to the relation $\leq^M$, they also hold should we substitute $\leq^N$ for $\leq^M$ when stating them.
-\end{rem}
+\end{defi}
+
+Obviously, $\leq^M_w \subset \leq^N_w$ and $\leq^M \subset \leq^N$ as partial orders on local method definitions. In fact, it can be easily verified that the identity map is both a dense embedding of $\leq^M_w$ into $\leq^N_w$ and a dense embedding of $\leq^M$ into $\leq^N$. Considering that the results in the remaining part of this thesis are positive with respect to the relation $\leq^M$, they also hold should we substitute $\leq^N$ for $\leq^M$ when stating them. 
 
 \begin{defi}
 Let $X, Y$ be local method definitions. We say
@@ -9249,7 +9255,7 @@ Is the downward directed small grounds hypothesis true?
 
 Notice that the counter-example to the naive downward directed small grounds hypothesis constructed in the proof of Proposition \ref{nddgfalse} --- namely, the triple $(L, W, W')$ --- fails to be a counter-example to the downward directed small grounds hypothesis, since obviously $L \subset L \cap W$. So far, it seems that the construction of a counter-example to the downward directed small grounds hypothesis by any means similar to the aforementioned proof, hinges on the ability to amalgamate two universes incomparable with respect to inclusion through a scheme akin to Jensen's coding-the-universe forcing.
 
-Let us now turn our attention to the relation $\leq^M$ and the local method hierarchy.
+Let us now turn our attention to the relation $\leq^M$ and the local method hierarchy. For each of the remaining questions, one can also ask a variant thereof in which we swop out every (explicit or otherwise) instance of the relation $\leq^M$ for an instance of the relation $\leq^N$.
 
 So far, every small extension of $V$ we know how to construct either
 \begin{itemize}
