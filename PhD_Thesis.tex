@@ -2895,8 +2895,10 @@ Let $\mathfrak{T}$ be a TCI in $V$. If $\mathcal{M} \models^* \mathfrak{T}$ in a
 
 In this section and the next one, we investigate how one could ``force'' the existence of models of TCIs, under different restrictions and in a variety of settings. As a starting point, we would like to frame the problem of constructing models of TCIs in the context of Section \ref{setupsec}, just so we can utilise Lemma \ref{main2}, among other things. 
 
+Towards this end, we want to come up with a formula $\psi_{cert}$ in two free variables: $\psi_{cert}$ is intended to help us define a uniform reduction of the problem of constructing models of TCIs. We shall exhibit $\psi_{cert}$ in the proof of the next lemma, the latter of which statement also highlights some key properties of $\psi_{cert}$.
+
 \begin{lem}\label{mcequiv}
-There is a formula $\psi_{cert}$ in two free variables, such that in any model of $\mathsf{ZFC}$, 
+The formula $\psi_{cert}$ can be defined such that in any model of $\mathsf{ZFC}$, 
 \begin{enumerate}[label=(\alph*)]
     \item $\psi_{cert}(\mathfrak{T}, (\mathfrak{A}_{\mathfrak{T}}, \mathcal{L}_{\mathfrak{T}}, \Gamma_{\mathfrak{T}}))$ defines a function $$\mathfrak{T} \mapsto (\mathfrak{A}_{\mathfrak{T}}, \mathcal{L}_{\mathfrak{T}}, \Gamma_{\mathfrak{T}})$$ on the class of all TCIs, wherewith
     \begin{enumerate}[label=(\roman*)]
@@ -9269,7 +9271,7 @@ Is there a TCI $\mathfrak{T}$ such that $\{\mathfrak{T}\} \not\leq^M \mathsf{Fg}
 \end{ques}
 
 \begin{rem}\label{rem9414}
-Note that the $\leq^N$-variant of Question \ref{q843} has a negative answer. Indeed, $X \leq^N \mathsf{Fg}$ for every local method definition $X$ because of Lemma \ref{conalt}. Recalling Fact \ref{fact221}, this suggests that any small extension of $V$ not accessible by forcing cannot be triangulated in $\mathbf{M}_S(V)$ by a local method definition with a margin of error comparable to or better than that of forcing.
+Note that the $\leq^N$-variant of Question \ref{q843} has a negative answer. Indeed, $X \leq^N \mathsf{Fg}$ for every local method definition $X$ because of Lemma \ref{conalt}. Recalling Fact \ref{fact221}, this suggests that any small extension of $V$ not accessible by forcing cannot be triangulated in $\mathbf{M}_S(V)$ by a local method definition with a margin of error not obviously worse than that of forcing.
 \end{rem}
 
 Should Question \ref{q843} be answered in the affirmative, non-trivial separation of the local method hierarchy would become more hopeful. In this case, the following question could serve as our guide towards such a separation.
