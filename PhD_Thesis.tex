@@ -2895,10 +2895,10 @@ Let $\mathfrak{T}$ be a TCI in $V$. If $\mathcal{M} \models^* \mathfrak{T}$ in a
 
 In this section and the next one, we investigate how one could ``force'' the existence of models of TCIs, under different restrictions and in a variety of settings. As a starting point, we would like to frame the problem of constructing models of TCIs in the context of Section \ref{setupsec}, just so we can utilise Lemma \ref{main2}, among other things. 
 
-Towards this end, we want to come up with a formula $\psi_{cert}$ in two free variables: $\psi_{cert}$ is intended to help us define a uniform reduction of the problem of constructing models of TCIs. We shall exhibit $\psi_{cert}$ in the proof of the next lemma, the latter of which statement also highlights some key properties of $\psi_{cert}$.
+Towards this end, we want to come up with a formula $\psi_{cert}$ in two free variables: $\psi_{cert}$ is intended to help us define a uniform reduction of the problem of constructing models of TCIs to the problem of forcing with language fragments. We shall exhibit $\psi_{cert}$ in the proof of the next lemma, the latter of which statement also highlights some key properties of $\psi_{cert}$.
 
 \begin{lem}\label{mcequiv}
-The formula $\psi_{cert}$ can be defined such that in any model of $\mathsf{ZFC}$, 
+The formula $\psi_{cert}$ can be chosen such that in any model of $\mathsf{ZFC}$, 
 \begin{enumerate}[label=(\alph*)]
     \item $\psi_{cert}(\mathfrak{T}, (\mathfrak{A}_{\mathfrak{T}}, \mathcal{L}_{\mathfrak{T}}, \Gamma_{\mathfrak{T}}))$ defines a function $$\mathfrak{T} \mapsto (\mathfrak{A}_{\mathfrak{T}}, \mathcal{L}_{\mathfrak{T}}, \Gamma_{\mathfrak{T}})$$ on the class of all TCIs, wherewith
     \begin{enumerate}[label=(\roman*)]
@@ -3058,7 +3058,7 @@ Now, we define $\Gamma_{\mathfrak{T}}$ as follows:
 Assume $T$ contains only $\Pi_2$ sentences. Then necessarily every member of $T$ is in prenex normal form. As a consequence, the transformation $$\varpi : \phi \mapsto \phi^*$$ described in \ref{gamma6} takes every member of $T$ to a $({\mathcal{L}_{\mathfrak{T}}})^{*}_{\mathfrak{A}_{\mathfrak{T}}}$ sentence in prenex normal form with the same quantification structure, making $\varpi"T$ a set of $({\mathcal{L}_{\mathfrak{T}}})^{*}_{\mathfrak{A}_{\mathfrak{T}}}$-$\Pi_2$ sentences. Clearly, all additions to $\Gamma_{\mathfrak{T}}$ as per \ref{gamma1} to \ref{gamma5} are $({\mathcal{L}_{\mathfrak{T}}})^{*}_{\mathfrak{A}_{\mathfrak{T}}}$-$\Pi_2$ sentences. By \ref{gamma7}, $\Gamma_{\mathfrak{T}}$ contains only $({\mathcal{L}_{\mathfrak{T}}})^{*}_{\mathfrak{A}_{\mathfrak{T}}}$-$\Pi_2$ sentences.
 \end{proof}
 
-Fix $\psi_{cert}$ to be as in Lemma \ref{mcequiv}. We are then justified in our next definition.
+Fix $\psi_{cert}$ to be as in the proof of Lemma \ref{mcequiv}. We are then justified in our next definition.
 
 \begin{defi}
 Let $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ be a TCI. Define
