@@ -4624,7 +4624,7 @@ If
 then $\Sigma(\mathfrak{C}, \mathcal{L} \cap Q_{\lambda}) = \Sigma$.
 \end{rem}
 
-We will define $\{\mathbb{P}_{\lambda} : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ by induction on $\lambda$. Assume that $\mathbb{P}_{\lambda'}$ has been defined for all $\lambda' \in \lambda \cap C$. Also, for $\lambda' \in \lambda \cap C$, allow 
+We will define $\{\mathbb{P}_{\lambda} : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ by induction on $\lambda$. Assume that $\mathbb{P}_{\lambda'} = (P_{\lambda'}, \leq_{\lambda'})$ has been defined for all $\lambda' \in \lambda \cap C$. Also, for $\lambda' \in \lambda \cap C$, allow 
 \begin{enumerate}[label=(\Alph*)]
     \item $\mathcal{L^*}$ to denote the set of first order formulas over the signature $\{\in, P, B\}$,
     \item $Ef_0^{\lambda}(\lambda')$ to denote the set 
@@ -4701,7 +4701,7 @@ Let $\Gamma_{\lambda}$ be the set of $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sent
     \item\label{c8}
     \!
     $\begin{aligned}[t]
-        \ulcorner & \forall \delta \ \forall \lambda' \ \forall \phi \ \forall \bar{s} \ \forall x \ \exists p \in \mathbb{P}_{\lambda'} \\
+        \ulcorner & \forall \delta \ \forall \lambda' \ \forall \phi \ \forall \bar{s} \ \forall x \ \exists p \in P_{\lambda'} \\
         & ((E(\ulcorner x \in \dot{X}_{\delta, \lambda'} \urcorner) \ \wedge \\
         & (\phi, \bar{s}) \in Df^{\lambda}(\lambda') \ \wedge \\
         & \forall n \in dom(\bar{s}) \ (E(\ulcorner \bar{s}(n) \in \dot{X}_{\delta, \lambda'} \urcorner))) \\
@@ -6445,22 +6445,63 @@ wherein
     \item $\Sigma$ interprets the unary relation symbol $\ulcorner E \urcorner$ occurring in $\mathcal{L}^*_{\mathfrak{A}}$ (formulas), and
     \item $X_{\delta, \lambda'} = X_{\delta, \lambda'}(\Sigma)$,
 \end{enumerate}
-as we ought to recall. In fact, it now seems impossible to translate (\ref{eq47}) into a set of $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences, and there is thus an inability to guarantee that the $\mathbb{P}_{\lambda^{\dagger}}(\theta)$-generic filter over $V$ is sufficiently generic over each non-empty $X_{\delta, \lambda'}$. This throws a wrench into the side condition method so crucial to the main results of this chapter.  
+as we ought to recall. In fact, if we cannot translate (\ref{eq47}) into a set of $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences, there is then an inability to guarantee that the $\mathbb{P}_{\lambda^{\dagger}}(\theta)$-generic filter over $V$ is sufficiently generic over each non-empty $X_{\delta, \lambda'}$. This throws a wrench into the side condition method so crucial to the main results of this chapter. 
 
-But is there a way to salvage things to certain reasonable extent, without a complete overhaul of the forcing construction? To be more concrete, we can ask the following question.
+Thankfully, there is a way out when $\theta = \omega_1$, via a rather straightforward ``quasi-second-order'' augmentation of our language. Let $\mathcal{L}$ be as defined in the proof of Theorem \ref{notion1}. Pick a new distinguished symbol $\dot{G}$, rename $\mathcal{L}$ as $\mathcal{L}^o$, and re-declare
+\begin{equation*}
+    \mathcal{L} := \mathcal{L}^o \cup \{\ulcorner A \subset \dot{G} \urcorner : A \in [\mathcal{L}^o]^{< \omega_1}\} \cup \{\ulcorner \neg A \subset \dot{G} \urcorner : A \in [\mathcal{L}^o]^{< \omega_1}\} \text{.}
+\end{equation*} 
+As in the proof of Theorem \ref{notion1}, we want to define $\mathbb{P}_{\lambda}$ assuming $\mathbb{P}_{\lambda'} = (P_{\lambda'}, \leq_{\lambda'})$ has been defined for all $\lambda' \in \lambda \cap C$. First, given $\lambda' \in \lambda \cap C$, we call a condition $p$ of $\mathbb{P}_{\lambda'}$ (i.e. $p \in P_{\lambda'}$) \textit{good} iff whenever $$x = \ulcorner \neg A \subset \dot{G} \urcorner \in p$$ for some $A \in [\mathcal{L}^o]^{< \omega_1}$, we can find $x \in A$ for which $\neg x \in p$. Next, let 
+\begin{equation*}
+    P'_{\lambda'} := \{p \in P_{\lambda'} : p \text{ is good}\} \text{,}
+\end{equation*}
+and define $\mathrm{SP}_{\lambda'}$ to be the function with domain $P_{\lambda'}$ that takes $p \in P_{\lambda'}$ to the set
+\begin{equation*}
+    \bigcup \{A \in [\mathcal{L}^o]^{< \omega_1} : \ulcorner A \subset \dot{G} \urcorner \in p\} \cup (p \cap \mathcal{L}^o) \text{.}
+\end{equation*}
+Finally, to $\Gamma_{\lambda}$ in Definition \ref{defc}, we add the $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentence 
+\begin{enumerate}[label=(S\arabic*)$_{\lambda}$, leftmargin=40pt]
+    \setcounter{enumi}{8}
+    \item $\ulcorner \forall A \in [\mathcal{L}^o]^{< \omega_1} \cap Q_{\lambda} \ (E(\ulcorner A \subset \dot{G} \urcorner) \iff \forall x \in A \ (E(x))) \urcorner$,
+\end{enumerate}
+and re-declare
+\begin{enumerate}[label=(S\arabic*)$_{\lambda} \ :$, leftmargin=50pt]
+    \setcounter{enumi}{7}
+    \item 
+    \!
+    $\begin{aligned}[t]
+        \ulcorner & \forall \delta \ \forall \lambda' \ \forall \phi \ \forall \bar{s} \ \forall x \ \exists p \in P_{\lambda'} \ \exists q \in P'_{\lambda'} \ \exists A \\
+        & ((E(\ulcorner x \in \dot{X}_{\delta, \lambda'} \urcorner) \ \wedge \\
+        & (\phi, \bar{s}) \in Df^{\lambda}(\lambda') \ \wedge \\
+        & \forall n \in dom(\bar{s}) \ (E(\ulcorner \bar{s}(n) \in \dot{X}_{\delta, \lambda'} \urcorner))) \\
+        & \implies ((\phi, \bar{s}, p) \in Ef_0^{\lambda}(\lambda') \wedge p \subset q \ \wedge \\
+        & E(\ulcorner q \in \dot{X}_{\delta, \lambda'} \urcorner) \wedge \mathrm{SP}_{\lambda'}(q) = A \ \wedge \\
+        & E(\ulcorner A \subset \dot{G} \urcorner))) \urcorner.
+    \end{aligned}$
+\end{enumerate}
+With these modifications, the rest of the proof of Theorem \ref{notion1} goes through without much difficulty, once we note that
+\begin{enumerate}[label=(CS\arabic*), leftmargin=40pt]
+    \item $P'_{\lambda}$ is dense in $\mathbb{P}_{\lambda}$ for all $\lambda \in C$, and
+    \item\label{cs2} letting $j$ be the generic ultrapower map as in the proof of Lemma \ref{sideuni}, $j(A) = j" A$ must hold whenever $$A \in V \text{ and } V \models \text{``} |A| < \omega_1 \text{''.}$$
+\end{enumerate}
+
+We have described above a spiritually countable-support version of the original $\mathbb{P} = \mathbb{P}_{\lambda^{\dagger}}$ constructed in the proof of Theorem \ref{notion1}. To distinguish this new version from the original, call the former $\mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$. Now, it is a routine exercise to check that the map $A \mapsto \{\ulcorner A \subset \dot{G} \urcorner\}$, under some appropriate quotient, witnesses $\mathbb{P}_{\lambda^{\dagger}}(\omega_1) \lessdot \mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$. 
+
+What prevents us from adapting our augmentation to supports of greater cardinalities? For one, \ref{cs2} no longer holds if we replace the sole instance of $\omega_1$ therein with a larger cardinal. Whether this is a fundamental obstacle to our cause can be formalised as the following question.
 
 \begin{ques}\label{oq1}
-Let $W$ and $\lambda^{\dagger}$ be as in the proof of Theorem \ref{notion1}. In $W$, can $\theta$, $C$, 
+Let $W$ and $\lambda^{\dagger}$ be as in the proof of Theorem \ref{notion1}. In $W$, can $\theta$, $C$, $\mathbb{P}^*$
 \begin{gather*}
     (C \cup \{\lambda^{\dagger}\} \longrightarrow \mathcal{P}(H(\lambda^{\dagger}))) [\lambda \mapsto Q_{\lambda}] \text{, and} \\
     (C \cup \{\lambda^{\dagger}\} \longrightarrow \mathcal{P}(H(\lambda^{\dagger}))) [\lambda \mapsto \Gamma_{\lambda}]
 \end{gather*}
 be chosen such that 
 \begin{enumerate}[label=(\arabic*)]
-    \item $\theta > \omega$ is a cardinal,
+    \item $\theta > \omega_1$ is a cardinal,
     \item $[Q_{\lambda}]^{< \theta} \subset Q_{\lambda}$ for all $\lambda \in C$,
-    \item \ref{4101} and \ref{4102} of Lemma \ref{lem26} are fulfilled with $\mathbb{P}_{\lambda^{\dagger}}(\theta)$ in place of $\mathbb{P}$, and
-    \item $\mathbb{P}_{\lambda^{\dagger}}(\theta)$ does not collapse $\omega_1^W$?
+    \item $\mathbb{P}_{\lambda^{\dagger}}(\theta) \lessdot \mathbb{P}^*$,
+    \item \ref{4101} and \ref{4102} of Lemma \ref{lem26} are fulfilled with $\mathbb{P}^*$ in place of $\mathbb{P}$, and
+    \item $\mathbb{P}^*$ does not collapse $\omega_1^W$?
 \end{enumerate}
 \end{ques}
 
@@ -6490,18 +6531,21 @@ Comparing Theorem \ref{notion1} with Theorem \ref{notion2} makes clear the exist
     \mathbb{P}'_{\lambda}(\theta) := \ & (P_{\lambda}(\theta), \supset) \text{.}
 \end{align*}
 
+Indeed, one can easily see that the ``quasi-second-order'' augmentation described immediately before Question \ref{oq1} carries over without a hitch in the proofs of Theorems \ref{notion2} and \ref{notion3}, due in no small part to the much-emphasised and -elaborated modularisability of our forcing framework. Moreover, letting $\mathbb{P}^{* < \omega_1}_{\lambda^{\dagger}}$ be the result of the aforementioned augmentation on the version of $\mathbb{P}_{\lambda^{\dagger}}$ constructed in the proof of Theorem \ref{notion2}, one can obtain $\mathbb{P}'_{\lambda^{\dagger}}(\omega_1) \lessdot \mathbb{P}^{* < \omega_1}_{\lambda^{\dagger}}$ through basically the same argument as the one netting us $\mathbb{P}_{\lambda^{\dagger}}(\omega_1) \lessdot \mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$. This specifically motivates the next question.
+
 \begin{ques}\label{oq2}
-Let $W$ and $\lambda^{\dagger}$ be as in the proof of Theorem \ref{notion2}. In $W$, can $\theta$, $C$, 
+Let $W$ and $\lambda^{\dagger}$ be as in the proof of Theorem \ref{notion2}. In $W$, can $\theta$, $C$, $\mathbb{P}^*$
 \begin{gather*}
     (C \cup \{\lambda^{\dagger}\} \longrightarrow \mathcal{P}(H(\lambda^{\dagger}))) [\lambda \mapsto Q_{\lambda}] \text{, and} \\
     (C \cup \{\lambda^{\dagger}\} \longrightarrow \mathcal{P}(H(\lambda^{\dagger}))) [\lambda \mapsto \Gamma_{\lambda}]
 \end{gather*}
 be chosen such that 
 \begin{enumerate}[label=(\arabic*)]
-    \item $\theta > \omega$ is a cardinal,
+    \item $\theta > \omega_1$ is a cardinal,
     \item $[Q_{\lambda}]^{< \theta} \subset Q_{\lambda}$ for all $\lambda \in C$,
-    \item \ref{K1} to \ref{K5} of Fact \ref{fact436} are fulfilled with $\mathbb{P}'_{\lambda^{\dagger}}(\theta)$ in place of $\mathbb{P}$, and
-    \item $\mathbb{P}'_{\lambda^{\dagger}}(\theta)$ does not collapse $\omega_1^W$?
+    \item $\mathbb{P}'_{\lambda^{\dagger}}(\theta) \lessdot \mathbb{P}^*$,
+    \item \ref{K1} to \ref{K5} of Fact \ref{fact436} are fulfilled with $\mathbb{P}^*$ in place of $\mathbb{P}$, and
+    \item $\mathbb{P}^*$ does not collapse $\omega_1^W$?
 \end{enumerate}
 \end{ques}
 
