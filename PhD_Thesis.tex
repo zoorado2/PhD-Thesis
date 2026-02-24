@@ -6425,15 +6425,15 @@ Then there is a stationary-preserving forcing notion $\mathbb{P}$ of size $2^{< 
 
 Working in the universe $W$ as defined in the proof of Theorem \ref{notion1} and thinning out $C$ if necessary, fix any $\theta$ such that $[Q_{\lambda}]^{< \theta} \subset Q_{\lambda}$ for all $\lambda \in C$. Should we then alter the definition of $\Gamma_{\lambda}$ and $P_{\lambda}$ for each $\lambda \in C \cup \{\lambda^{\dagger}\}$ as follows:
 \begin{align*}
-    \Gamma_{\lambda}(\theta) := \ & \text{the set } \Gamma_{\lambda} \text{ defined according to Definition \ref{defc},} \\
-    & \text{but with } \mathbb{P}_{\lambda'}(\theta) \text{ in place of the parameter } \mathbb{P}_{\lambda'} \text{ for each } \lambda' \in \lambda \cap C \\
-    P_{\lambda}(\theta) := \ & \{p \in [\mathcal{L} \cap Q_{\lambda}]^{< \theta} : \\
-    & \ \Vdash_{Col(\omega, |H(\kappa)|)} \exists \Sigma \ (``\Sigma \ \Gamma_{\lambda}(\theta) (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A}) \text{-certifies } p")\} \\
-    \mathbb{P}_{\lambda}(\theta) := \ & (P_{\lambda}(\theta), \supset) \text{,}
+    \Gamma_{\lambda}^C(\theta) := \ & \text{the set } \Gamma_{\lambda} \text{ defined according to Definition \ref{defc},} \\
+    & \text{but with } \mathbb{P}^C_{\lambda'}(\theta) \text{ in place of the parameter } \mathbb{P}_{\lambda'} \text{ for each } \lambda' \in \lambda \cap C \\
+    P_{\lambda}^C(\theta) := \ & \{p \in [\mathcal{L}]^{< \theta} \cap Q_{\lambda} : \\
+    & \ \Vdash_{Col(\omega, |H(\kappa)|)} \exists \Sigma \ (``\Sigma \ \Gamma^C_{\lambda}(\theta) (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A}) \text{-certifies } p")\} \\
+    \mathbb{P}^C_{\lambda}(\theta) := \ & (P^C_{\lambda}(\theta), \supset) \text{,}
 \end{align*}
-would all subsequent lemmas in the proof still go through? What notable forcing-theoretic properties can we use to differentiate among the $\mathbb{P}_{\lambda^{\dagger}}(\theta)$'s that result from varying $\theta$? 
+would all subsequent lemmas in the proof still go through? What notable forcing-theoretic properties can we use to differentiate among the $\mathbb{P}^C_{\lambda^{\dagger}}(\theta)$'s that result from varying $C$ and $\theta$? 
 
-Let $\theta$ be a cardinal greater than $\omega$. Then the most obvious gap in the proof shows up in the semantic interpretation of members of $\Gamma_{\lambda}(\theta)$. More specifically, since there are many dense subsets of many of the $\mathbb{P}_{\lambda'}$'s which are definable without parameters and contain only infinite sets, \ref{c8} no longer means
+Let $\theta$ be a cardinal greater than $\omega$ and $C$ be such that $[Q_{\lambda}]^{< \theta} \subset Q_{\lambda}$ for all $\lambda \in C$. Then the most obvious gap in the proof shows up in the semantic interpretation of members of $\Gamma^C_{\lambda}(\theta)$. More specifically, since there are many dense subsets of many of the $\mathbb{P}_{\lambda'}$'s which are definable without parameters and contain only infinite sets, \ref{c8} no longer means
 \begin{equation}
     \label{eq47}
     \parbox{\dimexpr\linewidth-6em}{
@@ -6445,7 +6445,7 @@ wherein
     \item $\Sigma$ interprets the unary relation symbol $\ulcorner E \urcorner$ occurring in $\mathcal{L}^*_{\mathfrak{A}}$ (formulas), and
     \item $X_{\delta, \lambda'} = X_{\delta, \lambda'}(\Sigma)$,
 \end{enumerate}
-as we ought to recall. In fact, if we cannot translate (\ref{eq47}) into a set of $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences, there is then an inability to guarantee that the $\mathbb{P}_{\lambda^{\dagger}}(\theta)$-generic filter over $V$ is sufficiently generic over each non-empty $X_{\delta, \lambda'}$. This throws a wrench into the side condition method so crucial to the main results of this chapter. 
+as we ought to recall. In fact, if we cannot translate (\ref{eq47}) into a set of $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences, there is then an inability to guarantee that the $\mathbb{P}^C_{\lambda^{\dagger}}(\theta)$-generic filter over $V$ is sufficiently generic over each non-empty $X_{\delta, \lambda'}$. This throws a wrench into the side condition method so crucial to the main results of this chapter. 
 
 Thankfully, there is a way out when $\theta = \omega_1$, via a rather straightforward ``quasi-second-order'' augmentation of our language. Let $\mathcal{L}$ be as defined in the proof of Theorem \ref{notion1}. Pick a new distinguished symbol $\dot{G}$, rename $\mathcal{L}$ as $\mathcal{L}^o$, and re-declare
 \begin{equation*}
@@ -6462,7 +6462,7 @@ and define $\mathrm{SP}_{\lambda'}$ to be the function with domain $P_{\lambda'}
 Finally, to $\Gamma_{\lambda}$ in Definition \ref{defc}, we add the $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentence 
 \begin{enumerate}[label=(S\arabic*)$_{\lambda}$, leftmargin=40pt]
     \setcounter{enumi}{8}
-    \item $\ulcorner \forall A \in [\mathcal{L}^o]^{< \omega_1} \cap Q_{\lambda} \ (E(\ulcorner A \subset \dot{G} \urcorner) \iff \forall x \in A \ (E(x))) \urcorner$,
+    \item\label{s9n} $\ulcorner \forall A \in [\mathcal{L}^o]^{< \omega_1} \cap Q_{\lambda} \ (E(\ulcorner A \subset \dot{G} \urcorner) \iff \forall x \in A \ (E(x))) \urcorner$,
 \end{enumerate}
 and re-declare
 \begin{enumerate}[label=(S\arabic*)$_{\lambda} \ :$, leftmargin=50pt]
@@ -6485,12 +6485,12 @@ With these modifications, the rest of the proof of Theorem \ref{notion1} goes th
     \item\label{cs2} letting $j$ be the generic ultrapower map as in the proof of Lemma \ref{sideuni}, $j(A) = j" A$ must hold whenever $$A \in V \text{ and } V \models \text{``} |A| < \omega_1 \text{''.}$$
 \end{enumerate}
 
-We have described above a spiritually countable-support version of the original $\mathbb{P} = \mathbb{P}_{\lambda^{\dagger}}$ constructed in the proof of Theorem \ref{notion1}. To distinguish this new version from the original, call the former $\mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$. Now, it is a routine exercise to check that the map $A \mapsto \{\ulcorner A \subset \dot{G} \urcorner\}$, under some appropriate quotient, witnesses $\mathbb{P}_{\lambda^{\dagger}}(\omega_1) \lessdot \mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$. 
+We have described above a spiritually countable-support version of the original $\mathbb{P} = \mathbb{P}_{\lambda^{\dagger}}$ constructed in the proof of Theorem \ref{notion1}. To distinguish this new version from the original, call the former $\mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$. Now, it is a routine exercise in transfinite induction to check that the map $A \mapsto \{\ulcorner A \subset \dot{G} \urcorner\}$ --- under some appropriate quotient --- witnesses $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1) \lessdot \mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$ assuming $[Q_{\lambda}]^{< \theta} \subset Q_{\lambda}$ for all $\lambda \in C$. In fact, as a consequence of the \ref{s9n}'s, the image of any $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$-generic filter $g$ over $W$ under the said map uniquely determines any $\mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$-generic filter over $W$ extending $g$. This then implies that $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ and $\mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$ are forcing equivalent.
 
 What prevents us from adapting our augmentation to supports of greater cardinalities? For one, \ref{cs2} no longer holds if we replace the sole instance of $\omega_1$ therein with a larger cardinal. Whether this is a fundamental obstacle to our cause can be formalised as the following question.
 
 \begin{ques}\label{oq1}
-Let $W$ and $\lambda^{\dagger}$ be as in the proof of Theorem \ref{notion1}. In $W$, can $\theta$, $C$, $\mathbb{P}^*$
+Let $W$ and $\lambda^{\dagger}$ be as in the proof of Theorem \ref{notion1}. In $W$, can $\theta$, $C$
 \begin{gather*}
     (C \cup \{\lambda^{\dagger}\} \longrightarrow \mathcal{P}(H(\lambda^{\dagger}))) [\lambda \mapsto Q_{\lambda}] \text{, and} \\
     (C \cup \{\lambda^{\dagger}\} \longrightarrow \mathcal{P}(H(\lambda^{\dagger}))) [\lambda \mapsto \Gamma_{\lambda}]
@@ -6499,9 +6499,8 @@ be chosen such that
 \begin{enumerate}[label=(\arabic*)]
     \item $\theta > \omega_1$ is a cardinal,
     \item $[Q_{\lambda}]^{< \theta} \subset Q_{\lambda}$ for all $\lambda \in C$,
-    \item $\mathbb{P}_{\lambda^{\dagger}}(\theta) \lessdot \mathbb{P}^*$,
-    \item \ref{4101} and \ref{4102} of Lemma \ref{lem26} are fulfilled with $\mathbb{P}^*$ in place of $\mathbb{P}$, and
-    \item $\mathbb{P}^*$ does not collapse $\omega_1^W$?
+    \item \ref{4101} and \ref{4102} of Lemma \ref{lem26} are fulfilled with $\mathbb{P}^C_{\lambda^{\dagger}}(\theta)$ in place of $\mathbb{P}$, and
+    \item $\mathbb{P}^C_{\lambda^{\dagger}}(\theta)$ does not collapse $\omega_1^W$?
 \end{enumerate}
 \end{ques}
 
@@ -6517,24 +6516,24 @@ be chosen such that
 \begin{enumerate}[label=(\arabic*)]
     \item $\theta$ is an infinite cardinal,
     \item $[Q_{\lambda}]^{< \theta} \subset Q_{\lambda}$ for all $\lambda \in C$,
-    \item  \ref{4101} and \ref{4102} of Lemma \ref{lem26} are fulfilled with $\mathbb{P}_{\lambda^{\dagger}}(\theta)$ in place of $\mathbb{P}$, and
-    \item $\mathbb{P}_{\lambda^{\dagger}}(\theta)$ does not add reals?
+    \item  \ref{4101} and \ref{4102} of Lemma \ref{lem26} are fulfilled with $\mathbb{P}^C_{\lambda^{\dagger}}(\theta)$ in place of $\mathbb{P}$, and
+    \item $\mathbb{P}^C_{\lambda^{\dagger}}(\theta)$ does not add reals?
 \end{enumerate}
 \end{ques}
 
 Comparing Theorem \ref{notion1} with Theorem \ref{notion2} makes clear the existence of close relatives of Questions \ref{oq1} and \ref{addsreals}, given the following definitions in the universe $W$, where $W$ is as defined in the proof of Theorem \ref{notion2}:
 \begin{align*}
-    \Gamma'_{\lambda}(\theta) := \ & \text{the set } \Gamma'_{\lambda} \text{ defined according to Definition \ref{def447},} \\
-    & \text{but with } \mathbb{P}_{\lambda'}(\theta) \text{ in place of the parameter } \mathbb{P}_{\lambda'} \text{ for each } \lambda' \in \lambda \cap C \\
-    P'_{\lambda}(\theta) := \ & \{p \in [\mathcal{L} \cap Q_{\lambda}]^{< \theta} : \\
-    & \ \Vdash_{Col(\omega, |H(\kappa)|)} \exists \Sigma \ (``\Sigma \ \Gamma'_{\lambda}(\theta) (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A}) \text{-certifies } p")\} \\
-    \mathbb{P}'_{\lambda}(\theta) := \ & (P_{\lambda}(\theta), \supset) \text{.}
+    \Gamma^{'C}_{\lambda}(\theta) := \ & \text{the set } \Gamma'_{\lambda} \text{ defined according to Definition \ref{def447},} \\
+    & \text{but with } \mathbb{P}^{'C}_{\lambda'}(\theta) \text{ in place of the parameter } \mathbb{P}_{\lambda'} \text{ for each } \lambda' \in \lambda \cap C \\
+    P^{'C}_{\lambda}(\theta) := \ & \{p \in [\mathcal{L}]^{< \theta} \cap Q_{\lambda} : \\
+    & \ \Vdash_{Col(\omega, |H(\kappa)|)} \exists \Sigma \ (``\Sigma \ \Gamma^{'C}_{\lambda}(\theta) (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A}) \text{-certifies } p")\} \\
+    \mathbb{P}^{'C}_{\lambda}(\theta) := \ & (P^{'C}_{\lambda}(\theta), \supset) \text{.}
 \end{align*}
 
-Indeed, one can easily see that the ``quasi-second-order'' augmentation described immediately before Question \ref{oq1} carries over without a hitch in the proofs of Theorems \ref{notion2} and \ref{notion3}, due in no small part to the much-emphasised and -elaborated modularisability of our forcing framework. Moreover, letting $\mathbb{P}^{* < \omega_1}_{\lambda^{\dagger}}$ be the result of the aforementioned augmentation on the version of $\mathbb{P}_{\lambda^{\dagger}}$ constructed in the proof of Theorem \ref{notion2}, one can obtain $\mathbb{P}'_{\lambda^{\dagger}}(\omega_1) \lessdot \mathbb{P}^{* < \omega_1}_{\lambda^{\dagger}}$ through basically the same argument as the one netting us $\mathbb{P}_{\lambda^{\dagger}}(\omega_1) \lessdot \mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$. This specifically motivates the next question.
+Indeed, one can easily see that the ``quasi-second-order'' augmentation described immediately before Question \ref{oq1} carries over without a hitch in the proofs of Theorems \ref{notion2} and \ref{notion3}, due in no small part to the much-emphasised and -elaborated modularisability of our forcing framework. Moreover, letting $\mathbb{P}^{* < \omega_1}_{\lambda^{\dagger}}$ be the result of the aforementioned augmentation on the version of $\mathbb{P}_{\lambda^{\dagger}}$ constructed in the proof of Theorem \ref{notion2}, one can obtain the forcing equivalence of $\mathbb{P}^{'C}_{\lambda^{\dagger}}(\omega_1)$ and $\mathbb{P}^{* < \omega_1}_{\lambda^{\dagger}}$ through essentially the same argument as the one that nets us the forcing equivalence of $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ and $\mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$. This specifically motivates the next question.
 
 \begin{ques}\label{oq2}
-Let $W$ and $\lambda^{\dagger}$ be as in the proof of Theorem \ref{notion2}. In $W$, can $\theta$, $C$, $\mathbb{P}^*$
+Let $W$ and $\lambda^{\dagger}$ be as in the proof of Theorem \ref{notion2}. In $W$, can $\theta$, $C$,
 \begin{gather*}
     (C \cup \{\lambda^{\dagger}\} \longrightarrow \mathcal{P}(H(\lambda^{\dagger}))) [\lambda \mapsto Q_{\lambda}] \text{, and} \\
     (C \cup \{\lambda^{\dagger}\} \longrightarrow \mathcal{P}(H(\lambda^{\dagger}))) [\lambda \mapsto \Gamma_{\lambda}]
@@ -6543,9 +6542,8 @@ be chosen such that
 \begin{enumerate}[label=(\arabic*)]
     \item $\theta > \omega_1$ is a cardinal,
     \item $[Q_{\lambda}]^{< \theta} \subset Q_{\lambda}$ for all $\lambda \in C$,
-    \item $\mathbb{P}'_{\lambda^{\dagger}}(\theta) \lessdot \mathbb{P}^*$,
-    \item \ref{K1} to \ref{K5} of Fact \ref{fact436} are fulfilled with $\mathbb{P}^*$ in place of $\mathbb{P}$, and
-    \item $\mathbb{P}^*$ does not collapse $\omega_1^W$?
+    \item \ref{K1} to \ref{K5} of Fact \ref{fact436} are fulfilled with $\mathbb{P}^{'C}_{\lambda^{\dagger}}(\theta)$ in place of $\mathbb{P}$, and
+    \item $\mathbb{P}^{'C}_{\lambda^{\dagger}}(\theta)$ does not collapse $\omega_1^W$?
 \end{enumerate}
 \end{ques}
 
@@ -6559,8 +6557,8 @@ be chosen such that
 \begin{enumerate}[label=(\arabic*)]
     \item $\theta$ is an infinite cardinal,
     \item $[Q_{\lambda}]^{< \theta} \subset Q_{\lambda}$ for all $\lambda \in C$,
-    \item \ref{K1} to \ref{K5} of Fact \ref{fact436} are fulfilled with $\mathbb{P}'_{\lambda^{\dagger}}(\theta)$ in place of $\mathbb{P}$, and
-    \item $\mathbb{P}'_{\lambda^{\dagger}}(\theta)$ does not add reals?
+    \item \ref{K1} to \ref{K5} of Fact \ref{fact436} are fulfilled with $\mathbb{P}^{'C}_{\lambda^{\dagger}}(\theta)$ in place of $\mathbb{P}$, and
+    \item $\mathbb{P}^{'C}_{\lambda^{\dagger}}(\theta)$ does not add reals?
 \end{enumerate}
 \end{ques}
 
