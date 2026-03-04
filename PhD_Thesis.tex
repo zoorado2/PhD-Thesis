@@ -6431,9 +6431,9 @@ Work in the universe $W$ as defined in the proof of Theorem \ref{notion1} and le
     & \ \Vdash_{Col(\omega, |H(\kappa)|)} \exists \Sigma \ (``\Sigma \ \Gamma^C_{\lambda}(\theta) (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A}) \text{-certifies } p")\} \\
     \mathbb{P}^C_{\lambda}(\theta) := \ & (P^C_{\lambda}(\theta), \supset) \text{,}
 \end{align*}
-would all subsequent lemmas in the proof still go through? What notable forcing-theoretic properties can we use to differentiate among the $\mathbb{P}^C_{\lambda^{\dagger}}(\theta)$'s that result from varying $C$ and $\theta$? 
+would all subsequent lemmas in the proof still go through?
 
-In an attempt to answer the first question, let $\theta$ be a cardinal greater than $\omega$. Then the most obvious gap in the proof shows up in the semantic interpretation of members of $\Gamma^C_{\lambda}(\theta)$. More specifically, since there are many dense subsets of many of the $\mathbb{P}_{\lambda'}$'s which are definable without parameters and contain only infinite sets, \ref{c8} no longer means
+In an attempt to answer this question, let $\theta$ be a cardinal greater than $\omega$. Then the most obvious gap in the proof shows up in the semantic interpretation of members of $\Gamma^C_{\lambda}(\theta)$. More specifically, since there are many dense subsets of many of the $\mathbb{P}_{\lambda'}$'s which are definable without parameters and contain only infinite sets, \ref{c8} no longer means
 \begin{equation}
     \label{eq47}
     \parbox{\dimexpr\linewidth-6em}{
@@ -6467,7 +6467,7 @@ Finally, to $\Gamma_{\lambda}$ in Definition \ref{defc}, we add the $\mathcal{L}
 and re-declare
 \begin{enumerate}[label=(S\arabic*)$_{\lambda} \ :$, leftmargin=50pt]
     \setcounter{enumi}{7}
-    \item 
+    \item\label{s8n}
     \!
     $\begin{aligned}[t]
         \ulcorner & \forall \delta \ \forall \lambda' \ \forall \phi \ \forall \bar{s} \ \forall x \ \exists p \in P_{\lambda'} \ \exists q \in P'_{\lambda'} \ \exists A \\
@@ -6481,11 +6481,23 @@ and re-declare
 \end{enumerate}
 With these modifications, the rest of the proof of Theorem \ref{notion1} goes through without much difficulty, once we note that
 \begin{enumerate}[label=(CS\arabic*), leftmargin=40pt]
-    \item $P'_{\lambda}$ is dense in $\mathbb{P}_{\lambda}$ for all $\lambda \in C$, and
+    \item\label{cs1} $P'_{\lambda}$ is dense in $\mathbb{P}_{\lambda}$ for all $\lambda \in C$, and
     \item\label{cs2} letting $j$ be the generic ultrapower map as in the proof of Lemma \ref{sideuni}, $j(A) = j" A$ must hold whenever $$A \in V \text{ and } V \models \text{``} |A| < \omega_1 \text{''.}$$
 \end{enumerate}
 
-We have described above what is spiritually a countable-support version of the original $\mathbb{P} = \mathbb{P}_{\lambda^{\dagger}}$ constructed in the proof of Theorem \ref{notion1}. To distinguish this new version from the original, call the former $\mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$. Now, it is a routine exercise in transfinite induction to check that the map $A \mapsto \{\ulcorner A \subset \dot{G} \urcorner\}$ --- under some appropriate quotient --- witnesses $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1) \lessdot \mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$. In fact, as a consequence of the \ref{s9n}'s, the image of any $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$-generic filter $g$ over $W$ under the aforementioned map uniquely determines any $\mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$-generic filter over $W$ extending $g$. We thus have that $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ and $\mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$ are forcing equivalent.
+We have described above what is spiritually a countable-support version of the original sequence $\{\mathbb{P}_{\lambda} : \lambda \in C \cup \lambda^{\dagger}\}$ constructed in the proof of Theorem \ref{notion1}. To distinguish this new version from the original, call the former sequence $\{\mathbb{P}^{< \omega_1}_{\lambda} : \lambda \in C \cup \lambda^{\dagger}\}$.
+
+\begin{prop}\label{prop741}
+$\mathbb{P}^C_{\lambda}(\omega_1)$ and $\mathbb{P}^{< \omega_1}_{\lambda}$ are forcing equivalent for all $\lambda \in C \cup \lambda^{\dagger}$.
+\end{prop}
+
+\begin{proof}
+By induction on $\lambda \in C \cup \lambda^{\dagger}$. Given \ref{s9n}, \ref{cs1} and the induction hypothesis, we can deduce that (\ref{eq47}) and the redeclared $\hyperref[s8n]{\text{(S8)}_{\lambda}}$ are equivalent through a routine unfolding of definitions. We shall show that the map $A \mapsto \{\ulcorner A \subset \dot{G} \urcorner\}$ is a dense weak embedding from $\mathbb{P}^C_{\lambda}(\omega_1)$ into $\mathbb{P}^{< \omega_1}_{\lambda}$. That it is a weak embedding is easy to see, so we need only show that its image is dense in $w(\mathbb{P}^{< \omega_1}_{\lambda})$. Towards that end, let $p \in P^{< \omega_1}_{\lambda}$. By \ref{cs1}, choose $q \leq_{\lambda} p$ such that $q$ is a good condition of $\mathbb{P}^{< \omega_1}_{\lambda}$. Now, setting 
+\begin{equation*}
+    A_q := \bigcup \{A \in [\mathcal{L}^o]^{< \omega_1} : \ulcorner A \subset \dot{G} \urcorner \in q\} \cup (q \cap \mathcal{L}^o) \text{,}
+\end{equation*}
+we have by \ref{s9n} that $\{\ulcorner A_q \subset \dot{G} \urcorner\}$ extends $q$, and thus $p$, in $w(\mathbb{P}^{< \omega_1}_{\lambda})$.
+\end{proof}
 
 What prevents us from adapting our augmentation to supports of greater cardinalities? For one, \ref{cs2} no longer holds if we replace the sole instance of $\omega_1$ therein with a larger cardinal. Whether this is a fundamental obstacle to our cause can be formalised as the following question.
 
@@ -6533,7 +6545,7 @@ Comparing Theorem \ref{notion1} with Theorems \ref{notion2} and \ref{notion3} ma
     \mathbb{P}^{''C}_{\lambda}(\theta) := \ & (P^{''C}_{\lambda}(\theta), \supset) \text{.}
 \end{align*}
 
-Indeed, one can easily see that the ``quasi-second-order'' augmentation described immediately before the statement of Question \ref{oq1} carries over without a hitch in the proofs of Theorems \ref{notion2} and \ref{notion3}, due in no small part to the much-emphasised and -elaborated modularisability of our forcing framework. In fact, more can be said. Let $\mathbb{P}^{* < \omega_1}_{\lambda^{\dagger}}$ and $\mathbb{P}^{** < \omega_1}_{\lambda^{\dagger}}$ be the results of the aforementioned augmentation on, respectively, the version of $\mathbb{P}_{\lambda^{\dagger}}$ constructed in the proof of Theorem \ref{notion2}, and the version of $\mathbb{P}_{\lambda^{\dagger}}$ to be constructed according to the guidelines found immediately before the statement of Theorem \ref{notion3} (in order to prove Theorem \ref{notion3}). One can then obtain the forcing equivalence of $\mathbb{P}^{'C}_{\lambda^{\dagger}}(\omega_1)$ and $\mathbb{P}^{* < \omega_1}_{\lambda^{\dagger}}$, as well as the forcing equivalence of $\mathbb{P}^{''C}_{\lambda^{\dagger}}(\omega_1)$ and $\mathbb{P}^{** < \omega_1}_{\lambda^{\dagger}}$, through essentially the same argument as the one that previously netted us the forcing equivalence of $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ and $\mathbb{P}^{< \omega_1}_{\lambda^{\dagger}}$. This realisation specifically motivates the next two questions.
+Indeed, one can easily see that the ``quasi-second-order'' augmentation described immediately before the statement of Question \ref{oq1} carries over without a hitch in the proofs of Theorems \ref{notion2} and \ref{notion3}, due in no small part to the much-emphasised and -elaborated modularisability of our forcing framework. In fact, more can be said. Let $\mathbb{P}^{* < \omega_1}_{\lambda^{\dagger}}$ and $\mathbb{P}^{** < \omega_1}_{\lambda^{\dagger}}$ be the results of the aforementioned augmentation on, respectively, the version of $\mathbb{P}_{\lambda^{\dagger}}$ constructed in the proof of Theorem \ref{notion2}, and the version of $\mathbb{P}_{\lambda^{\dagger}}$ to be constructed according to the guidelines found immediately before the statement of Theorem \ref{notion3} (in order to prove Theorem \ref{notion3}). One can then obtain the forcing equivalence of $\mathbb{P}^{'C}_{\lambda^{\dagger}}(\omega_1)$ and $\mathbb{P}^{* < \omega_1}_{\lambda^{\dagger}}$, as well as the forcing equivalence of $\mathbb{P}^{''C}_{\lambda^{\dagger}}(\omega_1)$ and $\mathbb{P}^{** < \omega_1}_{\lambda^{\dagger}}$, through essentially the same argument as the one in the proof of Proposition \ref{prop741}. This realisation specifically motivates the next two questions.
 
 \begin{ques}\label{oq2}
 Let $W$, $\lambda^{\dagger}$ and $\kappa$ be as in the proof of Theorem \ref{notion2}. In $W$, can $\theta$, $C$ and
