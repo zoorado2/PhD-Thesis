@@ -8665,12 +8665,19 @@ There are formulas $\phi$, $\psi$ and $\psi'$ in the language of set theory with
 \end{prop}
 
 \begin{rem}\label{rem926}
-One may view Proposition \ref{prop322} as a template for the set of requirements any sufficiently local means of defining small extensions of $V$ ought to fulfil. More precisely, should we replace 
+One may view Proposition \ref{prop322} as a template for the set of requirements any sufficiently local means of defining small extensions of $V$ should fulfil. More precisely, should we replace 
 \begin{itemize}
-    \item ``$\mathfrak{T}$ is a TCI'' with any other means of defining the parameter set, and
-    \item ``$\mathcal{M} \models^* \mathfrak{T}$'' with any other means of locally defining the class of possible generators from the parameter set
+    \item ``$\mathfrak{T}$ is a TCI'' with any other description $\varphi(x)$ of a parameter set $x$, and
+    \item ``$\mathcal{M} \models^* \mathfrak{T}$'' with any other sufficiently local means of defining the class of generators of small extensions of $V$ from a parameter set $x$ satisfying $\varphi(x)$
 \end{itemize}
-in Proposition \ref{prop322}, we should still expect the said proposition to hold. In any case where the aforementioned replacements behave as expected, we say that the associated means of defining small extensions of $V$ \textit{fulfils the requirements suggested by Proposition \ref{prop322}}.
+in Proposition \ref{prop322}, we should still expect the said proposition to hold. This is because morally, 
+\begin{itemize}
+    \item localness ought to imply absoluteness, 
+    \item any ``sufficiently local'' means ought to come with an \textit{a priori} bound to the amount of information needed for its purpose, and
+    \item Lemma \ref{setcode} can always be utilised to define $\phi$, and thus $\psi$ and $\psi'$, in our modified version of Proposition \ref{prop322}.
+\end{itemize}
+
+In any case where the aforementioned replacements behave as expected, we say that the associated means of defining small extensions of $V$ \textit{fulfils the requirements suggested by Proposition \ref{prop322}}.
 \end{rem}
 
 In the presence of Fact \ref{fact34}, Proposition \ref{prop322} gives validity to Definition \ref{def323}: the function $\mathrm{Eval}^V$ taking TCIs in $V$ to subsets of $\mathbf{M}_S(V)$ actually exists. Fix formulas $\phi$ and $\psi$ as in Proposition \ref{prop322}. Let 
@@ -9492,6 +9499,7 @@ By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to 
 
 Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
 
+\blankpage
 \part{\texorpdfstring{ References}{References}}
 
 \chapter{References}
