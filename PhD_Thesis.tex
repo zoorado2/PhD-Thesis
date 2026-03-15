@@ -8643,22 +8643,24 @@ Just like how a set computed by some oracle machine with a fixed oracle --- or i
 It might not be immediately obvious that whenever there are $W$ and $\mathcal{M}$ for which $\mathcal{M} \in W \in \mathbf{M}(V)$ and $\mathcal{M} \models^* \mathfrak{T}$ for some TCI $\mathfrak{T} \in V$, $V[\mathcal{M}]$ must exist. The next proposition, summarising much of the setup done in Section \ref{GOCon}, shows that one can translate between models of a TCI $\mathfrak{T}$ and subsets of a set associated with $\mathfrak{T}$. Further, this translation can be carried out in an absolute and uniform manner.
 
 \begin{prop}\label{prop322}
-There are formulas $\phi$ and $\psi$ in the language of set theory with the following properties: 
+There are formulas $\phi$, $\psi$ and $\psi'$ in the language of set theory with the following properties: 
 \begin{enumerate}[label=(\arabic*)]
-    \item $\phi$ and $\psi$ have two and three free variables respectively,
-    \item $\phi$ defines a function from the class of all TCIs into the universe,
-    \item $\psi$ defines a function from the class
+    \item $\phi$, $\psi$ and $\psi'$ have two, three and two free variables respectively,
+    \item\label{9252} $\phi$ defines a function from the class of all TCIs into the universe,
+    \item\label{9253} $\psi$ defines a function from the class
     \begin{equation*}
         \{(\mathfrak{T}, \mathcal{M}) : \mathfrak{T} \text{ is a TCI and } \mathcal{M} \models^* \mathfrak{T}\}
     \end{equation*}
     into the universe,
-    \item $\phi$ and $\psi$ are absolute for transitive models of $\mathsf{ZFC}$,
+    \item\label{9254} $\psi' = \ulcorner \exists x_1 \ \psi(x_0, x_1, x_2)  \urcorner$,
+    \item\label{9255} $\phi$, $\psi$ and $\psi'$ are absolute for transitive models of $\mathsf{ZFC}$,
     \item\label{3245} whenever $\mathfrak{T}$ is a TCI, the relation
     \begin{equation*}
         R_{\mathfrak{T}} := \{(\mathcal{M}, x) : \psi(\mathfrak{T}, \mathcal{M}, x)\}
     \end{equation*}
-    is one-one, 
+    is one-one,
     \item\label{3246} for all $\mathfrak{T}$, $\mathcal{M}$ and $x$, $\psi(\mathfrak{T}, \mathcal{M}, x)$ implies there is $\mathcal{L}$ for which $\phi(\mathfrak{T}, \mathcal{L})$ and $x \subset \mathcal{L}$, and
+    \item\label{9258} for all TCIs $\mathfrak{T}$, $\mathfrak{T}$ is consistent iff $$\Vdash_{Col(\omega, \lambda)} \exists x \ \psi'(\mathfrak{T}, x) \text{,}$$ where $\lambda \geq |H(|trcl(\mathfrak{T})|^+)|$.
 \end{enumerate}
 \end{prop}
 
@@ -8668,9 +8670,9 @@ In the presence of Fact \ref{fact34}, Proposition \ref{prop322} gives validity t
     \Sigma(\mathfrak{T}, \mathcal{M}) := \ & \text{ the unique } x \text{ for which } \psi(\mathfrak{T}, \mathcal{M}, x) \text{.}
 \end{align*}
 Given a TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ and sets $y, z$ with $\vartheta(\dot{\mathcal{U}}) = (y, z)$, we should think of $\mathcal{L}_{\mathfrak{T}}$ as containing all the possible atomic sentences over $\sigma$ that involve members of $y$ as parameters. Then for any model $\mathcal{M}$ of $\mathfrak{T}$, $\Sigma(\mathfrak{T}, \mathcal{M})$ ($\subset \mathcal{L}_{\mathfrak{T}}$, by \ref{3246} of Proposition \ref{prop322}) can be thought of as the ``$\mathfrak{T}$-specific atomic diagram''  of $\mathcal{M}$. According to \ref{3245} of Proposition \ref{prop322}, we can always recover $\mathcal{M}$ in a transitive model of $\mathsf{ZFC}$ from $\mathfrak{T}$ and $\Sigma(\mathfrak{T}, \mathcal{M})$ alone. As a consequence, 
-\begin{equation*}
+\begin{equation}\label{eq921}
     V[\mathcal{M}] = V[x] \text{ if } V \text{ is a CTM and } \psi(\mathfrak{T}, \mathcal{M}, x) \text{ for some TCI } \mathfrak{T} \in V \text{.}
-\end{equation*}
+\end{equation}
 
 Observe that we can ``cover'' the entire small outward multiverse with a local method definition.
 
@@ -9354,15 +9356,80 @@ So far, every small extension of $V$ we know how to construct either
     \item is a forcing extension of $V$, or
     \item depends on information extracted from a proper-class-sized fragment of $V$, if not more.
 \end{itemize} 
-Naturally, we might wonder if it is possible to generate small extensions of $V$ based locally on a set in $V$, in a way that differs substantively from set forcing.
+As such, one might wonder if it is possible to generate small extensions of $V$ based locally on a set in $V$, in a way that differs substantively from set forcing. It turns out that there is a relatively simple argument against this.
 
-\begin{ques}\label{q843}
-Is there a TCI $\mathfrak{T}$ such that $\{\mathfrak{T}\} \not\leq^M \mathsf{Fg}$?
-\end{ques}
+The following fact can be extracted from the standard proof (see e.g. the lead-up to Corollary 15.42 of \cite{jech}) of Fact \ref{fact221}.
+
+\begin{fact}\label{fact9413}
+Let
+\begin{enumerate}[label=(\alph*)]
+    \item\label{9413a} $\varphi$ be a formula with one free variable in the language associated with $V$,
+    \item $\mathbb{P}$ be a forcing notion, 
+    \item $X$ be any set, and
+    \item\label{9413d} $\dot{x}$ be a $\mathbb{P}$-name of a subset of $X$.
+\end{enumerate}
+Assume $\varphi$ is absolute for outer models of $V$, and that $\Vdash_{\mathbb{P}} \varphi(\dot{x})$. Then there exist $\mathbb{B}$ and $\dot{\bar{x}}$ such that
+\begin{enumerate}[label=(\arabic*)]
+    \item $\mathbb{B}$ is a complete subalgebra of $B(\mathbb{P})$, 
+    \item $\dot{\bar{x}}$ is a $\mathbb{B}$-name of a subset of $X$, 
+    \item $\Vdash_{\mathbb{B}} \varphi(\dot{\bar{x}})$, and
+    \item $V[g] = V[\dot{\bar{x}}[g]]$ for every $\mathbb{B}$-generic filter $g$ over $V$.
+\end{enumerate}
+Moreover, distinguished witnesses $\mathbb{B}(\mathbb{P}, \dot{x})$ and $\dot{\bar{x}}(\mathbb{P})$, of $\mathbb{B}$ and $\dot{\bar{x}}$ respectively, can be chosen such that the function 
+\begin{equation*}
+    (\mathbb{P}, \dot{x}) \mapsto (\mathbb{B}(\mathbb{P}, \dot{x}), \dot{\bar{x}}(\mathbb{P}))
+\end{equation*}
+on the class of pairs $(\mathbb{P}, \dot{x})$ satisfying \ref{9413a} to \ref{9413d} in conjunction with any fixed $\varphi$ and $X$ is definable.
+\end{fact}
+
+\begin{thm}\label{thm9414}
+Let $\mathfrak{T}$ be a TCI. Then $\{\mathfrak{T}\} \leq^M \mathsf{Fg}$.
+\end{thm}
+
+\begin{proof}
+The theorem is trivially true if $\mathfrak{T}$ is inconsistent. So let us assume, without loss of generality, that $\mathfrak{T}$ is consistent. Setting $\lambda := |H(|trcl(\mathfrak{T})|^+)|$ we have $$\Vdash_{Col(\omega, \lambda)} \exists x \ \psi'(\mathfrak{T}, x)$$ by \ref{9258} of Proposition \ref{prop322}. Then \ref{9254} and \ref{3246} of Proposition \ref{prop322} tell us for some set $\mathcal{L}$ there is a $Col(\omega, \lambda)$-name $\dot{x}$ for a subset of $\mathcal{L}$ for which $\Vdash_{Col(\omega, \lambda)} \psi'(\mathfrak{T}, \dot{x})$. Viewing $\psi'(\mathfrak{T}, x)$ as a formula with a single free variable $x$, we can apply Fact \ref{fact9413} with \ref{9255} of Proposition \ref{prop322} in mind, to obtain $\mathbb{B}$ and $\dot{\bar{x}}$ such that
+\begin{enumerate}[label=(\arabic*)]
+    \item $\mathbb{B}$ is a complete subalgebra of $B(Col(\omega, \lambda))$, 
+    \item $\dot{\bar{x}}$ is a $\mathbb{B}$-name of a subset of $\mathcal{L}$, 
+    \item\label{p94143} $\Vdash_{\mathbb{B}} \psi'(\mathfrak{T}, \dot{\bar{x}})$, and
+    \item\label{p94144} $V[g] = V[\dot{\bar{x}}[g]]$ for every $\mathbb{B}$-generic filter $g$ over $V$.
+\end{enumerate}
+Now let $g$ be any $\mathbb{B}$-generic filter $g$ over $V$. Then in $V[g]$, there exists $\mathcal{M}$ satisfying $\psi(\mathfrak{T}, \mathcal{M}, \dot{\bar{x}}[g])$ by \ref{9254} of Proposition \ref{prop322} and \ref{p94143} of this proof. Fix one such $\mathcal{M}$. As a consequence of (\ref{eq921}) and \ref{p94144} of this proof, $V[g] = V[\mathcal{M}]$. Finally, \ref{9253} of Proposition \ref{prop322} gives us $\mathcal{M} \models^* \mathfrak{T}$.
+\end{proof}
+
+\begin{cor}
+Let $X$ be a local method definition.
+\begin{enumerate}[label=(\arabic*)]
+    \item\label{94151} $X \leq^M_w \mathsf{Fg}$.
+    \item\label{94152} If $X$ is a set, then $X \leq^M \mathsf{Fg}$.
+\end{enumerate}
+\end{cor}
+
+\begin{proof}
+Given Theorem \ref{thm9414}, apply Axiom of Choice outside $V$ for \ref{94151} and inside $V$ for \ref{94152}.
+\end{proof}
+
+\begin{cor}
+\leavevmode 
+\begin{enumerate}[label=(\arabic*)]
+    \item\label{94161} Assume there is a definable (with parameters) well-ordering of $V$. Then $X \leq^M \mathsf{Fg}$ for every local method definition.
+    \item\label{94162} If $\text{``}V = L\text{''}$ holds, then $X \leq^M \mathsf{Fg}$ for every local method definition.
+\end{enumerate}
+\end{cor}
+
+\begin{proof}
+Given Theorem \ref{thm9414}, \ref{94161} is immediate. Then \ref{94162} holds because of \ref{94161} and the fact that there is a definable well-ordering of $L$.
+\end{proof}
+
+From \ref{9252} and \ref{3246} of Proposition \ref{prop322}, as well as the last sentence of Fact \ref{fact9413}, one can infer that the main obstacle to proving the $\leq^M$-maximality of $\mathsf{Fg}$ in every CTM with our current tools is precisely the lack of canonical $Col(\omega, \lambda)$-names $\dot{x}$ that allow the proof of Theorem \ref{thm9414} to go through.
 
 \begin{rem}\label{rem9414}
-Note that the $\leq^N$-variant of Question \ref{q843} has a negative answer. Indeed, $X \leq^N \mathsf{Fg}$ for every local method definition $X$ because of Lemma \ref{conalt}. Recalling Fact \ref{fact221}, this suggests that any small extension of $V$ not accessible by forcing cannot be triangulated in $\mathbf{M}_S(V)$ by a local method definition with a margin of error not obviously worse than that of forcing.
+Note that already $X \leq^N \mathsf{Fg}$ for every local method definition $X$ as a direct result of Lemma \ref{conalt}. Recalling Fact \ref{fact221}, this suggests that any small extension of $V$ not accessible by forcing cannot be triangulated in $\mathbf{M}_S(V)$ by a local method definition with a margin of error not obviously worse than that of forcing.
 \end{rem}
+
+\begin{ques}\label{q843}
+Is there a local method definition $X$ such that $X \not\leq^M \mathsf{Fg}$?
+\end{ques}
 
 Should Question \ref{q843} be answered in the affirmative, non-trivial separation of the local method hierarchy would become more hopeful. In this case, the following question could serve as our guide towards such a separation.
 
