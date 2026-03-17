@@ -8672,10 +8672,10 @@ There are formulas $\phi$, $\psi$ and $\psi'$ in the language of set theory with
 \end{prop}
 
 \begin{rem}\label{rem926}
-One may view Proposition \ref{prop322} as a template for the set of requirements any sufficiently local means of defining small extensions of $V$ should fulfil. More precisely, should we replace 
+One may view Proposition \ref{prop322} as a template for the set of requirements any sufficiently local means of defining a class of small extensions of $V$ through their generators should fulfil. More precisely, should we replace 
 \begin{itemize}
-    \item ``$\mathfrak{T}$ is a TCI'' with any other description $\varphi(x)$ of a parameter set $x$, and
-    \item ``$\mathcal{M} \models^* \mathfrak{T}$'' with any other sufficiently local means of defining the class of generators of small extensions of $V$ from a parameter set $x$ satisfying $\varphi(x)$
+    \item ``$\mathfrak{T}$ is a TCI'' with any other description $\varphi(\mathfrak{T})$ of a parameter set $\mathfrak{T}$, and
+    \item ``$\mathcal{M} \models^* \mathfrak{T}$'' with any other sufficiently local means of defining the class of generators $\mathcal{M}$ of small extensions of $V$ from a parameter set $\mathfrak{T}$ satisfying $\varphi(\mathfrak{T})$
 \end{itemize}
 in Proposition \ref{prop322}, we should still expect the said proposition to hold. This is because morally, 
 \begin{itemize}
@@ -8685,7 +8685,7 @@ in Proposition \ref{prop322}, we should still expect the said proposition to hol
 \end{itemize}
 all of which justify the properties of $\phi$, and thus of $\psi$ and $\psi'$, in our modified version of Proposition \ref{prop322}.
 
-In any case where the aforementioned replacements behave as expected, we say that the associated means of defining small extensions of $V$ \textit{fulfils the requirements suggested by Proposition \ref{prop322}}.
+In any case where the aforementioned replacements behave as expected, we say that the associated means of defining a class of small extensions of $V$ through their generators \textit{fulfils the requirements suggested by Proposition \ref{prop322}}.
 \end{rem}
 
 In the presence of Fact \ref{fact34}, Proposition \ref{prop322} gives validity to Definition \ref{def323}: the function $\mathrm{Eval}^V$ taking TCIs in $V$ to subsets of $\mathbf{M}_S(V)$ actually exists. Fix formulas $\phi$ and $\psi$ as in Proposition \ref{prop322}. Let 
@@ -8697,6 +8697,10 @@ whenever $\mathfrak{T}$ is a TCI and $\psi(\mathfrak{T}, \mathcal{M}, x)$ for so
 \begin{equation}\label{eq921}
     V[\mathcal{M}] = V[x] \text{ if } V \text{ is a CTM and } \psi(\mathfrak{T}, \mathcal{M}, x) \text{ for some TCI } \mathfrak{T} \in V \text{.}
 \end{equation}
+
+\begin{rem}\label{rem927}
+Note that our argument for (\ref{eq921}) only leverages on the conditions enumerated in Proposition \ref{prop322}. Hence, (\ref{eq921}) holds for any means of defining a class of small extensions of $V$ through their generators, as long as it fulfils the requirements suggested by Proposition \ref{prop322} (see Remark \ref{rem926}).
+\end{rem}
 
 Observe that we can ``cover'' the entire small outward multiverse with a local method definition.
 
@@ -9421,7 +9425,17 @@ The theorem is trivially true if $\mathfrak{T}$ is inconsistent. So let us assum
 Now let $g$ be any $\mathbb{B}$-generic filter $g$ over $V$. Then in $V[g]$, there exists $\mathcal{M}$ satisfying $\psi(\mathfrak{T}, \mathcal{M}, \dot{\bar{x}}[g])$ by \ref{9254} of Proposition \ref{prop322} and \ref{p94143} of this proof. Fix one such $\mathcal{M}$. As a consequence of (\ref{eq921}) and \ref{p94144} of this proof, $V[g] = V[\mathcal{M}]$. Finally, \ref{3245} of Proposition \ref{prop322} gives us $\mathcal{M} \models^* \mathfrak{T}$.
 \end{proof}
 
-By carefully analysing the proof of Theorem \ref{thm9414}, we can come to a stronger conclusion. Indeed, by an argument virtually identical to the one in the said proof, any means of defining small extensions of $V$ that fulfils the requirements suggested by Proposition \ref{prop322} (see Remark \ref{rem926}) can be refined by forcing with some forcing notion. In practice, where forcing is used predominantly within the context of consistency proofs, this indicates that there is no better tool than forcing to generate small extensions of $V$ in a sufficiently local manner. 
+By carefully analysing the proof of Theorem \ref{thm9414}, we can come to a stronger conclusion. 
+
+\begin{thm}\label{thm9415}
+Let $X \subset \mathbf{M}_S(V)$ be defined by a means fulfilling the requirements suggested by Proposition \ref{prop322} (see Remark \ref{rem926}). Then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset X$. 
+\end{thm}
+
+\begin{proof}
+Since the proof of Theorem \ref{thm9414} only levarages on the conditions enumerated in Proposition \ref{prop322} as well as (\ref{eq921}), by Remark \ref{rem927}, an argument virtually identical to the one in the said proof can be used here.
+\end{proof}
+
+In practice, where forcing is used predominantly within the context of consistency proofs, Theorem \ref{thm9415} indicates that there is no better tool than forcing to define a class of small extensions of $V$ through their generators, if we want this definition to be sufficiently local. 
 
 \begin{cor}
 Let $X$ be a local method definition.
@@ -9507,7 +9521,6 @@ By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to 
 
 Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
 
-\blankpage
 \part{\texorpdfstring{ References}{References}}
 
 \chapter{References}
