@@ -8656,7 +8656,7 @@ There are formulas $\phi$, $\psi$ and $\psi'$ in the language of set theory with
         \{\mathcal{M} : \exists \mathfrak{T} \ (\mathfrak{T} \text{ is a TCI and } \mathcal{M} \models^* \mathfrak{T})\} \text{,}
     \end{equation*}
     \item\label{9254} $\psi' = \ulcorner \exists x_1 \ \psi(x_0, x_1, x_2)  \urcorner$,
-    \item\label{9255} $\phi$, $\psi$ and $\psi'$ are absolute for transitive models of $\mathsf{ZFC}$,
+    \item\label{9255} $\phi$, $\psi$ and $\psi'$ are absolute for outer models of $V$,
     \item\label{3245} whenever $\mathfrak{T}$ is a TCI,
     \begin{equation*}
         \{\mathcal{M} : \exists x \ \psi(\mathfrak{T}, \mathcal{M}, x)\} = \{\mathcal{M} : \mathcal{M} \models^* \mathfrak{T}\} \text{,}
@@ -8665,7 +8665,7 @@ There are formulas $\phi$, $\psi$ and $\psi'$ in the language of set theory with
     \begin{equation*}
         \{x \in \mathcal{P}(\mathcal{L}) : \psi(\mathfrak{T}, \mathcal{M}, x)\}
     \end{equation*}
-    is absolute for transitive models of $\mathsf{ZFC}$,
+    is absolute for outer models of $V$,
     \item\label{3246} for all $\mathfrak{T}$, $\mathcal{M}$ and $x$, $\psi(\mathfrak{T}, \mathcal{M}, x)$ implies there is $\mathcal{L}$ for which $\phi(\mathfrak{T}, \mathcal{L})$ and $x \subset \mathcal{L}$, and
     \item\label{9258} for all TCIs $\mathfrak{T}$, $\mathfrak{T}$ is consistent iff $$\Vdash_{Col(\omega, \lambda)} \exists x \ \psi'(\mathfrak{T}, x) \text{,}$$ where $\lambda$ is any cardinal $\geq |H(|trcl(\mathfrak{T})|^+)|$.
 \end{enumerate}
@@ -8693,7 +8693,7 @@ In the presence of Fact \ref{fact34}, Proposition \ref{prop322} gives validity t
     \mathcal{L}_{\mathfrak{T}} := \ & \text{ the unique } \mathcal{L} \text{ for which } \phi(\mathfrak{T}, \mathcal{L}) \text{, and} \\
     \mathcal{M}(\mathfrak{T}, x) := \ & \text{ the unique } \mathcal{M} \text{ for which } \psi(\mathfrak{T}, \mathcal{M}, x)
 \end{align*}
-whenever $\mathfrak{T}$ is a TCI and $\psi(\mathfrak{T}, \mathcal{M}, x)$ for some $\mathcal{M}$. This is possible by \ref{9252} and \ref{9253} of Proposition \ref{prop322}. Given a TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ and sets $y, z$ with $\vartheta(\dot{\mathcal{U}}) = (y, z)$, we should think of $\mathcal{L}_{\mathfrak{T}}$ as containing all the possible atomic sentences over $\sigma$ that involve members of $y$ as parameters. Then by \ref{9253} of Proposition \ref{prop322}, for any model $\mathcal{M}$ of $\mathfrak{T}$, there is $x$ ($\subset \mathcal{L}_{\mathfrak{T}}$, by \ref{3246} of Proposition \ref{prop322}) such that $\mathcal{M} = \mathcal{M}(\mathfrak{T}, x)$. This set $x$ can be thought of generally as a code of $\mathcal{M}$, and in our current use case, as \textit{the} ``$\mathfrak{T}$-specific atomic diagram''  of $\mathcal{M}$. According to \ref{3245} of Proposition \ref{prop322}, for any model $\mathcal{M}$ of a TCI $\mathfrak{T}$ there is some $x$ for which $\psi(\mathfrak{T}, \mathcal{M}, x)$ holds. Moreover, we can always correctly recover $\mathcal{M}(\mathfrak{T}, x)$ in a transitive model of $\mathsf{ZFC}$ from $\mathfrak{T}$ and $x$ alone, due to \ref{9255} of Proposition \ref{prop322}. Finally, in the presence of what has been discussed in this paragraph so far, \ref{3245'} of Proposition \ref{prop322} implies that any set $x$ for which $\psi(\mathfrak{T}, \mathcal{M}, x)$ holds in the meta-theory necessarily generates the smallest outer model of $V$ containing $\mathcal{M}$. As a consequence, 
+whenever $\mathfrak{T}$ is a TCI and $\psi(\mathfrak{T}, \mathcal{M}, x)$ for some $\mathcal{M}$. This is possible by \ref{9252} and \ref{9253} of Proposition \ref{prop322}. Given a TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ and sets $y, z$ with $\vartheta(\dot{\mathcal{U}}) = (y, z)$, we should think of $\mathcal{L}_{\mathfrak{T}}$ as containing all the possible atomic sentences over $\sigma$ that involve members of $y$ as parameters. Then by \ref{9253} of Proposition \ref{prop322}, for any model $\mathcal{M}$ of $\mathfrak{T}$, there is $x$ ($\subset \mathcal{L}_{\mathfrak{T}}$, by \ref{3246} of Proposition \ref{prop322}) such that $\mathcal{M} = \mathcal{M}(\mathfrak{T}, x)$. This set $x$ can be thought of generally as a code of $\mathcal{M}$, and in our current use case, as \textit{the} ``$\mathfrak{T}$-specific atomic diagram''  of $\mathcal{M}$. According to \ref{3245} of Proposition \ref{prop322}, for any model $\mathcal{M}$ of a TCI $\mathfrak{T}$ there is some $x$ for which $\psi(\mathfrak{T}, \mathcal{M}, x)$ holds. Moreover, we can always recover the same $\mathcal{M}(\mathfrak{T}, x)$ in any outer model of $V$ from $\mathfrak{T}$ and $x$ alone, due to \ref{9255} of Proposition \ref{prop322}. Finally, in the presence of what has been discussed in this paragraph so far, \ref{3245'} of Proposition \ref{prop322} implies that any set $x$ for which $\psi(\mathfrak{T}, \mathcal{M}, x)$ holds in any outer model of $V$ containing $\mathcal{M}$ necessarily generates the smallest outer model of $V$ containing $\mathcal{M}$. As a consequence, 
 \begin{equation}\label{eq921}
     V[\mathcal{M}] = V[x] \text{ if } V \text{ is a CTM and } \psi(\mathfrak{T}, \mathcal{M}, x) \text{ for some TCI } \mathfrak{T} \in V \text{.}
 \end{equation}
