@@ -544,7 +544,7 @@
       \field{pages}{xii+317}
       \range{pages}{-1}
     \endentry
-    \entry{farah}{article}{}{}
+    \entry{farah}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=54d17bb1030a8a6a4eef428bf7a18dbf}{%
            family={Farah},
@@ -564,9 +564,19 @@
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{arXiv preprint arXiv:1005.4193}
+      \field{eprintclass}{math.LO}
+      \field{eprinttype}{arXiv}
       \field{title}{The extender algebra and $\Sigma^2_1$-absoluteness}
-      \field{year}{2010}
+      \field{year}{2016}
+      \verb{eprint}
+      \verb 1005.4193
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1005.4193
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1005.4193
+      \endverb
     \endentry
     \entry{fmw}{incollection}{}{}
       \name{author}{3}{}{%
@@ -1536,7 +1546,7 @@
       \field{volume}{2}
       \field{year}{2017}
     \endentry
-    \entry{schindler-hod}{article}{}{}
+    \entry{schindler-hod}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=ed64ae723b8c8488e982ed38c544d137}{%
            family={Schindler},
@@ -1756,7 +1766,7 @@
       \verb https://doi.org/10.1142/S021906131750009X
       \endverb
     \endentry
-    \entry{vopenka}{article}{}{}
+    \entry{vopenka}{book}{}{}
       \name{author}{2}{}{%
         {{hash=872d50c7ef80d2c09fd12c46b4075947}{%
            family={Vopěnka},
