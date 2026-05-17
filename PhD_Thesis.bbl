@@ -367,6 +367,37 @@
       \field{pages}{37\bibrangedash 49}
       \range{pages}{13}
     \endentry
+    \entry{bukovsky1}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=fc1d3ae9e868f7ec732e8e971db79220}{%
+           family={Bukovskỳ},
+           familyi={B\bibinitperiod},
+           given={Lev},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Polska Akademia Nauk. Instytut Matematyczny PAN}%
+      }
+      \strng{namehash}{fc1d3ae9e868f7ec732e8e971db79220}
+      \strng{fullhash}{fc1d3ae9e868f7ec732e8e971db79220}
+      \strng{fullhashraw}{fc1d3ae9e868f7ec732e8e971db79220}
+      \strng{bibnamehash}{fc1d3ae9e868f7ec732e8e971db79220}
+      \strng{authorbibnamehash}{fc1d3ae9e868f7ec732e8e971db79220}
+      \strng{authornamehash}{fc1d3ae9e868f7ec732e8e971db79220}
+      \strng{authorfullhash}{fc1d3ae9e868f7ec732e8e971db79220}
+      \strng{authorfullhashraw}{fc1d3ae9e868f7ec732e8e971db79220}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fundamenta Mathematicae}
+      \field{number}{1}
+      \field{title}{Characterization of generic extensions of models of set theory}
+      \field{volume}{83}
+      \field{year}{1973}
+      \field{pages}{35\bibrangedash 46}
+      \range{pages}{12}
+    \endentry
     \entry{cohen1}{article}{}{}
       \name{author}{1}{}{%
         {{hash=3676bd8b5a6758a014b490225ec91475}{%
@@ -512,6 +543,30 @@
       \field{year}{2001}
       \field{pages}{xii+317}
       \range{pages}{-1}
+    \endentry
+    \entry{farah}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=54d17bb1030a8a6a4eef428bf7a18dbf}{%
+           family={Farah},
+           familyi={F\bibinitperiod},
+           given={Ilijas},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{54d17bb1030a8a6a4eef428bf7a18dbf}
+      \strng{fullhash}{54d17bb1030a8a6a4eef428bf7a18dbf}
+      \strng{fullhashraw}{54d17bb1030a8a6a4eef428bf7a18dbf}
+      \strng{bibnamehash}{54d17bb1030a8a6a4eef428bf7a18dbf}
+      \strng{authorbibnamehash}{54d17bb1030a8a6a4eef428bf7a18dbf}
+      \strng{authornamehash}{54d17bb1030a8a6a4eef428bf7a18dbf}
+      \strng{authorfullhash}{54d17bb1030a8a6a4eef428bf7a18dbf}
+      \strng{authorfullhashraw}{54d17bb1030a8a6a4eef428bf7a18dbf}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1005.4193}
+      \field{title}{The extender algebra and $\Sigma^2_1$-absoluteness}
+      \field{year}{2010}
     \endentry
     \entry{fmw}{incollection}{}{}
       \name{author}{3}{}{%
@@ -1481,6 +1536,29 @@
       \field{volume}{2}
       \field{year}{2017}
     \endentry
+    \entry{schindler-hod}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=ed64ae723b8c8488e982ed38c544d137}{%
+           family={Schindler},
+           familyi={S\bibinitperiod},
+           given={Ralf},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{ed64ae723b8c8488e982ed38c544d137}
+      \strng{fullhash}{ed64ae723b8c8488e982ed38c544d137}
+      \strng{fullhashraw}{ed64ae723b8c8488e982ed38c544d137}
+      \strng{bibnamehash}{ed64ae723b8c8488e982ed38c544d137}
+      \strng{authorbibnamehash}{ed64ae723b8c8488e982ed38c544d137}
+      \strng{authornamehash}{ed64ae723b8c8488e982ed38c544d137}
+      \strng{authorfullhash}{ed64ae723b8c8488e982ed38c544d137}
+      \strng{authorfullhashraw}{ed64ae723b8c8488e982ed38c544d137}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{HOD L (R), Bukowskỳ, Vopenka, and Woodin’s extender algebra}
+      \field{year}{2019}
+    \endentry
     \entry{scott}{book}{}{}
       \name{author}{2}{}{%
         {{hash=cf3b63c577143e7ddf272693c8301798}{%
@@ -1677,6 +1755,41 @@
       \verb{url}
       \verb https://doi.org/10.1142/S021906131750009X
       \endverb
+    \endentry
+    \entry{vopenka}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=872d50c7ef80d2c09fd12c46b4075947}{%
+           family={Vopěnka},
+           familyi={V\bibinitperiod},
+           given={Petr},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2f28578598e1ccab15e82e5c4a988c4e}{%
+           family={Hájek},
+           familyi={H\bibinitperiod},
+           given={Petr},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{2}{%
+        {Amsterdam, Netherlands}%
+        {London, England}%
+      }
+      \list{publisher}{1}{%
+        {North-Holland}%
+      }
+      \strng{namehash}{3dcdf86707f043b6dd1c3098a76efacc}
+      \strng{fullhash}{3dcdf86707f043b6dd1c3098a76efacc}
+      \strng{fullhashraw}{3dcdf86707f043b6dd1c3098a76efacc}
+      \strng{bibnamehash}{3dcdf86707f043b6dd1c3098a76efacc}
+      \strng{authorbibnamehash}{3dcdf86707f043b6dd1c3098a76efacc}
+      \strng{authornamehash}{3dcdf86707f043b6dd1c3098a76efacc}
+      \strng{authorfullhash}{3dcdf86707f043b6dd1c3098a76efacc}
+      \strng{authorfullhashraw}{3dcdf86707f043b6dd1c3098a76efacc}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The theory of semisets}
+      \field{year}{1972}
     \endentry
     \entry{woodin}{book}{}{}
       \name{author}{1}{}{%
