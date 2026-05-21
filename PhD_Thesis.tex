@@ -2473,7 +2473,7 @@ then as long as $P \neq \emptyset$,
 \end{prop}
 
 \begin{lem}\label{inout}
-Let $|trcl(\mathfrak{A})| \leq \lambda$ and $p \subset \mathcal{L}$. Assume there is $\Sigma$ in a weak outer model $W$ of $V$ such that $\Sigma$ $\Gamma(\mathcal{L}, \mathfrak{A})$-certifies $p$. Then $$\Vdash_{Col(\omega, \lambda)} \exists \Sigma \ (``\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A}) \text{-certifies } p").$$
+Let $|trcl(\mathfrak{A})| \leq \lambda$ and $p \subset \mathcal{L}$. Assume there is $\Sigma$ in an outer model $W$ of $V$ such that $\Sigma$ $\Gamma(\mathcal{L}, \mathfrak{A})$-certifies $p$. Then $$\Vdash_{Col(\omega, \lambda)} \exists \Sigma \ (``\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A}) \text{-certifies } p").$$
 \end{lem}
 
 \begin{proof}
@@ -2498,10 +2498,10 @@ then $\varphi$ is a $\Sigma_1$ (in fact, $\Delta_1$, although that delineation i
     \item $p \subset \Sigma$, and
     \item $``\Sigma \text{ is } \mathcal{L}\text{-nice}"$,
 \end{enumerate}
-every of which aforementioned points is expressible as a $\Delta_0$ formula (following Definition \ref{def27}) in the language of set theory. Note also that whenever $\varphi(\Sigma, y)$ holds, $\Sigma$, $y$ and any witness $f$ must have transitive closures of cardinalities no larger than $\lambda$. Moreover, we have $$\psi \iff \exists \Sigma \ \exists y \ \varphi(\Sigma, y).$$ As $p, \mathfrak{A}, \mathcal{L}, \mathcal{L}^*_{\mathfrak{A}}, \Gamma$ are subsets of $trcl((p, \mathfrak{A}, \mathcal{L}, \mathcal{L}^*_{\mathfrak{A}}, \Gamma))$ and $|trcl((p, \mathfrak{A}, \mathcal{L}, \mathcal{L}^*_{\mathfrak{A}}, \Gamma))| \leq \lambda$, the structure $$\mathfrak{B} := (trcl((p, \mathfrak{A}, \mathcal{L}, \mathcal{L}^*_{\mathfrak{A}}, \Gamma)); \in, p, \mathfrak{A}, \mathcal{L}, \mathcal{L}^*_{\mathfrak{A}}, \Gamma)$$ can be coded as a real in $V[g]$, by Lemma \ref{setcode}. This means that in all weak outer models of $V[g]$, $\psi$ can be thought of as a $\mathbf{\Sigma^1_1}$ sentence involving a real code of $\mathfrak{B}$ found in $V[g]$. In particular, by Mostowski's absoluteness theorem, $\psi$ is absolute for $V[g]$ and $W[g]$. Now $W[g] \models \psi$ implies $V[g] \models \psi$, contradicting (\ref{eq10}).
+every of which aforementioned points is expressible as a $\Delta_0$ formula (following Definition \ref{def27}) in the language of set theory. Note also that whenever $\varphi(\Sigma, y)$ holds, $\Sigma$, $y$ and any witness $f$ must have transitive closures of cardinalities no larger than $\lambda$. Moreover, we have $$\psi \iff \exists \Sigma \ \exists y \ \varphi(\Sigma, y).$$ As $p, \mathfrak{A}, \mathcal{L}, \mathcal{L}^*_{\mathfrak{A}}, \Gamma$ are subsets of $trcl((p, \mathfrak{A}, \mathcal{L}, \mathcal{L}^*_{\mathfrak{A}}, \Gamma))$ and $|trcl((p, \mathfrak{A}, \mathcal{L}, \mathcal{L}^*_{\mathfrak{A}}, \Gamma))| \leq \lambda$, the structure $$\mathfrak{B} := (trcl((p, \mathfrak{A}, \mathcal{L}, \mathcal{L}^*_{\mathfrak{A}}, \Gamma)); \in, p, \mathfrak{A}, \mathcal{L}, \mathcal{L}^*_{\mathfrak{A}}, \Gamma)$$ can be coded as a real in $V[g]$, by Lemma \ref{setcode}. This means that in all outer models of $V[g]$, $\psi$ can be thought of as a $\mathbf{\Sigma^1_2}$ sentence involving a real code of $\mathfrak{B}$ found in $V[g]$. In particular, by Shoenfield absoluteness theorem, $\psi$ is absolute for $V[g]$ and $W[g]$. Now $W[g] \models \psi$ implies $V[g] \models \psi$, contradicting (\ref{eq10}).
 \end{proof}
 
-Note that the proof of Lemma \ref{inout} does not require that $\Gamma$ contains only $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences. Indeed, for a litany of properties $K$, the existence of an object satisfying $K$ is absolute between $V$ and its weak outer models, and hence between $V$ and its forcing extensions. However, it is often useful --- if not integral --- to have a proper handle on such an object. It is towards this end that we are often interested in the existence of a $V$-generic object $k$ such that $k$ satisfies $K$ in $V[k]$.
+Note that the proof of Lemma \ref{inout} does not require that $\Gamma$ contains only $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences. Indeed, for a litany of properties $K$, the existence of an object satisfying $K$ is absolute between $V$ and its outer models, and hence between $V$ and its forcing extensions. However, it is often useful --- if not integral --- to have a proper handle on such an object. It is towards this end that we are often interested in the existence of a $V$-generic object $k$ such that $k$ satisfies $K$ in $V[k]$.
 
 Specifying ``$k$ satisfies $K$'' to be ``$k \models^{*}_{\mathfrak{A}} \Gamma$'', the following lemma is thus well-motivated. 
 
@@ -2516,7 +2516,7 @@ Let $W$, $\lambda$, $B$, $P$, $\mathbb{P}$ and $g$ be such that
     \item $W$ is a weak outer model of $V$, and
     \item $g \in W$ is a $\mathbb{P}$-$\Sigma_1$-generic filter over $\mathfrak{A}$.
 \end{itemize}
-If there is $\Sigma$ in a weak outer model $W'$ of $V$ such that $\Sigma$ $\Gamma(\mathcal{L}, \mathfrak{A})$-certifies $\emptyset$, then $\bigcup g$ $\Gamma(\mathcal{L}, \mathfrak{A})$-certifies $\emptyset$.
+If there is $\Sigma$ in an outer model $W'$ of $V$ such that $\Sigma$ $\Gamma(\mathcal{L}, \mathfrak{A})$-certifies $\emptyset$, then $\bigcup g$ $\Gamma(\mathcal{L}, \mathfrak{A})$-certifies $\emptyset$.
 
 In particular, if $g$ is $\mathbb{P}$-generic over $V$, then $\bigcup g$ $\Gamma(\mathcal{L}, \mathfrak{A})$-certifies $\emptyset$ in $V[g] = V[\bigcup g]$.
 \end{lem}
@@ -2536,7 +2536,7 @@ There are $W$, $\mathfrak{A}'$, $\mathcal{L}'$, $\Gamma'$, $P'$, $\mathbb{P}'$, 
     \item\label{3394} $P' = \{p \in [\mathcal{L}']^{< \omega} : \ \Vdash_{Col(\omega, |trcl(\mathfrak{A}')|)} \exists \Sigma \ (``\Sigma \ \Gamma'(\mathcal{L}', \mathfrak{A}') \text{-certifies } p")\} \neq \emptyset$,
     \item\label{3395} $\mathbb{P}' = (P', \supset \cap \ (P' \times P'))$, 
     \item\label{3396} $\mathbb{P}'$ is $\Sigma_1$-definable in the language associated with $\mathfrak{A}'$,
-    \item\label{3397} $W$ is a weak outer model of $V$,
+    \item\label{3397} $W$ is an outer model of $V$,
     \item\label{3398} $g \in W$ is a $\mathbb{P}'$-generic filter over $\mathfrak{A}'$,
     \item\label{3399} $\phi$ is a $\mathcal{L}^{*}_{\mathfrak{A}'}$-$\Sigma_2$ sentence which is $(\mathfrak{A}', \mathbb{P}', \mathcal{L}')$-universal, and
     \item\label{33910} $\bigcup g \not \models^{*}_{\mathfrak{A}'} \phi$.
@@ -2635,7 +2635,7 @@ then the said $\phi$ hence rewritten is a $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Sig
 This section shall be concluded with another absoluteness result. This time, instead of looking for witnesses in forcing extensions, we turn our focus to the forcing notions themselves.
 
 \begin{lem}\label{Pisabs}
-The definition of $\mathbb{P}$ from parameters $B$, $\mathcal{L}$, $\mathfrak{A}$, $\Gamma$ in Proposition \ref{certgood}, where $\lambda$ is additionally specified to be $|trcl(\mathfrak{A})|$, is absolute for transitive models of $\mathsf{ZFC}$.
+The definition of $\mathbb{P}$ from parameters $B$, $\mathcal{L}$, $\mathfrak{A}$, $\Gamma$ in Proposition \ref{certgood}, where $\lambda$ is additionally specified to be $|trcl(\mathfrak{A})|$, is absolute for transitive models of $\mathsf{ZFC}$ sharing the same ordinals.
 \end{lem}
 
 \begin{proof}
@@ -2643,7 +2643,7 @@ It suffices to show that the set
 \begin{equation}\label{setdef}
     \{p \in B : \ \Vdash_{Col(\omega, |trcl(\mathfrak{A})|)} \exists \Sigma \ (``\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A}) \text{-certifies } p")\}
 \end{equation}
-is absolute for transitive models of $\mathsf{ZFC}$. 
+is absolute for transitive models of $\mathsf{ZFC}$ sharing the same ordinals. 
 
 Let $V'$ and $W$ be transitive models of $\mathsf{ZFC}$ such that $\{B, \mathcal{L}, \mathfrak{A}, \Gamma\} \subset V' \subset W$. Have $P^{V'}$ and $P^W$ denote the versions of the set (\ref{setdef}) defined in $V'$ and $W$ respectively. We want to prove $P^{V'} = P^W$. 
 
@@ -2651,7 +2651,7 @@ First note that $$ Col(\omega, |trcl(\mathfrak{A})|)^{V'} = Col(\omega, |trcl(\m
 \begin{equation}\label{iffpw}
     p \in P^W \iff \ \Vdash_{Col(\omega, |trcl(\mathfrak{A})|)^{V'}} \exists \Sigma \ (``\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A}) \text{-certifies } p")
 \end{equation}
-in $W$. Since any forcing extension of $W$ is a weak outer model of $V$, a direct application of Lemma \ref{inout} gives us $P^W \subset P^{V'}$. Next, fix any $p \in P^{V'}$ and any $Col(\omega, |trcl(\mathfrak{A})|)^{V'}$-generic filter $g$ over $W$. Now $g$ is also a $Col(\omega, |trcl(\mathfrak{A})|)^{V'}$-generic filter over $V'$, so $V'[g]$ and $W[g]$ are transitive models of $\mathsf{ZFC}$ and moreover, $V'[g] \subset W[g]$. By the definition of $P^{V'}$ in $V'$, $$V'[g] \models ``\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A}) \text{-certifies } p"$$ for some $\Sigma \in V'[g]$. That $\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A})$-certifying $p$ is absolute for transitive models of $\mathsf{ZFC}$ implies $$W[g] \models ``\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A}) \text{-certifies } p".$$ We have thus shown $$W \models (\Vdash_{Col(\omega, |trcl(\mathfrak{A})|)^{V'}} \exists \Sigma \ (``\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A}) \text{-certifies } p")),$$ whence $p \in P^W$ by (\ref{iffpw}). This allows us to conclude $P^{V'} = P^W$.
+in $W$. Since any forcing extension of $W$ is an outer model of $V$, a direct application of Lemma \ref{inout} gives us $P^W \subset P^{V'}$. Next, fix any $p \in P^{V'}$ and any $Col(\omega, |trcl(\mathfrak{A})|)^{V'}$-generic filter $g$ over $W$. Now $g$ is also a $Col(\omega, |trcl(\mathfrak{A})|)^{V'}$-generic filter over $V'$, so $V'[g]$ and $W[g]$ are transitive models of $\mathsf{ZFC}$ and moreover, $V'[g] \subset W[g]$. By the definition of $P^{V'}$ in $V'$, $$V'[g] \models ``\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A}) \text{-certifies } p"$$ for some $\Sigma \in V'[g]$. That $\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A})$-certifying $p$ is absolute for transitive models of $\mathsf{ZFC}$ implies $$W[g] \models ``\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A}) \text{-certifies } p".$$ We have thus shown $$W \models (\Vdash_{Col(\omega, |trcl(\mathfrak{A})|)^{V'}} \exists \Sigma \ (``\Sigma \ \Gamma(\mathcal{L}, \mathfrak{A}) \text{-certifies } p")),$$ whence $p \in P^W$ by (\ref{iffpw}). This allows us to conclude $P^{V'} = P^W$.
 \end{proof}
 
 \chapter{Theories with Constraints in Interpretation}\label{TCIsec}
@@ -3087,7 +3087,7 @@ Let $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ be a TCI. Define 
 
 By Lemma \ref{mcequiv}, if $\mathfrak{T}$ is a TCI and $A$ the base set of $\mathfrak{A}_{\mathfrak{T}}$, then $\mathbb{P}(\mathfrak{T}) \in A \cap \mathcal{P}(A)$, so $\mathbb{P}(\mathfrak{T})$ is definable in the language associated with $\mathfrak{A}_{\mathfrak{T}}$, and furthermore, $(\mathfrak{A}_{\mathfrak{T}}, \mathbb{P}(\mathfrak{T}))$ is good for $\mathcal{L}_{\mathfrak{T}}$.
 
-By Lemmas \ref{Pisabs} and \ref{mcequiv}, the definition of $\mathbb{P}(\mathfrak{T})$ from $\mathfrak{T}$ is absolute for transitive models of $\mathsf{ZFC}$.
+By Lemmas \ref{Pisabs} and \ref{mcequiv}, the definition of $\mathbb{P}(\mathfrak{T})$ from $\mathfrak{T}$ is absolute for transitive models of $\mathsf{ZFC}$ sharing the same ordinals.
 
 At this juncture, it is customary for us to remark on possible reasons to consider $\mathbb{P}(\mathfrak{T})$ in our process of studying $\mathfrak{T}$. To this end, it is helpful to preview the main forcing construction of next chapter.
 
@@ -3142,9 +3142,8 @@ By Lemmas \ref{mcequiv} and \ref{mcequiv2}, we can find a triple $(\mathfrak{A}_
 \end{enumerate}
 Then the conjunction of
 \begin{itemize}
-    \item Lemma \ref{inout},
-    \item the fact that every forcing extension of $V$ is an outer model of $V$, and
-    \item the fact that every outer model of $V$ is a weak outer model of $V$
+    \item Lemma \ref{inout}, and
+    \item the fact that every forcing extension of $V$ is an outer model of $V$,
 \end{itemize}   
 tells us that $\mathfrak{T}$ is consistent iff $$\Vdash_{Col(\omega, \lambda)} \exists \Sigma \ (``\Sigma \ \Gamma_{\mathfrak{T}} (\mathcal{L}_{\mathfrak{T}}, \mathfrak{A}_{\mathfrak{T}})\text{-certifies } \emptyset") \text{,}$$ where $\lambda$ is any cardinal $\geq |H(|trcl(\mathfrak{T})|^+)|$. 
 
@@ -3484,7 +3483,7 @@ By a simple cardinality argument, there must exist some $\alpha < |[\mathcal{L}_
 Let $\Gamma_{\mathfrak{T}}^{\top}$ denote the unique $\Gamma$ such that $\Gamma = \Gamma_{\mathfrak{T}}^{(\alpha)} = \Gamma_{\mathfrak{T}}^{(\alpha + 1)}$ for some $\alpha < |[\mathcal{L}_{\mathfrak{T}}]^{< \omega}|^+$. Similarly, $\mathbb{P}(\mathfrak{T})^{\top}$ shall denote the unique $\mathbb{P}$ such that $\mathbb{P} = \mathbb{P}(\mathfrak{T})^{(\alpha)} = \mathbb{P}(\mathfrak{T})^{(\alpha + 1)}$ for some $\alpha < |[\mathcal{L}_{\mathfrak{T}}]^{< \omega}|^+$.
 \end{defi}
 
-It is not hard to see that $P(\mathfrak{T})^{\top}$ is an atomless upward closed subset of $\mathbb{P}(\mathfrak{T})$ and $\Gamma_{\mathfrak{T}} \subset \Gamma_{\mathfrak{T}}^{\top}$. Furthermore, $P(\mathfrak{T})^{(\alpha)}$ is absolute for transitive models of $\mathsf{ZFC}$ for every ordinal $\alpha$, because of Lemma \ref{Pisabs}. This means $\mathbb{P}(\mathfrak{T})^{\top}$ is absolute for transitive models of $\mathsf{ZFC}$ as well.
+It is not hard to see that $P(\mathfrak{T})^{\top}$ is an atomless upward closed subset of $\mathbb{P}(\mathfrak{T})$ and $\Gamma_{\mathfrak{T}} \subset \Gamma_{\mathfrak{T}}^{\top}$. Furthermore, $P(\mathfrak{T})^{(\alpha)}$ is absolute for transitive models of $\mathsf{ZFC}$ sharing the same ordinals given any ordinal $\alpha$, because of Lemma \ref{Pisabs}. This means $\mathbb{P}(\mathfrak{T})^{\top}$ is absolute for transitive models of $\mathsf{ZFC}$ sharing the same ordinals as well.
 
 \begin{rem}\label{CBrem}
 In constructing the $\mathbb{P}(\mathfrak{T})^{(\alpha)}$'s, we are inductively removing atoms of $\mathbb{P}(\mathfrak{T})$. These atoms are representatives of isolated models of a TCI. By looking at Definition \ref{CB1} in this way, we can draw obvious parallels between $\mathbb{P}(\mathfrak{T})^{(\alpha)}$ and the $\alpha$-th-order Cantor-Bendixson derivative of a set. Such parallels culminate in $\mathbb{P}(\mathfrak{T})^{\top}$ being analogous to the ``perfect core'' of $\mathbb{P}(\mathfrak{T})$.
@@ -3587,7 +3586,7 @@ Fix $f_1$ a bijection between $y$ and $|y|$, and $f_2$ a form-preserving signatu
     \item a TCI $\mathfrak{T}' := (T', \sigma', \dot{\mathcal{U}}, \vartheta')$ in $V$ such that $\mathfrak{T}'$ has a countable transitive closure, and
     \item a bijection between $\{\mathcal{M} : \mathcal{M} \models^* \mathfrak{T}\}$ and $\{\mathcal{M} : \mathcal{M} \models^* \mathfrak{T}'\}$ in every weak outer model of $V$.
 \end{itemize}
-As a consequence, we can assume $\mathfrak{T}$ has a countable transitive closure without loss of generality. By Lemma \ref{setcode}, $\mathfrak{T}$ can be coded as a real. Besides, if $\mathfrak{T}$ has a model $\mathcal{M}$ in an outer model $W$ of $V$, then $M$ has a real code. By a routine check while unfurling the definition of $\models^*$ (see e.g. the proof of Lemma \ref{inout} for an argument of the satisfaction relation being $\Sigma_1$), we get that the statement $$\exists \mathcal{M} \ (\mathcal{M} \models^* \mathfrak{T})$$ is equivalent to a $\mathbf{\Sigma^1_1}$ sentence involving a real code of $\mathfrak{T}$ found in $V$, so it is absolute for $V$ and any of its weak outer models. If $\mathfrak{T}$ is consistent, it must have a model in some outer model of $V$, whence it has a model in $V$.
+As a consequence, we can assume $\mathfrak{T}$ has a countable transitive closure without loss of generality. By Lemma \ref{setcode}, $\mathfrak{T}$ can be coded as a real. Besides, if $\mathfrak{T}$ has a model $\mathcal{M}$ in an outer model $W$ of $V$, then $M$ has a real code. By a routine check while unfurling the definition of $\models^*$ (see e.g. the proof of Lemma \ref{inout} for an argument of the satisfaction relation being $\Sigma_1$), we get that the statement $$\exists \mathcal{M} \ (\mathcal{M} \models^* \mathfrak{T})$$ is equivalent to a $\mathbf{\Sigma^1_2}$ sentence involving a real code of $\mathfrak{T}$ found in $V$, so it is absolute for $V$ and any of its outer models. If $\mathfrak{T}$ is consistent, it must have a model in some outer model of $V$, whence it has a model in $V$.
 \end{proof}
 
 Ideally, in the spirit of Lemmas \ref{genericls} and \ref{genericlscor}, we want to prove a generic version of Lemma \ref{modelinV}. This can be done through a relatively effective version of Theorem \ref{genericdichom} for a certain class of countable TCIs, so as to kill two birds with one stone. Some definitions and facts are prerequisites.
@@ -4804,7 +4803,7 @@ noting that
     \item $[\mathcal{L} \cap Q_{\lambda'}]^{< \omega}$ is closed under finite extensions,
     \item the definition of $\mathbb{P}_{\lambda'}$ in relation to the other parameters is faithful to the hypothesis of Lemma \ref{main2},
     \item $g$ satisfies the hypothesis of Lemma \ref{main2} with respect to the other parameters, and
-    \item $\mathbb{P}_{\lambda'}$ being non-empty (per Lemma \ref{nonemp}) implies there is $\Sigma$ in some weak outer model $W'$ of $W$ such that $\Sigma$ $\Gamma_{\lambda'} (\mathcal{L} \cap Q_{\lambda'}, \mathfrak{A})$-certifies $\emptyset$,
+    \item $\mathbb{P}_{\lambda'}$ being non-empty (per Lemma \ref{nonemp}) implies there is $\Sigma$ in some outer model $W'$ of $W$ such that $\Sigma$ $\Gamma_{\lambda'} (\mathcal{L} \cap Q_{\lambda'}, \mathfrak{A})$-certifies $\emptyset$,
 \end{itemize}
 to arrive at $\bigcup g \ \Gamma_{\lambda'} (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A}) \text{-certifies } \emptyset$.
 \end{proof}
@@ -4952,7 +4951,7 @@ Now that
 \begin{itemize}
     \item $\Sigma^* \in W^*$,
     \item $\Sigma^*$ $j(\Gamma_{\lambda^{\dagger}})(j(\mathcal{L}), j(\mathfrak{A}))$-certifies $q^*$,
-    \item $W^*$ is a weak outer model of $M$, and
+    \item $W^*$ is an outer model of $M$, and
     \item $|H(\kappa)^W|^W = |trcl(\mathfrak{A})|^W$,
 \end{itemize} 
 we can apply Lemma \ref{inout} with 
@@ -5495,7 +5494,7 @@ Notice whenever $\phi$ is a $(\mathcal{L}^s)^*_{\mathfrak{A}}$-$\Pi_2$ sentence,
 \begin{equation*}
     \varphi(\phi) := \forall \mathfrak{D} \ \forall \lambda \in C \cup \{\lambda^{\dagger}\} \ (``\mathfrak{D} \text{ is a } \lambda \text{-certificate} \implies \Sigma'(\mathfrak{D}, \mathcal{L} \cap Q_{\lambda}) \models^*_{\mathfrak{A}} \phi")
 \end{equation*}
-is equivalent to a $\mathbf{\Pi^1_2}$ sentence. We can thus employ an argument akin to that which proved Lemma \ref{inout}, bearing in mind to replace each invocation of Mostowski's absoluteness theorem with an invocation of Shoenfield's absoluteness theorem, to obtain the fact below.
+is equivalent to a $\mathbf{\Pi^1_2}$ sentence. We can thus employ an argument akin to that which proved Lemma \ref{inout}, to obtain the fact below.
 
 \begin{fact}\label{fact449}
 Let $\phi$ be a $(\mathcal{L}^s)^*_{\mathfrak{A}}$-$\Pi_2$ sentence. Then the following are equivalent.
@@ -5605,7 +5604,7 @@ is a $\pi(\lambda)$-certificate relative to $M$. In other words, $\mathfrak{D}$ 
 Use $(\Sigma')^{\pi, M}(\cdot, \cdot)$ to denote the function $\Sigma'(\cdot, \cdot)$ relativised to $(\pi, M)$. Following \ref{443'2} of Remark \ref{rem443}, we have that
 \begin{enumerate}[label=(\alph*)]
     \item the hypothesis on $\mathfrak{D}$ in \ref{def439}, relativised to $(\pi, M)$, is satisfied, 
-    \item $(\Sigma')^{\pi, M}(\mathfrak{D}, \pi(\mathcal{L} \cap Q_{\lambda}))$ is a set found in some weak outer model of $M$, and
+    \item $(\Sigma')^{\pi, M}(\mathfrak{D}, \pi(\mathcal{L} \cap Q_{\lambda}))$ is a set found in some outer model of $M$, and
     \item $(\Sigma')^{\pi, M}(\mathfrak{D}, \pi(\mathcal{L} \cap Q_{\lambda}))$ $\pi(\Gamma'_{\lambda}) (\pi(\mathcal{L} \cap Q_{\lambda}), \pi(\mathfrak{A}))$-certifies $\emptyset$. 
 \end{enumerate}
 Applying Lemma \ref{inout} in $M$ gives us the fact that 
@@ -6230,7 +6229,7 @@ satisfies the hypothesis of \ref{4391} of Remark \ref{rem438} relativised to $(j
 is a $j(\lambda)$-certificate relative to $M$. In other words, $\mathfrak{D}'$ fulfils the requirements of Definition \ref{def437} relativised to $(j, M)$. By (\ref{eq4.6}), the elementarity of $j$, and \ref{443'1} and \ref{443'2} of Remark \ref{rem443} relativised to $(j, M)$, 
 \begin{enumerate}[label=(\alph*)]
     \setcounter{enumi}{4}
-    \item\label{451c} $\Sigma'(\mathfrak{D}', j(\mathcal{L}))$ is a set found in some weak outer model of $M$,
+    \item\label{451c} $\Sigma'(\mathfrak{D}', j(\mathcal{L}))$ is a set found in some outer model of $M$,
     \item\label{451a} $\Sigma'(\mathfrak{D}', j(\mathcal{L}))$ $j(\Gamma'_{\lambda}) (j(\mathcal{L}), j(\mathfrak{A}))$-certifies $\emptyset$, and
     \item\label{451b} there is $n < \omega$ for which 
     \begin{gather*}
