@@ -8674,7 +8674,7 @@ There are formulas $\phi$, $\psi$ and $\psi'$ in the language of set theory with
     \end{equation*}
     is absolute for outer models of $V$,
     \item\label{3246} for all $\mathfrak{T}$, $\mathcal{M}$ and $x$, $\psi(\mathfrak{T}, \mathcal{M}, x)$ implies there is $\mathcal{L}$ for which $\phi(\mathfrak{T}, \mathcal{L})$ and $x \subset \mathcal{L}$, and
-    \item\label{9258} for all TCIs $\mathfrak{T}$, $\mathfrak{T}$ is consistent iff $$\Vdash_{Col(\omega, \lambda)} \exists x \ \psi'(\mathfrak{T}, x) \text{,}$$ where $\lambda$ is any cardinal $\geq |H(|trcl(\mathfrak{T})|^+)|$.
+    \item\label{9258} for all TCIs $\mathfrak{T}$, $\mathfrak{T}$ is consistent iff $$\Vdash_{Col(\omega, \lambda)} \exists x \ \psi'(\mathfrak{T}, x) \text{,}$$ where $\lambda$ is any sufficiently large cardinal.
 \end{enumerate}
 \end{prop}
 
@@ -9422,7 +9422,7 @@ Let $\mathfrak{T}$ be a TCI. Then $\{\mathfrak{T}\} \leq^M \mathsf{Fg}$.
 \end{thm}
 
 \begin{proof}
-The theorem is trivially true if $\mathfrak{T}$ is inconsistent. So let us assume, without loss of generality, that $\mathfrak{T}$ is consistent. Setting $\lambda := |H(|trcl(\mathfrak{T})|^+)|$ we have $$\Vdash_{Col(\omega, \lambda)} \exists x \ \psi'(\mathfrak{T}, x)$$ by \ref{9258} of Proposition \ref{prop322}. Then \ref{9254} and \ref{3246} of Proposition \ref{prop322} tell us for some set $\mathcal{L}$ there is a $Col(\omega, \lambda)$-name $\dot{x}$ for a subset of $\mathcal{L}$ for which $\Vdash_{Col(\omega, \lambda)} \psi'(\mathfrak{T}, \dot{x})$. Viewing $\psi'(\mathfrak{T}, x)$ as a formula with a single free variable $x$, we can apply Fact \ref{fact9413} with \ref{9255} of Proposition \ref{prop322} in mind, to obtain $\mathbb{B}$ and $\dot{\bar{x}}$ such that
+The theorem is trivially true if $\mathfrak{T}$ is inconsistent. So let us assume, without loss of generality, that $\mathfrak{T}$ is consistent. Setting $\lambda$ to be large enough, we have $$\Vdash_{Col(\omega, \lambda)} \exists x \ \psi'(\mathfrak{T}, x)$$ by \ref{9258} of Proposition \ref{prop322}. Then \ref{9254} and \ref{3246} of Proposition \ref{prop322} tell us for some set $\mathcal{L}$ there is a $Col(\omega, \lambda)$-name $\dot{x}$ for a subset of $\mathcal{L}$ for which $\Vdash_{Col(\omega, \lambda)} \psi'(\mathfrak{T}, \dot{x})$. Viewing $\psi'(\mathfrak{T}, x)$ as a formula with a single free variable $x$, we can apply Fact \ref{fact9413} with \ref{9255} of Proposition \ref{prop322} in mind, to obtain $\mathbb{B}$ and $\dot{\bar{x}}$ such that
 \begin{enumerate}[label=(\arabic*)]
     \item $\mathbb{B}$ is a complete subalgebra of $B(Col(\omega, \lambda))$, 
     \item $\dot{\bar{x}}$ is a $\mathbb{B}$-name of a subset of $\mathcal{L}$, 
@@ -9442,7 +9442,49 @@ Let $\emptyset \neq X \subset \mathbf{M}_S(V)$ be defined by a means fulfilling 
 Since the proof of Theorem \ref{thm9414} only levarages on the conditions enumerated in Proposition \ref{prop322} as well as (\ref{eq921}), by Remark \ref{rem927}, an argument virtually identical to the one in the said proof can be used here.
 \end{proof}
 
-In practice, where forcing is used predominantly within the context of consistency proofs, Theorem \ref{thm9415} indicates that there is no better tool than forcing to define a class of small extensions of $V$ through their generators, if we want this definition to be sufficiently local. 
+In practice, where forcing is used predominantly within the context of consistency proofs, Theorem \ref{thm9415} hints that there is no better tool than forcing to define a class of small extensions of $V$ through their generators, if we want this definition to be sufficiently local. 
+
+What is a good benchmark for being sufficiently local? It might be illuminating to look at methods of generating small extensions other than set forcing. Currently known methods of this sort --- including the various types of amenable class forcing, as well as more esoteric ones (see e.g. \cite{stanley}) --- depend chiefly on decoding functions that unravel generators into subclasses of $V$ fulfilling certain conditions. These generators are always bounded subclasses of $V$, while these decoding functions, being the most complicated of the components that define the methods, are typically (if not always) $\Delta_1$-definable with parameters in $V \cup \{V\}$. This leads to the methods themselves being $\Delta_1$-definable with parameters in $V \cup \{V\}$. Of course, the same definability condition applies to set forcing  
+
+Now, being sufficiently local within a small extension $V[g]$ of $V$ necessarily excludes the use of $V$ itself as a parameter, unless $V$ is definable in $V[g]$. But $V$ being definable in $V[g]$ implies $V$ is definable in $V[g]$ with parameters in $V \cup \{g\}$, so in any case, it makes sense to forbid the use of $V$ as a parameter in our push for localness. As it turns out, with this seemingly minor restriction imposed upon a property that virtually all known methods of generating small extensions possess, one can show that set forcing is in some sense the best such method for individual use cases.
+
+\begin{cor}
+Let 
+\begin{enumerate}[label=(\alph*)]
+    \item $n < \omega$,
+    \item $\Vec{y} \in V^n$, and
+    \item $\varphi$ be a $(n + 1)$-ary $\Delta_1$ formula in the L\'{e}vy hierarchy.
+\end{enumerate}
+Define 
+\begin{equation*}
+    U(\Vec{y}, \varphi) := \{V[x] : \exists x' \in V \ (x \subset x') \text{ and } \varphi (\Vec{y}, x) \} \text{.}
+\end{equation*}
+If $U(\Vec{y}, \varphi) \neq \emptyset$, then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset X$. 
+\end{cor}
+
+\begin{proof}
+Since $U(\Vec{y}, \varphi) \neq \emptyset$, we can fix some $x, x'$ such that 
+\begin{equation}\label{eq942}
+    x' \in V \text{, } x \subset x' \text{ and } \varphi (\Vec{y}, x) \text{.}
+\end{equation}
+Notice that (\ref{eq942}) is provably equivalent over $\mathrm{ZFC}$ (actually over a much weaker set theory) to $\varphi'(y, x)$ for some $y \in V$ and some binary $\Delta_1$ formula $\varphi'$ in the L\'{e}vy hierarchy. Now $\varphi'$ naturally gives rise to a means fulfilling the requirements suggested by Proposition \ref{prop322}. To elaborate, we replace 
+\begin{itemize}
+    \item ``$\mathfrak{T}$ is a TCI'' with ``$\mathfrak{T} = y$'', and
+    \item ``$\mathcal{M} \models^* \mathfrak{T}$'' with ``$\varphi'(\mathfrak{T}, \mathcal{M})$'',
+\end{itemize}
+throughout Proposition \ref{prop322}, so that the said proposition still holds should we then define
+\begin{enumerate}[label=(\roman*)]
+    \item\label{9416i} $\phi(\mathfrak{T}, z) := \mathfrak{T} = y \wedge z = x'$, and
+    \item\label{9416ii} $\psi(\mathfrak{T}, z, x) := \mathfrak{T} = y \wedge z = x \wedge \varphi'(\mathfrak{T}, x)$.
+\end{enumerate}
+One way to see that conditions \ref{9255} and \ref{9258} of our modified Proposition \ref{prop322} hold with definitions \ref{9416i} and \ref{9416ii}, is to invoke an argument similar to that in the proof of Lemma \ref{inout}. 
+
+The long of and short of it is that the hypothesis of Theorem \ref{thm9415} is satisfied with
+\begin{equation*}
+    X := \{V[x] : x \subset x' \text{ and } \varphi(\Vec{y}, x)\} \text{,}
+\end{equation*}
+and since it is obvious that $X \subset U(\Vec{y}, \varphi)$, it suffices to apply Theorem \ref{thm9415} to yield a forcing notion $\mathbb{P} \in V$ with the property $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset X$.
+\end{proof}
 
 \begin{cor}
 Let $X$ be a local method definition.
@@ -9527,6 +9569,8 @@ By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to 
 \end{rem}
 
 Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
+
+\blankpage
 
 \part{\texorpdfstring{ References}{References}}
 
