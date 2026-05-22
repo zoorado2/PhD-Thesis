@@ -1697,6 +1697,37 @@
       \verb https://books.google.com.sg/books?id=4PZ6DAAAQBAJ
       \endverb
     \endentry
+    \entry{stanley}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=29537d166431c3a2fd474313e173e905}{%
+           family={Stanley},
+           familyi={S\bibinitperiod},
+           given={Maurice\bibnamedelima C},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {North-Holland}%
+      }
+      \strng{namehash}{29537d166431c3a2fd474313e173e905}
+      \strng{fullhash}{29537d166431c3a2fd474313e173e905}
+      \strng{fullhashraw}{29537d166431c3a2fd474313e173e905}
+      \strng{bibnamehash}{29537d166431c3a2fd474313e173e905}
+      \strng{authorbibnamehash}{29537d166431c3a2fd474313e173e905}
+      \strng{authornamehash}{29537d166431c3a2fd474313e173e905}
+      \strng{authorfullhash}{29537d166431c3a2fd474313e173e905}
+      \strng{authorfullhashraw}{29537d166431c3a2fd474313e173e905}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Pure and Applied Logic}
+      \field{number}{2}
+      \field{title}{A non-generic real incompatible with 0}
+      \field{volume}{85}
+      \field{year}{1997}
+      \field{pages}{157\bibrangedash 192}
+      \range{pages}{36}
+    \endentry
     \entry{takeuti}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9a6f44fd63be15b0b390d3447a3f47e7}{%
