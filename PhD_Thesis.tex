@@ -9512,7 +9512,27 @@ Given Theorem \ref{thm9414}, apply Axiom of Choice outside $V$ for \ref{94151} a
 Given Theorem \ref{thm9414}, \ref{94161} is immediate. Then \ref{94162} holds because of \ref{94161} and the fact that there is a definable well-ordering of $L$.
 \end{proof}
 
-From \ref{9252} and \ref{3246} of Proposition \ref{prop322}, as well as the last sentence of Fact \ref{fact9413}, one can infer that the main obstacle to proving the $\leq^M$-maximality of $\mathsf{Fg}$ in every CTM with our current tools is precisely the lack of canonical $Col(\omega, \lambda)$-names $\dot{x}$ that allow the proof of Theorem \ref{thm9414} to go through.
+From \ref{9252} and \ref{3246} of Proposition \ref{prop322}, as well as the last sentence of Fact \ref{fact9413}, one can infer that the main obstacle to proving the $\leq^M$-maximality of $\mathsf{Fg}$ in every CTM with our current tools is precisely the lack of canonical $Col(\omega, \lambda)$-names $\dot{x}$ that allow the proof of Theorem \ref{thm9414} to go through. In fact, this obstacle is intrinsic via the next lemma, given that it is consistent with ZFC to not have a definable global choice function.
+
+\begin{lem}
+Let $\lambda$ be an infinite cardinal and define $\mathrm{Ex}(\lambda)$ to be the proper class
+\begin{equation*}
+    \{\psi \in ran(\Vdash_{Col(\omega, \lambda)} : \exists \phi \ (\psi = \ulcorner \exists x \ \phi(x) \urcorner)\} \text{.}
+\end{equation*}
+If there is a definable (with parameters) class function $F$ on $\mathrm{Ex}(\lambda)$ such that $ran(F) \subset V^{Col(\omega, \lambda)}$ and 
+\begin{equation}\label{eq943}
+    \forall \psi \in \mathrm{Ex}(\lambda) \ \forall \phi \ (((\Vdash_{Col(\omega, \lambda)} \psi) \wedge \psi = \ulcorner \exists x \ \phi(x) \urcorner) \implies \Vdash_{Col(\omega, \lambda)} \phi(F(\psi))) \text{,}
+\end{equation}
+then there is a definable (with parameters) global choice function.
+\end{lem}
+
+\begin{proof}
+Assume $F$ exists in accordance with the hypothesis of the lemma. Note that the forcing notion $Col(\omega, \lambda)$ and the proper classes $V^{Col(\omega, \lambda)}$ and $\mathrm{Ex}(\lambda)$ are all definable from the parameter $\lambda$. Fix any definable well-ordering $<_{\lambda}$ of (the conditions of) $Col(\omega, \lambda)$. For example, the length-lexicographical ordering works as $<_{\lambda}$. For any non-empty set $X$, set $\psi_X := \ulcorner \exists x \ ( x \in \check{X}) \urcorner \in \mathrm{Ex}(\lambda)$, where $\check{X}$ is the canonical $Col(\omega, \lambda)$-name for $X$. Obviously, $\Vdash_{Col(\omega, \lambda)} \psi_X$, so by (\ref{eq943}), $\Vdash_{Col(\omega, \lambda)} F(\psi_X) \in \check{X}$. Let $p_X$ be the $<_{\lambda}$-least member of the (necessarily non-empty) set 
+\begin{equation*}
+    \{p \in Col(\omega, \lambda) : \exists x \ (p \Vdash_{Col(\omega, \lambda)} F(\psi_X) = \check{x})\} \text{.}
+\end{equation*}
+Then there is a unique $x$ such that $p_X \Vdash_{Col(\omega, \lambda)} F(\psi_X) = \check{x}$, and it must be the case that $x \in X$. We have thus given a definition of a global choice function based on $F$ and $\lambda$. Since $F$ is itself definable with parameters, we are done.
+\end{proof}
 
 \begin{rem}\label{rem9414}
 Note that already $X \leq^N \mathsf{Fg}$ for every local method definition $X$ as a direct result of Lemma \ref{conalt}. Recalling Fact \ref{fact221}, this suggests that any small extension of $V$ not accessible by forcing cannot be triangulated in $\mathbf{M}_S(V)$ by a local method definition with a margin of error not obviously worse than that of forcing.
@@ -9571,8 +9591,6 @@ By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to 
 \end{rem}
 
 Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
-
-\blankpage
 
 \part{\texorpdfstring{ References}{References}}
 
