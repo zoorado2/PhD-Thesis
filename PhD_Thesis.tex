@@ -9512,43 +9512,64 @@ Given Theorem \ref{thm9414}, apply Axiom of Choice outside $V$ for \ref{94151} a
 Given Theorem \ref{thm9414}, \ref{94161} is immediate. Then \ref{94162} holds because of \ref{94161} and the fact that there is a definable well-ordering of $L$.
 \end{proof}
 
-From \ref{9252} and \ref{3246} of Proposition \ref{prop322}, as well as the last sentence of Fact \ref{fact9413}, one can infer that the main obstacle to proving the $\leq^M$-maximality of $\mathsf{Fg}$ in every CTM with our current tools is precisely the lack of canonical $Col(\omega, \lambda)$-names $\dot{x}$ that allow the proof of Theorem \ref{thm9414} to go through. In fact, this obstacle is intrinsic via the following lemma, as it is known that $\mathsf{ZFC}$ is consistent with the non-existence of a definable global choice function --- one can always force it, say, by adding proper class many Cohen reals.
+From \ref{9252} and \ref{3246} of Proposition \ref{prop322}, as well as the last sentence of Fact \ref{fact9413}, one can infer that the main obstacle to proving the $\leq^M$-maximality of $\mathsf{Fg}$ in every CTM with our current tools is precisely the lack of canonical $Col(\omega, \lambda)$-names $\dot{x}$ that allow the proof of Theorem \ref{thm9414} to go through. In fact, this obstacle is intrinsic via the following two lemmas, as it is known that $\mathsf{ZFC}$ is consistent with the non-existence of a definable global choice function --- one can always force it, say, by adding proper class many Cohen reals.
 
 \begin{lem}\label{lem9419}
 Let $\lambda$ be an infinite cardinal, $1 \leq n < \omega$, and have $\Vdash^n_{Col(\omega, \lambda)}$ denote the restriction of $\Vdash_{Col(\omega, \lambda)}$ to $\Sigma_n$ sentences, that is,
 \begin{equation*}
     \Vdash^n_{Col(\omega, \lambda)} \ := \{(p, \psi) : p \Vdash_{Col(\omega, \lambda)} \psi \text{ and } \psi \text{ is } \Sigma_n \text{ with parameters in } V^{Col(\omega, \lambda)}\} \text{.}
 \end{equation*}
-Define $\mathrm{Ex}_n(\lambda)$ to be $ran(\Vdash^n_{Col(\omega, \lambda)})$. If there is a definable (with parameters) class function $F$ on $\mathrm{Ex}_n(\lambda)$ such that $ran(F) \subset V^{Col(\omega, \lambda)}$ and 
+Define $\mathrm{Ex}_n(\lambda)$ to be $ran(\Vdash^n_{Col(\omega, \lambda)})$. If there is an ordinal definable class function $F$ on $\mathrm{Ex}_n(\lambda)$ such that $ran(F) \subset V^{Col(\omega, \lambda)}$ and 
 \begin{equation}\label{eq943}
     \forall \psi \in \mathrm{Ex}_n(\lambda) \ \forall \phi \ (((\Vdash^n_{Col(\omega, \lambda)} \psi) \wedge \psi = \ulcorner \exists x \ \phi(x) \urcorner) \implies \Vdash^n_{Col(\omega, \lambda)} \phi(F(\psi))) \text{,}
 \end{equation}
-then there is a definable (with parameters) global choice function.
+then there is an ordinal definable global choice function.
 \end{lem}
 
 \begin{proof}
-Assume $F$ exists for some $\lambda$ and $n$ in accordance with the hypothesis of the lemma. Note that the forcing notion $Col(\omega, \lambda)$ and the proper classes $V^{Col(\omega, \lambda)}$, $\Vdash^n_{Col(\omega, \lambda)}$ and $\mathrm{Ex}_n(\lambda)$ are all definable from the parameter $\lambda$, which means (\ref{eq943}) is expressible as a single sentence (with parameters) in the language of set theory. 
+Assume $F$ exists for some $\lambda$ and $n$ in accordance with the hypothesis of the lemma. Note that the forcing notion $Col(\omega, \lambda)$ and the proper classes $V^{Col(\omega, \lambda)}$, $\Vdash^n_{Col(\omega, \lambda)}$ and $\mathrm{Ex}_n(\lambda)$ are all definable from the parameter $\lambda$, which means (\ref{eq943}) is expressible as a single sentence with ordinal parameters in the language of set theory. 
 
 Fix any definable well-ordering $<_{\lambda}$ of (the conditions of) $Col(\omega, \lambda)$. For example, the length-lexicographical ordering works as $<_{\lambda}$. For any non-empty set $X$, set $\psi_X := \ulcorner \exists x \ ( x \in \check{X}) \urcorner \in \mathrm{Ex}_n(\lambda)$, where $\check{X}$ is the canonical $Col(\omega, \lambda)$-name for $X$. Obviously, $\Vdash^n_{Col(\omega, \lambda)} \psi_X$, so by (\ref{eq943}), $\Vdash^n_{Col(\omega, \lambda)} F(\psi_X) \in \check{X}$. Let $p_X$ be the $<_{\lambda}$-least member of the (necessarily non-empty) set 
 \begin{equation*}
     \{p \in Col(\omega, \lambda) : \exists x \ (p \Vdash^n_{Col(\omega, \lambda)} F(\psi_X) = \check{x})\} \text{.}
 \end{equation*}
-Then there is a unique $x$ such that $p_X \Vdash^n_{Col(\omega, \lambda)} F(\psi_X) = \check{x}$, and it must be the case that $x \in X$. We have thus given a definition of a global choice function based on $F$ and $\lambda$. Since $F$ is itself definable with parameters, we are done.
+Then there is a unique $x$ such that $p_X \Vdash^n_{Col(\omega, \lambda)} F(\psi_X) = \check{x}$, and it must be the case that $x \in X$. We have thus given a definition of a global choice function based on $F$ and $\lambda$. Since $F$ is itself ordinal definable, we are done.
 \end{proof}
 
-More specifically, what stands between Corollary \ref{cor9417} and the collapse of the local method hierarchy above $\mathsf{\Sigma^M_1}$, if we were to follow an argument similar to that found in the proof of Theorem \ref{thm9414}, is the next lemma.
+Lemma \ref{lem9419} still holds should we replace $Col(\omega, \lambda)$ with any other forcing notion, as long as we relax the definability condition of the global choice function we obtain in the conclusion to allow for (non-ordinal) parameters. 
 
-\begin{lem}
-Let $\lambda$ be an infinite cardinal, $1 \leq n < \omega$, and $\Vdash^n_{Col(\omega, \lambda)}$ be as defined in Lemma \ref{lem9419}.
-If for some $k < \omega$, there is a definable (with parameters) class function $F$ on $\mathsf{\Sigma^M_k}$ such that $ran(F) \subset V^{Col(\omega, \lambda)}$ and 
-\begin{equation}\label{eq944}
-    \forall \mathfrak{T} \in \mathsf{\Sigma^M_k} \ ((\Vdash^n_{Col(\omega, \lambda)} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \implies \Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}) \models^* \check{\mathfrak{T}} \text{''}) \text{,}
-\end{equation}
+\begin{lem}\label{lem9420}
+Let $\mathbb{P}$ be any forcing notion, $1 \leq n < \omega$, and have $\Vdash^n_{\mathbb{P}}$ denote the restriction of $\Vdash_{\mathbb{P}}$ to $\Sigma_n$ sentences, that is,
+\begin{equation*}
+    \Vdash^n_{\mathbb{P}} \ := \{(p, \psi) : p \Vdash_{\mathbb{P}} \psi \text{ and } \psi \text{ is } \Sigma_n \text{ with parameters in } V^{\mathbb{P}}\} \text{.}
+\end{equation*}
+Define $\mathrm{Ex}_n(\mathbb{P})$ to be $ran(\Vdash^n_{\mathbb{P}})$. If there is a definable (with parameters) class function $F$ on $\mathrm{Ex}_n(\mathbb{P})$ such that $ran(F) \subset V^{\mathbb{P}}$ and 
+\begin{equation*}
+    \forall \psi \in \mathrm{Ex}_n(\mathbb{P}) \ \forall \phi \ (((\Vdash^n_{\mathbb{P}} \psi) \wedge \psi = \ulcorner \exists x \ \phi(x) \urcorner) \implies \Vdash^n_{\mathbb{P}} \phi(F(\psi))) \text{,}
+\end{equation*}
 then there is a definable (with parameters) global choice function.
 \end{lem}
 
 \begin{proof}
-Assume $F$ exists for some $\lambda$, $n$ and $k$ in accordance with the hypothesis of the lemma. Recall that for any TCI $\mathfrak{T}$, $\text{``} \mathcal{M} \models^* \mathfrak{T} \text{''}$ is expressible as a $\Sigma_1$ sentence in the language of set theory with the parameters $\mathcal{M}$ and $\mathfrak{T}$, so $\Vdash^n_{Col(\omega, \lambda)} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})$ iff $\mathfrak{T}$ is consistent. 
+Essentially the same as that of Lemma \ref{lem9419}: we need only add the forcing notion $\mathbb{P}$ and a well-ordering thereof to the list of parameters in the definition of our global choice function.
+\end{proof}
+
+More specifically, what stands between Corollary \ref{cor9417} and the collapse of the local method hierarchy above $\mathsf{\Sigma^M_1}$, if we were to follow an argument similar to that found in the proof of Theorem \ref{thm9414}, are the next two lemmas.
+
+\begin{lem}\label{lem9421}
+Let $\lambda$ be an infinite cardinal, $1 \leq n < \omega$, and $\Vdash^n_{Col(\omega, \lambda)}$ be as defined in Lemma \ref{lem9419}.
+If for some $k < \omega$, there is an ordinal definable class function $F$ on $\mathsf{\Sigma^M_k}$ such that $ran(F) \subset V^{Col(\omega, \lambda)}$ and 
+\begin{equation}\label{eq944}
+    \forall \mathfrak{T} \in \mathsf{\Sigma^M_k} \ ((\Vdash^n_{Col(\omega, \lambda)} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \implies \Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}) \models^* \check{\mathfrak{T}} \text{''}) \text{,}
+\end{equation}
+then there is an ordinal definable global choice function.
+\end{lem}
+
+\begin{proof}
+Assume $F$ exists for some $\lambda$, $n$ and $k$ in accordance with the hypothesis of the lemma. Recall that for any TCI $\mathfrak{T}$, $\text{``} \mathcal{M} \models^* \mathfrak{T} \text{''}$ is expressible as a $\Sigma_1$ sentence in the language of set theory with the parameters $\mathcal{M}$ and $\mathfrak{T}$, so 
+\begin{equation*}
+    \forall \mathfrak{T} \ (\mathfrak{T} \text{ is a TCI} \implies ((\Vdash^n_{Col(\omega, \lambda)} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \iff \mathfrak{T} \text{ is consistent})) \text{.}
+\end{equation*}
 
 As in the proof of Lemma \ref{lem9419}, fix a definable well-ordering $<_{\lambda}$ of (the conditions of) $Col(\omega, \lambda)$. Let $X$ be any non-empty set, and set
 \begin{equation*}
@@ -9562,8 +9583,22 @@ By (\ref{eq944}), $\Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}_X) \
 \begin{equation*}
     \{p \in Col(\omega, \lambda) : \exists x \ (p \Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}_X) \text{ interprets } \ulcorner \check{c} \urcorner \text{ as } \check{x} \text{''})\} \text{.}
 \end{equation*}
-Then there is a unique $x$ such that $p_X \Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}_X) \text{ interprets } \ulcorner \check{c} \urcorner \text{ as } \check{x} \text{''}$, and it must be the case that $x \in X$. We are thus done as we were in the proof of Lemma \ref{lem9419}.
+Then there is a unique $x$ such that $p_X \Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}_X) \text{ interprets } \ulcorner \check{c} \urcorner \text{ as } \check{x} \text{''}$, and it must be the case that $x \in X$. We are now done as we were in the proof of Lemma \ref{lem9419}, bearing in mind that the symbols $\ulcorner c \urcorner$ and $\dot{\mathcal{U}}$ are coded as members of $H(\omega)$, and are thus definable without parameters.
 \end{proof}
+
+We can proceed to conclude the next lemma by modifying the proof of Lemma \ref{lem9421}, the way we proceeded from Lemma \ref{lem9419} to Lemma \ref{lem9420}. The only additional ingredient we need is the realisation that for every forcing notion $\mathbb{P}$, 
+\begin{equation*}
+    \forall \mathfrak{T} \ (\mathfrak{T} \text{ is a TCI} \implies ((\Vdash_{\mathbb{P}} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \iff \mathfrak{T} \text{ is consistent})) \text{.}
+\end{equation*}
+
+\begin{lem}\label{lem9422}
+Let $\mathbb{P}$ be any forcing notion, $1 \leq n < \omega$, and $\Vdash^n_{\mathbb{P}}$ be as defined in Lemma \ref{lem9420}.
+If for some $k < \omega$, there is a definable (with parameters) class function $F$ on $\mathsf{\Sigma^M_k}$ such that $ran(F) \subset V^{\mathbb{P}}$ and 
+\begin{equation*}
+    \forall \mathfrak{T} \in \mathsf{\Sigma^M_k} \ ((\Vdash^n_{\mathbb{P}} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \implies \Vdash^n_{\mathbb{P}} \text{``} F(\mathfrak{T}) \models^* \check{\mathfrak{T}} \text{''}) \text{,}
+\end{equation*}
+then there is a definable (with parameters) global choice function.
+\end{lem}
 
 \begin{rem}\label{rem9414}
 Note that already $X \leq^N \mathsf{Fg}$ for every local method definition $X$ as a direct result of Lemma \ref{conalt}. Recalling Fact \ref{fact221}, this suggests that any small extension of $V$ not accessible by forcing cannot be triangulated in $\mathbf{M}_S(V)$ by a local method definition with a margin of error not obviously worse than that of forcing.
@@ -9622,8 +9657,6 @@ By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to 
 \end{rem}
 
 Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
-
-\blankpage
 
 \part{\texorpdfstring{ References}{References}}
 
