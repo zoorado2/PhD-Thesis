@@ -9488,7 +9488,7 @@ and since it is obvious that $X \subset U(\Vec{y}, \varphi)$, it suffices to app
 
 Returning to our original context of local method definitions, the following corollaries can be observed.
 
-\begin{cor}
+\begin{cor}\label{cor9417}
 Let $X$ be a local method definition.
 \begin{enumerate}[label=(\arabic*)]
     \item\label{94151} $X \leq^M_w \mathsf{Fg}$.
@@ -9512,28 +9512,57 @@ Given Theorem \ref{thm9414}, apply Axiom of Choice outside $V$ for \ref{94151} a
 Given Theorem \ref{thm9414}, \ref{94161} is immediate. Then \ref{94162} holds because of \ref{94161} and the fact that there is a definable well-ordering of $L$.
 \end{proof}
 
-From \ref{9252} and \ref{3246} of Proposition \ref{prop322}, as well as the last sentence of Fact \ref{fact9413}, one can infer that the main obstacle to proving the $\leq^M$-maximality of $\mathsf{Fg}$ in every CTM with our current tools is precisely the lack of canonical $Col(\omega, \lambda)$-names $\dot{x}$ that allow the proof of Theorem \ref{thm9414} to go through. In fact, this obstacle is intrinsic via the next lemma, as it is known that $\mathsf{ZFC}$ is consistent with the non-existence of a definable global choice function --- one can always force it, say, by adding proper class many Cohen reals.
+From \ref{9252} and \ref{3246} of Proposition \ref{prop322}, as well as the last sentence of Fact \ref{fact9413}, one can infer that the main obstacle to proving the $\leq^M$-maximality of $\mathsf{Fg}$ in every CTM with our current tools is precisely the lack of canonical $Col(\omega, \lambda)$-names $\dot{x}$ that allow the proof of Theorem \ref{thm9414} to go through. In fact, this obstacle is intrinsic via the following lemma, as it is known that $\mathsf{ZFC}$ is consistent with the non-existence of a definable global choice function --- one can always force it, say, by adding proper class many Cohen reals.
 
-\begin{lem}
+\begin{lem}\label{lem9419}
 Let $\lambda$ be an infinite cardinal, $1 \leq n < \omega$, and have $\Vdash^n_{Col(\omega, \lambda)}$ denote the restriction of $\Vdash_{Col(\omega, \lambda)}$ to $\Sigma_n$ sentences, that is,
 \begin{equation*}
     \Vdash^n_{Col(\omega, \lambda)} \ := \{(p, \psi) : p \Vdash_{Col(\omega, \lambda)} \psi \text{ and } \psi \text{ is } \Sigma_n \text{ with parameters in } V^{Col(\omega, \lambda)}\} \text{.}
 \end{equation*}
-Define $\mathrm{Ex}(\lambda)$ to be $ran(\Vdash^n_{Col(\omega, \lambda)})$. If there is a definable (with parameters) class function $F$ on $\mathrm{Ex}(\lambda)$ such that $ran(F) \subset V^{Col(\omega, \lambda)}$ and 
+Define $\mathrm{Ex}_n(\lambda)$ to be $ran(\Vdash^n_{Col(\omega, \lambda)})$. If there is a definable (with parameters) class function $F$ on $\mathrm{Ex}_n(\lambda)$ such that $ran(F) \subset V^{Col(\omega, \lambda)}$ and 
 \begin{equation}\label{eq943}
-    \forall \psi \in \mathrm{Ex}(\lambda) \ \forall \phi \ (((\Vdash^n_{Col(\omega, \lambda)} \psi) \wedge \psi = \ulcorner \exists x \ \phi(x) \urcorner) \implies \Vdash^n_{Col(\omega, \lambda)} \phi(F(\psi))) \text{,}
+    \forall \psi \in \mathrm{Ex}_n(\lambda) \ \forall \phi \ (((\Vdash^n_{Col(\omega, \lambda)} \psi) \wedge \psi = \ulcorner \exists x \ \phi(x) \urcorner) \implies \Vdash^n_{Col(\omega, \lambda)} \phi(F(\psi))) \text{,}
 \end{equation}
 then there is a definable (with parameters) global choice function.
 \end{lem}
 
 \begin{proof}
-Assume $F$ exists for some $\lambda$ and $n$ in accordance with the hypothesis of the lemma. Note that the forcing notion $Col(\omega, \lambda)$ and the proper classes $V^{Col(\omega, \lambda)}$, $\Vdash^n_{Col(\omega, \lambda)}$ and $\mathrm{Ex}(\lambda)$ are all definable from the parameter $\lambda$, which means (\ref{eq943}) is expressible as a single sentence (with parameters) in the language of set theory. 
+Assume $F$ exists for some $\lambda$ and $n$ in accordance with the hypothesis of the lemma. Note that the forcing notion $Col(\omega, \lambda)$ and the proper classes $V^{Col(\omega, \lambda)}$, $\Vdash^n_{Col(\omega, \lambda)}$ and $\mathrm{Ex}_n(\lambda)$ are all definable from the parameter $\lambda$, which means (\ref{eq943}) is expressible as a single sentence (with parameters) in the language of set theory. 
 
-Fix any definable well-ordering $<_{\lambda}$ of (the conditions of) $Col(\omega, \lambda)$. For example, the length-lexicographical ordering works as $<_{\lambda}$. For any non-empty set $X$, set $\psi_X := \ulcorner \exists x \ ( x \in \check{X}) \urcorner \in \mathrm{Ex}(\lambda)$, where $\check{X}$ is the canonical $Col(\omega, \lambda)$-name for $X$. Obviously, $\Vdash^n_{Col(\omega, \lambda)} \psi_X$, so by (\ref{eq943}), $\Vdash^n_{Col(\omega, \lambda)} F(\psi_X) \in \check{X}$. Let $p_X$ be the $<_{\lambda}$-least member of the (necessarily non-empty) set 
+Fix any definable well-ordering $<_{\lambda}$ of (the conditions of) $Col(\omega, \lambda)$. For example, the length-lexicographical ordering works as $<_{\lambda}$. For any non-empty set $X$, set $\psi_X := \ulcorner \exists x \ ( x \in \check{X}) \urcorner \in \mathrm{Ex}_n(\lambda)$, where $\check{X}$ is the canonical $Col(\omega, \lambda)$-name for $X$. Obviously, $\Vdash^n_{Col(\omega, \lambda)} \psi_X$, so by (\ref{eq943}), $\Vdash^n_{Col(\omega, \lambda)} F(\psi_X) \in \check{X}$. Let $p_X$ be the $<_{\lambda}$-least member of the (necessarily non-empty) set 
 \begin{equation*}
     \{p \in Col(\omega, \lambda) : \exists x \ (p \Vdash^n_{Col(\omega, \lambda)} F(\psi_X) = \check{x})\} \text{.}
 \end{equation*}
 Then there is a unique $x$ such that $p_X \Vdash^n_{Col(\omega, \lambda)} F(\psi_X) = \check{x}$, and it must be the case that $x \in X$. We have thus given a definition of a global choice function based on $F$ and $\lambda$. Since $F$ is itself definable with parameters, we are done.
+\end{proof}
+
+More specifically, what stands between Corollary \ref{cor9417} and the collapse of the local method hierarchy above $\mathsf{\Sigma^M_1}$, if we were to follow an argument similar to that found in the proof of Theorem \ref{thm9414}, is the next lemma.
+
+\begin{lem}
+Let $\lambda$ be an infinite cardinal, $1 \leq n < \omega$, and $\Vdash^n_{Col(\omega, \lambda)}$ be as defined in Lemma \ref{lem9419}.
+If for some $k < \omega$, there is a definable (with parameters) class function $F$ on $\mathsf{\Sigma^M_k}$ such that $ran(F) \subset V^{Col(\omega, \lambda)}$ and 
+\begin{equation}\label{eq944}
+    \forall \mathfrak{T} \in \mathsf{\Sigma^M_k} \ ((\Vdash^n_{Col(\omega, \lambda)} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \implies \Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}) \models^* \check{\mathfrak{T}} \text{''}) \text{,}
+\end{equation}
+then there is a definable (with parameters) global choice function.
+\end{lem}
+
+\begin{proof}
+Assume $F$ exists for some $\lambda$, $n$ and $k$ in accordance with the hypothesis of the lemma. Recall that for any TCI $\mathfrak{T}$, $\text{``} \mathcal{M} \models^* \mathfrak{T} \text{''}$ is expressible as a $\Sigma_1$ sentence in the language of set theory with the parameters $\mathcal{M}$ and $\mathfrak{T}$, so $\Vdash^n_{Col(\omega, \lambda)} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})$ iff $\mathfrak{T}$ is consistent. 
+
+As in the proof of Lemma \ref{lem9419}, fix a definable well-ordering $<_{\lambda}$ of (the conditions of) $Col(\omega, \lambda)$. Let $X$ be any non-empty set, and set
+\begin{equation*}
+    \mathfrak{T}_X := (\emptyset, \ulcorner c \urcorner, \dot{\mathcal{U}}, \{(\dot{\mathcal{U}}, (X, 1)), (\ulcorner c \urcorner, (X, 0))\}) \text{,}
+\end{equation*}
+where $\ulcorner c \urcorner$ is a constant symbol independent of $X$. Obviously, $\dot{\mathcal{U}}$ does not depend on $X$, while $\mathfrak{T}_X \in \mathsf{\Sigma^M_0} \subset \mathsf{\Sigma^M_k}$. Models of $\mathfrak{T}_X$ vary only by their interpretation of $\ulcorner c \urcorner$, and they are allowed to interpret $\ulcorner c \urcorner$ as any member of $X$. Since $X$ is non-empty, $\mathfrak{T}_X$ is consistent, and we have that 
+\begin{equation*}
+    \Vdash^n_{Col(\omega, \lambda)} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}}_X \text{''}) \text{.}
+\end{equation*}
+By (\ref{eq944}), $\Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}_X) \models^* \check{\mathfrak{T}}_X \text{''}$. Choose $p_X$ to be the $<_{\lambda}$-least member of the (necessarily non-empty) set 
+\begin{equation*}
+    \{p \in Col(\omega, \lambda) : \exists x \ (p \Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}_X) \text{ interprets } \ulcorner \check{c} \urcorner \text{ as } \check{x} \text{''})\} \text{.}
+\end{equation*}
+Then there is a unique $x$ such that $p_X \Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}_X) \text{ interprets } \ulcorner \check{c} \urcorner \text{ as } \check{x} \text{''}$, and it must be the case that $x \in X$. We are thus done as we were in the proof of Lemma \ref{lem9419}.
 \end{proof}
 
 \begin{rem}\label{rem9414}
@@ -9593,6 +9622,8 @@ By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to 
 \end{rem}
 
 Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
+
+\blankpage
 
 \part{\texorpdfstring{ References}{References}}
 
