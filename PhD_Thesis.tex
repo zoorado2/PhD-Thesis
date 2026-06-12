@@ -9448,7 +9448,7 @@ What is a good benchmark for being sufficiently local? It might be illuminating 
 
 Now, being sufficiently local within a small extension $V[g]$ of $V$ necessarily excludes the use of $V$ itself as a parameter, unless $V$ is definable in $V[g]$. But if $g$ is a bounded subclass of $V$, then $V$ being definable in $V[g]$ must come from the fact that $V$ is definable in $V[g]$ with parameters in $V \cup \{g\}$. So, in any case, it makes sense to forbid the use of $V$ --- or any internally non-definable predicate thereof --- as a parameter in our push for localness. As it turns out, with this seemingly minor restriction imposed upon a property that virtually all known methods of generating small extensions possess, one can show that set forcing is in some sense the best such method for individual use cases.
 
-\begin{cor}
+\begin{cor}\label{cor9416}
 Let 
 \begin{enumerate}[label=(\alph*)]
     \item $n < \omega$,
@@ -9459,7 +9459,7 @@ Define
 \begin{equation*}
     U(\Vec{y}, \varphi) := \{V[x] : \exists x' \in V \ (x \subset x') \text{ and } \varphi (\Vec{y}, x) \} \text{.}
 \end{equation*}
-If $U(\Vec{y}, \varphi) \neq \emptyset$, then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset X$. 
+If $U(\Vec{y}, \varphi) \neq \emptyset$, then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset U(\Vec{y}, \varphi)$. 
 \end{cor}
 
 \begin{proof}
@@ -9510,6 +9510,96 @@ Given Theorem \ref{thm9414}, apply Axiom of Choice outside $V$ for \ref{94151} a
 
 \begin{proof}
 Given Theorem \ref{thm9414}, \ref{94161} is immediate. Then \ref{94162} holds because of \ref{94161} and the fact that there is a definable well-ordering of $L$.
+\end{proof}
+
+With some basic coding, Corollary \ref{cor9416} can be improved.
+
+\begin{thm}\label{thm9419}
+Let 
+\begin{enumerate}[label=(\alph*)]
+    \item $n < \omega$,
+    \item $\Vec{y} \in V^n$, and
+    \item $\varphi$ be a $(n + 1)$-ary $\Sigma_1$ formula in the L\'{e}vy hierarchy.
+\end{enumerate}
+Define 
+\begin{equation*}
+    U'(\Vec{y}, \varphi) := \{W \in \mathbf{M}(V) : (W; \in) \models \exists x \ \varphi (\Vec{y}, x) \} \text{.}
+\end{equation*}
+If $U'(\Vec{y}, \varphi) \neq \emptyset$, then there is a TCI $\mathfrak{T} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}) \subset U'(\Vec{y}, \varphi)$. 
+\end{thm}
+
+\begin{proof}
+Let $n$, $\Vec{y}$ and $\varphi$ be in accordance with the hypothesis, and assume $U'(\Vec{y}, \varphi) \neq \emptyset$. Then for some outer model $W$ of $V$, $(W; \in) \models \varphi (\Vec{y}, x)$. Since $\varphi$ is $\Sigma_1$, it can be written as $\ulcorner \exists \Vec{z} \ \phi(\Vec{y}, \Vec{z}, x) \urcorner$ for some formula $\phi$ that is $\Delta_0$ in the L\'{e}vy hierarchy. In $W$, there must be a witness $a$ for $\exists x \ \varphi (\Vec{y}, x)$ as well as witnesses $\Vec{b}$ for $\varphi$ itself, so let 
+\begin{itemize}
+    \item $S$ be a subset of some cardinal $\kappa$ that codes $\{\Vec{y}, a, \Vec{b}\}$ \textit{a la} Lemma \ref{setcode}, and
+    \item $\lambda := \kappa^+$.
+\end{itemize}
+Then $L_{\lambda}[S] \models \phi(\Vec{y}, \Vec{b}, a)$ and $|L_{\lambda}[S]| = \lambda$ in $W$. 
+
+In $V$, let $N := H(\lambda^+)$. We define a TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta) \in V$ with $\sigma$ containing exactly the binary relation symbols $\in$, $\ulcorner \in^* \urcorner$, $\ulcorner R^* \urcorner$ and $\ulcorner f_y^* \urcorner$ for each $y$ occurring in $\Vec{y}$, together with constant symbols $\ulcorner \lambda^* \urcorner$, $\ulcorner x^* \urcorner$, $\ulcorner y^* \urcorner$ for each $y$ occurring in $\Vec{y}$, and $\ulcorner z^* \urcorner$ for each $z$ occurring in $\Vec{z}$. Also, define
+\begin{gather*}
+    \vartheta (\dot{\mathcal{U}}) := (N, 1) \\
+    \vartheta (\ulcorner \in \urcorner) := (\in \cap \ N, 1) \\
+    \vartheta (\ulcorner \in^* \urcorner) := (\lambda \times \lambda, 0) \\
+    \vartheta (\ulcorner R^* \urcorner) := (\lambda \times \lambda, 0) \\
+    \vartheta (\ulcorner f_y^* \urcorner) := (\lambda \times trcl(\{y\}), 0) \text{ for each } y \text{ occurring in } \Vec{y} \\
+    \vartheta (\ulcorner \lambda^* \urcorner) := (\{\lambda\}, 0) \\
+    \vartheta (\ulcorner x^* \urcorner) := (\lambda, 0) \\
+    \vartheta (\ulcorner y^* \urcorner) := (\lambda, 0) \text{ for each } y \text{ occurring in } \Vec{y} \\
+    \vartheta (\ulcorner z^* \urcorner) := (\lambda, 0) \text{ for each } z \text{ occurring in } \Vec{z} \text{.}
+\end{gather*}
+Morally, for some transitive model $N'$ of set theory,
+\begin{enumerate}[label=(\Alph*)]
+    \item\label{9419A} $\ulcorner \in^* \urcorner$ is supposed to interpret a binary relation on $\lambda$ isomorphic to $\in \cap \ N'$ on $N'$, 
+    \item\label{9419B} $\ulcorner R^* \urcorner$ is supposed to be a rank function on $N'$, and 
+    \item\label{9419C} the $\ulcorner f_y^* \urcorner$s are supposed to guarantee that every $y$ occurring in $\Vec{y}$ is a member of $N'$.
+\end{enumerate}
+Meanwhile, 
+\begin{enumerate}[label=(\Alph*)]
+    \setcounter{enumi}{3}
+    \item\label{9419D} the starred constant symbols are supposed to pick out parameters and witnesses in $N'$ corresponding to their unstarred names.
+\end{enumerate}
+
+Finally, we want $T$ to contain the following statements (the reader should check that they are expressible in our signature with our set constraints).
+\begin{enumerate}[label=(\arabic*)]
+    \item\label{94191} $dom(\in^*) = \lambda^*$.
+    \item\label{94192} The extensionality of $\in^*$, i.e.
+    \begin{equation*}
+        \ulcorner \forall x \in \lambda^* \ \forall y \in \lambda^* \ (\forall z \ (z \in^* x \iff z \in^* y) \implies x = y) \urcorner \text{.}
+    \end{equation*}
+    \item\label{94193} $R^*$ behaves like the rank function, i.e. $R^*$ is a function from $\lambda^*$ onto itself, and for all $x \in \lambda^*$,
+    \begin{equation*}
+        R^*(x) = \bigcup \{R^*(y) + 1 : y \in^* x\} \text{.}
+    \end{equation*}
+    \item\label{94194} For each $y$ occurring in $\Vec{y}$, $f_y^*$ is a partial function from $\lambda^*$ onto $trcl(\{y\})$, such that for all members $z_1$ and $z_2$ of $dom(f_y^*)$, $z_1 \in^* z_2 \iff f_y^*(z_1) \in f_y^*(z_2)$.
+    \item\label{94195} For each $y$ occurring in $\Vec{y}$, there is $x$ such that $z \in^* x \iff z \in dom(f_y^*)$ for all $z$, and furthermore, $y^*$ is equal to a $\in^*$-maximal member of $x$.
+    \item\label{94196} $\phi^*$, where $\phi^*$ is obtained from $\phi(\Vec{y}, \Vec{z}, x)$ by a global substitution of $\ulcorner \in \urcorner$ with $\ulcorner \in^* \urcorner$, $\ulcorner x \urcorner$ with $\ulcorner x^* \urcorner$, $\ulcorner y \urcorner$ with $\ulcorner y^* \urcorner$ for every $y$ occurring in $\Vec{y}$, and $\ulcorner z \urcorner$ with $\ulcorner z^* \urcorner$ for every $z$ occurring in $\Vec{z}$.
+\end{enumerate}
+It is easy to verify that for some transitive model $N'$ of set theory, \ref{94191} to \ref{94193} give us \ref{9419A} and \ref{9419B}, \ref{94194} and \ref{94195} give us \ref{9419C}, and \ref{94196} gives us \ref{9419D}. Moreover, this $N'$ is unique and 
+\begin{equation}\label{eq943'}
+    (N'; \in, \Vec{y}) \cong (\lambda; \in^*, \Vec{y^*}) \text{,}
+\end{equation}
+where $\Vec{y^*}$ is got from $\Vec{y}$ by replacing every instance of $y$ occurring in $\Vec{y}$ with the corresponding $y^*$, via the Mostowski collapse.
+
+Now, $\mathfrak{T}$ is consistent due to the existence of $L_{\lambda}[S]$ in $W$. On the other hand, if $\mathcal{M} \models^* \mathfrak{T}$ in some outer model $W'$ of $V$, then there is some transitive model $N'$ of set theory containing $\Vec{y}$ and satisfying (\ref{eq943'}) by the absoluteness of the Mostowski collapse. This means $(N'; \in, \Vec{y}) \models \exists x \ \varphi (\Vec{y}, x)$, and because $\varphi$ is $\Sigma_1$, necessarily $(W'; \in) \models \exists x \ \varphi (\Vec{y}, x)$ as well. We have thus shown that $\mathrm{Eval}^V(\mathfrak{T}) \subset U'(\Vec{y}, \varphi)$.
+\end{proof}
+
+\begin{cor}
+Let 
+\begin{enumerate}[label=(\alph*)]
+    \item $n < \omega$,
+    \item $\Vec{y} \in V^n$, and
+    \item $\varphi$ be a $(n + 1)$-ary $\Sigma_1$ formula in the L\'{e}vy hierarchy.
+\end{enumerate}
+Define 
+\begin{equation*}
+    U'(\Vec{y}, \varphi) := \{W \in \mathbf{M}(V) : (W; \in) \models \exists x \ \varphi (\Vec{y}, x) \} \text{.}
+\end{equation*}
+If $U'(\Vec{y}, \varphi) \neq \emptyset$, then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset U'(\Vec{y}, \varphi)$. 
+\end{cor}
+
+\begin{proof}
+This is a direct consequence of Corollary \ref{cor9417} and Theorem \ref{thm9419}.
 \end{proof}
 
 From \ref{9252} and \ref{3246} of Proposition \ref{prop322}, as well as the last sentence of Fact \ref{fact9413}, one can infer that the main obstacle to proving the $\leq^M$-maximality of $\mathsf{Fg}$ in every CTM with our current tools is precisely the lack of canonical $Col(\omega, \lambda)$-names $\dot{x}$ that allow the proof of Theorem \ref{thm9414} to go through. In fact, this obstacle is intrinsic via the following two lemmas, as it is known that $\mathsf{ZFC}$ is consistent with the non-existence of a definable global choice function --- one can always force it, say, by adding proper class many Cohen reals.
