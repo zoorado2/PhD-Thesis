@@ -398,6 +398,39 @@
       \field{pages}{35\bibrangedash 46}
       \range{pages}{12}
     \endentry
+    \entry{ciesielski}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=73d7594c586eabe36c0da2bf6e322d17}{%
+           family={Ciesielski},
+           familyi={C\bibinitperiod},
+           given={Krzysztof},
+           giveni={K\bibinitperiod}}}%
+        {{hash=24db1e505453e50e0e67884aca6fe990}{%
+           family={Guzicki},
+           familyi={G\bibinitperiod},
+           given={Wojciech},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b93bb88970a934c243f2daf00bab5be}
+      \strng{fullhash}{2b93bb88970a934c243f2daf00bab5be}
+      \strng{fullhashraw}{2b93bb88970a934c243f2daf00bab5be}
+      \strng{bibnamehash}{2b93bb88970a934c243f2daf00bab5be}
+      \strng{authorbibnamehash}{2b93bb88970a934c243f2daf00bab5be}
+      \strng{authornamehash}{2b93bb88970a934c243f2daf00bab5be}
+      \strng{authorfullhash}{2b93bb88970a934c243f2daf00bab5be}
+      \strng{authorfullhashraw}{2b93bb88970a934c243f2daf00bab5be}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the American Mathematical Society}
+      \field{number}{1}
+      \field{title}{Generic families and models of set theory with the axiom of choice}
+      \field{volume}{106}
+      \field{year}{1989}
+      \field{pages}{199\bibrangedash 206}
+      \range{pages}{8}
+    \endentry
     \entry{cohen1}{article}{}{}
       \name{author}{1}{}{%
         {{hash=3676bd8b5a6758a014b490225ec91475}{%
