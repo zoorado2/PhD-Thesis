@@ -9512,7 +9512,7 @@ Given Theorem \ref{thm9414}, apply Axiom of Choice outside $V$ for \ref{94151} a
 Given Theorem \ref{thm9414}, \ref{94161} is immediate. Then \ref{94162} holds because of \ref{94161} and the fact that there is a definable well-ordering of $L$.
 \end{proof}
 
-With some basic coding, Corollary \ref{cor9416} can be improved.
+Corollary \ref{cor9416} can be improved in different directions with the use of some basic coding.
 
 \begin{thm}\label{thm9419}
 Let 
@@ -9529,7 +9529,7 @@ If $U'(\Vec{y}, \varphi) \neq \emptyset$, then there is a TCI $\mathfrak{T} \in 
 \end{thm}
 
 \begin{proof}
-Let $n$, $\Vec{y}$ and $\varphi$ be in accordance with the hypothesis, and assume $U'(\Vec{y}, \varphi) \neq \emptyset$. Then for some outer model $W$ of $V$, $(W; \in) \models \varphi (\Vec{y}, x)$. Since $\varphi$ is $\Sigma_1$, it can be written as $\ulcorner \exists \Vec{z} \ \phi(\Vec{y}, \Vec{z}, x) \urcorner$ for some formula $\phi$ that is $\Delta_0$ in the L\'{e}vy hierarchy. In $W$, there must be a witness $a$ for $\exists x \ \varphi (\Vec{y}, x)$ as well as witnesses $\Vec{b}$ for $\varphi$ itself, so let 
+Let $n$, $\Vec{y}$ and $\varphi$ be in accordance with the hypothesis, and assume $U'(\Vec{y}, \varphi) \neq \emptyset$. Then for some outer model $W$ of $V$, $(W; \in) \models \exists x \ \varphi (\Vec{y}, x)$. Since $\varphi$ is $\Sigma_1$, it can be written as $\ulcorner \exists \Vec{z} \ \phi(\Vec{y}, \Vec{z}, x) \urcorner$ for some formula $\phi$ that is $\Delta_0$ in the L\'{e}vy hierarchy. In $W$, there must be a witness $a$ for $\exists x \ \varphi (\Vec{y}, x)$ as well as witnesses $\Vec{b}$ for $\varphi$ itself, so let 
 \begin{itemize}
     \item $S$ be a subset of some cardinal $\kappa$ that codes $\{\Vec{y}, a, \Vec{b}\}$ \textit{a la} Lemma \ref{setcode}, and
     \item $\lambda := \kappa^+$.
@@ -9575,13 +9575,93 @@ Finally, we want $T$ to contain the following statements (the reader should chec
     \item\label{94195} For each $y$ occurring in $\Vec{y}$, there is $x$ such that $z \in^* x \iff z \in dom(f_y^*)$ for all $z$, and furthermore, $y^*$ is equal to a $\in^*$-maximal member of $x$.
     \item\label{94196} $\phi^*$, where $\phi^*$ is obtained from $\phi(\Vec{y}, \Vec{z}, x)$ by a global substitution of $\ulcorner \in \urcorner$ with $\ulcorner \in^* \urcorner$, $\ulcorner x \urcorner$ with $\ulcorner x^* \urcorner$, $\ulcorner y \urcorner$ with $\ulcorner y^* \urcorner$ for every $y$ occurring in $\Vec{y}$, and $\ulcorner z \urcorner$ with $\ulcorner z^* \urcorner$ for every $z$ occurring in $\Vec{z}$.
 \end{enumerate}
-It is easy to verify that for some transitive model $N'$ of set theory, \ref{94191} to \ref{94193} give us \ref{9419A} and \ref{9419B}, \ref{94194} and \ref{94195} give us \ref{9419C}, and \ref{94196} gives us \ref{9419D}. Moreover, this $N'$ is unique and 
+It is easy to verify that for some transitive model $N'$ of set theory containing $\Vec{y}$, \ref{94191} to \ref{94193} give us \ref{9419A} and \ref{9419B}, \ref{94194} and \ref{94195} give us \ref{9419C}, and \ref{94196} gives us \ref{9419D}. Moreover, this $N'$ is unique and 
 \begin{equation}\label{eq943'}
     (N'; \in, \Vec{y}) \cong (\lambda; \in^*, \Vec{y^*}) \text{,}
 \end{equation}
 where $\Vec{y^*}$ is got from $\Vec{y}$ by replacing every instance of $y$ occurring in $\Vec{y}$ with the corresponding $y^*$, via the Mostowski collapse.
 
 Now, $\mathfrak{T}$ is consistent due to the existence of $L_{\lambda}[S]$ in $W$. On the other hand, if $\mathcal{M} \models^* \mathfrak{T}$ in some outer model $W'$ of $V$, then there is some transitive model $N'$ of set theory containing $\Vec{y}$ and satisfying (\ref{eq943'}) by the absoluteness of the Mostowski collapse. This means $(N'; \in, \Vec{y}) \models \exists x \ \varphi (\Vec{y}, x)$, and because $\varphi$ is $\Sigma_1$, necessarily $(W'; \in) \models \exists x \ \varphi (\Vec{y}, x)$ as well. We have thus shown that $\mathrm{Eval}^V(\mathfrak{T}) \subset U'(\Vec{y}, \varphi)$.
+\end{proof}
+
+\begin{thm}\label{thm9420}
+Let 
+\begin{enumerate}[label=(\alph*)]
+    \item $n < \omega$,
+    \item $\Vec{y} \in V^n$, and
+    \item $\varphi$ be a $(n + 1)$-ary $\Sigma_1$ formula in the L\'{e}vy hierarchy.
+\end{enumerate}
+Define 
+\begin{equation*}
+    U''(\Vec{y}, \varphi) := \{W \in \mathbf{M}(V) : \exists x \in W \ (W = V[x] \wedge (W; \in) \models \varphi (\Vec{y}, x))\} \text{.}
+\end{equation*}
+If $U''(\Vec{y}, \varphi) \neq \emptyset$, then there is a TCI $\mathfrak{T} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}) \subset U''(\Vec{y}, \varphi)$. 
+\end{thm}
+
+\begin{proof}
+Let $n$, $\Vec{y}$ and $\varphi$ be in accordance with the hypothesis, and assume $U''(\Vec{y}, \varphi) \neq \emptyset$. Then for some outer model $W$ of $V$, there is $x \in W$ such that $W = V[x]$ and $(W; \in) \models \varphi(\Vec{y}, x)$. By Proposition \ref{prop35}, for some cardinal $\kappa$ in $W$, 
+\begin{align}
+\begin{split}\label{eq943''}
+    \exists x' \ \exists x'' \ \exists \nu \ (\text{``} & x'' \text{ is a set of ordinals, } \nu \text{ is an isomorphism from the relation} \\
+    & \text{coded by } x'' \text{ onto } trcl(\{x'\}) \text{, } \varphi(\Vec{y}, x') \text{ and } x'' \in V_{\kappa}[x'] \text{''})
+\end{split}
+\end{align}
+holds in $W$. On the other hand, any outer model $W'$ of $V$ in which (\ref{eq943''}) holds with $a$ and $a'$ in place of $x'$ and $x''$ respectively, must also have as an inner model $V[a] = V[a'] \in U''(\Vec{y}, \varphi)$. As (\ref{eq943''}) is a $\Sigma_1$ formula in the L\'{e}vy hierarchy with parameters in $V$, we may hereon assume, without loss of generality, that $x$ is a set of ordinals with supremum $\alpha$. 
+
+As in the proof of Theorem \ref{thm9419}, we write $\varphi(\Vec{y}, x)$ as $\ulcorner \exists \Vec{z} \ \phi(\Vec{y}, \Vec{z}, x) \urcorner$ for some formula $\phi$ that is $\Delta_0$ in the L\'{e}vy hierarchy, and find in $W$ witnesses $\Vec{b}$ for $\varphi$ so that $(W; \in) \models \phi(\Vec{y}, \Vec{b}, x)$. In $V$, choose a strong limit cardinal $\lambda > \alpha$ and a bijection $g$ from $\lambda$ onto $V_{\lambda}$, such that $\{\Vec{y}, \Vec{b}, x\} \in V_{\lambda}[x]$ and $(V_{\lambda}[x]; \in) \models \phi(\Vec{y}, \Vec{b}, x)$. Over the structure $(V_{\lambda}[x]; \in, g)$, one can define using a formula $\psi$ in two free variables, a canonical bijection $g'$ from $\lambda$ onto $V_{\lambda}[x]$ for which $g'(y) = z \iff \psi(y, z)$. This definition goes through all formulas in a single free variable with parameters in $V_{\lambda} \cup \{g\}$, in a manner similar to how the canonical global well-ordering is coherently defined on every initial segment of $L$.
+
+In $V$, we set $N := H(\lambda^+)$ and expand on the TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ defined in the proof of Theorem \ref{thm9419}. To $\sigma$, we add a new constant symbol $\ulcorner g^* \urcorner$ for the interpretation of $g$, so naturally $\vartheta(\ulcorner g^* \urcorner) := (\{g\}, 0)$. For any sentence $\theta$ in the language of set theory with parameters occurring in or among $\Vec{y}$, $\Vec{b}$, $x$, and $g$, define $\theta^*$ to be the unique formula obtained from $\theta$ by a global substitution of
+\begin{itemize}
+    \item $\ulcorner \in \urcorner$ with $\ulcorner \in^* \urcorner$, 
+    \item $\ulcorner x \urcorner$ with $\ulcorner x^* \urcorner$, 
+    \item $\ulcorner g \urcorner$ with $\ulcorner g^* \urcorner$, 
+    \item $\ulcorner y \urcorner$ with $\ulcorner y^* \urcorner$ for every $y$ occurring in $\Vec{y}$, 
+    \item $\ulcorner z \urcorner$ with $\ulcorner z^* \urcorner$ for every $z$ occurring in $\Vec{z}$, 
+    \item any existential quantification of the form $\ulcorner \exists z \urcorner$ with the corresponding bounded quantification $\ulcorner \exists z \in \lambda^* \urcorner$, and
+    \item any universal quantification of the form $\ulcorner \forall z \urcorner$ with the corresponding bounded quantification $\ulcorner \forall z \in \lambda^* \urcorner$.
+\end{itemize}
+Next, we add to $T$ the following statements (the reader should again check that they are expressible in our signature with our set constraints).
+\begin{enumerate}[label=(\arabic*)]
+    \item $\psi^*$ defines an order isomorphism $\pi$ under $\in$ from a subset of $\lambda$ onto $\lambda$.
+    \item $dom(\pi)$ contains exactly all members $c$ of $\lambda$ that satisfy both
+    \begin{equation*}
+        \ulcorner \forall y \ \forall z \ ((y \in^* c \wedge z \in^* y) \implies z \in^* c) \urcorner
+    \end{equation*}
+    and
+    \begin{equation*}
+        \ulcorner \forall y \ \forall z \ ((y \in^* c \wedge z \in^* c) \implies (y \in^* z \vee z \in^* y \vee y = z)) \urcorner \text{.}
+    \end{equation*}
+    \item For each $c \in dom(\pi)$, 
+    \begin{equation*}
+        c \cap dom(\pi) = \{d \in \lambda : d \in^* c\} \text{.}
+    \end{equation*}
+    \item $x^*$ is a subset of $dom(\pi)$.
+    \item A schema involving relativisation of formulas to members of $\lambda$, among other things, that in totality gives us: for every $c \in \lambda$, if $d$ is the unique member of $\pi^{-1}(\{c\})$, then 
+    \begin{equation*}
+        ((R^*)^{-1}(d); \in^*, x^*) \cong (V_c[x]; \in, x)
+    \end{equation*}
+    for some $x$, via the Mostowski collapse.
+\end{enumerate}
+
+It is not difficult to verify that given (the appropriate reduct of) a model $(\lambda; \in^*, \Vec{y^*}, \Vec{z^*}, x^*)$ of our expanded $\mathfrak{T}$ in any outer model $W'$ of $V$, there are sets $\Vec{z}$ and $x'$ such that
+\begin{enumerate}[label=(\Alph*)]
+    \item\label{9420A} $\{\Vec{y}, \Vec{z}, x'\} \in V_{\lambda}[x']$.
+    \item $(V_{\lambda}[x']; \in, \Vec{y}, \Vec{z}, x') \cong (\lambda; \in^*, \Vec{y^*}, \Vec{z^*}, x^*)$, where 
+    \begin{itemize}
+        \item $\Vec{y^*}$ is again got from $\Vec{y}$ by replacing every instance of $y$ occurring in $\Vec{y}$ with the corresponding $y^*$, and
+        \item $\Vec{z^*}$ is got from $\Vec{z}$ by replacing every instance of $z$ occurring in $\Vec{z}$ with the corresponding $z^*$,
+    \end{itemize}
+    via the Mostowski collapse,
+    \item\label{9420C} $(V_{\lambda}[x']; \in, \Vec{y}, \Vec{z}, x') \models \phi(\Vec{y}, \Vec{z}, x')$, 
+    \item $x' \subset ORD^{V_{\lambda}[x']} = \lambda$, and
+    \item\label{9420E} letting $\psi^{\dagger}$ denote the unique formula --- which happens to be $\Delta_0$ in the L\'{e}vy hierarchy --- obtained from $\psi$ by a global substitution of 
+    \begin{itemize}
+        \item any existential quantification of the form $\ulcorner \exists z \urcorner$ with the corresponding bounded quantification $\ulcorner \exists z \in V_{\lambda}[x'] \urcorner$, and
+        \item any universal quantification of the form $\ulcorner \forall z \urcorner$ with the corresponding bounded quantification $\ulcorner \forall z \in V_{\lambda}[x'] \urcorner$,
+    \end{itemize}
+    $\psi^{\dagger}$ defines in $W'$ a bijection $\pi^{\dagger}$ from $\lambda$ onto $V_{\lambda}[x']$.
+\end{enumerate}
+Further, $\mathfrak{T}$ is consistent due to the existence of $(V_{\lambda}[x]; \in, g)$ in $W$. So let $\mathcal{M} \models^* \mathfrak{T}$ in some outer model of $V$. In $V[\mathcal{M}]$, there is a set of ordinals $x'$ and a list of parameters $\Vec{z}$ for which \ref{9420C} holds, so by the absoluteness of $\phi$, $(V[\mathcal{M}]; \in) \models \varphi(\Vec{y}, x')$. Trivially, $V[x'] \subset V[\mathcal{M}]$. On the flipside, we can accurately define $V_{\lambda}[x']$ in $V[x']$, which implies we can recover through $\psi^{\dagger}$ and its absoluteness, the same sets $\Vec{z}$ and $\pi^{\dagger}$ that make \ref{9420A} to \ref{9420E} true in $V[\mathcal{M}]$. But $\mathcal{M}$ is definable in an absolute sense from the structure $(V_{\lambda}[x']; \in, \Vec{y}, \Vec{z}, x')$ and the map $\psi^{\dagger}$, allowing us to conclude that $V[x'] = V[\mathcal{M}]$.
 \end{proof}
 
 \begin{cor}
@@ -9592,14 +9672,18 @@ Let
     \item $\varphi$ be a $(n + 1)$-ary $\Sigma_1$ formula in the L\'{e}vy hierarchy.
 \end{enumerate}
 Define 
-\begin{equation*}
-    U'(\Vec{y}, \varphi) := \{W \in \mathbf{M}(V) : (W; \in) \models \exists x \ \varphi (\Vec{y}, x) \} \text{.}
-\end{equation*}
-If $U'(\Vec{y}, \varphi) \neq \emptyset$, then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset U'(\Vec{y}, \varphi)$. 
+\begin{align*}
+    U'(\Vec{y}, \varphi) := \ & \{W \in \mathbf{M}(V) : (W; \in) \models \exists x \ \varphi (\Vec{y}, x) \} \\
+    U''(\Vec{y}, \varphi) := \ & \{W \in \mathbf{M}(V) : \exists x \in W \ (W = V[x] \wedge (W; \in) \models \varphi (\Vec{y}, x))\} \text{.}
+\end{align*}
+\begin{enumerate}[label=(\arabic*)]
+    \item\label{94211} If $U'(\Vec{y}, \varphi) \neq \emptyset$, then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset U'(\Vec{y}, \varphi)$. 
+    \item\label{94212} If $U''(\Vec{y}, \varphi) \neq \emptyset$, then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset U''(\Vec{y}, \varphi)$. 
+\end{enumerate}
 \end{cor}
 
 \begin{proof}
-This is a direct consequence of Corollary \ref{cor9417} and Theorem \ref{thm9419}.
+\ref{94211} is a direct consequence of Corollary \ref{cor9417} and Theorem \ref{thm9419}. Similarly, \ref{94212} is a direct consequence of Corollary \ref{cor9417} and Theorem \ref{thm9420}.
 \end{proof}
 
 From \ref{9252} and \ref{3246} of Proposition \ref{prop322}, as well as the last sentence of Fact \ref{fact9413}, one can infer that the main obstacle to proving the $\leq^M$-maximality of $\mathsf{Fg}$ in every CTM with our current tools is precisely the lack of canonical $Col(\omega, \lambda)$-names $\dot{x}$ that allow the proof of Theorem \ref{thm9414} to go through. In fact, this obstacle is intrinsic via the following two lemmas, as it is known that $\mathsf{ZFC}$ is consistent with the non-existence of a definable global choice function --- one can always force it, say, by adding proper class many Cohen reals.
@@ -9747,6 +9831,8 @@ By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to 
 \end{rem}
 
 Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
+
+\blankpage
 
 \part{\texorpdfstring{ References}{References}}
 
