@@ -9605,9 +9605,22 @@ Let $n$, $\Vec{y}$ and $\varphi$ be in accordance with the hypothesis, and assum
 \end{align}
 holds in $W$. On the other hand, any outer model $W'$ of $V$ in which (\ref{eq943''}) holds with $a$ and $a'$ in place of $x'$ and $x''$ respectively, must also have as an inner model $V[a] = V[a'] \in U''(\Vec{y}, \varphi)$. As (\ref{eq943''}) is a $\Sigma_1$ formula in the L\'{e}vy hierarchy with parameters in $V$, we may hereon assume, without loss of generality, that $x$ is a set of ordinals with supremum $\alpha$. 
 
-As in the proof of Theorem \ref{thm9419}, we write $\varphi(\Vec{y}, x)$ as $\ulcorner \exists \Vec{z} \ \phi(\Vec{y}, \Vec{z}, x) \urcorner$ for some formula $\phi$ that is $\Delta_0$ in the L\'{e}vy hierarchy, and find in $W$ witnesses $\Vec{b}$ for $\varphi$ so that $(W; \in) \models \phi(\Vec{y}, \Vec{b}, x)$. In $V$, choose a strong limit cardinal $\lambda > \alpha$ and a bijection $g$ from $\lambda$ onto $V_{\lambda}$, such that $\{\Vec{y}, \Vec{b}, x\} \in V_{\lambda}[x]$ and $(V_{\lambda}[x]; \in) \models \phi(\Vec{y}, \Vec{b}, x)$. Over the structure $(V_{\lambda}[x]; \in, g)$, one can define using a formula $\psi$ in two free variables, a canonical bijection $g'$ from $\lambda$ onto $V_{\lambda}[x]$ for which $g'(y) = z \iff \psi(y, z)$. This definition goes through all formulas in a single free variable with parameters in $V_{\lambda} \cup \{g\}$, in a manner similar to how the canonical global well-ordering is coherently defined on every initial segment of $L$.
+As in the proof of Theorem \ref{thm9419}, we write $\varphi(\Vec{y}, x)$ as $\ulcorner \exists \Vec{z} \ \phi(\Vec{y}, \Vec{z}, x) \urcorner$ for some formula $\phi$ that is $\Delta_0$ in the L\'{e}vy hierarchy, and find in $W$ witnesses $\Vec{b}$ for $\varphi$ so that $(W; \in) \models \phi(\Vec{y}, \Vec{b}, x)$. In $V$, choose a strong limit cardinal $\lambda > \alpha$ and a bijection $g$ from $\lambda$ onto $V_{\lambda}$, such that $\{\Vec{y}, \Vec{b}, x\} \in V_{\lambda}[x]$ and $(V_{\lambda}[x]; \in) \models \phi(\Vec{y}, \Vec{b}, x)$. Over the structure $(V_{\lambda}[x]; \in, g)$, one can define using a formula $\psi$ in two free variables, a canonical bijection $g'$ from $\lambda$ onto $V_{\lambda}[x]$ for which $g'(y) = z \iff \psi(y, z)$. 
 
-In $V$, we set $N := H(\lambda^+)$ and expand on the TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ defined in the proof of Theorem \ref{thm9419}. To $\sigma$, we add a new constant symbol $\ulcorner g^* \urcorner$ for the interpretation of $g$, so naturally $\vartheta(\ulcorner g^* \urcorner) := (\{g\}, 0)$. For any sentence $\theta$ in the language of set theory with parameters occurring in or among $\Vec{y}$, $\Vec{b}$, $x$, and $g$, define $\theta^*$ to be the unique formula obtained from $\theta$ by a global substitution of
+\begin{rem}\label{rem9414'}
+We can choose $\psi$ so that the definition of $g'$ goes through all formulas in a single free variable with parameters in $V_{\lambda} \cup \{g\}$, in a manner similar to how the canonical global well-ordering is coherently defined on every initial segment of $L$. As we shall see, this lets us simplify our proof a little.
+\end{rem}
+
+In $V$, we set $N := H(\lambda^+)$ and expand on the TCI $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$ defined in the proof of Theorem \ref{thm9419}. Next, we do the following.
+\begin{enumerate}[label=(\roman*)]
+    \item Add a new constant symbol $\ulcorner g^* \urcorner$ to $\sigma$ for the interpretation of $g$.
+    \item\label{9413ii} Add a binary relation symbol $\ulcorner V^* \urcorner$ to $\sigma$ for the interpretation of the copy of $(V_{\lambda}; \in)$ in the structure $(\lambda; \in^*)$.
+    \item Carry out the assignment $\vartheta(\ulcorner g^* \urcorner) := (\{g\}, 0)$.
+    \item\label{9413iv} Carry out the assignment $\vartheta(\ulcorner V^* \urcorner) := (V_{\lambda} \times \lambda, 0)$.
+\end{enumerate}
+(If $\psi$ were chosen as per Remark \ref{rem9414'}, we may omit steps \ref{9413ii} and \ref{9413iv}.)
+
+For any sentence $\theta$ in the language of set theory with parameters occurring in or among $\Vec{y}$, $\Vec{b}$, $x$, and $g$, define $\theta^*$ to be the unique formula obtained from $\theta$ by a global substitution of
 \begin{itemize}
     \item $\ulcorner \in \urcorner$ with $\ulcorner \in^* \urcorner$, 
     \item $\ulcorner x \urcorner$ with $\ulcorner x^* \urcorner$, 
@@ -9617,7 +9630,7 @@ In $V$, we set $N := H(\lambda^+)$ and expand on the TCI $\mathfrak{T} = (T, \si
     \item any existential quantification of the form $\ulcorner \exists z \urcorner$ with the corresponding bounded quantification $\ulcorner \exists z \in \lambda^* \urcorner$, and
     \item any universal quantification of the form $\ulcorner \forall z \urcorner$ with the corresponding bounded quantification $\ulcorner \forall z \in \lambda^* \urcorner$.
 \end{itemize}
-Next, we add to $T$ the following statements (the reader should again check that they are expressible in our signature with our set constraints).
+Finally, we add to $T$ the following statements (the reader should again check that they are expressible in our signature with our set constraints).
 \begin{enumerate}[label=(\arabic*)]
     \item $\psi^*$ defines an order isomorphism $\pi$ under $\in$ from a subset of $\lambda$ onto $\lambda$.
     \item $dom(\pi)$ contains exactly all members $c$ of $\lambda$ that satisfy both
@@ -9633,12 +9646,30 @@ Next, we add to $T$ the following statements (the reader should again check that
         c \cap dom(\pi) = \{d \in \lambda : d \in^* c\} \text{.}
     \end{equation*}
     \item $x^*$ is a subset of $dom(\pi)$.
-    \item A schema involving relativisation of formulas to members of $\lambda$, among other things, that in totality gives us: for every $c \in \lambda$, if $d$ is the unique member of $\pi^{-1}(\{c\})$, then 
-    \begin{equation*}
-        ((R^*)^{-1}(d); \in^*, x^*) \cong (V_c[x]; \in, x)
-    \end{equation*}
-    for some $x$, via the Mostowski collapse.
+    \item\label{94135} $V^*$ is an isomorphism from $(V_{\lambda}; \in)$ onto $(ran(V^*); \in^*)$.
+    \item For every $c \in \lambda$ and every $d \in (R^*)^{-1}(c+1) \setminus (R^*)^{-1}(c)$, there are $e \in \lambda$, $\Vec{a} \in ((R^*)^{-1}(c))^{< \omega}$, $\Vec{b} \in ((V^*)"(V_{c+1}))^{< \omega}$, and formulas $\chi$ and $\chi'$ such that
+    \begin{itemize}
+        \item $\chi'$ is a formula in the language of set theory of arity $dom(\Vec{a}) + dom(\Vec{b}) + 1$,
+        \item $\{y \in \lambda : y \in^* e\} = ((R^*)^{-1}(c))$, 
+        \item $\chi$ is the formal expression of the statement 
+        \begin{equation*}
+            \text{``} d = \{z \in e : (e; \in) \models \chi(\Vec{a}, \Vec{b}, z)\} \text{''}
+        \end{equation*} 
+        as a sentence in the language of set theory, and
+        \item $\chi^*$ holds.
+    \end{itemize}
+    \item\label{94137} For every $c \in \lambda$, $\Vec{a} \in ((R^*)^{-1}(c))^{< \omega}$, $\Vec{b} \in ((V^*)"(V_{c+1}))^{< \omega}$ and every formula $\chi'$, there are $d \in (R^*)^{-1}(c+1) \setminus (R^*)^{-1}(c)$, $e \in \lambda$ and a formula $\chi$ such that if $\chi'$ is a formula in the language of set theory of arity $dom(\Vec{a}) + dom(\Vec{b}) + 1$, then
+    \begin{itemize}
+        \item $\{y \in \lambda : y \in^* e\} = ((R^*)^{-1}(c))$, 
+        \item $\chi$ is the formal expression of the statement 
+        \begin{equation*}
+            \text{``} d = \{z \in e : (e; \in) \models \chi(\Vec{a}, \Vec{b}, z)\} \text{''}
+        \end{equation*}
+        as a sentence in the language of set theory, and
+        \item $\chi^*$ holds.
+    \end{itemize}
 \end{enumerate}
+(If $\psi$ were chosen as per Remark \ref{rem9414'}, we may omit statements \ref{94135} to \ref{94137}.)
 
 It is not difficult to verify that given (the appropriate reduct of) a model $(\lambda; \in^*, \Vec{y^*}, \Vec{z^*}, x^*)$ of our expanded $\mathfrak{T}$ in any outer model $W'$ of $V$, there are sets $\Vec{z}$ and $x'$ such that
 \begin{enumerate}[label=(\Alph*)]
@@ -9843,6 +9874,8 @@ By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to 
 \end{rem}
 
 Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
+
+\blankpage
 
 \part{\texorpdfstring{ References}{References}}
 
