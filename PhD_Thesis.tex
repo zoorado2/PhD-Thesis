@@ -9349,6 +9349,20 @@ What is a good benchmark for being sufficiently local? It might be illuminating 
 
 Now, being sufficiently local within a small extension $V[g]$ of $V$ necessarily excludes the use of $V$ itself as a parameter, unless $V$ is definable in $V[g]$. But if $g$ is a bounded subclass of $V$, then $V$ being definable in $V[g]$ must come from the fact that $V$ is definable in $V[g]$ with parameters in $V \cup \{g\}$. So, in any case, it makes sense to forbid the use of $V$ --- or any internally non-definable predicate thereof --- as a parameter in our push for localness. As it turns out, with this seemingly minor restriction imposed upon a property that virtually all known methods of generating small extensions possess, one can show that set forcing is in some sense the best such method for individual use cases.
 
+\begin{defi}
+Let 
+\begin{enumerate}[label=(\alph*)]
+    \item $n < \omega$,
+    \item $\Vec{y} \in V^n$, and
+    \item $\varphi$ be a $(n + 1)$-ary formula in the language of set theory.
+\end{enumerate}
+Define 
+\begin{align*}
+    U(\Vec{y}, \varphi) := \ & \{V[x] : \exists x' \in V \ (x \subset x') \text{ and } \varphi (\Vec{y}, x) \} \\
+    = \ & \{V[x] \in \mathbf{M}_S(V) : \exists x' \in V \ ((V[x]; \in) \models \text{``} x \subset x' \text{''} \wedge \varphi (\Vec{y}, x)) \} \text{.}
+\end{align*}
+\end{defi}
+
 \begin{cor}\label{cor9416}
 Let 
 \begin{enumerate}[label=(\alph*)]
@@ -9356,10 +9370,6 @@ Let
     \item $\Vec{y} \in V^n$, and
     \item $\varphi$ be a $(n + 1)$-ary $\Delta_1$ formula in the L\'{e}vy hierarchy.
 \end{enumerate}
-Define 
-\begin{equation*}
-    U(\Vec{y}, \varphi) := \{V[x] : \exists x' \in V \ (x \subset x') \text{ and } \varphi (\Vec{y}, x) \} \text{.}
-\end{equation*}
 If $U(\Vec{y}, \varphi) \neq \emptyset$, then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset U(\Vec{y}, \varphi)$. 
 \end{cor}
 
@@ -9509,7 +9519,20 @@ then there is a definable (with parameters) global choice function.
 
 \subsection{Enhanced Arguments}
 
-Corollary \ref{cor9416} can be improved in different directions with the use of some basic coding.
+Corollary \ref{cor9416} can be improved in different directions with the use of some basic coding. Before giving these improved versions, let us prove two theorems which are both helpful and independently interesting.
+
+\begin{defi}
+Let 
+\begin{enumerate}[label=(\alph*)]
+    \item $n < \omega$,
+    \item $\Vec{y} \in V^n$, and
+    \item $\varphi$ be a $(n + 1)$-ary formula in the language of set theory.
+\end{enumerate}
+Define 
+\begin{equation*}
+    U'(\Vec{y}, \varphi) := \{W \in \mathbf{M}(V) : (W; \in) \models \exists x \ \varphi (\Vec{y}, x) \} \text{.}
+\end{equation*}
+\end{defi}
 
 \begin{thm}\label{thm9419}
 Let 
@@ -9518,10 +9541,6 @@ Let
     \item $\Vec{y} \in V^n$, and
     \item $\varphi$ be a $(n + 1)$-ary $\Sigma_1$ formula in the L\'{e}vy hierarchy.
 \end{enumerate}
-Define 
-\begin{equation*}
-    U'(\Vec{y}, \varphi) := \{W \in \mathbf{M}(V) : (W; \in) \models \exists x \ \varphi (\Vec{y}, x) \} \text{.}
-\end{equation*}
 If $U'(\Vec{y}, \varphi) \neq \emptyset$, then there is a TCI $\mathfrak{T} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}) \subset U'(\Vec{y}, \varphi)$. 
 \end{thm}
 
@@ -9580,6 +9599,19 @@ where $\Vec{y^*}$ is got from $\Vec{y}$ by replacing every instance of $y$ occur
 
 Now, $\mathfrak{T}$ is consistent due to the existence of $L_{\lambda}[S]$ in $W$. On the other hand, if $\mathcal{M} \models^* \mathfrak{T}$ in some outer model $W'$ of $V$, then there is some transitive model $N'$ of set theory containing $\Vec{y}$ and satisfying (\ref{eq943'}) by the absoluteness of the Mostowski collapse. This means $(N'; \in, \Vec{y}) \models \exists x \ \varphi (\Vec{y}, x)$, and because $\varphi$ is $\Sigma_1$, necessarily $(W'; \in) \models \exists x \ \varphi (\Vec{y}, x)$ as well. We have thus shown that $\mathrm{Eval}^V(\mathfrak{T}) \subset U'(\Vec{y}, \varphi)$.
 \end{proof}
+
+\begin{defi}
+Let 
+\begin{enumerate}[label=(\alph*)]
+    \item $n < \omega$,
+    \item $\Vec{y} \in V^n$, and
+    \item $\varphi$ be a $(n + 1)$-ary formula in the language of set theory.
+\end{enumerate}
+Define 
+\begin{equation*}
+    U''(\Vec{y}, \varphi) := \{W \in \mathbf{M}(V) : \exists x \in W \ (W = V[x] \wedge (W; \in) \models \varphi (\Vec{y}, x))\} \text{.}
+\end{equation*}
+\end{defi}
 
 \begin{thm}\label{thm9420}
 Let 
@@ -9699,12 +9731,9 @@ Let
     \item $\Vec{y} \in V^n$, and
     \item $\varphi$ be a $(n + 1)$-ary $\Sigma_1$ formula in the L\'{e}vy hierarchy.
 \end{enumerate}
-Define 
-\begin{align*}
-    U'(\Vec{y}, \varphi) := \ & \{W \in \mathbf{M}(V) : (W; \in) \models \exists x \ \varphi (\Vec{y}, x) \} \\
-    U''(\Vec{y}, \varphi) := \ & \{W \in \mathbf{M}(V) : \exists x \in W \ (W = V[x] \wedge (W; \in) \models \varphi (\Vec{y}, x))\} \text{.}
-\end{align*}
+The following conclusions hold.
 \begin{enumerate}[label=(\arabic*)]
+    \item\label{94210} If $U(\Vec{y}, \varphi) \neq \emptyset$, then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset U(\Vec{y}, \varphi)$.
     \item\label{94211} If $U'(\Vec{y}, \varphi) \neq \emptyset$, then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset U'(\Vec{y}, \varphi)$. 
     \item\label{94212} If $U''(\Vec{y}, \varphi) \neq \emptyset$, then there is a forcing notion $\mathbb{P} \in V$ such that $\mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset U''(\Vec{y}, \varphi)$. 
 \end{enumerate}
@@ -9712,6 +9741,15 @@ Define
 
 \begin{proof}
 \ref{94211} is a direct consequence of Corollary \ref{cor9417} and Theorem \ref{thm9419}. Similarly, \ref{94212} is a direct consequence of Corollary \ref{cor9417} and Theorem \ref{thm9420}.
+
+To see that \ref{94210} is true, assume $U(\Vec{y}, \varphi) \neq \emptyset$, or in other words, that there are $V[x] \in \mathbf{M}_S(V)$ and $x' \in V$ satisfying $(V[x]; \in) \models \text{``} x \subset x' \text{''} \wedge \varphi (\Vec{y}, x)$. Set
+\begin{equation*}
+    \varphi' := \ulcorner \text{``} x \subset x' \text{''} \wedge \varphi (\Vec{y}, x) \urcorner \text{.}
+\end{equation*}
+Now $\varphi'$ is a $(n+2)$-ary $\Sigma_1$ formula in the L\'{e}vy hierarchy with list of parameters $\Vec{y}' := \Vec{y}^{\frown}(x') \in V^{n+1}$. Moreover, $V[x] \in U''(\Vec{y}', \varphi') \subset U(\Vec{y}, \varphi)$, so an application of \ref{94212} yields the existence of a forcing notion $\mathbb{P} \in V$ for which
+\begin{equation*}
+    \mathrm{Eval}^V(\mathfrak{T}(\mathbb{P})) \subset U''(\Vec{y}', \varphi') \subset U(\Vec{y}, \varphi) \text{.} \qedhere
+\end{equation*}
 \end{proof}
 
 \section{Discussion and Questions}
@@ -9874,8 +9912,6 @@ By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to 
 \end{rem}
 
 Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
-
-\blankpage
 
 \part{\texorpdfstring{ References}{References}}
 
