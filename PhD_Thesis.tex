@@ -6428,7 +6428,7 @@ Then there is a stationary-preserving forcing notion $\mathbb{P}$ of size $2^{< 
 \end{enumerate}
 \end{thm}
 
-\section{Open Questions}
+\section{Extending the Namba Extension Problem}
 
 Work in the universe $W$ as defined in the proof of Theorem \ref{notion1} and let $\lambda^{\dagger}$, $\kappa$, $C$ and $\{Q_{\lambda} : \lambda \in C\}$ be as in the same proof. Fix any infinite cardinal $\theta > \omega$. Should we then alter the definition of $\Gamma_{\lambda}$ and $P_{\lambda}$ for each $\lambda \in C \cup \{\lambda^{\dagger}\}$ as follows:
 \begin{align*}
@@ -6492,21 +6492,157 @@ With these modifications, the rest of the proof of Theorem \ref{notion1} goes th
     \item\label{cs2} letting $j$ be the generic ultrapower map as in the proof of Lemma \ref{sideuni}, $j(A) = j" A$ must hold whenever $$A \in V \text{ and } V \models \text{``} |A| < \omega_1 \text{''.}$$
 \end{enumerate}
 
-We have described above what is spiritually a countable-support version of the original sequence $\{\mathbb{P}_{\lambda} : \lambda \in C \cup \lambda^{\dagger}\}$ constructed in the proof of Theorem \ref{notion1}. To distinguish this new version from the original, call the former sequence $\{\mathbb{P}^{< \omega_1}_{\lambda} : \lambda \in C \cup \lambda^{\dagger}\}$.
+We have described above what is spiritually a countable-support version of the original sequence $\{\mathbb{P}_{\lambda} : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ constructed in the proof of Theorem \ref{notion1}. To distinguish this new version from the original, call the former sequence $\{\mathbb{P}^{< \omega_1}_{\lambda} : \lambda \in C \cup \{\lambda^{\dagger}\}\}$.
 
 \begin{prop}\label{prop741}
-$\mathbb{P}^C_{\lambda}(\omega_1)$ and $\mathbb{P}^{< \omega_1}_{\lambda}$ are forcing equivalent for all $\lambda \in C \cup \lambda^{\dagger}$.
+$\mathbb{P}^C_{\lambda}(\omega_1)$ and $\mathbb{P}^{< \omega_1}_{\lambda}$ are forcing equivalent for all $\lambda \in C \cup \{\lambda^{\dagger}\}$.
 \end{prop}
 
 \begin{proof}
-By induction on $\lambda \in C \cup \lambda^{\dagger}$. Given \ref{s9n}, \ref{cs1} and the induction hypothesis, we can deduce that (\ref{eq47}) and the redeclared $\hyperref[s8n]{\text{(S8)}_{\lambda}}$ are equivalent through a routine unfolding of definitions. We shall show that the map $A \mapsto \{\ulcorner A \subset \dot{G} \urcorner\}$ is a dense weak embedding from $\mathbb{P}^C_{\lambda}(\omega_1)$ into $\mathbb{P}^{< \omega_1}_{\lambda}$. That it is a weak embedding is easy to see, so we need only show that its image is dense in $w(\mathbb{P}^{< \omega_1}_{\lambda})$. Towards that end, let $p \in P^{< \omega_1}_{\lambda}$. By \ref{cs1}, choose $q \leq_{\lambda} p$ such that $q$ is a good condition of $\mathbb{P}^{< \omega_1}_{\lambda}$. Now, setting 
+By induction on $\lambda \in C \cup \{\lambda^{\dagger}\}$. Given \ref{s9n}, \ref{cs1} and the induction hypothesis, we can deduce that (\ref{eq47}) and the redeclared $\hyperref[s8n]{\text{(S8)}_{\lambda}}$ are equivalent through a routine unfolding of definitions. We shall show that the map $A \mapsto \{\ulcorner A \subset \dot{G} \urcorner\}$ is a dense weak embedding from $\mathbb{P}^C_{\lambda}(\omega_1)$ into $\mathbb{P}^{< \omega_1}_{\lambda}$. That it is a weak embedding is easy to see, so we need only show that its image is dense in $w(\mathbb{P}^{< \omega_1}_{\lambda})$. Towards that end, let $p \in P^{< \omega_1}_{\lambda}$. By \ref{cs1}, choose $q \leq_{\lambda} p$ such that $q$ is a good condition of $\mathbb{P}^{< \omega_1}_{\lambda}$. Now, setting 
 \begin{equation*}
     A_q := \bigcup \{A \in [\mathcal{L}^o]^{< \omega_1} : \ulcorner A \subset \dot{G} \urcorner \in q\} \cup (q \cap \mathcal{L}^o) \text{,}
 \end{equation*}
 we have by \ref{s9n} that $\{\ulcorner A_q \subset \dot{G} \urcorner\}$ extends $q$, and thus $p$, in $w(\mathbb{P}^{< \omega_1}_{\lambda})$.
 \end{proof}
 
-What prevents us from adapting our augmentation to supports of greater cardinalities? For one, \ref{cs2} no longer holds if we replace the sole instance of $\omega_1$ therein with a larger cardinal. Whether this is a fundamental obstacle to our cause can be formalised as the following question.
+For the set $C$ defined in the proof of Theorem \ref{notion1}, the sequence $\{\mathbb{P}^C_{\lambda}(\omega_1) : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ will play a crucial role in our solution to a higher analogue of the Namba extension problem.
+
+\begin{defi}
+Let $GNb_1(\kappa, \lambda)$ denote the statement
+\begin{align*}
+    \text{`} & \text{there is a forcing notion } \mathbb{P} = (P, \leq_{\mathbb{P}}) \text{ such that:} \\
+    & P \subset H(\lambda), \\
+    & \mathbb{P} \text{ adds no } \omega \text{-sequences of ordinals,} \\
+    & \mathbb{P} \text{ preserves stationary subsets of } \kappa \text{,} \\
+    & \Vdash_{\mathbb{P}} ``cof(\alpha) = \omega_1" \text{ for all regular cardinals } \alpha \text{ satisfying } \omega_2 \leq \alpha < \lambda \text{ and } \alpha \neq \kappa \text{,} \\
+    & \Vdash_{\mathbb{P}} ``cof(\lambda) = \kappa" \text{'.}
+\end{align*}
+\end{defi}
+
+\begin{defi}
+Let $GNb'_1(\kappa, \lambda)$ denote the statement
+\begin{align*}
+    \text{`} & \text{there is a forcing notion } \mathbb{P} \text{ such that:} \\
+    & \mathbb{P} \text{ adds no } \omega \text{-sequences of ordinals,} \\
+    & \mathbb{P} \text{ preserves stationary subsets of } \kappa \text{,} \\
+    & \Vdash_{\mathbb{P}} ``cof(\alpha) = \omega_1" \text{ for all regular cardinals } \alpha \text{ satisfying } \omega_2 \leq \alpha < \lambda \text{ and } \alpha \neq \kappa \text{,} \\
+    & \Vdash_{\mathbb{P}} ``cof(\gamma) = \kappa" \text{ for all regular cardinals } \gamma \text{ satisfying } \lambda \leq \gamma \leq 2^{< \lambda} \text{, and} \\
+    & \Vdash_{\mathbb{P}} ``cof(\beta) = \beta" \text{ for all regular cardinals } \beta \text{ satisfying } 2^{< \lambda} < \beta \text{'.}
+\end{align*}
+\end{defi}
+
+\begin{thm}\label{thm744}
+Let $\kappa$, $\lambda^{\dagger}$ be regular cardinals such that 
+\begin{enumerate}[label=(\alph*)]
+    \item $\omega_1 < \kappa < \lambda^{\dagger}$,
+    \item $\Diamond_{\lambda^{\dagger}}$ holds, and
+    \item for every stationary subset $S$ of $\kappa$, there is an outer model $W$ of $V$ wherein a definable elementary embedding $j$ exists of $V$ into a definable inner model $M$ of $W$ with the property
+    \begin{equation*}
+        crit(j) = \kappa \in j(S) \text{.}
+    \end{equation*}
+\end{enumerate}
+Then there is a forcing notion of size $\lambda$ witnessing $GNb_1(\kappa, \lambda^{\dagger})$.
+\end{thm}
+
+\begin{proof}
+We leave it to the reader to check that, under our hypotheses, the entire argument after Lemma \ref{lem26} in the proof of Theorem \ref{notion1} goes through without a hitch should we employ the ``natural'' substitutions of
+\begin{enumerate}[label=(\arabic*)]
+    \item all instances of $\omega$ originally required to ensure 
+    \begin{equation*}
+        \Vdash_{\mathbb{P}} \text{``} cof(\alpha) = \omega \text{''} \text{ for all regular cardinals } \alpha \text{ satisfying } \omega_2 \leq \alpha < \lambda^{\dagger}
+    \end{equation*}
+    with $\omega_1$,
+    \item all instances of $\omega_1$ originally required to ensure
+    \begin{equation*}
+        \Vdash_{\mathbb{P}} \text{``} cof(\lambda^{\dagger}) = \omega_1 \text{''}
+    \end{equation*}
+    with $\kappa$, 
+    \item all instances of $R$ with 
+    \begin{equation*}
+        R' := \{i < \lambda^{\dagger} : \omega_2 \leq i \neq \kappa \text{ and } i \text{ is regular} \} \text{,}
+    \end{equation*}
+\end{enumerate}
+while
+\begin{enumerate}[label=(\arabic*)]
+    \setcounter{enumi}{3}
+    \item modifying \ref{c2} so that it also says
+    \begin{quote}
+        ``each $F_i$ is a strictly increasing function'',
+    \end{quote}
+    \item\label{7444} modifying \ref{c7} so that it instead says
+    \begin{quote}
+        ``if $X_{\delta, \lambda'}$ is non-empty, then $(X_{\delta, \lambda'}; \in, c \cap X_{\delta, \lambda'}, \mathbb{P}_{\lambda'}, A_{\lambda'})$ is an elementary submodel of $(Q_{\lambda'}; \in, c \cap Q_{\lambda'}, \mathbb{P}_{\lambda'}, A_{\lambda'})$,''
+    \end{quote}
+    and
+    \item\label{7445} using the aforementioned sequence of ``countable-support'' forcing notions $\{\mathbb{P}^C_{\lambda}(\omega_1) : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ in place of the sequence $\{\mathbb{P}_{\lambda} : \lambda \in C \cup \{\lambda^{\dagger}\}\}$.
+\end{enumerate}
+
+What is left for us to prove is that $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ adds no $\omega$-sequences of ordinals. Towards this end, let 
+\begin{itemize}
+    \item $p \in \mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$, 
+    \item $\dot{f}$ be a $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$-name of function from $\omega$ into $ORD$, 
+    \item and $\{A_n : n < \omega\}$ be a partition of $\omega$ into infinite subsets, such that
+    \begin{equation*}
+        n + 1 \subset \bigcup \{A_m : m \leq n\}
+    \end{equation*}
+    for every $n < \omega$.
+\end{itemize}
+Due to \ref{7444}, we may, by identifying $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ with a certain dense suborder of itself, assume that for any $\delta < \kappa$ and any $\lambda \in C \cup \{\lambda^{\dagger}\}$, $X_{\delta, \lambda}(q)$ is the Skolem hull of itself with respect to $c$ whenever $q$ is a condition of $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ and $X_{\delta, \lambda}(q) \neq \emptyset$. Now define a sequence $\{(p_n, B_n) : n < \omega\}$ such that
+\begin{enumerate}[label=(\roman*)]
+    \item\label{744i} $p_n$ is a condition of $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ for all $n < \omega$,
+    \item $p_n \subset p_{n+1}$ for all $n < \omega$,
+    \item\label{744iii} $B_n$ is a surjection from $\bigcup \{A_m : m \leq n\}$ onto 
+    \begin{align*}
+        E_n := \{(\delta, \lambda, D) \in \mathcal{P}(H(\lambda^{\dagger})): \ & \delta < \kappa \text{, } \lambda \in C \cup \{\lambda^{\dagger}\} \text{, } X_{\delta, \lambda}(p_n) \neq \emptyset \text{ and} \\ 
+        & D \text{ is a dense subset of } \mathbb{P}^C_{\lambda}(\omega_1) \\ 
+        & \text{definable over } (Q_{\lambda}; \in, \mathbb{P}_{\lambda}, A_{\lambda}) \\
+        & \text{with parameters from } X_{\delta, \lambda}(p_n)\} \text{, and}
+    \end{align*}
+    \item\label{744iv} $B_n \subset B_{n+1}$ for all $n < \omega$, 
+\end{enumerate}
+as follows. Set $p_0 := p$ and choose $B_0$ to be any surjection from $A_n$ onto $E_0$. Assuming $(p_n, B_n)$ has been defined, we first extend $p_n$ to some condition $q_n$ of $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ deciding the ordinal value of $\dot{f}(n)$, before extending $q_n$ to another condition $r_n$ of $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ for which 
+\begin{equation*}
+    \exists \delta \ \exists \lambda \ \exists D \ (B_n(n) = (\delta, \lambda, D) \text{ and } [r_n]^{< \omega_1} \cap X_{\delta, \lambda}(r_n) \cap D \neq \emptyset) \text{.}
+\end{equation*}
+Such an $r_n$ can be found because of \ref{7445}. Assign $p_{n+1}$ to be $r_n$ and $B_{n+1}$ to be any set extending $B_n$ that satisfies \ref{744iii}. From this construction, and in particular, from its implication
+\begin{align*}
+    \forall n < \omega \ \exists \beta \ \exists \delta \ \exists \lambda \ \exists D \ (& B_n(n) = (\delta, \lambda, D) \text{, } p_{n+1} \Vdash_{\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)} \dot{f}(n) = \beta \text{ and} \\
+    & [p_{n+1}]^{< \omega_1} \cap X_{\delta, \lambda}(p_{n+1}) \cap D \neq \emptyset)
+\end{align*}
+as well as the (predefined target) properties \ref{744i} to \ref{744iv}, we observe that 
+\begin{equation*}
+    p^* := \bigcup \{p_n : n < \omega\}
+\end{equation*}
+is a condition of $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ extending $p$ that forces $\dot{f}$ to take on a value in $V$. As $p$ is an arbitrary condition of $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$, the usual density argument tells us that $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ adds no $\omega$-sequences of ordinals.
+\end{proof}
+
+\begin{thm}
+Let $\kappa$, $\lambda^{\dagger}$ be regular cardinals such that $\omega_1 < \kappa < \lambda^{\dagger}$ and $\kappa$ is measurable. Then there is a forcing notion of size $2^{< \lambda}$ witnessing $GNb_1'(\kappa, \lambda^{\dagger})$.
+\end{thm}
+
+\begin{proof}
+It is easy to see that in $V^{Col(\lambda^{\dagger}, \lambda^{\dagger})}$, 
+\begin{enumerate}[label=(\arabic*)]
+    \item $\lambda^{\dagger}$ remains regular,
+    \item $\Diamond_{\lambda^{\dagger}}$ holds,
+    \item $\kappa$ remains measurable, 
+    \item $|H(\lambda^{\dagger})| = \lambda^{\dagger}$, and
+    \item $H(\lambda^{\dagger}) = H(\lambda^{\dagger})^V$.
+\end{enumerate}
+As a result, the hypotheses of Theorem \ref{thm744} are fulfilled in all $Col(\lambda^{\dagger}, \lambda^{\dagger})$-generic extensions $V[h]$ of $V$. Furthermore, for every such $V[h]$, Lemma \ref{lem26} holds after we replace
+\begin{itemize}
+    \item the only instance of the clause ``stationary-preserving forcing notion $\mathbb{P} = (P, \leq_P)$ fulfilling'' with ``forcing notion $\mathbb{P} = (P, \leq_P)$ preserving stationary subsets of $\kappa$ and fulfilling'',
+    \item the only instance of $\omega$ with $\omega_1$,
+    \item the only instance of $\omega_1$ with $\kappa$, and
+    \item the only instance of the clause ``$\omega_2 \leq \alpha < \lambda^{\dagger}$'' with ``$\omega_2 \leq \alpha < \lambda^{\dagger} \text{ and } \alpha \neq \kappa$''.
+\end{itemize}
+We are therefore justified in concluding the theorem.
+\end{proof}
+
+\section{Open Questions}
+
+Recall our augmentation of the definition of $\{\mathbb{P}_{\lambda} : \lambda \in C \cup \lambda^{\dagger}\}$ in the proof of Theorem \ref{notion1} to obtain the sequence $\{\mathbb{P}^{< \omega_1}_{\lambda} : \lambda \in C \cup \lambda^{\dagger}\}$. What prevents us from adapting this augmentation process to ``supports'' of greater cardinalities? For one, \ref{cs2} no longer holds if we replace the sole instance of $\omega_1$ therein with a larger cardinal. Whether this is a fundamental obstacle to our cause can be formalised as the following question.
 
 \begin{ques}\label{oq1}
 Let $W$, $\lambda^{\dagger}$ and $\kappa$ be as in the proof of Theorem \ref{notion1}. In $W$, can $\theta$, $C$ and
