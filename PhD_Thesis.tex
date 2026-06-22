@@ -5095,6 +5095,8 @@ Since \ref{43ii} and \ref{43iii} make each $\mathbb{P}(D)$ ``Namba-like'', the c
 \end{enumerate}
 hence it is sufficiently motivated. We shall spend the rest of this section ironing out the details of our incorporation attempt, with Theorem \ref{notion2} being its upshot.
 
+\subsection{Key Definitions and a Fact}
+
 \begin{defi}\label{defl2}
 To prepare for Definition \ref{def433}, let us first set aside the following distinguished symbols:
 \begin{enumerate}[label=(\alph*)]
@@ -5230,6 +5232,8 @@ and in every forcing extension of $V$,
     \end{itemize}
 \end{enumerate}
 \end{fact}
+
+\subsection{Theorem and Proof}
 
 Fix $F^*$, $T$ and $\dot{p}$ as provided by Fact \ref{fact434}. In light of said fact, we can make sense of --- and subsequently prove --- the following strengthening of Lemma 2.14 of \cite{schindler}.
 
@@ -6431,6 +6435,10 @@ Then there is a stationary-preserving forcing notion $\mathbb{P}$ of size $2^{< 
 
 \section{Discussion: Obstacles to Natural Analogues}\label{sect74}
 
+This section provides a cursory investigation into natural analogues of the constructions that transpired in the proofs of Theorems \ref{notion1} and \ref{notion2}. The said investigation is carried out roughly along two paths.
+
+\subsection{Towards Greater Supports}
+
 Work in the universe $W$ as defined in the proof of Theorem \ref{notion1} and let $\lambda^{\dagger}$, $\kappa$, $C$ and $\{Q_{\lambda} : \lambda \in C\}$ be as in the same proof. Fix any infinite cardinal $\theta > \omega$. Should we then alter the definition of $\Gamma_{\lambda}$ and $P_{\lambda}$ for each $\lambda \in C \cup \{\lambda^{\dagger}\}$ as follows:
 \begin{align*}
     \Gamma_{\lambda}^C(\theta) := \ & \text{the set } \Gamma_{\lambda} \text{ defined according to Definition \ref{defc},} \\
@@ -6507,9 +6515,21 @@ By induction on $\lambda \in C \cup \{\lambda^{\dagger}\}$. Given \ref{s9n}, \re
 we have by \ref{s9n} that $\{\ulcorner A_q \subset \dot{G} \urcorner\}$ extends $q$, and thus $p$, in $w(\mathbb{P}^{< \omega_1}_{\lambda})$.
 \end{proof}
 
-Now that we have shown how to augment the definition of $\{\mathbb{P}_{\lambda} : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ in the proof of Theorem \ref{notion1} to obtain a sequence of forcing notions pointwise forcing equivalent to $\{\mathbb{P}^C_{\lambda}(\omega_1) : \lambda \in C \cup \{\lambda^{\dagger}\}\}$, what prevents us from adapting this augmentation process to ``supports'' of greater cardinalities? For one, \ref{cs2} no longer holds if we replace the sole instance of $\omega_1$ therein with a larger cardinal. 
+Now that we have shown how to augment the definition of $\{\mathbb{P}_{\lambda} : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ in the proof of Theorem \ref{notion1} to obtain a sequence of forcing notions pointwise forcing equivalent to $\{\mathbb{P}^C_{\lambda}(\omega_1) : \lambda \in C \cup \{\lambda^{\dagger}\}\}$, what prevents us from adapting this augmentation process to ``supports'' of greater cardinalities? For one, \ref{cs2} no longer holds if we replace the sole instance of $\omega_1$ therein with a larger cardinal. It stands to reason that a more drastic overhaul of the specifications is needed for further extensions in this direction.
 
-Also natural is the question of whether we can swop out the precipitous ideal on $\omega_1$ for a measurable cardinal and still derive a close analogue of Theorem \ref{notion1}. If we were to allow the collapse of all cardinals strictly between $\omega$ and a measurable cardinal $\kappa$, it would be much more economical to reduce the hypotheses to that of Theorem \ref{notion1} by by first collapsing $\kappa$ to $\omega_1$ and obtaining that $\mathrm{NS}_{\omega_1}$ is precipitous. If we want to preserve both $\omega_1$ and $\kappa$, perhaps the sequence $\{\mathbb{P}^C_{\lambda}(\omega_1) : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ can come into use for some $C$ to be defined? 
+\subsection{Towards a Measurable Analogue}
+
+Also natural is the question of whether we can swop out the precipitous ideal on $\omega_1$ for a measurable cardinal and still derive a close analogue of Theorem \ref{notion1}. If we were to allow the collapse of all cardinals strictly between $\omega$ and a measurable cardinal $\kappa$, it would be much more economical to reduce the hypotheses to that of Theorem \ref{notion1} by by first collapsing $\kappa$ to $\omega_1$ and obtaining that $\mathrm{NS}_{\omega_1}$ is precipitous. Preserving both $\omega_1$ and $\kappa$ would require substantial innovation, because although
+\begin{enumerate}[label=(\alph*)]
+    \item the Asper\'{o}-Schindler side condition method is the only known non-trivial way to ensure the preservation of $\omega_1$ that plays well with the general machinery of forcing with language fragments, and
+    \item employing the Asper\'{o}-Schindler side condition method to preserve $\omega_1$ requires the existence of ample non-trivial definable elementary embeddings of $V$ into definable inner models, all with critical point $\omega_1^V$, from the perspective of some outer model of $V$, 
+\end{enumerate}
+yet
+\begin{enumerate}[label=(\alph*)]
+    \setcounter{enumi}{2}
+    \item the existence of even a single outer model of $V$ in which there is a definable non-trivial elementary embedding of $V$ with critical point $\omega_1^V$ into a definable inner model, is not known to follow from the existence of a measurable cardinal. 
+\end{enumerate} 
+The only category of obvious alternatives to the Asper\'{o}-Schindler side condition method we have encountered so far appears to be the class of methods that leverage on the ``countable support'' the sequences of forcing notions $\{\mathbb{P}^C_{\lambda}(\omega_1) : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ are inherently endowed with. In this subsection, let us briefly experiment with such sequences. 
 
 \begin{defi}
 Let $GNb_1(\kappa, \lambda)$ denote the statement
@@ -6661,7 +6681,10 @@ However, even if we weaken the modified \ref{c5} to instead say
 \end{quote}
 it appears hard to argue that a set $\Sigma$ both extending $p^*$ and satisfying \ref{c1} to \ref{c8} exists in some outer model of $V$. 
 
-Our line of reasoning --- as intuitive as it is --- juxtaposed with the tiny gap we encountered along the way, point to the probable need for new technology in order to prove Assumption \ref{thm744}. That is, if it were even provable.
+Our line of reasoning --- as intuitive as it is --- juxtaposed with the tiny gap we encountered along the way, points to the following:
+\begin{quote}
+    if a a witness to Assumption \ref{thm744} can be uniformly constructed from $\kappa$ and $\lambda^{\dagger}$, then either $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ is also a witness for some uniform definition of $C$, or radically new technology is needed in the construction.
+\end{quote}
 
 \section{Open Questions}
 
