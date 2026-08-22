@@ -3944,7 +3944,7 @@ Fix any nicely computable code $r$ of $H(\omega)$. Check that the following stat
     \item The oracle machine $\Psi$ constructed in the proof of Lemma \ref{ctblegeneric2} is a definable element of $H(\omega)$ over the structure $(H(\omega); \in, r, f)$.
     \item\label{ss53c} The injective function $t \mapsto f" \Sigma(\mathfrak{T}, \mathcal{M}_t)$ defined in the proof of Lemma \ref{ctblegeneric2} always has a left inverse computable using only $f_r" (P(\mathfrak{T})^{\top})$ as parameter. Further, said left inverse is uniformly computable over all relevant code-friendly $\Pi_2$ TCIs $\mathfrak{T}$.
 \end{enumerate}
-The verity of \ref{ss53a} to \ref{ss53c} implies that our proof of Lemma \ref{ctblegeneric2} essentially functions as a proof of a more general statement, which we formally present as a theorem below.
+The verity of \ref{ss53a} to \ref{ss53c} implies that the proof of Lemma \ref{ctblegeneric2} essentially functions as a proof of a more general statement, which we formally present as a theorem below.
 
 \begin{thm}\label{lastthm}
 There is a $\Delta_0$ formula $\psi_{gmc}$ in four free variables in the language of set theory such that $\psi_{gmc}(r, f_r, \Psi_r, \bar{\Psi}_{r})$ defines a function $$r \mapsto (f_r, \Psi_r, \bar{\Psi}_{r})$$ on the set of all nicely computable codes of $H(\omega)$, wherewith
@@ -4309,7 +4309,7 @@ Is there a ``naturally definable'' class $\mathcal{C}$ of TCIs such that
 
 This chapter illustrates how the forcing framework introduced in Section \ref{forframe} can be applied to resolve variants of what we term the \textit{Namba extension problem}.
 
-The main results in this chapter are Theorems \ref{notion1} and \ref{notion2}. We shall see that our proof of Theorem \ref{notion1} can be intuitively extended to a proof of Theorem \ref{notion2}, thanks to the modularisability of our framework.
+The main results in this chapter are Theorems \ref{notion1} and \ref{notion2}. We shall see that the proof of Theorem \ref{notion1} can be intuitively extended to a proof of Theorem \ref{notion2}, thanks to the modularisability of our framework.
 
 \section{An Extension Problem}
 
@@ -4779,7 +4779,7 @@ then there is $\Sigma' \supset \Sigma$ for which $\Sigma'$ $\Gamma_{\lambda_1} (
 It can be gleaned from Lemma \ref{extcert} and the definition of the $\mathbb{P}_{\lambda}$'s that
 \begin{enumerate}[label=(P\arabic*), leftmargin=40pt]
     \item\label{p1} $P_{\lambda_0} = P_{\lambda_1} \cap Q_{\lambda_0}$ whenever $\lambda_0, \lambda_1 \in C \cup \{\lambda^{\dagger}\}$ and $\lambda_0 \leq \lambda_1$, and
-    \item\label{p2} $P_{\lambda} = \bigcup \{P_{\lambda'} : \lambda' \in C \cap \lambda\}$ whenever $\lambda \in C \cup \{\lambda^{\dagger}\}$ and $sup(\lambda \cap C) = \lambda$.
+    \item\label{p2} $P_{\lambda} = \bigcup \{P_{\lambda'} : \lambda' \in C \cap \lambda\}$ whenever $\lambda \in C \cup \{\lambda^{\dagger}\}$ and $\mathrm{sup}(\lambda \cap C) = \lambda$.
 \end{enumerate}
 
 \begin{lem}\label{modeldone}
@@ -4870,7 +4870,7 @@ For <$k$> $\in \{2, 7, 8\}$, we check that $\Sigma^* \models^*_{j(\mathfrak{A})}
 
 \begin{enumerate}[label=<$k$> $\eq$ \arabic* :, leftmargin=70pt]
     \addtocounter{enumi}{1}
-    \item Let $i \in j(R)$. If $\dot{F}_i$ does not occur in $\Sigma'$, there is nothing to check, because the definition of $\mathfrak{C}$ guarantees $ran(F_i(\Sigma^*))$ is cofinal in $i$. Otherwise, $\dot{F}_i$ occurs in $\Sigma'$, which means $\dot{F}_i$ occurs in $j" \bigcup g$. Then there is $i' \in R$ such that $\dot{F}_i = \dot{F}_{j(i')} = j(\dot{F}_{i'})$. That $\bigcup g \models^*_{\mathfrak{A}} \hyperref[c2]{\text{(S2)}_{\nu}}$ implies $ran(F_{i'}(\bigcup g))$ is cofinal in $i'$. By a basic property of elementary embeddings associated with generic iterations, we know that for any ordinal $\alpha$ satisfying the inequality $\omega_1^W < cof^{W}(\alpha)$, we must have $j(\alpha) = sup(j" \alpha)$. Thus, $ran(F_i(\Sigma^*)) = j" ran(F_{i'}(\bigcup g))$ is cofinal in $j(i') = i$, and we are done.
+    \item Let $i \in j(R)$. If $\dot{F}_i$ does not occur in $\Sigma'$, there is nothing to check, because the definition of $\mathfrak{C}$ guarantees $ran(F_i(\Sigma^*))$ is cofinal in $i$. Otherwise, $\dot{F}_i$ occurs in $\Sigma'$, which means $\dot{F}_i$ occurs in $j" \bigcup g$. Then there is $i' \in R$ such that $\dot{F}_i = \dot{F}_{j(i')} = j(\dot{F}_{i'})$. That $\bigcup g \models^*_{\mathfrak{A}} \hyperref[c2]{\text{(S2)}_{\nu}}$ implies $ran(F_{i'}(\bigcup g))$ is cofinal in $i'$. By a basic property of elementary embeddings associated with generic iterations, we know that for any ordinal $\alpha$ satisfying the inequality $\omega_1^W < cof^{W}(\alpha)$, we must have $j(\alpha) = \mathrm{sup}(j" \alpha)$. Thus, $ran(F_i(\Sigma^*)) = j" ran(F_{i'}(\bigcup g))$ is cofinal in $j(i') = i$, and we are done.
     \addtocounter{enumi}{4}
     \item\label{k7m} Let $\delta$, $\lambda$, $\phi$, $\bar{s}$ and $x$ be such that 
     \begin{enumerate}[label=(K7.\arabic*), leftmargin=50pt]
@@ -5022,16 +5022,18 @@ According to Theorem \ref{notion1}, if $\mathrm{NS}_{\omega_1}$ is precipitous, 
 Assume $\mathrm{NS}_{\omega_1}$ is precipitous and $2^{\omega_1} = \omega_2$. Then $Nb'_1(\lambda)$ --- thus also $Nb_1(\lambda)$ --- is witnessed by a forcing notion of size $2^{< \lambda}$, for each regular cardinal $\lambda > \omega_2$. Furthermore, $Nb_0(\alpha)$ holds for each ordinal $\alpha > \omega_2$.
 \end{cor}
 
+\subsection{Intuition Behind the Forcing Definition}\label{intuit}
+
 An advantage of the forcing framework of Section \ref{forframe} is that it facilitates modular analyses of the generic object. Adding components to the generic object can be done by expanding the language and the meta-language requirements on which the forcing notion is based. Under the right circumstances, that said addition preserves a property of the original forcing notion is readily derived from examining the expanded language and requirements.
 
-Let us use the proof of Theorem \ref{notion1} to illustrate this. The key components of the proof are 
+Let us use the proof of Theorem \ref{notion1} to illustrate this. The key components of the proof are the objects
 \begin{equation*}
-    \mathfrak{A}, \mathcal{L}, C, \{(Q_{\lambda}, A_{\lambda}) : \lambda \in C\}, \Gamma_{base}, \Gamma_{side1}(\Vec{P}), \Gamma_{side2}(P) \text{,}
+    \lambda^{\dagger}, \mathfrak{A}, \mathcal{L}, C, \{(Q_{\lambda}, A_{\lambda}) : \lambda \in C\}, \Gamma_{base}, \Gamma_{side1}(\Vec{P}), \Gamma_{side2}(P) \text{,}
 \end{equation*}
-where 
+in $W$, where 
 \begin{itemize}
-    \item $\Gamma_{base}$ is the set containing just \ref{c1} to \ref{c4},
-    \item $\Gamma_{side1}(\Vec{P})$ is the set containing just \ref{c5} to \ref{c8}, and
+    \item $\Gamma_{base}$ is the set containing just \ref{c1} to \ref{c3},
+    \item $\Gamma_{side1}(\Vec{P})$ is the set containing just \ref{c4} to \ref{c8}, and
     \item $\Gamma_{side2}(P)$ is the singleton set containing (\ref{c9}).
 \end{itemize}
 Denote the set $\{\mathcal{L}, C, \{(Q_{\lambda}, A_{\lambda}) : \lambda \in C\}\}$ by $\mathrm{Fd}$. If $\mathfrak{A}'$, $\mathcal{L}'$ and $\Gamma'$ respectively fulfil the properties of $\mathfrak{A}$, $\mathcal{L}$ and $\Gamma$ in Section \ref{forframe}, let $\mathrm{AF}(\mathfrak{A}', \mathcal{L}', \Gamma')$ denote
@@ -5040,15 +5042,21 @@ Denote the set $\{\mathcal{L}, C, \{(Q_{\lambda}, A_{\lambda}) : \lambda \in C\}
 \end{equation*}
 For the proof to go through with its choice of $C$ and $\{(Q_{\lambda}, A_{\lambda}) : \lambda \in C\}$, the following conditions must be met.
 \begin{enumerate}[label=(\alph*)]
-    \item $trcl(\mathcal{L})$ is sufficiently small relative to $\mathfrak{A}$.
+    \item\label{intuita} $trcl(\mathcal{L})$ is sufficiently small relative to $\mathfrak{A}$.
     \item $\Gamma_{base}$ is a set of $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences possibly having members of $\mathrm{Fd}$ as fixed parameters.
     \item $\Gamma_{side1}(\Vec{P})$ is a set of $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences parametrised by a set of forcing notions $\Vec{P}$ and possibly having members of $\mathrm{Fd}$ as fixed parameters.
-    \item $\Gamma_{side2}(P)$ is a set of $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences parametrised by a forcing notion $P$ and possibly having members of $\mathrm{Fd}$ as fixed parameters.
+    \item\label{intuitd} $\Gamma_{side2}(P)$ is a set of $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences parametrised by a forcing notion $P$ and possibly having members of $\mathrm{Fd}$ as fixed parameters.
 \end{enumerate}
 Under these conditions, the crux of the proof boils down to a two-step process.
 \begin{enumerate}[leftmargin=50pt, label=Step \arabic*:]
-    \item\label{remstep1} Inductively construct forcing notions along $C$ such that for every $\lambda \in C \cup sup(C)$, $$\mathbb{P}_{\lambda} = \mathrm{AF}(\mathfrak{A}, \mathcal{L} \cap Q_{\lambda}, \Gamma_{base} \cup \Gamma_{side1}(\Vec{\mathbb{P}}_{\lambda})) \text{,}$$ where $$\Vec{\mathbb{P}}_{\lambda} := \{\mathbb{P}_{\lambda'} : \lambda' \in C \cap \lambda\} \text{.}$$
-    \item Setting $\mathbb{P} := \mathbb{P}_{sup(C)}$, show that $\Gamma_{side2}(\mathbb{P})$ is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal.
+    \item\label{remstep1} Inductively construct forcing notions along $C$ such that for every $\lambda \in C \cup \{\lambda^{\dagger}\}$, 
+    \begin{align*}
+        P_{\lambda} = \ & \mathrm{AF}(\mathfrak{A}, \mathcal{L} \cap Q_{\lambda}, \Gamma_{base} \cup \Gamma_{side1}(\Vec{\mathbb{P}}_{\lambda})) \\
+        \leq_{\lambda} \ = & \subset \cap \ P_{\lambda} \\
+        \mathbb{P}_{\lambda} = \ & (P_{\lambda}, \leq_{\lambda}) \text{,}
+    \end{align*}
+    where $$\Vec{\mathbb{P}}_{\lambda} := \{\mathbb{P}_{\lambda'} : \lambda' \in C \cap \lambda\} \text{.}$$
+    \item Setting $\mathbb{P} := \mathbb{P}_{\lambda^{\dagger}}$, show that $\Gamma_{side2}(\mathbb{P})$ is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal.
 \end{enumerate}
 Since Step 1 is pretty much automatic, we only have to prove the $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universality of $\Gamma_{side2}(\mathbb{P})$ should we alter any of $\mathcal{L}$, $\Gamma_{base}$, $\Gamma_{side1}(\Vec{P})$ and $\Gamma_{side2}(P)$. But this is made easier by referring to the proof of Lemma \ref{sideuni}. In fact, if we were to expand any of $\mathcal{L}$, $\Gamma_{base}$, $\Gamma_{side1}(\Vec{P})$ and $\Gamma_{side2}(P)$, then the proof of Lemma \ref{sideuni} is essentially a part of proving that $\Gamma_{side2}(\mathbb{P})$ is $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal, so we could build upon it directly to complete Step 2. 
 
@@ -5622,7 +5630,7 @@ so also $\emptyset \in \mathbb{P}_{\lambda}$ by the elementarity of $\pi$.
 By Proposition \ref{certgood}, $(\mathfrak{A}, \mathbb{P})$ is good for $\mathcal{L}$. Obviously, $\mathbb{P}$ is definable in the language associated with $\mathfrak{A}$ because $\mathbb{P} \in H(\kappa)$. Moreover, the following hold as they do in the proof of Theorem \ref{notion1}.
 \begin{enumerate}[label=(P\arabic*), leftmargin=40pt]
     \item\label{p1'} $P_{\lambda_0} = P_{\lambda_1} \cap Q_{\lambda_0}$ whenever $\lambda_0, \lambda_1 \in C \cup \{\lambda^{\dagger}\}$ and $\lambda_0 \leq \lambda_1$, and
-    \item\label{p2'} $P_{\lambda} = \bigcup \{P_{\lambda'} : \lambda' \in C \cap \lambda\}$ whenever $\lambda \in C \cup \{\lambda^{\dagger}\}$ and $sup(\lambda \cap C) = \lambda$.
+    \item\label{p2'} $P_{\lambda} = \bigcup \{P_{\lambda'} : \lambda' \in C \cap \lambda\}$ whenever $\lambda \in C \cup \{\lambda^{\dagger}\}$ and $\mathrm{sup}(\lambda \cap C) = \lambda$.
 \end{enumerate}
 
 \begin{lem}\label{modeldone2}
@@ -6435,11 +6443,162 @@ Then there is a stationary-preserving forcing notion $\mathbb{P}$ of size $2^{< 
 
 \section{Discussion: Obstacles to Natural Analogues}\label{sect74}
 
-This section provides a cursory investigation into natural analogues of the constructions that transpired in the proofs of Theorems \ref{notion1} and \ref{notion2}. The said investigation is carried out roughly along two paths.
+This section provides a cursory investigation into natural analogues of the constructions that transpired in the proofs of Theorems \ref{notion1} and \ref{notion2}. The said investigation is carried out roughly along three paths.
+
+\subsection{Towards a Two-cofinality Generalisation}\label{2cof}
+
+Let us first recapitulate a part of Subsection \ref{intuit}, namely the high-level description of the forcing construction integral to the proof of Theorem \ref{notion1}. For the rest of this subsection, we adopt the notation of Subsection \ref{intuit}, so that the major components of the proof of Theorem \ref{notion1} are labelled 
+\begin{equation*}
+    \lambda^{\dagger}, \mathfrak{A}, \mathcal{L}, C, \{(Q_{\lambda}, A_{\lambda}) : \lambda \in C\}, \Gamma_{base}, \Gamma_{side1}(\Vec{P}) \text{ and } \Gamma_{side2}(P)
+\end{equation*}
+accordingly, from the perspective of the universe $W$ as defined in the proof of Theorem \ref{notion1}. We shall also work in $W$ for the rest of this subsection. 
+
+Now, expand $\mathfrak{A}$, $\mathcal{L}$, $\Gamma_{base}$, $\Gamma_{side1}(\Vec{P})$ and $\Gamma_{side2}(P)$ such that 
+\begin{itemize}
+    \item $\mathfrak{A} = (A; \in, \Vec{R})$,
+    \item $(A; \in)$ is a transitive model of $\mathrm{ZFC - Powerset}$, and
+    \item \ref{intuita} to \ref{intuitd} in Subsection \ref{intuit} are satisfied with $\mathrm{Fd}$ denoting the set 
+    \begin{equation*}
+        \{\mathcal{L}, C, \{(Q_{\lambda}, A_{\lambda}) : \lambda \in C\}\} \text{,}
+    \end{equation*}
+\end{itemize}
+before inductively constructing $P_{\lambda}$, $\leq_{\lambda}$, $\mathbb{P}_{\lambda}$ and $\Vec{\mathbb{P}}_{\lambda}$ for $\lambda \in C \cup \{\lambda^{\dagger}\}$ following \hyperref[remstep1]{Step 1} of Subsection \ref{intuit}, where $\mathrm{AF}(\mathfrak{A}', \mathcal{L}', \Gamma')$ denote
+\begin{equation*}
+    \{p \in [\mathcal{L}']^{< \omega} : \ \Vdash_{Col(\omega, |trcl(\mathfrak{A}')|)} \exists \Sigma \ (``\Sigma \ \Gamma'(\mathcal{L}', \mathfrak{A}') \text{-certifies } p")\}
+\end{equation*}
+whenever $\mathfrak{A}'$, $\mathcal{L}'$ and $\Gamma'$ respectively fulfil the properties of $\mathfrak{A}$, $\mathcal{L}$ and $\Gamma$ in Section \ref{forframe}. Finally, set $\mathbb{P} := \mathbb{P}_{\lambda^{\dagger}}$.
+
+When a forcing notion $\mathbb{P}$ is obtained through the process highlighted in the previous paragraph, we say $\mathbb{P}$ is \textit{additively defined from the proof of Theorem \ref{notion1}} (in short, \textit{additively defined}), precisely because the said process is a form of additive construction built upon the skeleton that is the proof of Theorem \ref{notion1}. Note that this is actually a shorthand because the definition of such a $\mathbb{P}$ is contingent on the definitions of a slew of other objects --- so it is really the tuple $(\mathfrak{A}, \mathcal{L}, \Gamma_{base}, \Gamma_{side1}(\Vec{P}), \Gamma_{side2}(P))$ that is additively defined. As prefaced (or rather, preempted) in Subsection \ref{intuit}, the main theorems of Section \ref{ss43} are crucially dependent on forcing notions which are additively defined. In this subsection, we briefly explore the use of such additive definitions in proving a possible two-cofinalty generalisation of the Namba extension problem. 
+
+\begin{defi}
+Define 
+\begin{equation*}
+    R(\lambda) := \{i < \lambda : \omega_2 \leq i \text{ and } i \text{ is regular}\} \text{.}
+\end{equation*}
+For any set $\mathrm{Sb}$, let $Nb_2(\lambda, \mathrm{Sb})$ denote the statement
+\begin{align*}
+    \text{`} & \text{there is a stationary-preserving forcing notion } \mathbb{P} \text{ such that} \\ 
+    & \Vdash_{\mathbb{P}} ``cof(\alpha) = \omega" \text{ for all } \alpha \in R(\lambda) \setminus \mathrm{Sb} \text{,} \\
+    & \Vdash_{\mathbb{P}} ``cof(\gamma) = \omega_1" \text{ for all } \gamma \in R(\lambda) \cap \mathrm{Sb} \text{, and} \\
+    & \Vdash_{\mathbb{P}} ``cof(\gamma') = \omega_1" \text{ for all regular cardinals } \gamma' \text{ satisfying } \lambda \leq \gamma' \leq 2^{< \lambda} \text{, and} \\
+    & \Vdash_{\mathbb{P}} ``cof(\beta) = \beta" \text{ for all regular cardinals } \beta \text{ satisfying } 2^{< \lambda} < \beta \text{'.}
+\end{align*}
+\end{defi}
+
+Jensen first considered statements similar to $Nb_2$ in \cite{lforcing}. There, he showed that $Nb_2(\lambda, \mathrm{Sb})$ for every set $\mathrm{Sb}$ whenever $\lambda$ is strongly inaccessible. Recent results by De Bondt and Veli\v{c}kovi\'{c} (\cite{bendb}, as part of De Bondt's PhD dissertation) imply that $Nb_2(\lambda, \mathrm{Sb})$ for every regular $\lambda > \omega_2$ and every set $\mathrm{Sb}$. 
+
+It would be nice to have the following strengthening of Theorem \ref{notion1}, so that modulo an assumption beyond $\mathsf{ZFC}$, we can improve on a facet of De Bondt's and Veli\v{c}kovi\'{c}'s results by finding smaller witnesses to $Nb_2$.
+
+\begin{conj}\label{notion4}
+Assume $\mathrm{NS}_{\omega_1}$ is precipitous. Then $Nb_2(\lambda^{\dagger}, \mathrm{Sb})$ holds for every regular cardinal $\lambda^{\dagger} > 2^{\omega_1}$ and every set $\mathrm{Sb}$, and is witnessed by a forcing notion of size $2^{< \lambda^{\dagger}}$. In other words, whenever $\lambda^{\dagger} > 2^{\omega_1}$ is a regular cardinal and $\mathrm{Sb}$ is a set, there is a stationary-preserving forcing notion $\mathbb{P}'$ of size $2^{< \lambda^{\dagger}}$ such that 
+\begin{enumerate}[label=(\arabic*)]
+    \item\label{cond1+} $\Vdash_{\mathbb{P}'} ``cof(\alpha) = \omega"$ for all $\alpha \in R(\lambda^{\dagger}) \setminus \mathrm{Sb}$,
+    \item\label{cond2+} $\Vdash_{\mathbb{P}} ``cof(\gamma) = \omega_1"$ for all $\gamma \in R(\lambda^{\dagger}) \cap \mathrm{Sb}$,
+    \item $\Vdash_{\mathbb{P}'} ``cof(\gamma') = \omega_1"$ for all regular cardinals $\gamma'$ satisfying $\lambda^{\dagger} \leq \gamma' \leq 2^{< \lambda^{\dagger}}$, and
+    \item\label{cond4+} $\Vdash_{\mathbb{P}'} ``cof(\beta) = \beta"$ for all regular cardinals $\beta$ satisfying $2^{< \lambda^{\dagger}} < \beta$.
+\end{enumerate}
+\end{conj}
+
+It might be tempting to adapt the proof of Theorem \ref{notion1} in an attempt to prove Conjecture \ref{notion4}. We first show that a reduction via the natural analogue of Lemma \ref{lem26} for our purposes is possible. 
+
+\begin{lem}\label{lem26an}
+If in $V^{Col(\lambda^{\dagger}, \lambda^{\dagger})}$ there is a stationary-preserving forcing notion $\mathbb{P} = (P, \leq_P)$ fulfilling 
+\begin{enumerate}[label=(\arabic*')]
+    \item\label{4100'} $P \subset H(\lambda^{\dagger})$, 
+    \item\label{4101'} $\Vdash_{\mathbb{P}} ``cof(\alpha) = \omega"$ for all $\alpha \in R(\lambda^{\dagger}) \setminus \mathrm{Sb}$,
+    \item\label{4101''} $\Vdash_{\mathbb{P}} ``cof(\gamma) = \omega_1"$ for all $\gamma \in R(\lambda^{\dagger}) \cap \mathrm{Sb}$, and
+    \item\label{4102'} $\Vdash_{\mathbb{P}} ``cof(\lambda^{\dagger}) = \omega_1"$,
+\end{enumerate}
+then for some $Col(\lambda^{\dagger}, \lambda^{\dagger})$-name $\dot{\mathbb{P}}$ for $\mathbb{P}$,
+\begin{equation*}
+    Col(\lambda^{\dagger}, \lambda^{\dagger}) * \dot{\mathbb{P}}
+\end{equation*} 
+is a stationary-preserving forcing notion that contains a dense subset of size $2^{< \lambda^{\dagger}}$ and fulfils \ref{cond1+} to \ref{cond4+} of Conjecture \ref{notion4} in $V$.
+\end{lem}
+
+\begin{proof}
+Working in $V$, set 
+\begin{equation*}
+    \mathbb{P}' := Col(\lambda^{\dagger}, \lambda^{\dagger}) * \dot{\mathbb{P}} \text{.}
+\end{equation*} 
+Then $\mathbb{P}'$ is a stationary-preserving forcing notion fulfilling \ref{cond1+} and \ref{cond2+} of Conjecture \ref{notion4} because 
+\begin{itemize}
+    \item $Col(\lambda^{\dagger}, \lambda^{\dagger})$ is a stationary-preserving forcing notion forcing $\dot{\mathbb{P}}$ to be stationary-preserving, 
+    \item $Col(\lambda^{\dagger}, \lambda^{\dagger})$ forces $cof(\alpha) = cof^{V}(\alpha)$ for all $ \alpha < \lambda^{\dagger}$, and
+    \item \ref{4101'} and \ref{4101''} hold.
+\end{itemize}
+The rest of this proof is identical to that of Lemma \ref{lem26}.
+\end{proof}
+
+In order to prove Conjecture \ref{notion4}, it is therefore sufficient to exhibit in $W$ a stationary-preserving forcing notion $\mathbb{P} = (P, \leq_P)$ fulfilling \ref{4100'} to \ref{4102'} of Lemma \ref{lem26an}. The most straightforward way to find such a $\mathbb{P}$, considering the knowledge we so far possess, is perhaps to additively define it.
+
+To this end, retroactively set $R := R(\lambda^{\dagger}) \setminus \mathrm{Sb}$. Also, set $R' := R(\lambda^{\dagger}) \cap \mathrm{Sb}$.
+
+\begin{defi}\label{defl'}
+The language $\mathcal{L}'$ requires the distinguished symbols $\dot{F}'_i$ for $i \in R'$. Now fix $\mathcal{L}'$ to be the smallest set closed under negation, that contains expressions (strings) of the type
+\begin{enumerate}[label=(L\arabic*), leftmargin=40pt]
+    \setcounter{enumi}{2}
+    \item $\ulcorner \dot{F}'_i (\beta) = \alpha \urcorner$, for $i \in R'$, $\beta < \omega_1$ and $\alpha < i$.
+\end{enumerate}
+\end{defi}
+
+\begin{defi}
+For any pair $(i, \Sigma)$, define $F'_i(\Sigma)$ to be the set 
+\begin{equation*}
+    \{(\beta, \alpha) : \ulcorner \dot{F}'_i(\beta) = \alpha \urcorner \in \Sigma\} \text{.}
+\end{equation*}
+\end{defi}
+
+Expand $\mathcal{L}$ to just include $\mathcal{L}'$ and expand $\Gamma_{base}$ to just include the singleton set containing
+\begin{align*}
+    \varphi_{new} := \ulcorner & \forall i \ \forall \beta_0 \ \forall \beta_1 \ \forall \alpha_0 \ \forall \alpha_1 \\
+    & ((E(\ulcorner \dot{F}'_i (\beta_0) = \alpha_0 \urcorner) \wedge E(\ulcorner \dot{F}'_i (\beta_1) = \alpha_1 \urcorner) \wedge \beta_0 \in \beta_1) \\
+    & \implies \alpha_0 \in \alpha_1) \urcorner \text{.}
+\end{align*}
+In other words, reassign
+\begin{align*}
+    \mathcal{L} := \ & \mathcal{L} \cup \mathcal{L}' \\
+    \Gamma_{base} := \ & \Gamma_{base} \cup \{\varphi_{new}\} \text{.}
+\end{align*}
+
+In principle, $\varphi_{new}$ means to say that $F'_i(\Sigma)$ is strictly increasing as long as $\Sigma$ interprets the unary relation symbol $\ulcorner E \urcorner$ occurring in $\mathcal{L}^*_{\mathfrak{A}}$ (formulas).
+
+Recall that the crux of the proof of Theorem \ref{notion1} lies in Lemma \ref{sideuni}, and the proof of Lemma \ref{sideuni} hinges on the ability to extend $j" (\bigcup g)$ to $j(\Gamma_{\lambda^{\dagger}})(j(\mathcal{L}), j(\mathfrak{A}))$-certify a particular member of $j([\mathcal{L}]^{< \omega})$, where
+\begin{itemize}
+    \item $j$ is a fixed elementary embedding of $W$ into some inner model of $W$ with critical point $\omega_1^W$,
+    \item $j$ possesses the following property: $\bigcup j" A = j(\bigcup A)$ as long as $A$ is a set of ordinals with supremum being a regular cardinal of $W$ above $\omega^W_1$, 
+    \item $g$ is a $\mathbb{P}_{\lambda}$-generic filter over $W$ for some $\lambda \in C$, and
+    \item $\Gamma_{\lambda}$ can be considered definitionally as $\Gamma_{base} \cup \Gamma_{side1}(\Vec{\mathbb{P}}_{\lambda})$ whenever $\lambda \in C \cup \{\lambda^{\dagger}\}$.
+\end{itemize}
+Now notice that given our newly reassigned $\mathcal{L}$ and $\Gamma_{\lambda}$'s, no extension of $j" (\bigcup g)$ can help make progress towards $i \in R'$ having an uncountable cofinality in $W^{\mathbb{P}}$ if $F'_i(\bigcup g)$ has domain bounded in $\omega_1^W$ and range unbounded in $i$. To continue leveraging on the current technology behind Lemma \ref{sideuni}, we would have to find the non-trivial expansions of $\mathcal{L}$, $\Gamma_{base}$, $\Gamma_{side1}(\Vec{P})$ and $\Gamma_{side2}(P)$ that help guard against this scenario, as $i$ ranges over $R'$. Only then does an additively defined forcing notion $\mathbb{P}$ have any hope of satisfying \ref{4100'} to \ref{4102'} of Lemma \ref{lem26an}.
+
+\begin{defi}
+For each $i \in R'$, let $\varphi^i_{req}$ be the member of $\mathcal{L}^*_{\mathfrak{A}}$ defined by
+\begin{equation*}
+    \varphi^i_{req} := \ulcorner \exists \gamma \ \forall \beta \ \forall \alpha \ (E(\ulcorner \dot{F}'_i (\beta) = \alpha \urcorner) \implies \alpha \in \gamma) \urcorner \text{.}
+\end{equation*}
+What $\varphi^i_{req}$ means to say, is that the range of $F'_i(\Sigma)$ is bounded in $i$ as long as $\Sigma$ interprets the unary relation symbol $\ulcorner E \urcorner$ occurring in $\mathcal{L}^*_{\mathfrak{A}}$ (formulas).
+\end{defi}
+
+Given any $i \in R'$, $\varphi^i_{req}$ is a $\mathcal{L}^{*}_{\mathfrak{A}}$-$\Sigma_2$ sentence. Hence we cannot just add it to $\Gamma_{base}$ and run it through our current forcing framework while expecting $\bigcup g \models^{*}_{\mathfrak{A}} \varphi^i_{req}$ for every $\mathbb{P}_{\lambda}$-generic filter $g$ over $W$ whenever $\lambda \in C \cup \{\lambda^{\dagger}\}$. Nevertheless, under the current side-condition technology exemplified by the proofs of Lemmas \ref{sideuni} and \ref{statdone}, we would require 
+\begin{enumerate}[label=(TC\arabic*), leftmargin=50pt]
+    \item\label{tc1} $\{\lambda \in C : \ \Vdash_{\mathbb{P}_{\lambda}} \text{``} \bigcup \check{G} \models^{*}_{\mathfrak{A}} \varphi^i_{req} \text{''}\}$
+    to be a sufficiently large subset of $\lambda^{\dagger}$, and yet also that
+    \item\label{tc2} $\neg\varphi^i_{req}$ is derivable as a $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentence in $\Gamma_{side2}(\mathbb{P})$, so that $\Vdash_{\mathbb{P}} \text{``} \bigcup \check{G} \models^{*}_{\mathfrak{A}} \neg\varphi^i_{req} \text{''}$,
+\end{enumerate}
+where $\check{G}$ stands for the context sensitive canonical name for the generic filter --- it appearing in the forcing language of a forcing notion $\mathbb{Q}$ indicates that it is standing in for the canonical $\mathbb{Q}$-name for the $\mathbb{Q}$-generic filter. Letting $\varphi_{sc}$ be the negation of the $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentence (\ref{c9}), one should spot a parallel between $\varphi^i_{req}$ and $\varphi_{sc}$. To elaborate, notice that for the original set of $\mathbb{P}_{\lambda}$'s (which include $\mathbb{P}$ as originally defined) in the proof of Theorem \ref{notion1},
+\begin{enumerate}[label=(TC\arabic*'), leftmargin=50pt]
+    \item\label{tc1'} $\{\lambda \in C : \ \Vdash_{\mathbb{P}_{\lambda}} \text{``} \bigcup \check{G} \models^{*}_{\mathfrak{A}} \varphi_{sc} \text{''}\}$
+    is a club subset of $\lambda^{\dagger}$, and
+    \item\label{tc2'} $\neg\varphi_{sc}$ is derivable as a $(\mathfrak{A}, \mathbb{P}, \mathcal{L})$-universal $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentence in $\Gamma_{side2}(\mathbb{P})$, so that $\Vdash_{\mathbb{P}} \text{``} \bigcup \check{G} \models^{*}_{\mathfrak{A}} \neg\varphi_{sc} \text{''}$.
+\end{enumerate}
+The parallel between \ref{tc1} and \ref{tc1'}, as well as the parallel between \ref{tc2} and \ref{tc2'}, is thus obvious. 
+
+As a certain level of uniformity in the definition of the $\mathbb{P}_{\lambda}$'s, namely \ref{p1} and \ref{p2} in the proof of Theorem \ref{notion1}, is required for the proof of Lemma \ref{statdone} to go through, the tension between \ref{tc1} and \ref{tc2} immediately rules out any naive expansions of the $\Gamma_{\lambda}$'s. The hunch that any forcing notion $\mathbb{P}$ --- not to mention an additively defined one --- satisfying \ref{4100'} to \ref{4102'} of Lemma \ref{lem26an} has to have a deviously clever construction is also indirectly supported by the fact that the only known method of resolving the tension between \ref{tc1'} and \ref{tc2'} is a complicated inductive construction (that of the $\mathbb{P}_{\lambda}$'s in the proof of Theorem \ref{notion1} as per the crux of \cite{schindler}) without spiritual precedence.
 
 \subsection{Towards Greater Supports}
 
-Work in the universe $W$ as defined in the proof of Theorem \ref{notion1} and let $\lambda^{\dagger}$, $\kappa$, $C$ and $\{Q_{\lambda} : \lambda \in C\}$ be as in the same proof. Fix any infinite cardinal $\theta > \omega$. Should we then alter the definition of $\Gamma_{\lambda}$ and $P_{\lambda}$ for each $\lambda \in C \cup \{\lambda^{\dagger}\}$ as follows:
+Work in the universe $W$ as defined in the proof of Theorem \ref{notion1} and let $\lambda^{\dagger}$, $\kappa$, $\mathfrak{A}$, $\mathcal{L}$, $C$ and $\{Q_{\lambda} : \lambda \in C\}$ be as in the same proof. Fix any infinite cardinal $\theta > \omega$. Should we then alter the definition of $\Gamma_{\lambda}$ and $P_{\lambda}$ for each $\lambda \in C \cup \{\lambda^{\dagger}\}$ as follows:
 \begin{align*}
     \Gamma_{\lambda}^C(\theta) := \ & \text{the set } \Gamma_{\lambda} \text{ defined according to Definition \ref{defc},} \\
     & \text{but with } \mathbb{P}^C_{\lambda'}(\theta) \text{ in place of the parameter } \mathbb{P}_{\lambda'} \text{ for each } \lambda' \in \lambda \cap C \\
@@ -6514,6 +6673,39 @@ By induction on $\lambda \in C \cup \{\lambda^{\dagger}\}$. Given \ref{s9n}, \re
 \end{equation*}
 we have by \ref{s9n} that $\{\ulcorner A_q \subset \dot{G} \urcorner\}$ extends $q$, and thus $p$, in $w(\mathbb{P}^{< \omega_1}_{\lambda})$.
 \end{proof}
+
+By the modularisability of our forcing framework, one can easily verify that greater support analogues of the forcing notions witnessing the main theorems of Section \ref{ss43} exist. More specifically, the following can be proven.
+
+\begin{thm}
+Assume
+\begin{enumerate}[label=(\roman*), leftmargin=40pt]
+    \item $\Gamma  = \bigcup_{1 \leq k < \omega} \mathcal{P}(\mathbb{R}^{k}) \cap L(\Gamma, \mathbb{R})$,
+    \item $\Gamma$ is productive,
+    \item $\mathrm{NS}_{\omega_1}$ is saturated,
+    \item $2^{\omega_1} = \mathbf{\delta^1_2} = \omega_2$, and
+    \item $MA(\omega_1)$ holds.
+\end{enumerate}
+Let 
+\begin{itemize}
+    \item $D \in L(\Gamma, \mathbb{R})$ be a dense subset of $\mathbb{P}_{max}$,
+    \item $A \subset \omega_1$ be such that $\omega_1^{L[A]} = \omega_1$, and
+    \item $\lambda^{\dagger} > \omega_2$ be a regular cardinal.
+\end{itemize}
+Then there is a stationary-preserving forcing notion $\mathbb{P}$ of size $2^{< \lambda^{\dagger}}$ such that 
+\begin{enumerate}[label=(\alph*)]
+    \item for some $\kappa$, $\mathfrak{A}$, $\mathcal{L}$, $C$ and $\{Q_{\lambda} : \lambda \in C\}$ in $V^{Col(\lambda^{\dagger}, \lambda^{\dagger})}$, 
+    \begin{equation*}
+        \mathbb{P} = Col(\lambda^{\dagger}, \lambda^{\dagger}) * \mathbb{P}^C_{\lambda^{\dagger}}(\omega_1) \text{,}
+    \end{equation*}
+    \item $\mathbb{P}$ witnesses $Nb'_1(\lambda^{\dagger})$ (thus also $Nb_1(\lambda^{\dagger})$), and
+    \item in $V^{\mathbb{P}}$, there is a $\Diamond$-iteration $$\langle \bar{N}_i = (N_i; \in, I_i, a_i), \sigma_{ij} : i \leq j \leq \omega_1^V \rangle$$ satisfying 
+    \begin{enumerate}[label=(\arabic*), leftmargin=40pt]
+        \item $\bar{N}_0 \in D^* := (F^*) " ((F^*)^{-1}(D)^*) \subset \mathbb{P}_{max}$,
+        \item $I_{\omega_1^V} = \mathrm{NS}_{\omega_1}^{V^{\mathbb{P}}} \cap N_{\omega_1^V}$, and
+        \item $a_{\omega_1^V} = A$.
+    \end{enumerate}
+\end{enumerate}
+\end{thm}
 
 Now that we have shown how to augment the definition of $\{\mathbb{P}_{\lambda} : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ in the proof of Theorem \ref{notion1} to obtain a sequence of forcing notions pointwise forcing equivalent to $\{\mathbb{P}^C_{\lambda}(\omega_1) : \lambda \in C \cup \{\lambda^{\dagger}\}\}$, what prevents us from adapting this augmentation process to ``supports'' of greater cardinalities? For one, \ref{cs2} no longer holds if we replace the sole instance of $\omega_1$ therein with a larger cardinal. It stands to reason that a more drastic overhaul of the specifications is needed for further extensions in this direction.
 
@@ -6677,7 +6869,7 @@ At this point, there should be an inkling that $p^*$ being a condition of $\math
 \end{itemize}
 However, even if we weaken the modified \ref{c5} to instead say
 \begin{quote}
-    ``$sup(X_{\delta, \lambda'} \cap \delta) = \delta$ whenever $X_{\delta, \lambda'}$ is non-empty'',
+    ``$\mathrm{sup}(X_{\delta, \lambda'} \cap \delta) = \delta$ whenever $X_{\delta, \lambda'}$ is non-empty'',
 \end{quote}
 it appears hard to argue that a set $\Sigma$ both extending $p^*$ and satisfying \ref{c1} to \ref{c8} exists in some outer model of $V$. 
 
@@ -6835,11 +7027,7 @@ Towards resolving Question \ref{inzfc}, one might want to first consider the tru
     \item\label{newq2} Is it true that $\mathsf{ZFC} \vdash ``Nb_1(\lambda)$ holds for all regular cardinals $\lambda$ above $\omega_2$''?
 \end{enumerate}
 
-It so happens that recent results by De Bondt and Veli\v{c}kovi\'{c} (\cite{bendb}, as a part of De Bondt's PhD dissertation) resolved \ref{newq2} in the affirmative. In fact, the class of forcing notions constructed by De Bondt and Veli\v{c}kovi\'{c} assuming only $\mathsf{ZFC}$, bears witness to a theorem significantly stronger than 
-\begin{equation*}
-    \text{``}Nb_1(\lambda) \text{ holds for all regular cardinals } \lambda \text{ above } \omega_2 \text{'',}
-\end{equation*}
-but does not seem to fulfil the size requirements of Question \ref{inzfc}. These forcing notions always add reals, so they cannot be used to answer Question \ref{q428}. Additionally, because the De Bondt-Veli\v{c}kovi\'{c} forcing constructions appear vastly different from the Asper\'{o}-Schindler one, there is no obvious way to integrate one kind with the other towards proving Theorem \ref{notion2}. For instance, it is clear that iterating forcing notions born from these two kinds of constructions would not work, since an Asper\'{o}-Schindler forcing notion must force 
+Following from the discussion in Subsection \ref{2cof} about the statement schema $Nb_2$, it is known that De Bondt's and Veli\v{c}kovi\'{c}'s results in \cite{bendb} resolved \ref{newq2} in the affirmative. However, the class of forcing notions constructed by them under $\mathsf{ZFC}$ does not fulfil the size requirements of Question \ref{inzfc}. These forcing notions always add reals, so they cannot be used to answer Question \ref{q428}. Additionally, because the De Bondt-Veli\v{c}kovi\'{c} forcing constructions appear vastly different from the Asper\'{o}-Schindler one, there is no obvious way to integrate one kind with the other towards proving Theorem \ref{notion2}. For instance, it is clear that iterating forcing notions born from these two kinds of constructions would not work, since an Asper\'{o}-Schindler forcing notion must force 
 \begin{equation*}
     ``cof(\omega_2^V) = \omega \text{ and } cof(\omega_3^V) = \omega_1" \text{.}
 \end{equation*}
