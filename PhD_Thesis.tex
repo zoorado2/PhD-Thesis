@@ -2439,7 +2439,7 @@ Fix a set of $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences, $\Gamma$, for thi
 
 In the previous section, we saw how a forcing notion $\mathbb{P}$ can generate witnesses to certain $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences when $\mathbb{P}$ is definable in the language associated with $\mathfrak{A}$ and $(\mathfrak{A}, \mathbb{P})$ is good for $\mathcal{L}$. Leveraging on this fact, we shall develop a framework for defining forcing notions that generate witnesses to a given set of $\mathcal{L}^*_{\mathfrak{A}}$-$\Pi_2$ sentences. 
 
-This framework both generalises and is inspired by the forcing construction Asper\'{o} and Schindler carried out in the proof of the main theorem of \cite{schindler}.
+This framework both generalises and is inspired by the forcing construction Asper\'{o} and Schindler carried out in the proof of the main theorem (Lemma 2.14) of \cite{schindler}.
 
 \begin{defi}
 A set $B$ is $\mathcal{L}$\emph{-closed under finite extensions} iff
@@ -6594,7 +6594,7 @@ where $\check{G}$ stands for the context sensitive canonical name for the generi
 \end{enumerate}
 The parallel between \ref{tc1} and \ref{tc1'}, as well as the parallel between \ref{tc2} and \ref{tc2'}, is thus obvious. 
 
-As a certain level of uniformity in the definition of the $\mathbb{P}_{\lambda}$'s, namely \ref{p1} and \ref{p2} in the proof of Theorem \ref{notion1}, is required for the proof of Lemma \ref{statdone} to go through, the tension between \ref{tc1} and \ref{tc2} immediately rules out any naive expansions of the $\Gamma_{\lambda}$'s. The hunch that any forcing notion $\mathbb{P}$ --- not to mention an additively defined one --- satisfying \ref{4100'} to \ref{4102'} of Lemma \ref{lem26an} has to have a deviously clever construction is also indirectly supported by the fact that the only known method of resolving the tension between \ref{tc1'} and \ref{tc2'} is a complicated inductive construction (that of the $\mathbb{P}_{\lambda}$'s in the proof of Theorem \ref{notion1} as per the crux of \cite{schindler}) without spiritual precedence.
+As a certain level of uniformity in the definition of the $\mathbb{P}_{\lambda}$'s, namely \ref{p1} and \ref{p2} in the proof of Theorem \ref{notion1}, is required for the proof of Lemma \ref{statdone} to go through, the tension between \ref{tc1} and \ref{tc2} immediately rules out any naive expansions of the $\Gamma_{\lambda}$'s. The hunch that any forcing notion $\mathbb{P}$ --- not to mention an additively defined one --- satisfying \ref{4100'} to \ref{4102'} of Lemma \ref{lem26an} has to have a deviously clever construction is also indirectly supported by the fact that the only known method of resolving the tension between \ref{tc1'} and \ref{tc2'} is a complicated inductive construction (that of the $\mathbb{P}_{\lambda}$'s in the proof of Theorem \ref{notion1}, as per the proof of Lemma 2.14 of \cite{schindler}) without spiritual precedence.
 
 What about riding on the coattails of the Asper\'{o}-Schindler side condition method? This seems to be our best bet at the moment, but observe that in the proof of Theorem \ref{notion1}, we have the ability to bound the range of the function
 \begin{equation*}
@@ -6602,7 +6602,13 @@ What about riding on the coattails of the Asper\'{o}-Schindler side condition me
 \end{equation*}
 by choosing an appropriate $\lambda \in C$ and taking $g$ to be any $\mathbb{P}_{\lambda}$-generic filter over $W$. To take a leaf out of the same book, we can try to fulfil \ref{tc1} on a meta level by organising the inductive construction of a sequence of forcing notions that incorporates the ordering of a club subset of $i$. 
 
-The thorny portion of the aforementioned approach is in making the construction along a selected club subset $C'$ of $i$ cohere with the construction along $C$. The construction along $C$, as seen in the proof of Theorem \ref{notion1}, works because the extension of the $j$-image $\Sigma$ of a $\mathbb{P}_{\lambda}$-generic filter over $W$ --- for some $\lambda \in C$ --- that is so crucial in the proof of Lemma \ref{sideuni}, is for all practical purposes an \textit{end extension}. This is due to the fact that in the proof of Lemma \ref{sideuni}, the initial side condition of $\Sigma$ is extended by adding a new elementary substructure that completely covers (i.e. includes) $\Sigma$. Such end extensions can be done easily via $j$ as they are bound by few constraints. Yet once $C'$ comes into the picture, we are forced to either give up \ref{p1} and \ref{p2} or to deal with extensions that are more constrained and elaborate. Both choices would require certain innovation and ingenuity, in no small part because the proof of Lemma \ref{statdone}, which relies heavily on \ref{p1} and \ref{p2}, lies within the core of the Asper\'{o}-Schindler technology.
+The thorny portion of the aforementioned approach is in making the construction along a selected club subset $C'$ of $i$ cohere with the construction along $C$. The construction along $C$, as seen in the proof of Theorem \ref{notion1}, works because the extension of the $j$-image $\Sigma$ of a $\mathbb{P}_{\lambda}$-generic filter over $W$, an extension so crucial to proving Lemma \ref{sideuni}, is for all practical purposes an end extension. This is due to the fact that, according to the proof of Lemma \ref{sideuni}, the initial side condition of $\Sigma$ is extended by adding a new elementary substructure that completely covers (i.e. includes) $\Sigma$. Such end extensions can be done easily via $j$ as they are bound by few constraints. Yet once $C'$ comes into the picture, we are forced to either give up \ref{p1} and \ref{p2} or to deal with extensions that are more constrained and elaborate. Both choices would require certain innovation and ingenuity, in no small part because the proof of Lemma \ref{statdone}, which relies heavily on \ref{p1} and \ref{p2}, is rather evidently a core component of the Asper\'{o}-Schindler technology.
+
+All in all, the upshot of the preceding discussion in this subsection can be (informally) summarised thus: a proof of Conjecture \ref{notion4}, if it were provable, would most likely involve either
+\begin{itemize}
+    \item a non-trivial augmentation to the basic skeleton of the Asper\'{o}-Schindler method, or 
+    \item a totally different --- and in all likelihood, entirely new --- approach.
+\end{itemize}
 
 \subsection{Towards Greater Supports}
 
