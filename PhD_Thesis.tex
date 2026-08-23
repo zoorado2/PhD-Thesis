@@ -6674,7 +6674,7 @@ By induction on $\lambda \in C \cup \{\lambda^{\dagger}\}$. Given \ref{s9n}, \re
 we have by \ref{s9n} that $\{\ulcorner A_q \subset \dot{G} \urcorner\}$ extends $q$, and thus $p$, in $w(\mathbb{P}^{< \omega_1}_{\lambda})$.
 \end{proof}
 
-By the modularisability of our forcing framework, one can easily verify that greater support analogues of the forcing notions witnessing the main theorems of Section \ref{ss43} exist. More specifically, the following can be proven.
+By the modularisability of our forcing framework, one can easily verify that greater support analogues of the forcing notions witnessing the main theorems of Section \ref{ss43} exist. In particular, the following can be proven with just a little additional effort.
 
 \begin{thm}
 Assume
@@ -6691,14 +6691,37 @@ Let
     \item $A \subset \omega_1$ be such that $\omega_1^{L[A]} = \omega_1$, and
     \item $\lambda^{\dagger} > \omega_2$ be a regular cardinal.
 \end{itemize}
-Then there is a stationary-preserving forcing notion $\mathbb{P}$ of size $2^{< \lambda^{\dagger}}$ such that 
-\begin{enumerate}[label=(\alph*)]
-    \item for some $\kappa$, $\mathfrak{A}$, $\mathcal{L}$, $C$ and $\{Q_{\lambda} : \lambda \in C\}$ in $V^{Col(\lambda^{\dagger}, \lambda^{\dagger})}$, 
+Then there are 
+\begin{enumerate}[label=(\arabic*)]
+    \item $Col(\lambda^{\dagger}, \lambda^{\dagger})$-names $\dot{\mathfrak{A}}$, $\dot{\mathcal{L}}$, and $\dot{C}$, 
+    \item a sequence of $Col(\lambda^{\dagger}, \lambda^{\dagger})$-names $\{\dot{Q}_{\lambda} : \lambda \in C\}$, and
+    \item a formula $\varphi_{\Gamma}$ with a single free variable in the forcing language of $Col(\lambda^{\dagger}, \lambda^{\dagger})$ fulfilling
     \begin{equation*}
-        \mathbb{P} = Col(\lambda^{\dagger}, \lambda^{\dagger}) * \mathbb{P}^C_{\lambda^{\dagger}}(\omega_1) \text{,}
+        \Vdash_{Col(\lambda^{\dagger}, \lambda^{\dagger})} \forall x \ (\text{``} \varphi_{\Gamma}(x) \subset \dot{\mathcal{L}}^*_{\dot{\mathfrak{A}}} \text{''})
     \end{equation*}
-    \item $\mathbb{P}$ witnesses $Nb'_1(\lambda^{\dagger})$ (thus also $Nb_1(\lambda^{\dagger})$), and
-    \item in $V^{\mathbb{P}}$, there is a $\Diamond$-iteration $$\langle \bar{N}_i = (N_i; \in, I_i, a_i), \sigma_{ij} : i \leq j \leq \omega_1^V \rangle$$ satisfying 
+\end{enumerate}
+such that for each infinite ordinal $\theta < \omega_2$, there are
+\begin{enumerate}[label=(\arabic*)]
+    \setcounter{enumi}{3}
+    \item a sequence of $Col(\lambda^{\dagger}, \lambda^{\dagger})$-names $\{\dot{\Gamma}_{\lambda}(\theta) : \lambda \in \dot{C} \cup \{\lambda^{\dagger}\}\}$,
+    \item a sequence of $Col(\lambda^{\dagger}, \lambda^{\dagger})$-names $\{\dot{P}_{\lambda}(\theta) : \lambda \in \dot{C} \cup \{\lambda^{\dagger}\}\}$,
+    \item a sequence of $Col(\lambda^{\dagger}, \lambda^{\dagger})$-names $\{\dot{\mathbb{P}}_{\lambda}(\theta) : \lambda \in \dot{C} \cup \{\lambda^{\dagger}\}\}$, and
+    \item a stationary-preserving forcing notion $\mathbb{P}(\theta)$ of size $2^{< \lambda^{\dagger}}$
+\end{enumerate}
+for which
+\begin{enumerate}[label=(\alph*)]
+    \item $\Vdash_{Col(\lambda^{\dagger}, \lambda^{\dagger})} \text{``} \dot{C} \text{ is a club subset of } \lambda^{\dagger} \text{''}$,
+    \item $\Vdash_{Col(\lambda^{\dagger}, \lambda^{\dagger})} \text{``} \forall \lambda \in \dot{C} \cup \{\lambda^{\dagger}\} \ (\dot{\Gamma}_{\lambda}(\theta) = \varphi_{\Gamma}(\{\dot{\mathbb{P}}_{\lambda'}(\theta) : \lambda' \in C \cap \lambda\})) \text{''}$,
+    \item \!
+    $\begin{aligned}[t]
+        \Vdash_{Col(\lambda^{\dagger}, \lambda^{\dagger})} \text{``} \forall \lambda \in \dot{C} \ \cup & \ \{\lambda^{\dagger}\} \\
+        (\dot{P}_{\lambda}(\theta) = \ & \{p \in [\dot{\mathcal{L}}]^{< \theta} \cap \dot{Q}_{\lambda} : \\
+        & \Vdash_{Col(\omega, |trcl(\dot{\mathfrak{A}})|)} \exists \Sigma \ (\text{``} \Sigma \ \dot{\Gamma}_{\lambda}(\theta) (\dot{\mathcal{L}} \cap \dot{Q}_{\lambda}, \dot{\mathfrak{A}}) \text{-certifies } p \text{''})\}) \text{'',}
+    \end{aligned}$
+    \item $\Vdash_{Col(\lambda^{\dagger}, \lambda^{\dagger})} \text{``} \forall \lambda \in \dot{C} \cup \{\lambda^{\dagger}\} \ (\dot{\mathbb{P}}_{\lambda}(\theta) = (\dot{P}_{\lambda}(\theta), \supset)) \text{''}$,
+    \item $\mathbb{P}(\theta) = Col(\lambda^{\dagger}, \lambda^{\dagger}) * \dot{\mathbb{P}}_{\lambda^{\dagger}}(\theta)$,
+    \item $\mathbb{P}(\theta)$ witnesses $Nb'_1(\lambda^{\dagger})$ (thus also $Nb_1(\lambda^{\dagger})$), and
+    \item in $V^{\mathbb{P}(\theta)}$, there is a $\Diamond$-iteration $$\langle \bar{N}_i = (N_i; \in, I_i, a_i), \sigma_{ij} : i \leq j \leq \omega_1^V \rangle$$ satisfying 
     \begin{enumerate}[label=(\arabic*), leftmargin=40pt]
         \item $\bar{N}_0 \in D^* := (F^*) " ((F^*)^{-1}(D)^*) \subset \mathbb{P}_{max}$,
         \item $I_{\omega_1^V} = \mathrm{NS}_{\omega_1}^{V^{\mathbb{P}}} \cap N_{\omega_1^V}$, and
