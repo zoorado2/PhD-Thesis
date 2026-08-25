@@ -6748,15 +6748,40 @@ Now that we have shown how to augment the definition of $\{\mathbb{P}_{\lambda} 
 
 \subsection{Towards a Measurable Analogue}
 
-Also natural is the question of whether we can swop out the precipitous ideal on $\omega_1$ for a measurable cardinal and still derive a close analogue of Theorem \ref{notion1}. If we were to allow the collapse of all cardinals strictly between $\omega$ and a measurable cardinal $\kappa$, it would be much more economical to reduce the hypotheses to that of Theorem \ref{notion1} by by first collapsing $\kappa$ to $\omega_1$ and obtaining that $\mathrm{NS}_{\omega_1}$ is precipitous. Preserving both $\omega_1$ and $\kappa$ would require substantial innovation, because although
+Also natural is the question of whether we can swop out the precipitous ideal on $\omega_1$ for a measurable cardinal and still derive a close analogue of Theorem \ref{notion1}. If we were to allow the collapse of all cardinals strictly between $\omega$ and a measurable cardinal $\kappa$, it would be much more economical to reduce the hypotheses to that of Theorem \ref{notion1} by by first collapsing $\kappa$ to $\omega_1$ and obtaining that $\mathrm{NS}_{\omega_1}$ is precipitous. What is more interesting is an analogue that preserves both $\omega_1$ and $\kappa$. Before we highlight some of the difficulties in proving such an analogue, let us first recapitulate a core ingredient of the proof of Theorem \ref{notion1}.
+
+\begin{defi}
+\leavevmode
+\begin{enumerate}[label=(\arabic*)]
+    \item For any inner or outer model $W$ of $V$, we say $\pi$ is an \textit{$\omega_1$-elementary embedding of $W$} iff in some outer model of $W$,
+    \begin{enumerate}[label=(\alph*)]
+        \item $\pi$ is a definable function,
+        \item $\pi$ is non-trivial elementary embedding of $W$ into some definable inner model $M$ (so that $W$ is also a definable inner model), and
+        \item $\pi$ has critical point $\omega_1^W$.
+    \end{enumerate}
+    \item For any inner or outer model $W$ of $V$ and any set $S \in \mathcal{P}(\omega_1^W) \cap W$, we say $\pi$ is an \textit{$(\omega_1, S)$-elementary embedding of $W$} iff in some outer model of $W$,
+    \begin{enumerate}[label=(\alph*)]
+        \item $\pi$ is an $\omega_1$-elementary embedding of $W$, and
+        \item $\omega_1^W \in \pi(S)$.
+    \end{enumerate}
+\end{enumerate}
+\end{defi}
+
+Preserving both $\omega_1$ and $\kappa$ would require substantial innovation, because
 \begin{enumerate}[label=(\alph*)]
-    \item the Asper\'{o}-Schindler side condition method is the only known non-trivial way to ensure the preservation of $\omega_1$ that plays well with the general machinery of forcing with language fragments, and
-    \item employing the Asper\'{o}-Schindler side condition method to preserve $\omega_1$ requires the existence of ample non-trivial definable elementary embeddings of $V$ into definable inner models, all with critical point $\omega_1^V$, from the perspective of some outer model of $V$, 
+    \item the Asper\'{o}-Schindler side condition method is the only known way of preserving $\omega_1$ that plays well with the broader machinery of forcing with language fragments, and
+    \item employing the Asper\'{o}-Schindler side condition method to preserve $\omega_1$ requires the existence of an $(\omega_1, S)$-elementary embedding of $V$ for each $S \in \mathcal{P}(\omega_1^V) \cap V$ fulfilling
+    \begin{equation*}
+        V \vDash \text{``} S \text{ is a stationary subset of } \omega_1 \text{''.}
+    \end{equation*}
 \end{enumerate}
 yet
 \begin{enumerate}[label=(\alph*)]
     \setcounter{enumi}{2}
-    \item the existence of even a single outer model of $V$ in which there is a definable non-trivial elementary embedding of $V$ with critical point $\omega_1^V$ into a definable inner model, is not known to follow from the existence of a measurable cardinal. 
+    \item the existence of an $(\omega_1, S)$-elementary embedding of $V$ for even a single $S \in \mathcal{P}(\omega_1^V) \cap V$ is not known to follow from 
+    \begin{equation*}
+        V \vDash \text{``there is a measurable cardinal''.}
+    \end{equation*}
 \end{enumerate} 
 The only category of obvious alternatives to the Asper\'{o}-Schindler side condition method we have encountered so far appears to be the class of methods that leverage on the ``countable support'' the sequences of forcing notions $\{\mathbb{P}^C_{\lambda}(\omega_1) : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ are inherently endowed with. In this subsection, let us briefly experiment with such sequences. 
 
