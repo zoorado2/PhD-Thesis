@@ -6782,8 +6782,10 @@ yet
     \begin{equation*}
         V \vDash \text{``there is a measurable cardinal''.}
     \end{equation*}
-\end{enumerate} 
-The only category of obvious alternatives to the Asper\'{o}-Schindler side condition method we have encountered so far appears to be the class of methods that leverage on the ``countable support'' the sequences of forcing notions $\{\mathbb{P}^C_{\lambda}(\omega_1) : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ are inherently endowed with. In this subsection, let us briefly experiment with such sequences. 
+\end{enumerate}
+Subsection \ref{2cof} provides an indication of how finicky and difficult tweaks and augmentations to the Asper\'{o}-Schindler side condition method can be, when the objective is to force an ordinal strictly below the cardinality of the resultant forcing notion to take on some uncountable cofinality. The difficulties highlighted in the aforementioned subsection stem primarily from the fact that certain important higher-order truths are not preserved by any $(\omega_1, S)$-elementary embedding of $V$ for any $S \in \mathcal{P}(\omega_1^V) \cap V$. Even if one is so optimistic to believe the said difficulties can be overcome, that no $(\omega_1, S)$-elementary embedding of $V$ is guaranteed to exist surely is a bridge too far, for such embeddings form the heart and soul of the Asper\'{o}-Schindler method, and losing a handle on them would call for a complete reinvention of the side condition technology should side conditions be needed to preserve $\omega_1$. 
+
+If not through side conditions, how else can we preserve $\omega_1$? The only category of known alternatives appears to be the class of methods leveraging on specific closure properties. This seems viable for our purposes at first glance, considering that the sequences of forcing notions $\{\mathbb{P}^C_{\lambda}(\omega_1) : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ can naturally be endowed with ``countable supports''. In this subsection, let us briefly experiment with such sequences. 
 
 \begin{defi}
 Let $GNb_1(\kappa, \lambda)$ denote the statement
@@ -6882,7 +6884,7 @@ while
     \item\label{7445} using the aforementioned sequence of ``countable-support'' forcing notions $\{\mathbb{P}^C_{\lambda}(\omega_1) : \lambda \in C \cup \{\lambda^{\dagger}\}\}$ in place of the sequence $\{\mathbb{P}_{\lambda} : \lambda \in C \cup \{\lambda^{\dagger}\}\}$.
 \end{enumerate}
 
-What is left for us to prove is that $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ adds no $\omega$-sequences of ordinals. We want to show that $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ exhibits some sort of strategic closure property. Towards this end, let 
+What is left for us to prove is that $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ adds no $\omega$-sequences of ordinals. We want to show that $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ exhibits some desirable closure property. Towards this end, let 
 \begin{itemize}
     \item $p \in \mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$, 
     \item $\dot{f}$ be a $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$-name of function from $\omega$ into $\omega_1$, 
@@ -6935,9 +6937,9 @@ However, even if we weaken the modified \ref{c5} to instead say
 \end{quote}
 it appears hard to argue that a set $\Sigma$ both extending $p^*$ and satisfying \ref{c1} to \ref{c8} exists in some outer model of $V$. 
 
-Our line of reasoning --- as intuitive as it is --- juxtaposed with the tiny gap we encountered along the way, points to the following:
+What we have uncovered in this subsection is therefore a tension between two of the original specifications in the proof of Theorem \ref{notion1}, a tension that appears robust enough to guard against the vast majority of closure properties from which one can conclude the preservation of $\omega_1$. Since the known techniques for preserving $\omega_1$ (beyond the most basic applications) rely either on side conditions or on closure properties, and the use of side conditions under our circumstances has been ruled out at the beginning of this subsection for being untenable given the current technology, all evidence points to the following:
 \begin{quote}
-    if a a witness to Assumption \ref{thm744} can be uniformly constructed from $\kappa$ and $\lambda^{\dagger}$, then either $\mathbb{P}^C_{\lambda^{\dagger}}(\omega_1)$ is also a witness for some uniform definition of $C$, or radically new technology is needed in the construction.
+    if a witness to Assumption \ref{thm744} can be uniformly constructed from $\kappa$ and $\lambda^{\dagger}$, then radically new ideas would have to be employed in the construction.
 \end{quote}
 
 \section{Open Questions}
