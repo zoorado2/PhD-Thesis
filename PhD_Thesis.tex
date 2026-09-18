@@ -2070,7 +2070,7 @@ That $\Sigma \subset \Sigma'$ means $$\Sigma \models^*_{\mathfrak{A}} \varphi \i
     \item $x \in \mathcal{L}$, $\varphi$ does not occur in $\mathsf{pos}(\phi)$ and moreover, $\ulcorner \neg \varphi \urcorner$ occurs in \\ $\nu^*(\mathsf{check}(\mathsf{pos}(\phi)))$. 
     
     Here $\ulcorner \neg \varphi \urcorner$ must occur in $\nu^*(\mathsf{pos}(\phi))$, so by the definition of $\mathsf{check}$, $$\ulcorner (\text{``} x \in \mathcal{L} \text{''} \implies E(\neg x)) \urcorner$$ occurs in $\nu^*(\mathsf{check}(\mathsf{pos}(\phi)))$. Now $$\Sigma \models^*_{\mathfrak{A}, \nu} \mathsf{check}(\mathsf{pos}(\phi))$$ implies either $x \not \in \mathcal{L}$ or $\neg x \in \Sigma$. 
-    \begin{enumerate}[label=Subcase \arabic*:, leftmargin=60pt]
+    \begin{enumerate}[label=Subcase (\alph*):, leftmargin=70pt]
         \item $x \not \in \mathcal{L}$. Then clearly $x \not \in \Sigma'$, so $\Sigma' \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner$.
         \item $\neg x \in \Sigma$. Then $\neg x \in \Sigma'$ because $\Sigma \subset \Sigma'$. Since $\Sigma'$ is $\mathcal{L}$-nice, it must be that $x \not \in \Sigma'$. We thus also have $\Sigma' \models^*_{\mathfrak{A}} \ulcorner \neg \varphi \urcorner$. \qedhere
     \end{enumerate}
@@ -6443,15 +6443,15 @@ Then there is a stationary-preserving forcing notion $\mathbb{P}$ of size $2^{< 
 
 \section{Discussion: Obstacles to Natural Analogues}\label{sect74}
 
-This section provides a cursory investigation into natural analogues of the constructions that transpired in the proofs of Theorems \ref{notion1} and \ref{notion2}. The said investigation is carried out roughly along three paths.
+This section provides a cursory investigation into some of the constructions that transpired in the proofs of Theorems \ref{notion1} and \ref{notion2}, and natural analogues thereof. The said investigation is carried out in four different directions, each of which is allocated its own subsection.
 
 \subsection{Towards a Two-cofinality Generalisation}\label{2cof}
 
-Let us first recapitulate a part of Subsection \ref{intuit}, namely the high-level description of the forcing construction integral to the proof of Theorem \ref{notion1}. For the rest of this subsection, we adopt the notation of Subsection \ref{intuit}, so that the major components of the proof of Theorem \ref{notion1} are labelled 
+Let us first recapitulate a part of Subsection \ref{intuit}, namely the high-level description of the forcing construction integral to the proof of Theorem \ref{notion1}. For the rest of this subsection and the next one, we adopt the notation of Subsection \ref{intuit}, so that the major components of the proof of Theorem \ref{notion1} are labelled 
 \begin{equation*}
     \lambda^{\dagger}, \mathfrak{A}, \mathcal{L}, C, \{(Q_{\lambda}, A_{\lambda}) : \lambda \in C\}, \Gamma_{base}, \Gamma_{side1}(\Vec{P}) \text{ and } \Gamma_{side2}(P)
 \end{equation*}
-accordingly, from the perspective of the universe $W$ as defined in the proof of Theorem \ref{notion1}. We shall also work in $W$ for the rest of this subsection. 
+accordingly, from the perspective of the universe $W$ as defined in the proof of Theorem \ref{notion1}. We shall also work in $W$ for the rest of this subsection and the next. 
 
 Now, expand $\mathfrak{A}$, $\mathcal{L}$, $\Gamma_{base}$, $\Gamma_{side1}(\Vec{P})$ and $\Gamma_{side2}(P)$ such that 
 \begin{itemize}
@@ -6609,6 +6609,246 @@ All in all, the upshot of the preceding discussion in this subsection can be (in
     \item a non-trivial augmentation to the basic skeleton of the Asper\'{o}-Schindler method, or 
     \item a totally different --- and in all likelihood, entirely new --- approach.
 \end{itemize}
+
+\subsection{\texorpdfstring{$\mathbb{P}$}{P} always adds reals}
+
+Recall that we are still working in the universe $W$, with the objects
+\begin{equation*}
+    \lambda^{\dagger}, \mathfrak{A}, \mathcal{L}, C, \{(Q_{\lambda}, A_{\lambda}) : \lambda \in C\}, \{\mathbb{P}_{\lambda} = (P_{\lambda}, \leq_{\lambda}) : \lambda \in C \cup \{\lambda^{\dagger}\}\}
+\end{equation*}
+as defined in the proof of Theorem \ref{notion1}. We shall prove the following.
+
+\begin{thm}
+For every $\lambda \in C \cup \{\lambda^{\dagger}\}$, $\mathbb{P}_{\lambda}$ adds reals.
+\end{thm}
+
+\begin{proof}
+Let us first define a few transformations on subsets of $\mathcal{L}$.
+
+\begin{defi}
+Whenever $\Sigma \subset \mathcal{L}$ and $n < \omega$, let
+\begin{align*}
+    \mathrm{Ret}(\Sigma, n) := 
+    \begin{cases}
+        \alpha & \text{if there is a unique } \alpha \text{ for which } \ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner \in \Sigma \\
+        0 & \text{otherwise.}
+    \end{cases}
+\end{align*}
+\end{defi}
+
+\begin{defi}
+Whenever $\Sigma \subset \mathcal{L}$, $n < \omega$, $z < 2$ and $y < 2$, let
+\begin{align*}
+    \mathrm{RetS}(\Sigma, n, z, y) := 
+    \begin{cases}
+    \!\begin{aligned}[t]
+    \begin{split}
+        \{\ulcorner \dot{F}_{\omega_2^W}(n) = \mathrm{Ret}(\Sigma, n) \urcorner, \\
+        \ulcorner \neg \dot{F}_{\omega_2^W}(n) = \mathrm{Ret}(\Sigma, n) + 1 \urcorner\}
+    \end{split}
+    \end{aligned} & \text{if } z = 1 \text{ and } y = 0 \\
+    \!\begin{aligned}[t]
+    \begin{split}
+        \{\ulcorner \neg \dot{F}_{\omega_2^W}(n) = \mathrm{Ret}(\Sigma, n) \urcorner, \\
+        \ulcorner \dot{F}_{\omega_2^W}(n) = \mathrm{Ret}(\Sigma, n) + 1 \urcorner\}
+    \end{split}
+    \end{aligned} & \text{if } z = 1 \text{ and } y = 1 \\
+    \!\begin{aligned}
+    \begin{split}
+        \{\ulcorner \dot{F}_{\omega_2^W}(n) = \mathrm{Ret}(\Sigma, n) \urcorner, \\
+        \ulcorner \neg \dot{F}_{\omega_2^W}(n) = \mathrm{Ret}(\Sigma, n) - 1 \urcorner\} 
+    \end{split}
+    \end{aligned} & \text{if } z = 0 \text{ and } y = 0 \\
+    \!\begin{aligned}[t]
+    \begin{split}
+        \{\ulcorner \neg \dot{F}_{\omega_2^W}(n) = \mathrm{Ret}(\Sigma, n) \urcorner, \\
+        \ulcorner \dot{F}_{\omega_2^W}(n) = \mathrm{Ret}(\Sigma, n) - 1 \urcorner\}
+    \end{split}
+    \end{aligned} & \text{otherwise.}
+    \end{cases}
+\end{align*}
+\end{defi}
+
+\begin{defi}
+Whenever $\Sigma \subset \mathcal{L}$, $n < \omega$ and $z < 2$, let
+\begin{align*}
+    \mathrm{BC}(\Sigma, n, z) = 
+    \begin{cases}
+    \!\begin{aligned}[t]
+    \begin{split}
+        \Sigma \setminus \mathrm{RetS}(\Sigma, n, z, 0) \\
+        \cup \ \mathrm{RetS}(\Sigma, n, z, 1)
+    \end{split}
+    \end{aligned} & \text{if } z = 1 \\
+    \!\begin{aligned}[t]
+    \begin{split}
+        \Sigma \setminus \mathrm{RetS}(\Sigma, n, z, 0) \\
+        \cup \ \mathrm{RetS}(\Sigma, n, z, 1)
+    \end{split}
+    \end{aligned} & \text{if } z = 0 \text{ and } \mathrm{Ret}(\Sigma, n) - 1 \neq \mathrm{Ret}(\Sigma, n) \\
+    \Sigma & \text{otherwise.}
+    \end{cases}
+\end{align*}
+\end{defi}
+
+It should be clear that the functions $\mathrm{Ret}$, $\mathrm{RetS}$ and $\mathrm{BC}$ are absolute for outer models of $W$. The next lemma will do the heavy lifting in proving the theorem.
+
+\begin{lem}\label{lem7411}
+Let $\lambda \in C \cup \{\lambda^{\dagger}\}$. If in some outer model $W'$ of $W$ we have some $\Sigma$ that $\Gamma_{\lambda} (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A})$-certifies $\emptyset$, then for every $n < \omega$ and every $z < 2$, $\mathrm{BC}(\Sigma, n, z)$ $\Gamma_{\lambda} (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A})$-certifies $\emptyset$ in $W'$.
+\end{lem}
+
+\begin{proof}
+By induction on $\lambda$. Assume the lemma is true for all $\lambda' \in C \cap \lambda$, and move to an outer model $W'$ of $W$ containing some $\Sigma$ that $\Gamma_{\lambda} (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A})$-certifies $\emptyset$. Define $F_{\omega_2} := F_{\omega_2^W}(\Sigma)$. If $X_{\delta^*, \lambda^*}(\Sigma) = \emptyset$ for all $\delta^* < \omega_1$ and all $\lambda^* \in C \cap \lambda$, then any increment or decrement to $F_{\omega_2}$ evaluated at any point in its domain, when reflected in $\Sigma$, would not affect its fulfillment of conditions \ref{c1} to \ref{c8}. In particular, the modified $\Sigma$ still vacuously fulfils conditions \ref{c3} to \ref{c8}.
+
+Now assume $X_{\delta^*, \lambda^*}(\Sigma) \neq \emptyset$ for some $\delta^* < \omega_1$ and some $\lambda^* \in C \cap \lambda$. Fix some $n < \omega$ and $z < 2$, before labelling $\Sigma' := \mathrm{BC}(\Sigma, n, z)$. We can without loss of generality assume that $\Sigma' \neq \Sigma$ and that $z = 1$, because the case where $\Sigma' \neq \Sigma$ and $z = 0$ is symmetrical. It is easy to see that $\Sigma'$ fulfils conditions \ref{c1} to \ref{c7} since $\Sigma$ does, so we are only left to check that $\Sigma'$ fulfils condition \ref{c8}. Towards this end, let
+\begin{enumerate}[label=(\arabic*)]
+    \item\label{74111} $\delta < \omega_1^W$ and $\lambda' \in C \cap \lambda$ be such that $X_{\delta, \lambda'} := X_{\delta, \lambda'}(\Sigma') \neq \emptyset$, and
+    \item\label{74112} $D$ be a dense subset of $\mathbb{P}_{\lambda'}$ definable over $(Q_{\lambda'}; \in, \mathbb{P}_{\lambda'}, A_{\lambda'})$ with parameters from $X_{\delta, \lambda'}$.
+\end{enumerate}
+We are going to show that
+\begin{equation}\label{eq741}
+    [\Sigma']^{< \omega} \cap X_{\delta, \lambda'} \cap D \neq \emptyset \text{.}
+\end{equation}
+If $\omega_2^W \geq \lambda'$, then $Q_{\lambda'} \cap \Sigma = Q_{\lambda'} \cap \Sigma'$, so (\ref{eq741}) is immediately implied by
+\begin{equation*}
+    [\Sigma]^{< \omega} \cap X_{\delta, \lambda'} \cap D \neq \emptyset \text{,}
+\end{equation*}
+which is in turn implied by the given fact that $\Sigma$ fulfils condition \ref{c8}. Now suppose $\omega_2^W < \lambda'$. Then $\omega_2^W$ is definable without parameters in $(Q_{\lambda'}; \in)$ and thus in $(X_{\delta, \lambda'}; \in)$. This means the set
+\begin{equation*}
+    D_n := \{p \in P_{\lambda'} : \exists \alpha < \omega_2^W \ (\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner \in p)\}
+\end{equation*}
+is a dense subset of $\mathbb{P}_{\lambda'}$ definable over $(Q_{\lambda'}; \in, \mathbb{P}_{\lambda'}, A_{\lambda'})$ with parameters from $X_{\delta, \lambda'}$. As $\Sigma$ fulfils condition \ref{c8}, there exists some $p_1 \in [\Sigma]^{< \omega} \cap X_{\delta, \lambda'} \cap D_n \text{,}$. By the fact that $\Sigma$ fulfils condition \ref{c1}, it must be the case that 
+\begin{equation*}
+    \ulcorner \dot{F}_{\omega_2^W}(n) = \mathrm{Ret}(\Sigma, n) \urcorner \in p_1 \text{,}
+\end{equation*}
+so also $\mathrm{Ret}(\Sigma, n) \in X_{\delta, \lambda'}$. As a consequence, we have that
+\begin{equation}\label{eq742}
+    \mathrm{BC}(A, n, z) \in X_{\delta, \lambda'} \text{ for each } A \in \mathcal{P}(\mathcal{L}) \cap X_{\delta, \lambda'} \text{.}
+\end{equation}
+We also note here the following easily verifiable rule: 
+\begin{align}\label{eq742'}
+\begin{split}
+    \forall \Sigma_1 \ \forall \Sigma_2 \ (&(\text{``}\Sigma_2 \ \Gamma_{\lambda} (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A}) \text{-certifies } \emptyset \text{''} \wedge \Sigma_1 \subset \Sigma_2) \\
+    & \implies \mathrm{BC}(\Sigma_1, n, z) \subset \mathrm{BC}(\Sigma_2, n, z)) \text{.}
+\end{split}
+\end{align}
+
+For convenience, denote $\mathrm{Ret}(\Sigma, n)$ by $\alpha$. Now define
+\begin{align*}
+    D' := \ & D \cap D_n \\
+    D'' := \ & \{p \in D' : \{\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner, \ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1\urcorner\} \cap p = \emptyset\} \  \cup \\
+    & \{\mathrm{BC}(p, n, z) : p \in D' \text{ and } \ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner \in p\} \ \cup \\
+    & \{\mathrm{BC}(p, n, z-1) : p \in D' \text{ and } \ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1 \urcorner \in p\} \text{.}
+\end{align*}
+First, note that $D'' \subset D_n$. Next, due to the following facts:
+\begin{itemize}
+    \item that \ref{74112} holds,
+    \item $D_n$ being definable over $(Q_{\lambda'}; \in, \mathbb{P}_{\lambda'}, A_{\lambda'})$ with parameters from $X_{\delta, \lambda'}$, and
+    \item $\{\omega_2^W, \alpha\} \subset X_{\delta, \lambda'}$, 
+\end{itemize}
+we can conclude that both $D'$ and $D''$ are definable over $(Q_{\lambda'}; \in, \mathbb{P}_{\lambda'}, A_{\lambda'})$ with parameters from $X_{\delta, \lambda'}$. Moreover, since $D_n$ is dense open in $\mathbb{P}_{\lambda'}$, $D'$ is a dense subset of $\mathbb{P}_{\lambda'}$ as well.
+
+\begin{claim}
+$D''$ is a dense subset of $\mathbb{P}_{\lambda'}$.
+\end{claim}
+
+\begin{proof}
+Choose an arbitrary $p \in P_{\lambda'}$. We wish to find $q \in D''$ with $q \leq_{\lambda'} p$. Proceed by cases as follows.
+\begin{enumerate}[label=Case \arabic*:, leftmargin=50pt]
+    \item\label{7411c1} $p \in D_n$ and $\{\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner, \ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1\urcorner\} \cap p = \emptyset$. Find $r \in D'$ with $r \leq_{\lambda'} p$. Then we too have $\{\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner, \ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1\urcorner\} \cap r = \emptyset$, so $r \in D''$. We can thus set $q := r$.
+    \item $p \in D_n$ and $\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner \in p$. By the induction hypothesis specified at $\lambda'$, $\mathrm{BC}(p, n, z) \in P_{\lambda'}$. Find $r \in D'$ with $r \leq_{\lambda'} \mathrm{BC}(p, n, z)$. It must be the case that $\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1 \urcorner \in r$, which yields $\mathrm{BC}(r, n, z-1) \in D''$. But $\mathrm{BC}(r, n, z-1) \leq_{\lambda'} p$, so we can set $q := \mathrm{BC}(r, n, z-1)$.
+    \item $p \in D_n$ and $\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1 \urcorner \in p$. By the induction hypothesis specified at $\lambda'$, $\mathrm{BC}(p, n, z-1) \in P_{\lambda'}$. Find $r \in D'$ with $r \leq_{\lambda'} \mathrm{BC}(p, n, z-1)$. It must be the case that $\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner \in r$, which yields $\mathrm{BC}(r, n, z) \in D''$. But $\mathrm{BC}(r, n, z) \leq_{\lambda'} p$, so we can set $q := \mathrm{BC}(r, n, z)$.
+    \item\label{7411c4} $p \not\in D_n$. Let $\Sigma^*$ $\Gamma_{\lambda'} (\mathcal{L} \cap Q_{\lambda'}, \mathfrak{A})$-certifies $p$ in some outer model $W^*$ of $W$. Through finitely many iterated applications of both
+    \begin{itemize}
+        \item $\mathrm{BC}(\cdot, n, z)$ on $\Sigma^*$, and
+        \item the induction hypothesis specified at $\lambda'$,
+    \end{itemize}
+    we are able to obtain in $W^*$ some $\Sigma^{**} \subset \mathcal{L}$ for which $\mathrm{Ret}(\Sigma^{**}, n) \not\in \{\alpha, \alpha+1\}$ and $\Sigma^{**}$ $\Gamma_{\lambda'} (\mathcal{L} \cap Q_{\lambda'}, \mathfrak{A})$-certifies $p$. Setting 
+    \begin{equation*}
+        p' := \{\ulcorner \dot{F}_{\omega_2^W}(n) = \mathrm{Ret}(\Sigma^{**}, n) \urcorner\} \cup p \text{,}
+    \end{equation*}
+    we thus have $p' \in D_n$ and $\{\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner, \ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1\urcorner\} \cap p' = \emptyset$, which brings us back to \hyperref[7411c1]{Case 1}. \qedhere
+\end{enumerate}
+\end{proof}
+
+\begin{rem}\label{rem7412}
+It is perhaps of special note that the particular manner in which \hyperref[7411c4]{Case 4} gets resolved in the proof of the preceding claim hinges on $\mathbb{P}_{\lambda'}$ having finite subsets of $\mathcal{L}$ as conditions. 
+\end{rem}
+
+Now that $D''$ is a dense subset of $\mathbb{P}_{\lambda'}$ definable over $(Q_{\lambda'}; \in, \mathbb{P}_{\lambda'}, A_{\lambda'})$ with parameters from $X_{\delta, \lambda'}$, the fact that $\Sigma$ satisfies condition \ref{c8} means there exists
+\begin{equation*}
+    p_2 \in [\Sigma]^{< \omega} \cap X_{\delta, \lambda'} \cap D'' \text{.}
+\end{equation*}
+We can additionally deduce $\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner \in p_2$ from $D''$ being a subset of $D_n$. Going by the definition of $D''$ alone, there must be some $p_3 \in D'$ such that 
+\begin{enumerate}[label=(\arabic*)]
+    \setcounter{enumi}{2}
+    \item\label{74113} $\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1 \urcorner \in p_3$, and
+    \item\label{74114} $p_2 = \mathrm{BC}(p_3, n, z-1)$.
+\end{enumerate}
+Furthermore, \ref{74114} immediately gives us
+\begin{enumerate}[label=(\arabic*)]
+    \setcounter{enumi}{4}
+    \item\label{74115} $\mathrm{BC}(p_2, n, z) \leq_{\lambda'} p_3$.
+\end{enumerate}
+That $p_2 \in [\Sigma]^{< \omega}$ implies $p_3 \in [\Sigma']^{< \omega}$ in the presence of (\ref{eq742'}) and \ref{74115}. On the other hand, that $p_2 \in X_{\delta, \lambda'}$ implies $\mathrm{BC}(p_2, n, z) \in X_{\delta, \lambda'}$ by (\ref{eq742}). Finally, the conjunction of 
+\begin{itemize}
+    \item $\mathrm{BC}(p_2, n, z) \in X_{\delta, \lambda'}$
+    \item \ref{74115} being true, and
+    \item $\mathrm{BC}(p_2, n, z) \setminus p_3$ being finite
+\end{itemize}
+allows the conclusion of $p_3 \in X_{\delta, \lambda'}$. We thus have (\ref{eq741}) from
+\begin{equation*}
+    p_3 \in [\Sigma']^{< \omega} \cap X_{\delta, \lambda'} \cap D' \subset [\Sigma']^{< \omega} \cap X_{\delta, \lambda'} \cap D. \qedhere
+\end{equation*}
+\end{proof}
+
+Fix $\lambda \in C \cup \{\lambda^{\dagger}\}$. We shall use a parity argument to code in $W^{\mathbb{P}_{\lambda}}$ a real that is new to $W$. Let $g$ be any $\mathbb{P}_{\lambda}$-generic filter over $W$, so that $\bigcup g$ $\Gamma_{\lambda} (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A})$-certifies $\emptyset$. In $W[g]$, make the following definitions.
+\begin{itemize}
+    \item $F_{\omega_2} := F_{\omega_2^W}(\bigcup g)$. 
+    \item $e$ is the unique function from $\omega$ into $2$ such that
+    \begin{align*}
+        e(n) := 
+        \begin{cases}
+            1 & \begin{aligned}[t]
+            \begin{split}
+               & \text{if there are } \alpha \text{ and } k \text{ satisfying} \\ & \omega \cdot \alpha + k = F_{\omega_2}(n) \text{ and } 1 \equiv k \ (\mathrm{mod} \ 2)
+            \end{split}
+            \end{aligned} \\
+            0 & \text{otherwise}.
+        \end{cases}
+    \end{align*}
+\end{itemize}
+
+Let $\dot{e}$ be a $\mathbb{P}_{\lambda}$-name for $e$ in $W$. Clearly, $\Vdash_{\mathbb{P}_{\lambda}} \text{``} \dot{e} \in 2^{\omega} \text{''}$. It suffices to show that $\Vdash_{\mathbb{P}_{\lambda}} \text{``} \dot{e} \not\in \mathbf{V} \text{''}$. By way of contradiction, suppose otherwise, that $\dot{e}$ is not always a new real. Then for some $p \in P_{\lambda}$ and some $r \in (2^{\omega})^W$, 
+\begin{equation}\label{eq744}
+    p \Vdash_{\mathbb{P}_{\lambda}} \dot{e} = \check{r} \text{.}
+\end{equation} 
+Choose $n < \omega$ such that $p$ does not explicitly decide the value of $F_{\omega_2}(n)$, or in other words,
+\begin{equation*}
+    \{\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner, \ulcorner \neg \dot{F}_{\omega_2^W}(n) = \alpha \urcorner\} \cap p = \emptyset
+\end{equation*}
+for every $\alpha$. This is possible because $F_{\omega_2}$ would live in $W$ otherwise. Now in some outer model $W'$ of $W$, there is some $\Sigma$ that $\Gamma_{\lambda} (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A})$-certifies $p$. Setting $\alpha^* := \mathrm{Ret}(\Sigma, n)$, this means 
+\begin{equation*}
+    q_0 := p \cup \{\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha^* \urcorner\} \in P_{\lambda} \text{.}
+\end{equation*} 
+On the other hand, $\mathrm{BC}(\Sigma, n, 1)$ $\Gamma_{\lambda} (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A})$-certifies $p$ as well by Lemma \ref{lem7411} and the definition of $\mathrm{BC}$, so also 
+\begin{equation*}
+    q_1 := p \cup \{\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha^* + 1 \urcorner\} \in P_{\lambda} \text{.}
+\end{equation*}
+From how $\dot{e}(n)$ is defined, either
+\begin{equation*}
+    q_0 \Vdash_{\mathbb{P}_{\lambda}} \text{``}\dot{e}(\check{n}) \neq \check{r}(\check{n}) \text{''}
+\end{equation*}
+or 
+\begin{equation*}
+    q_1 \Vdash_{\mathbb{P}_{\lambda}} \text{``}\dot{e}(\check{n}) \neq \check{r}(\check{n}) \text{''}
+\end{equation*}
+must hold. But since $q_0, q_1 \leq_{\lambda} p$, (\ref{eq744}) tells us that
+\begin{equation*}
+    q_i \Vdash_{\mathbb{P}_{\lambda}} \text{``}\dot{e}(\check{n}) = \check{r}(\check{n})
+\end{equation*}
+for all $i < 2$, a clear contradiction.
+\end{proof}
 
 \subsection{Towards Greater Supports}
 
@@ -6963,7 +7203,7 @@ be chosen such that
 \end{enumerate}
 \end{ques}
 
-In the spirit of Jensen's results on the Namba extension problem, we are interested in the possibility of modifying the forcing notion $\mathbb{P} = \mathbb{P}_{\lambda^{\dagger}}$ constructed in the proof of Theorem \ref{notion1} in sitable ways so that it does not add reals, under the right assumptions. More generally, we can ask the same about the parametrised versions of said forcing notion. 
+In the spirit of Jensen's results on the Namba extension problem and in light of Remark \ref{rem7412}, we are interested in the possibility --- under the right assumptions --- of suitably modifying the forcing notion $\mathbb{P} = \mathbb{P}_{\lambda^{\dagger}}$ constructed in the proof of Theorem \ref{notion1} so that it does not add reals. More generally, we can ask the same about the parametrised versions of said forcing notion. 
 
 \begin{ques}\label{addsreals}
 Let $V$, $W$, $\lambda^{\dagger}$ and $\kappa$ be as in the proof of Theorem \ref{notion1}. Additionally, assume $GCH$ holds in $V$ (and so also in $W$). Working in $W$, can $\theta$, $C$ and
