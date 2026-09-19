@@ -6618,7 +6618,7 @@ Recall that we are still working in the universe $W$, with the objects
 \end{equation*}
 as defined in the proof of Theorem \ref{notion1}. We shall prove the following.
 
-\begin{thm}
+\begin{thm}\label{thm747}
 For every $\lambda \in C \cup \{\lambda^{\dagger}\}$, $\mathbb{P}_{\lambda}$ adds reals.
 \end{thm}
 
@@ -6772,7 +6772,10 @@ Choose an arbitrary $p \in P_{\lambda'}$. We wish to find $q \in D''$ with $q \l
 \end{proof}
 
 \begin{rem}\label{rem7412}
-It is perhaps of special note that the particular manner in which \hyperref[7411c4]{Case 4} gets resolved in the proof of the preceding claim hinges on $\mathbb{P}_{\lambda'}$ having finite subsets of $\mathcal{L}$ as conditions. 
+The particular manner in which \hyperref[7411c4]{Case 4} gets resolved in the proof of the preceding claim hinges on $\mathbb{P}_{\lambda'}$ having finite subsets of $\mathcal{L}$ as conditions. The same argument does not work in general; specifically, it fails when 
+\begin{equation*}
+    \{\ulcorner \neg \dot{F}_{\omega_2^W}(n) = \beta \urcorner : \alpha \leq \beta < \alpha + \omega\} \subset p \text{.}
+\end{equation*}
 \end{rem}
 
 Now that $D''$ is a dense subset of $\mathbb{P}_{\lambda'}$ definable over $(Q_{\lambda'}; \in, \mathbb{P}_{\lambda'}, A_{\lambda'})$ with parameters from $X_{\delta, \lambda'}$, the fact that $\Sigma$ satisfies condition \ref{c8} means there exists
@@ -6849,6 +6852,36 @@ must hold. But since $q_0, q_1 \leq_{\lambda} p$, (\ref{eq744}) tells us that
 \end{equation*}
 for all $i < 2$, a clear contradiction.
 \end{proof}
+
+The proofs of both Theorem \ref{thm747} and Lemma \ref{lem7411} go through as they are, even with the definitions of all associated parameters swopped out for those in the proof of Theorem \ref{notion2}. Similarly, the proofs go through when the definitions of the said parameters are modified from the proof of Theorem \ref{notion2} according to the paragraph immediately before Theorem \ref{notion3}. As a result, mildly stronger versions of Theorems \ref{notion1}, \ref{notion2} and \ref{notion3} can be stated. In particular, we have the following.
+
+\begin{thm}
+Assume
+\begin{enumerate}[label=(\roman*), leftmargin=40pt]
+    \item $\Gamma  = \bigcup_{1 \leq k < \omega} \mathcal{P}(\mathbb{R}^{k}) \cap L(\Gamma, \mathbb{R})$,
+    \item $\Gamma$ is productive,
+    \item $\mathrm{NS}_{\omega_1}$ is saturated,
+    \item $2^{\omega_1} = \mathbf{\delta^1_2} = \omega_2$, and
+    \item $MA(\omega_1)$ holds.
+\end{enumerate}
+Let 
+\begin{itemize}
+    \item $D \in L(\Gamma, \mathbb{R})$ be a dense subset of $\mathbb{P}_{max}$,
+    \item $A \subset \omega_1$ be such that $\omega_1^{L[A]} = \omega_1$, and
+    \item $\lambda^{\dagger} > \omega_2$ be a regular cardinal.
+\end{itemize}
+Then there is a stationary-preserving forcing notion $\mathbb{P}$ of size $2^{< \lambda^{\dagger}}$ such that 
+\begin{enumerate}[label=(\alph*)]
+    \item $\mathbb{P}$ witnesses $Nb'_1(\lambda^{\dagger})$ (thus also $Nb_1(\lambda^{\dagger})$),
+    \item in $V^{\mathbb{P}}$, there is a $\Diamond$-iteration $$\langle \bar{N}_i = (N_i; \in, I_i, a_i), \sigma_{ij} : i \leq j \leq \omega_1^V \rangle$$ satisfying 
+    \begin{enumerate}[label=(\arabic*), leftmargin=40pt]
+        \item $\bar{N}_0 \in D^* := (F^*) " ((F^*)^{-1}(D)^*) \subset \mathbb{P}_{max}$,
+        \item $I_{\omega_1^V} = \mathrm{NS}_{\omega_1}^{V^{\mathbb{P}}} \cap N_{\omega_1^V}$, and
+        \item $a_{\omega_1^V} = A$, and
+    \end{enumerate}
+    \item $\mathbb{P}$ adds reals.
+\end{enumerate}
+\end{thm}
 
 \subsection{Towards Greater Supports}
 
@@ -7323,7 +7356,7 @@ Let $V$, $W$, $\lambda^{\dagger}$ and $\kappa$ be as in the proof of Theorem \re
 \end{enumerate}
 \end{ques}
 
-In the likely event that the answer to Question \ref{addsreals} is in the negative, it makes sense to consider a more general question.
+In the event that the answer to Question \ref{addsrealsadd} (and thus to Question \ref{addsreals}) is negative, it makes sense to consider a more general question.
 
 \begin{enumerate}[label=(Q\arabic*)]
     \item Must $Nb_2(\lambda)$ hold for all $\lambda$ above $\omega_2$, where 
