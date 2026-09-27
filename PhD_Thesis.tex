@@ -883,7 +883,7 @@ Forcing is a technique invented by Cohen in \cite{cohen1} to prove that the cont
 
 In a typical application of forcing, we start with a countable transitive model of set theory called the \emph{ground model}, following the meta-theoretic convention highlighted in Section \ref{subs21}. The usual forcing argument can be rewritten to occur entirely in the ground model with respect to a \emph{forcing notion} that lives therein. Exactly because of this, we often forget the fact that our ground model is a countable transitive model, or at least we eschew mentioning it. This is also why our ground model is conventionally taken to be $V$ itself. 
 
-Forcing parlance dictates a forcing notion to just be a partial order. 
+Forcing parlance dictates a forcing notion to be either a preorder or partial order. The variations in the definition of a forcing notion are more or less cosmetic, as we will see in this section. In different contexts, for the convenience of analysis, one or the other might be preferred. In this part as well as in Part \ref{part2} of this thesis, a forcing notion shall mean a partial order. In Part \ref{part3} of this thesis, a forcing notion shall mean a preorder.
 
 \begin{defi}
 Let $\mathbb{P} = (P, \leq_{\mathbb{P}})$ be a forcing notion, $D \subset P$ and $A$ be any set. We say a subset $g$ of $P$ \emph{meets} $D$ \emph{with respect to} $\mathbb{P}$ \emph{in} $A$ iff $$g \cap \{p \in P : p \in D \text{ or } \forall q \ (q \leq_{\mathbb{P}} p \implies q \not\in D)\} \cap A \neq \emptyset.$$ We say $g$ \emph{meets} $D$ \emph{with respect to} $\mathbb{P}$ iff $g$ meets $D$ with respect to $\mathbb{P}$ in $V$.
@@ -988,9 +988,9 @@ If $\mathbb{B}$ is a boolean algebra with base set $B$ and least element $\mathb
 \end{defi}
 
 \begin{defi}
-Let $\mathbb{P} = (P, \leq_{\mathbb{P}})$ and $\mathbb{Q} = (Q, \leq_{\mathbb{Q}})$ be preorders. We say $\pi$ is an \emph{embedding from} $\mathbb{P}$ \emph{into} $\mathbb{Q}$ iff $\pi$ is an injective function from $P$ into $Q$ satisfying
+Let $\mathbb{P} = (P, \leq_{\mathbb{P}})$ and $\mathbb{Q} = (Q, \leq_{\mathbb{Q}})$ be preorders. We say $\pi$ is an \emph{embedding from} $\mathbb{P}$ \emph{into} $\mathbb{Q}$ iff $\pi$ is an injective function from $P$ into $Q$ such that for all $p_1$, $p_2 \in P$,
 \begin{enumerate}[label=(\alph*)]
-    \item $p_1 \leq_{\mathbb{P}} p_2 \iff \pi(p_1) \leq_{\mathbb{Q}} \pi(p_2)$, and
+    \item $p_1 \leq_{\mathbb{P}} p_2 \iff \pi(p_1) \leq_{\mathbb{Q}} \pi(p_2)$ , and
     \item $p_1 \ \bot_{\mathbb{P}} \ p_2 \implies \pi(p_1) \ \bot_{\mathbb{Q}} \ \pi(p_2)$.
 \end{enumerate}
 \end{defi}
@@ -1027,10 +1027,25 @@ A preorder $\mathbb{P}$ is \emph{separative} iff $w(\mathbb{P}) = \mathbb{P}$.
 \end{defi}
 
 \begin{fact}\label{bcompletion}
-If $\mathbb{P}$ is a separative forcing notion, then there is a unique (up to isomorphism) complete boolean algebra $B(\mathbb{P})$ such that a dense embedding exists from $\mathbb{P}$ into $B(\mathbb{P})^+$.
+If $\mathbb{P}$ is a separative preorder, then there is a unique (up to isomorphism) complete boolean algebra $B(\mathbb{P})$ such that a dense embedding exists from $\mathbb{P}$ into $B(\mathbb{P})^+$.
 \end{fact}
 
-Fix a preorder $\mathbb{P} = (P, \leq_{\mathbb{P}})$. Note that by Fact \ref{seppre}, $w(\leq_{\mathbb{P}})$ induces an equivalence relation on $P$. To wit, for any $p, q \in P$, let $$p \sim_{\mathbb{P}} q \text{ iff } (p, q) \in w(\leq_{\mathbb{P}}) \text{ and } (q, p) \in w(\leq_{\mathbb{P}}) \text{.}$$ Then $\sim_{\mathbb{P}}$ is an equivalence relation on $P$. 
+The uniqueness part of Fact \ref{bcompletion} can be strengthened.
+
+\begin{fact}\label{bcompletion2}
+Let $\mathbb{P}$, $\mathbb{B}_1$, $\mathbb{B}_2$, $\pi_1$ and $\pi_2$ be such that
+\begin{enumerate}[label=(\arabic*)]
+    \item $\mathbb{P}$ is a separative preorder,
+    \item $\mathbb{B}_1$ and $\mathbb{B}_2$ are complete boolean algebras,
+    \item $\pi_1$ is a dense embedding from $\mathbb{P}$ into $\mathbb{B}_1^+$, and
+    \item $\pi_2$ is a dense embedding from $\mathbb{P}$ into $\mathbb{B}_2^+$.
+\end{enumerate}
+Have $\mathbb{B}'_1$ (resp. $\mathbb{B}'_2$) denote the unique expansion of the structure $\mathbb{B}_1$ (resp. $\mathbb{B}_2$) with just one additional unary relation interpreting $ran(\pi_1)$ (resp. $ran(\pi_2)$). Then $\mathbb{B}'_1 \cong \mathbb{B}'_2$.
+\end{fact}
+
+\begin{defi}
+Let $\mathbb{P} = (P, \leq_{\mathbb{P}})$ be any preorder. Note that by Fact \ref{seppre}, $w(\leq_{\mathbb{P}})$ induces an equivalence relation on $P$. To wit, for any $p, q \in P$, let $$p \sim_{\mathbb{P}} q \text{ iff } (p, q) \in w(\leq_{\mathbb{P}}) \text{ and } (q, p) \in w(\leq_{\mathbb{P}}) \text{.}$$ Then $\sim_{\mathbb{P}}$ is an equivalence relation on $P$.
+\end{defi} 
 
 \begin{defi}
 Given a preorder $\mathbb{P}$, call $$s(\mathbb{P}) := w(\mathbb{P}) / \sim_{\mathbb{P}}$$ the \emph{separative quotient} of $\mathbb{P}$.
@@ -1046,6 +1061,45 @@ Given preorders $\mathbb{P}$ and $\mathbb{Q}$, we say $\mathbb{P} \lessdot \math
 
 \begin{fact}\label{forpre}
 The relation $\lessdot$ is a preordering of the class of all preorders. Hence it also pre-orders the class of all forcing notions.
+\end{fact}
+
+\begin{defi}\label{def3218}
+Let $\mathbb{P} = (P, \leq_{\mathbb{P}})$ and $\mathbb{Q} = (Q, \leq_{\mathbb{Q}})$ be preorders. We say $\pi$ is a \emph{projection from} $\mathbb{Q}$ \emph{into} $\mathbb{P}$ iff $\pi$ is a function from $P$ into $Q$ satisfying
+\begin{enumerate}[label=(\alph*)]
+    \item\label{3218a} $q_1 \leq_{\mathbb{Q}} q_2 \implies \pi(q_1) \leq_{\mathbb{P}} \pi(q_2)$ for all $q_1$, $q_2 \in Q$, 
+    \item\label{3218b} $ran(\pi)$ is dense in $\mathbb{P}$, and
+    \item\label{3218c} for every $q \in Q$ and every $p \leq_{\mathbb{P}} \pi(q)$ there is $q' \leq_{\mathbb{Q}} q$ such that $\pi(q') \leq_{\mathbb{P}} p$.
+\end{enumerate}
+\end{defi}
+
+\begin{fact}\label{fact3217}
+Let $\mathbb{P} = (P, \leq_{\mathbb{P}})$ and $\mathbb{Q} = (Q, \leq_{\mathbb{Q}})$ be preorders and $\pi$ be a projection from $\mathbb{Q}$ into $\mathbb{P}$. Then for each $p \in P$ and each $q \in Q$, $[q]_{\sim_{\mathbb{Q}}} \subset \pi^{-1}(\{p\})$ whenever $[q]_{\sim_{\mathbb{Q}}} \cap \pi^{-1}(\{p\}) \neq \emptyset$.
+\end{fact}
+
+By Fact \ref{fact3217}, the following definition makes sense.
+
+\begin{defi}
+Let $\mathbb{P}$ and $\mathbb{Q}$ be preorders and $\pi$ be a projection from $\mathbb{Q}$ into $\mathbb{P}$. Setting $\iota_{\mathbb{P}}$ to be the canonical $\sim_{\mathbb{P}}$-quotient map from $\mathbb{P}$ onto $s(\mathbb{P}) = \mathbb{P} / \sim_{\mathbb{P}}$, define
+\begin{equation*}
+    s(\pi) := \iota_{\mathbb{P}} \circ (\pi / \sim_{\mathbb{Q}}) \text{,}
+\end{equation*}
+so that $s(\pi)$ is a map from $s(\mathbb{Q})$ into $s(\mathbb{P})$.
+\end{defi}
+
+\begin{defi}
+Given a preorder $\mathbb{P} = (P, \leq_{\mathbb{P}})$ and $p \in P$, define
+\begin{equation*}
+    P \restriction p := \{q \in P : q \leq_{\mathbb{P}} p\} \text{.}
+\end{equation*}
+\end{defi}
+
+\begin{fact}\label{fact3222}
+Let $\mathbb{P} = (P, \leq_{\mathbb{P}})$ and $\mathbb{Q} = (Q, \leq_{\mathbb{Q}})$ be preorders and $\pi$ be a projection from $\mathbb{Q}$ into $\mathbb{P}$. Then
+\begin{enumerate}[label=(\arabic*)]
+    \item $s(\pi)$ is a projection from $s(\mathbb{Q})$ into $s(\mathbb{P})$, and
+    \item\label{32222} viewing $s(\mathbb{Q})$ as a subset of $B(s(\mathbb{Q}))^+$ naturally (made possible by Fact \ref{bcompletion2}), there is a complete embedding $\tau$ from $s(\mathbb{P}) = (s(P), \leq_{s(\mathbb{P})})$ into $B(s(\mathbb{Q}))^+$ such that whenever $p \in s(P)$, $(s(\pi))^{-1}(s(P) \restriction p)$ is dense below $\tau(p)$ in $B(s(\mathbb{Q}))^+$.
+\end{enumerate}
+In particular, \ref{32222} implies that $\mathbb{P} \lessdot \mathbb{Q}$.
 \end{fact}
 
 \begin{defi}\label{comdef}
@@ -4303,7 +4357,7 @@ Is there a ``naturally definable'' class $\mathcal{C}$ of TCIs such that
 \end{enumerate} 
 \end{ques}
 
-\part{\texorpdfstring{  Applying Our Tools}{Applying Our Tools}}
+\part{\texorpdfstring{  Applying Our Tools}{Applying Our Tools}}\label{part3}
 
 \chapter{Extending Namba Forcing}\label{sect2}
 
@@ -6610,7 +6664,7 @@ All in all, the upshot of the preceding discussion in this subsection can be (in
     \item a totally different --- and in all likelihood, entirely new --- approach.
 \end{itemize}
 
-\subsection{\texorpdfstring{$\mathbb{P}$}{P} always adds reals}
+\subsection{\texorpdfstring{$\mathbb{P}$}{P} always adds Cohen reals}
 
 Recall that we are still working in the universe $W$, with the objects
 \begin{equation*}
@@ -6758,7 +6812,7 @@ Choose an arbitrary $p \in P_{\lambda'}$. We wish to find $q \in D''$ with $q \l
     \item\label{7411c1} $p \in D_n$ and $\{\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner, \ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1\urcorner\} \cap p = \emptyset$. Find $r \in D'$ with $r \leq_{\lambda'} p$. Then we too have $\{\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner, \ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1\urcorner\} \cap r = \emptyset$, so $r \in D''$. We can thus set $q := r$.
     \item $p \in D_n$ and $\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner \in p$. By the induction hypothesis specified at $\lambda'$, $\mathrm{BC}(p, n, z) \in P_{\lambda'}$. Find $r \in D'$ with $r \leq_{\lambda'} \mathrm{BC}(p, n, z)$. It must be the case that $\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1 \urcorner \in r$, which yields $\mathrm{BC}(r, n, z-1) \in D''$. But $\mathrm{BC}(r, n, z-1) \leq_{\lambda'} p$, so we can set $q := \mathrm{BC}(r, n, z-1)$.
     \item $p \in D_n$ and $\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha + 1 \urcorner \in p$. By the induction hypothesis specified at $\lambda'$, $\mathrm{BC}(p, n, z-1) \in P_{\lambda'}$. Find $r \in D'$ with $r \leq_{\lambda'} \mathrm{BC}(p, n, z-1)$. It must be the case that $\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner \in r$, which yields $\mathrm{BC}(r, n, z) \in D''$. But $\mathrm{BC}(r, n, z) \leq_{\lambda'} p$, so we can set $q := \mathrm{BC}(r, n, z)$.
-    \item\label{7411c4} $p \not\in D_n$. Let $\Sigma^*$ $\Gamma_{\lambda'} (\mathcal{L} \cap Q_{\lambda'}, \mathfrak{A})$-certifies $p$ in some outer model $W^*$ of $W$. Through finitely many iterated applications of both
+    \item\label{7411c4} $p \not\in D_n$. Let $\Sigma^*$ $\Gamma_{\lambda'} (\mathcal{L} \cap Q_{\lambda'}, \mathfrak{A})$-certifies $p$ in some outer model $W^*$ of $W$. Through finitely (in fact, either $|p|$ or $|p| + 1$) many iterated applications of both
     \begin{itemize}
         \item $\mathrm{BC}(\cdot, n, z)$ on $\Sigma^*$, and
         \item the induction hypothesis specified at $\lambda'$,
@@ -6853,7 +6907,70 @@ must hold. But since $q_0, q_1 \leq_{\lambda} p$, (\ref{eq744}) tells us that
 for all $i < 2$, a clear contradiction.
 \end{proof}
 
-The proofs of both Theorem \ref{thm747} and Lemma \ref{lem7411} go through as they are, even with the definitions of all associated parameters swopped out for those in the proof of Theorem \ref{notion2}. Similarly, the proofs go through when the definitions of the said parameters are modified from the proof of Theorem \ref{notion2} according to the paragraph immediately before Theorem \ref{notion3}. As a result, mildly stronger versions of Theorems \ref{notion1}, \ref{notion2} and \ref{notion3} can be stated. In particular, we have the following.
+In fact, we can show that the real $e$ defined in the proof of Theorem \ref{thm747} is a Cohen real, as $\lambda$ ranges over the set $C \cup \{\lambda^{\dagger}\}$. For notational convenience, we use $e_{\lambda}$ to denote $e$ as defined within $W^{\mathbb{P}_{\lambda}}$.
+
+\begin{thm}\label{thm7413}
+For every $\lambda \in C \cup \{\lambda^{\dagger}\}$, $\mathbb{C} \lessdot \mathbb{P}_{\lambda}$. Moreover, the set
+\begin{equation*}
+    \{p \in \mathbb{C} : p \subset e_{\lambda}\}
+\end{equation*}
+is $\mathbb{C}$-generic over $W$.
+\end{thm}
+
+\begin{proof}
+We adopt the function definitions made in the proof of Theorem \ref{thm747} as and when it is necessary. 
+
+Fix $\lambda \in C \cup \{\lambda^{\dagger}\}$. Given $X \subset \mathcal{L}_{\lambda}$, define 
+\begin{align*}
+    E_X := \{(n, z) \in \omega \times 2 : \exists \alpha \ \exists \beta \ \exists k < \omega \ (&\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner \in p \ \wedge \\ 
+    & \alpha = \omega \cdot \beta + k \ \wedge \\
+    & z \equiv k \ (\mathrm{mod} \ 2))\} \text{.}
+\end{align*}
+Let $p \in P_{\lambda} \subset \mathcal{P}(\mathcal{L}_{\lambda})$, so that we can find a set $\Sigma$ in some outer model of $W$ that $\Gamma_{\lambda} (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A})$-certifies $p$. Any such $\Sigma$ must satisfy condition \ref{c1}, which means that $E_p$ is necessarily a member of
+\begin{equation*}
+    \mathrm{Fn}(\omega, 2) := \text{the set of all finite partial functions from } \omega \text{ into } 2 \text{.}
+\end{equation*}
+As a result, $p \mapsto E_p$ is a function from $P_{\lambda}$ into $\mathrm{Fn}(\omega, 2)$. We shall use $\pi$ to denote this function. 
+
+Define $\mathbb{C}' := (\mathrm{Fn}(\omega, 2), \supset)$. Then $\mathbb{C}$ is easily seen to be a dense subset of $\mathbb{C}'$. By Fact \ref{defor}, we have $\mathbb{C} \lessdot \mathbb{C}'$. On the other hand, by Fact \ref{fact3222}, the fact that $\mathbb{C}$ is separative, as well as the definitions of $\mathbb{P}_{\lambda}$, $e_{\lambda}$ and $\pi$, we are able to conclude 
+\begin{itemize}
+    \item $\mathbb{C}' \lessdot \mathbb{P}_{\lambda}$, and 
+    \item the set $\{p \in \mathbb{C}' : p \subset e_{\lambda}\}$ is $\mathbb{C}'$-generic over $W$,
+\end{itemize}
+as long as $\pi$ is a projection. Hence, it suffices to show that $\pi$ is a projection. In other words, it suffices to show that \ref{3218a} to \ref{3218c} of Definition \ref{def3218} holds with 
+\begin{itemize}
+    \item $\mathbb{C}'$ in place of $\mathbb{P}$, 
+    \item $\mathrm{Fn}(\omega, 2)$ in place of $P$,
+    \item $\supset$ in place of both $\leq_{\mathbb{P}}$ and $\leq_{\mathbb{Q}}$,
+    \item $\mathbb{P}_{\lambda}$ in place of $\mathbb{Q}$, and
+    \item $P_{\lambda}$ in place of $Q$.
+\end{itemize}
+In this context, \ref{3218a} holds as a trivial consequence of the definitions of $\mathbb{P}_{\lambda}$ and $\pi$, and \ref{3218b} is implied by \ref{3218c} and the fact that $\mathbb{1}_{\mathbb{C}'} = \emptyset \in ran(\pi)$. 
+
+We are now left with proving
+\begin{equation}\label{eq745}
+    \forall q \in P_{\lambda} \ \forall p \in \mathrm{Fn}(\omega, 2) \ \exists q' \in P_{\lambda} \ (p \supset \pi(q) \implies (q' \supset q \wedge \pi(q') \supset p)) \text{.}
+\end{equation}
+So let $q \in P_{\lambda}$ and $p \in \mathrm{Fn}(\omega, 2)$ be such that $p \supset \pi(q)$. Fix an outer model $W'$ of $W$ in which there exists some $\Sigma$ $\Gamma_{\lambda} (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A})$-certifying $p$. Initiate $\Sigma^* := \Sigma$. Sequentially, for each $n \in dom(p) \setminus dom(\pi(q))$, perform the procedure below.
+\begin{enumerate}[label=(\Alph*)]
+    \item Let $z$ be the unique member of $2$ such that $(n, z) \in p$.
+    \item Iterate $\mathrm{BC}(\cdot, n, 1)$ on $\Sigma^*$ $|p|$ many times and call the result $\Sigma'$.
+    \item Let $\alpha$ be the unique set such that $\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner \in \Sigma'$.
+    \item If $\alpha = \omega \cdot \beta + k$ and $z \equiv k \ (\mathrm{mod} \ 2)$ for some $\beta$ and some $k < \omega$, then update $\Sigma^* := \Sigma'$. Otherwise, update $\Sigma^* := \mathrm{BC}(\Sigma', n, 1)$.
+\end{enumerate}
+Through repeated applications of Lemma \ref{lem7411}, we have both
+\begin{itemize}
+    \item $\Sigma^*$ $\Gamma_{\lambda} (\mathcal{L} \cap Q_{\lambda}, \mathfrak{A})$-certifies $q$, and
+    \item $p \subset E_{\Sigma^*}$.
+\end{itemize}
+But this means 
+\begin{equation*}
+    q' := q \cup \{\ulcorner \dot{F}_{\omega_2^W}(n) = \alpha \urcorner \in \Sigma^* : n \in dom(p) \setminus dom(\pi(q)) \wedge \alpha < \omega_2^W\}
+\end{equation*}
+is a condition of $\mathbb{P}_{\lambda}$ that satisfies $q' \supset q$ and $\pi(q') \supset p$. Thus (\ref{eq745}) is proven.
+\end{proof}
+
+The proofs of Theorems \ref{thm747}, \ref{thm7413} and Lemma \ref{lem7411} go through as they are, even with the definitions of all associated parameters swopped out for those in the proof of Theorem \ref{notion2}. Similarly, the proofs go through when the definitions of the said parameters are modified from the proof of Theorem \ref{notion2} according to the paragraph immediately before Theorem \ref{notion3}. As a result, mildly stronger versions of Theorems \ref{notion1}, \ref{notion2} and \ref{notion3} can be stated. In particular, we have the following.
 
 \begin{thm}
 Assume
@@ -6879,7 +6996,7 @@ Then there is a stationary-preserving forcing notion $\mathbb{P}$ of size $2^{< 
         \item $I_{\omega_1^V} = \mathrm{NS}_{\omega_1}^{V^{\mathbb{P}}} \cap N_{\omega_1^V}$, and
         \item $a_{\omega_1^V} = A$, and
     \end{enumerate}
-    \item $\mathbb{P}$ adds reals.
+    \item $\mathbb{P}$ adds Cohen reals.
 \end{enumerate}
 \end{thm}
 
