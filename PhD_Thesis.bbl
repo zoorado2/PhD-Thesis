@@ -1027,6 +1027,45 @@
       \verb https://doi-org.libproxy1.nus.edu.sg/10.1142/9789814602648_0002
       \endverb
     \endentry
+    \entry{kasum}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=e358f8bdfa3142d9226c6dbd769dd5b5}{%
+           family={Kasum},
+           familyi={K\bibinitperiod},
+           given={Obrad},
+           giveni={O\bibinitperiod}}}%
+        {{hash=906c6fc5ed1b8818264bbe26bb948bb9}{%
+           family={Veličković},
+           familyi={V\bibinitperiod},
+           given={Boban},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ed098db2bed6a1e5fdb5909bb30db75}
+      \strng{fullhash}{7ed098db2bed6a1e5fdb5909bb30db75}
+      \strng{fullhashraw}{7ed098db2bed6a1e5fdb5909bb30db75}
+      \strng{bibnamehash}{7ed098db2bed6a1e5fdb5909bb30db75}
+      \strng{authorbibnamehash}{7ed098db2bed6a1e5fdb5909bb30db75}
+      \strng{authornamehash}{7ed098db2bed6a1e5fdb5909bb30db75}
+      \strng{authorfullhash}{7ed098db2bed6a1e5fdb5909bb30db75}
+      \strng{authorfullhashraw}{7ed098db2bed6a1e5fdb5909bb30db75}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.LO}
+      \field{eprinttype}{arXiv}
+      \field{title}{Marginalia to a Theorem of Asperó and Schindler}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2308.08293
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2308.08293
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2308.08293
+      \endverb
+    \endentry
     \entry{kechris}{book}{}{}
       \name{author}{1}{}{%
         {{hash=c20ec70302197b9127746c09db04c836}{%
