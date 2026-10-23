@@ -9628,7 +9628,7 @@ The proof of Theorem \ref{revgenmodels} (and thus of Proposition \ref{prop323}) 
 to be definable in $V$. Obviously, $dom(F)$ is definable in $V$, so $ran(F)$ must be as well. 
 \end{proof}
 
-Let us choose a definable function $F$ as in the proof of Corollary \ref{cor324} and name it $\mathfrak{T}(\cdot)$, for later use and reference. Also, we shall use $\mathsf{Fg}$ to denote the local method definition of forcing; in other words,  $\mathsf{Fg} := ran(\mathfrak{T}(\cdot))$.
+Let us call the definable function $F$ in the proof of Corollary \ref{cor324} $\mathfrak{T}(\cdot)$, for later use and reference. Also, we shall use $\mathsf{Fg}$ to denote the local method definition of forcing; in other words,  $\mathsf{Fg} := ran(\mathfrak{T}(\cdot))$. Based on how it is constructively defined via the proof of Theorem \ref{revgenmodels}, $\mathfrak{T}(\cdot)$ is easily seen to be injective.
 
 \subsection{Complexity of Local Method Definitions}\label{ss32}
 
@@ -10715,7 +10715,7 @@ Is the downward directed small grounds hypothesis true?
 
 Notice that the counter-example to the naive downward directed small grounds hypothesis constructed in the proof of Proposition \ref{nddgfalse} --- namely, the triple $(L, W, W')$ --- fails to be a counter-example to the downward directed small grounds hypothesis, since obviously $L \subset L \cap W$. So far, it seems that the construction of a counter-example to the downward directed small grounds hypothesis by any means similar to the aforementioned proof, hinges on the ability to amalgamate two universes incomparable with respect to inclusion through a scheme akin to Jensen's coding-the-universe forcing.
 
-Let us now turn our attention to the relation $\leq^M$ and the local method hierarchy. Naturally, one can also ask a variant of each of the remaining questions in this section, in which we swop out every (explicit or otherwise) instance of the relation $\leq^M$ for an instance of the relation $\leq^N$.
+Let us now turn our attention to the relation $\leq^M$ and the local method hierarchy. Naturally, one can also ask a variant of each of the next 6 questions, in which we swop out every (explicit or otherwise) instance of the relation $\leq^M$ for an instance of the relation $\leq^N$.
 
 \begin{ques}\label{q843}
 Is there a local method definition $X$ such that $X \not\leq^M \mathsf{Fg}$?
@@ -10769,7 +10769,139 @@ Let $n > 2$. Is there a local method definition $X$ comprising only consistent T
 By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to the $\leq^N$-variant of Question \ref{q417}.
 \end{rem}
 
-Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schema.
+Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schemata.
+
+Building on the fact that $\mathsf{\Sigma^M_1} \leq^M \mathsf{Fg}$, we might want to explore possible finer relations between the two local method definitions. In other words, we might want to ask if there interesting local method definitions $X$ and $Y$ such that 
+\begin{enumerate}[label=(\arabic*)]
+    \item $X \subset \mathsf{\Sigma^M_1}$,
+    \item $Y \subset \mathsf{Fg}$, and
+    \item $X \leq^M Y$ or $X \leq^N Y$.
+\end{enumerate}
+
+In \cite{kasum}, Kasum and Veli\v{c}kovi\'{c} investigated the satisfiability of infinitary propositional formulas in certain classes of forcing extensions. They did so in great generality via a suitable generalisation of the satisfiability problem for infinitary propositional formulas. More specifically, they defined a \emph{problem} to take the form of a forcing notion $\mathbb{P}$ of some particular type, adjoined with a collection $\mathcal{D}$ of predense subsets of $\mathbb{P}$. A solution to the said problem is defined to be a $\mathbb{P}$-generic filter over $\mathcal{D}$. It is then shown that the satisfiability problem for any infinitary propositional formula can be encoded as a problem.
+
+Now, a problem $P$ can be trivially and constructively encoded as a TCI $\mathfrak{T}_P$, so that
+\begin{equation*}
+    \{\mathcal{M} : \mathcal{M} \models^* \mathfrak{T}_P\} = \{\text{solutions to } P\} \text{.}
+\end{equation*}
+As a result, the class of all problems can be viewed as a local method definition. Call this local method definition $\mathsf{Pm}$. Notice that the encoding of $P$ into $\mathfrak{T}_P$ can be done uniformly in a way that ensures 
+\begin{itemize}
+    \item $\mathfrak{T}_P \in \mathsf{\Sigma^M_1}$, and
+    \item $\mathfrak{T}_P \neq \mathfrak{T}_{P'}$ whenever $P'$ is a problem different from $P$.
+\end{itemize}
+Let $\mathfrak{T}_{-}$ denote the class function $P \mapsto \mathfrak{T}_P$ on the class of all problems, so that $\mathfrak{T}_{-}$ is injective with range $\mathsf{Pm}$. Further, $\mathsf{Pm} \subset \mathsf{\Sigma^M_1}$. On the side of $\mathsf{Fg}$, we may define different subclasses corresponding to known classes of forcing notions:
+\begin{align*}
+    \mathsf{Pr} := \ & \{\mathfrak{T}(\mathbb{P}) : \mathbb{P} \text{ is a proper forcing notion}\} \\
+    \mathsf{SPr} := \ & \{\mathfrak{T}(\mathbb{P}) : \mathbb{P} \text{ is a semiproper forcing notion}\} \\
+    \mathsf{SSP} := \ & \{\mathfrak{T}(\mathbb{P}) : \mathbb{P} \text{ is a stationary set preserving forcing notion}\} \text{.}
+\end{align*}
+
+The main results of Kasum and Veli\v{c}kovi\'{c} relating to problems are summarised in our terminology by the theorem below.
+
+\begin{thm}[\cite{kasum}]\label{thm9521}
+Suppose there is a proper class of inaccessible cardinals, and let $X$ be a local method definition satisfying $X \subset \mathsf{Pm}$. Then 
+\begin{enumerate}[label=(\arabic*)]
+    \item $X \leq^N \mathsf{Pr}$ if $X \leq^N_w \mathsf{Pr}$,
+    \item $X \leq^N \mathsf{SPr}$ if $X \leq^N_w \mathsf{SPr}$, and
+    \item $X \leq^N \mathsf{SSP}$ if $X \leq^N_w \mathsf{SSP}$.
+\end{enumerate}
+\end{thm}
+
+A natural question based upon Theorem \ref{thm9521} is whether the large cardinal hypothesis in the theorem can be omitted.
+
+\begin{ques}
+Suppose there is no proper class of inaccessible cardinals, and let $X$ be a local method definition satisfying $X \subset \mathsf{Pm}$.
+\begin{enumerate}[label=(\arabic*)]
+    \item Is it true that $X \leq^N \mathsf{Pr}$ if $X \leq^N_w \mathsf{Pr}$?
+    \item Is it true that $X \leq^N \mathsf{SPr}$ if $X \leq^N_w \mathsf{SPr}$?
+    \item Is it true that $X \leq^N \mathsf{SSP}$ if $X \leq^N_w \mathsf{SSP}$?
+\end{enumerate}
+\end{ques}
+
+Another natural question is whether $\leq^N$ can be replaced by $\leq^M$ everywhere in the conclusion of Theorem \ref{thm9521}. Using an argument similar to that which proved Theorem \ref{thm9414}, along with the fact that properness, semiproperness and stationary set preservation are all properties preserved by taking regular subposets, we can already deduce the following.
+
+\begin{prop}
+Let $X$ be a local method definition. Then 
+\begin{enumerate}[label=(\arabic*)]
+    \item $X \leq^M_w \mathsf{Pr}$ if $X \leq^N_w \mathsf{Pr}$,
+    \item $X \leq^M_w \mathsf{SPr}$ if $X \leq^N_w \mathsf{SPr}$, and
+    \item $X \leq^M_w \mathsf{SSP}$ if $X \leq^N_w \mathsf{SSP}$.
+\end{enumerate}
+\end{prop}
+
+So what we really want to ask can be reduced to a form that eschews any mention of weak $N$-reducibility.
+
+\begin{ques}
+Is there a known large cardinal hypothesis under which the following statements hold?
+\begin{enumerate}[label=(\arabic*)]
+    \item $X \leq^M \mathsf{Pr}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^M_w \mathsf{Pr}$.
+    \item $X \leq^M \mathsf{SPr}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^M_w \mathsf{SPr}$.
+    \item $X \leq^M \mathsf{SSP}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^M_w \mathsf{SSP}$.
+\end{enumerate}
+\end{ques}
+
+We are also interested in the necessary size bounds of witnesses to $N$-reducibility in Theorem \ref{thm9521}. To formalise this, we ought to first define the notion of problem size. So let $|P| = \mathrm{max}\{|\mathbb{P}|, |\mathcal{D}|\}$ whenever $P = (\mathbb{P}, \mathcal{D})$ is a problem. If $F$ is a partial class function from $\mathsf{Pm}$ into $\mathsf{Fg}$, set 
+\begin{equation*}
+    \Xi_F := \mathfrak{T}(\cdot)^{-1} \circ F \circ (\mathfrak{T}_{-} \restriction (\mathfrak{T}_{-}^{-1}(dom(F)))) \text{.}
+\end{equation*}
+This makes sense because 
+\begin{itemize}
+    \item $\mathfrak{T}_{-}$ has range $\mathsf{Pm}$, and
+    \item $\mathfrak{T}(\cdot)$ is injective and has range $\mathsf{Fg}$.
+\end{itemize}
+Then $\Xi_F$ is necessarily a partial function from the class of all problems into the class of all forcing notions. 
+
+Theorem \ref{thm9521} is proved constructively in \cite{kasum}. To wit, Kasum and Veli\v{c}kovi\'{c} gave uniform definitions of witnesses $F^{\mathsf{Pr}}_X$, $F^{\mathsf{SPr}}_X$ and $F^{\mathsf{SSP}}_X$ to $X \leq^N \mathsf{Pr}$, $X \leq^N \mathsf{SPr}$ and $X \leq^N \mathsf{SSP}$, respectively, in terms of $X$. Defining 
+\begin{align*}
+    \Xi^{\mathsf{Pr}}_{X} := \ & \Xi_{F^{\mathsf{Pr}}_X} \\
+    \Xi^{\mathsf{SPr}}_{X} := \ & \Xi_{F^{\mathsf{SPr}}_X} \\
+    \Xi^{\mathsf{SSP}}_{X} := \ & \Xi_{F^{\mathsf{SSP}}_X} \text{,}
+\end{align*}
+a quantitative version of Theorem \ref{thm9521}, also proved in \cite{kasum}, can be restated as follows.
+
+\begin{thm}[\cite{kasum}]\label{thm9525}
+Suppose there is a proper class of inaccessible cardinals, and let $X$ be a local method definition satisfying $X \subset \mathsf{Pm}$.  
+\begin{enumerate}[label=(\arabic*)]
+    \item If $X \leq^N_w \mathsf{Pr}$, then for every problem $P \in dom(\Xi^{\mathsf{Pr}}_{X})$ such that $\mathfrak{T}_P$ is consistent, there is an inaccessible cardinal $\kappa_P$ satisfying $|P| < \kappa_P \leq |\Xi^{\mathsf{Pr}}_{X}(P)|$.
+    \item If $X \leq^N_w \mathsf{SPr}$, then for every problem $P \in dom(\Xi^{\mathsf{SPr}}_{X})$ such that $\mathfrak{T}_P$ is consistent, there is an inaccessible cardinal $\kappa_P$ satisfying $|P| < \kappa_P \leq |\Xi^{\mathsf{SPr}}_{X}(P)|$.
+    \item If $X \leq^N_w \mathsf{SSP}$, then for every problem $P \in dom(\Xi^{\mathsf{SSP}}_{X})$ such that $\mathfrak{T}_P$ is consistent, there is an inaccessible cardinal $\kappa_P$ satisfying $|P| < \kappa_P \leq |\Xi^{\mathsf{SSP}}_{X}(P)|$.
+\end{enumerate}
+\end{thm}
+
+On the other hand, we can set 
+\begin{equation*}
+    F^{\dagger} := \mathfrak{T}(\cdot) \circ \pi_0 \circ \mathfrak{T}_{-}^{-1} \text{,}
+\end{equation*}
+where $\pi_0(P) = \mathbb{P}$ whenever $P = (\mathbb{P}, \mathcal{D})$ is a problem. $F^{\dagger}$ is a well-defined class function from $\mathsf{Pm}$ into $\mathsf{Fg}$ because $\mathfrak{T}_{-}^{-1}$ is injective with its domain being the class of all problems and its range being $\mathsf{Pm}$. Clearly,
+\begin{enumerate}[label=(S.\Alph*), leftmargin=40pt]
+    \item\label{SA} $\Xi_{F^{\dagger}}$ witnesses $\mathsf{Pm} \leq^M \mathsf{Fg}$, and
+    \item\label{SB} $|P| \geq |\Xi_{F^{\dagger}}(P)|$ for every problem $P$.
+\end{enumerate}
+So, the constraints imposed on the range of witnesses to local method reducibility in Theorem \ref{thm9525} seem to dramatically increase the difficulty of uniformly choosing relatively small forcing notions. But does this kind of choice functions even exist in these scenarios?
+
+\begin{ques}
+Is there a known large cardinal hypothesis under which the following statements hold?
+\begin{enumerate}[label=(\arabic*)]
+    \item If $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{Pr}$, then there is a witness $F$ to $X \leq^N \mathsf{Pr}$ such that $|P| \geq |\Xi_{F}(P)|$ for every problem $P$.
+    \item If $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{SPr}$, then there is a witness $F$ to $X \leq^N \mathsf{SPr}$ such that $|P| \geq |\Xi_{F}(P)|$ for every problem $P$.
+    \item If $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{SSP}$, then there is a witness $F$ to $X \leq^N \mathsf{SSP}$ such that $|P| \geq |\Xi_{F}(P)|$ for every problem $P$.
+\end{enumerate}
+\end{ques}
+
+Whether there is a class function $F$ with domain substantially bigger than $\mathsf{Pm}$, such that \ref{SA} and \ref{SB} hold with $F \restriction \mathsf{Pm}$ in place of $F^{\dagger}$, appears much less clear \textit{a priori}. That being said, one such example can be easily derived from the results in this chapter. Indeed, by choosing $\mathfrak{T}^*$ to be $\mathfrak{T}((\emptyset, \emptyset))$ in the proof of Theorem \ref{thm368}, we have a witness $F_{\mathfrak{T}^*}$ to $\mathsf{\Pi^M_2} \leq^M \mathsf{Fg}$ such that \ref{SA} and \ref{SB} hold with $F_{\mathfrak{T}^*} \restriction \mathsf{Pm}$ in place of $F^{\dagger}$.
+
+One may then justifiably ask if Theorem \ref{thm9521} can similarly be extended to domains not covered by $\mathsf{Pm}$.
+
+\begin{ques}\label{q9527}
+Is there a known large cardinal hypothesis under which the following statements hold?
+\begin{enumerate}[label=(\arabic*)]
+    \item $X \leq^N \mathsf{Pr}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{\Pi^M_2}$ and $X \leq^N_w \mathsf{Pr}$.
+    \item $X \leq^N \mathsf{SPr}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{\Pi^M_2}$ and $X \leq^N_w \mathsf{SPr}$.
+    \item $X \leq^N \mathsf{SSP}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{\Pi^M_2}$ and $X \leq^N_w \mathsf{SSP}$.
+\end{enumerate}
+\end{ques}
+
+Even though $\mathsf{\Pi^M_2} \leq^M \mathsf{Pm}$ is immediate from how similar a problem is to a forcing notion, this fact does not trivialise Question \ref{q9527}, as the obvious witnesses to $\mathsf{\Pi^M_2} \leq^M \mathsf{Pm}$ are not injective, and it is unclear if an injective witness exists.
 
 \part{\texorpdfstring{ References}{References}}
 
