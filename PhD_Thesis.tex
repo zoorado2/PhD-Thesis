@@ -10840,7 +10840,13 @@ Is there a known large cardinal hypothesis under which the following statements 
 \end{enumerate}
 \end{ques}
 
-We are also interested in the necessary size bounds of witnesses to $N$-reducibility in Theorem \ref{thm9521}. To formalise this, we ought to first define the notion of problem size. So let $|P| = \mathrm{max}\{|\mathbb{P}|, |\mathcal{D}|\}$ whenever $P = (\mathbb{P}, \mathcal{D})$ is a problem. If $F$ is a partial class function from $\mathsf{Pm}$ into $\mathsf{Fg}$, set 
+We are also interested in the necessary size bounds of witnesses to $N$-reducibility in Theorem \ref{thm9521}. To formalise this, we ought to first define the notion of problem size. So let $|P| := \mathrm{max}\{|\mathbb{P}|, |\mathcal{D}|\}$ whenever $P = (\mathbb{P}, \mathcal{D})$ is a problem. We can define the size of a TCI analogously: 
+\begin{equation*}
+    |\mathfrak{T}| := \mathrm{max} \left\{ |T|, |\sigma|, |dom(\vartheta)|, \left| \bigcup ran(\vartheta) \right| \right\}
+\end{equation*}
+whenever $\mathfrak{T} = (T, \sigma, \dot{\mathcal{U}}, \vartheta)$. In fact, this definition of the size of a TCI generalises that of the size of a problem because $|P| = |\mathfrak{T}_P|$ whenever $P$ is a problem.
+
+If $F$ is a partial class function from $\mathsf{Pm}$ into $\mathsf{Fg}$, set 
 \begin{equation*}
     \Xi_F := \mathfrak{T}(\cdot)^{-1} \circ F \circ (\mathfrak{T}_{-} \restriction (\mathfrak{T}_{-}^{-1}(dom(F)))) \text{.}
 \end{equation*}
@@ -10849,7 +10855,11 @@ This makes sense because
     \item $\mathfrak{T}_{-}$ has range $\mathsf{Pm}$, and
     \item $\mathfrak{T}(\cdot)$ is injective and has range $\mathsf{Fg}$.
 \end{itemize}
-Then $\Xi_F$ is necessarily a partial function from the class of all problems into the class of all forcing notions. 
+Then $\Xi_F$ is necessarily a partial function from the class of all problems into the class of all forcing notions. More generally, if $F$ is a partial class function from the class of all TCIs into $\mathsf{Fg}$, set 
+\begin{equation*}
+    \Xi'_F := \mathfrak{T}(\cdot)^{-1} \circ F \text{,}
+\end{equation*}
+so that $\Xi'_F$ is a partial function from the class of all TCIs into the class of all forcing notions.
 
 Theorem \ref{thm9521} is proved constructively in \cite{kasum}. To wit, Kasum and Veli\v{c}kovi\'{c} gave uniform definitions of witnesses $F^{\mathsf{Pr}}_X$, $F^{\mathsf{SPr}}_X$ and $F^{\mathsf{SSP}}_X$ to $X \leq^N \mathsf{Pr}$, $X \leq^N \mathsf{SPr}$ and $X \leq^N \mathsf{SSP}$, respectively, in terms of $X$. Defining 
 \begin{align*}
@@ -10872,9 +10882,9 @@ On the other hand, we can set
 \begin{equation*}
     F^{\dagger} := \mathfrak{T}(\cdot) \circ \pi_0 \circ \mathfrak{T}_{-}^{-1} \text{,}
 \end{equation*}
-where $\pi_0(P) = \mathbb{P}$ whenever $P = (\mathbb{P}, \mathcal{D})$ is a problem. $F^{\dagger}$ is a well-defined class function from $\mathsf{Pm}$ into $\mathsf{Fg}$ because $\mathfrak{T}_{-}^{-1}$ is injective with its domain being the class of all problems and its range being $\mathsf{Pm}$. Clearly,
+where $\pi_0(P) = \mathbb{P}$ whenever $P = (\mathbb{P}, \mathcal{D})$ is a problem. $F^{\dagger}$ is a well-defined class function from $\mathsf{Pm}$ into $\mathsf{Fg}$ because $\mathfrak{T}_{-}$ is injective with its domain being the class of all problems and its range being $\mathsf{Pm}$. Clearly,
 \begin{enumerate}[label=(\Alph*)$_{F^{\dagger}}$,leftmargin=40pt]
-    \item\label{SA} $\Xi_{F^{\dagger}}$ witnesses $\mathsf{Pm} \leq^M \mathsf{Fg}$, and
+    \item\label{SA} $F^{\dagger}$ witnesses $\mathsf{Pm} \leq^M \mathsf{Fg}$, and
     \item\label{SB} $|P| \geq |\Xi_{F^{\dagger}}(P)|$ for every problem $P$.
 \end{enumerate}
 So, the constraints imposed on the range of witnesses to local method reducibility in Theorem \ref{thm9525} seem to dramatically increase the difficulty of uniformly choosing relatively small forcing notions. But does this kind of choice functions even exist in these scenarios?
@@ -10888,7 +10898,11 @@ Is there a known large cardinal hypothesis under which the following statements 
 \end{enumerate}
 \end{ques}
 
-Whether there is a class function $F$ with domain substantially bigger than $\mathsf{Pm}$, such that \ref{SA} and \ref{SB} hold with $F \restriction \mathsf{Pm}$ in place of $F^{\dagger}$, appears much less clear \textit{a priori}. That being said, one such example can be easily derived from the results in this chapter. Indeed, by choosing $\mathfrak{T}^*$ to be $\mathfrak{T}((\emptyset, \emptyset))$ in the proof of Theorem \ref{thm368}, we have a witness $F_{\mathfrak{T}^*}$ to $\mathsf{\Pi^M_2} \leq^M \mathsf{Fg}$ such that \ref{SA} and \ref{SB} hold with $F_{\mathfrak{T}^*} \restriction \mathsf{Pm}$ in place of $F^{\dagger}$.
+Whether there is a class function $F$ on TCIs with domain substantially bigger than $\mathsf{Pm}$, such that the TCI analogues of \ref{SA} and \ref{SB} hold with $F$ in place of $F^{\dagger}$, appears much less clear \textit{a priori}. That being said, one such example can be easily derived from the results in this chapter. Indeed, by choosing $\mathfrak{T}^*$ to be $\mathfrak{T}((\emptyset, \emptyset))$ in the proof of Theorem \ref{thm368}, we have
+\begin{enumerate}[label=(\Alph*)$'_{F_{\mathfrak{T}^*}}$,leftmargin=45pt]
+    \item\label{SA'} $F_{\mathfrak{T}^*}$ witnesses $\mathsf{\Pi^M_2} \leq^M \mathsf{Fg}$, and
+    \item\label{SB'} $|\mathfrak{T}| \geq |\Xi'_{F_{\mathfrak{T}^*}}(\mathfrak{T})|$ for every $\mathfrak{T} \in \mathsf{\Pi^M_2}$.
+\end{enumerate}
 
 One may then justifiably ask if Theorem \ref{thm9521} can similarly be extended to domains not covered by $\mathsf{Pm}$.
 
