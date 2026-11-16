@@ -10789,32 +10789,36 @@ As a result, the class of all problems can be viewed as a local method definitio
     \item $\mathfrak{T}_P \in \mathsf{\Sigma^M_1}$, and
     \item $\mathfrak{T}_P \neq \mathfrak{T}_{P'}$ whenever $P'$ is a problem different from $P$.
 \end{itemize}
-Let $\mathfrak{T}_{-}$ denote the class function $P \mapsto \mathfrak{T}_P$ on the class of all problems, so that $\mathfrak{T}_{-}$ is injective with range $\mathsf{Pm}$. Further, $\mathsf{Pm} \subset \mathsf{\Sigma^M_1}$. On the side of $\mathsf{Fg}$, we may define different subclasses corresponding to known classes of forcing notions:
+Let $\mathfrak{T}_{-}$ denote the class function $P \mapsto \mathfrak{T}_P$ on the class of all problems, so that $\mathfrak{T}_{-}$ is injective with range $\mathsf{Pm}$. Further, $\mathsf{Pm} \subset \mathsf{\Sigma^M_1}$. 
+
+On the side of $\mathsf{Fg}$, we may define different subclasses corresponding to known classes of forcing notions:
 \begin{align*}
     \mathsf{Pr} := \ & \{\mathfrak{T}(\mathbb{P}) : \mathbb{P} \text{ is a proper forcing notion}\} \\
     \mathsf{SPr} := \ & \{\mathfrak{T}(\mathbb{P}) : \mathbb{P} \text{ is a semiproper forcing notion}\} \\
     \mathsf{SSP} := \ & \{\mathfrak{T}(\mathbb{P}) : \mathbb{P} \text{ is a stationary set preserving forcing notion}\} \text{.}
 \end{align*}
 
+In addition to $\mathsf{Pm}$, a more restrictive local method definition is also studied in \cite{kasum}, namely the class corresponding to \emph{$\mathrm{AS}$-good} problems. Here, $\mathrm{AS}$-goodness refers to a forcing-theoretic property observed in, and isolated from, the Asper\'{o}-Schindler side condition method. Let us denote this subclass of $\mathsf{Pm}$ by $\mathsf{AS\text{-}Pm}$. 
+
 The main results of Kasum and Veli\v{c}kovi\'{c} relating to problems are summarised in our terminology by the theorem below.
 
 \begin{thm}[\cite{kasum}]\label{thm9521}
-Suppose there is a proper class of inaccessible cardinals, and let $X$ be a local method definition satisfying $X \subset \mathsf{Pm}$. Then 
+Suppose there is a proper class of inaccessible cardinals. Then 
 \begin{enumerate}[label=(\arabic*)]
-    \item $X \leq^N \mathsf{Pr}$ if $X \leq^N_w \mathsf{Pr}$,
-    \item $X \leq^N \mathsf{SPr}$ if $X \leq^N_w \mathsf{SPr}$, and
-    \item $X \leq^N \mathsf{SSP}$ if $X \leq^N_w \mathsf{SSP}$.
+    \item $X \leq^N \mathsf{Pr}$ if $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{Pr}$,
+    \item $X \leq^N \mathsf{SPr}$ if $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{SPr}$, and
+    \item $X \leq^N \mathsf{SSP}$ if $X$ is a local method definition satisfying $X \subset \mathsf{AS\text{-}Pm}$ and $X \leq^N_w \mathsf{SSP}$.
 \end{enumerate}
 \end{thm}
 
 A natural question based upon Theorem \ref{thm9521} is whether the large cardinal hypothesis in the theorem can be omitted.
 
 \begin{ques}
-Suppose there is no proper class of inaccessible cardinals, and let $X$ be a local method definition satisfying $X \subset \mathsf{Pm}$.
+Suppose there is no proper class of inaccessible cardinals.
 \begin{enumerate}[label=(\arabic*)]
-    \item Is it true that $X \leq^N \mathsf{Pr}$ if $X \leq^N_w \mathsf{Pr}$?
-    \item Is it true that $X \leq^N \mathsf{SPr}$ if $X \leq^N_w \mathsf{SPr}$?
-    \item Is it true that $X \leq^N \mathsf{SSP}$ if $X \leq^N_w \mathsf{SSP}$?
+    \item Is it true that $X \leq^N \mathsf{Pr}$ if $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{Pr}$?
+    \item Is it true that $X \leq^N \mathsf{SPr}$ if $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{SPr}$?
+    \item Is it true that $X \leq^N \mathsf{SSP}$ if $X$ is a local method definition satisfying $X \subset \mathsf{AS\text{-}Pm}$ and $X \leq^N_w \mathsf{SSP}$?
 \end{enumerate}
 \end{ques}
 
@@ -10836,7 +10840,7 @@ Is there a known large cardinal hypothesis under which the following statements 
 \begin{enumerate}[label=(\arabic*)]
     \item $X \leq^M \mathsf{Pr}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^M_w \mathsf{Pr}$.
     \item $X \leq^M \mathsf{SPr}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^M_w \mathsf{SPr}$.
-    \item $X \leq^M \mathsf{SSP}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^M_w \mathsf{SSP}$.
+    \item $X \leq^M \mathsf{SSP}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{AS\text{-}Pm}$ and $X \leq^M_w \mathsf{SSP}$.
 \end{enumerate}
 \end{ques}
 
@@ -10870,11 +10874,11 @@ Theorem \ref{thm9521} is proved constructively in \cite{kasum}. To wit, Kasum an
 a quantitative version of Theorem \ref{thm9521}, also proved in \cite{kasum}, can be restated as follows.
 
 \begin{thm}[\cite{kasum}]\label{thm9525}
-Suppose there is a proper class of inaccessible cardinals, and let $X$ be a local method definition satisfying $X \subset \mathsf{Pm}$.  
+Suppose there is a proper class of inaccessible cardinals.  
 \begin{enumerate}[label=(\arabic*)]
-    \item If $X \leq^N_w \mathsf{Pr}$, then for every problem $P \in dom(\Xi^{\mathsf{Pr}}_{X})$ such that $\mathfrak{T}_P$ is consistent, there is an inaccessible cardinal $\kappa_P$ satisfying $|P| < \kappa_P \leq |\Xi^{\mathsf{Pr}}_{X}(P)|$.
-    \item If $X \leq^N_w \mathsf{SPr}$, then for every problem $P \in dom(\Xi^{\mathsf{SPr}}_{X})$ such that $\mathfrak{T}_P$ is consistent, there is an inaccessible cardinal $\kappa_P$ satisfying $|P| < \kappa_P \leq |\Xi^{\mathsf{SPr}}_{X}(P)|$.
-    \item If $X \leq^N_w \mathsf{SSP}$, then for every problem $P \in dom(\Xi^{\mathsf{SSP}}_{X})$ such that $\mathfrak{T}_P$ is consistent, there is an inaccessible cardinal $\kappa_P$ satisfying $|P| < \kappa_P \leq |\Xi^{\mathsf{SSP}}_{X}(P)|$.
+    \item If $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{Pr}$, then for every problem $P \in dom(\Xi^{\mathsf{Pr}}_{X})$ such that $\mathfrak{T}_P$ is consistent, there is an inaccessible cardinal $\kappa_P$ satisfying $|P| < \kappa_P \leq |\Xi^{\mathsf{Pr}}_{X}(P)|$.
+    \item If $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{SPr}$, then for every problem $P \in dom(\Xi^{\mathsf{SPr}}_{X})$ such that $\mathfrak{T}_P$ is consistent, there is an inaccessible cardinal $\kappa_P$ satisfying $|P| < \kappa_P \leq |\Xi^{\mathsf{SPr}}_{X}(P)|$.
+    \item If $X$ is a local method definition satisfying $X \subset \mathsf{AS\text{-}Pm}$ and $X \leq^N_w \mathsf{SSP}$, then for every problem $P \in dom(\Xi^{\mathsf{SSP}}_{X})$ such that $\mathfrak{T}_P$ is consistent, there is an inaccessible cardinal $\kappa_P$ satisfying $|P| < \kappa_P \leq |\Xi^{\mathsf{SSP}}_{X}(P)|$.
 \end{enumerate}
 \end{thm}
 
@@ -10894,7 +10898,7 @@ Is there a known large cardinal hypothesis under which the following statements 
 \begin{enumerate}[label=(\arabic*)]
     \item If $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{Pr}$, then there is a witness $F$ to $X \leq^N \mathsf{Pr}$ such that $|P| \geq |\Xi_{F}(P)|$ for every problem $P$.
     \item If $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{SPr}$, then there is a witness $F$ to $X \leq^N \mathsf{SPr}$ such that $|P| \geq |\Xi_{F}(P)|$ for every problem $P$.
-    \item If $X$ is a local method definition satisfying $X \subset \mathsf{Pm}$ and $X \leq^N_w \mathsf{SSP}$, then there is a witness $F$ to $X \leq^N \mathsf{SSP}$ such that $|P| \geq |\Xi_{F}(P)|$ for every problem $P$.
+    \item If $X$ is a local method definition satisfying $X \subset \mathsf{AS\text{-}Pm}$ and $X \leq^N_w \mathsf{SSP}$, then there is a witness $F$ to $X \leq^N \mathsf{SSP}$ such that $|P| \geq |\Xi_{F}(P)|$ for every problem $P$.
 \end{enumerate}
 \end{ques}
 
@@ -10911,16 +10915,35 @@ Is there a known large cardinal hypothesis under which the following statements 
 \begin{enumerate}[label=(\arabic*)]
     \item $X \leq^N \mathsf{Pr}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{\Pi^M_2}$ and $X \leq^N_w \mathsf{Pr}$.
     \item $X \leq^N \mathsf{SPr}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{\Pi^M_2}$ and $X \leq^N_w \mathsf{SPr}$.
-    \item $X \leq^N \mathsf{SSP}$ whenever $X$ is a local method definition satisfying $X \subset \mathsf{\Pi^M_2}$ and $X \leq^N_w \mathsf{SSP}$.
 \end{enumerate}
 \end{ques}
 
-Even though $\mathsf{\Pi^M_2} \leq^M \mathsf{Pm}$ is immediate from how similar a problem is to a forcing notion, this fact does not trivialise Question \ref{q9527}, as it is unclear if there is a witness $F$ to $\mathsf{\Pi^M_2} \leq^M \mathsf{Pm}$ satisfying any one of
+\begin{ques}\label{q9528}
+Are there
+\begin{enumerate}[label=(\alph*)]
+    \item a property $P$ analogous to $\mathrm{AS}$-goodness, and
+    \item a known large cardinal hypothesis,
+\end{enumerate} 
+under which the statement
+\begin{quote}
+    ``$X \leq^N \mathsf{SSP}$ whenever $X$ is a local method definition such that
+    \begin{enumerate}[label=(\arabic*),leftmargin=40pt]
+        \item $X \subset \mathsf{\Pi^M_2}$,
+        \item every member of $X$ has property $P$, and
+        \item $X \leq^N_w \mathsf{SSP}$''
+    \end{enumerate}
+\end{quote}
+holds?
+\end{ques}
+
+Even though $\mathsf{\Pi^M_2} \leq^M \mathsf{Pm}$ is immediate from how similar a problem is to a forcing notion, this fact does not trivialise Questions \ref{q9527} and \ref{q9528}, as it is unclear if there is a witness $F$ to $\mathsf{\Pi^M_2} \leq^M \mathsf{Pm}$ satisfying any one of
 \begin{itemize}
     \item $\forall \mathfrak{T} \in \mathsf{\Pi^M_2} \ (\{\mathfrak{T}\} \leq^N \mathsf{Pr} \implies \{F(\mathfrak{T})\} \leq^N \mathsf{Pr})$,
     \item $\forall \mathfrak{T} \in \mathsf{\Pi^M_2} \ (\{\mathfrak{T}\} \leq^N \mathsf{SPr} \implies \{F(\mathfrak{T})\} \leq^N \mathsf{SPr})$, and
     \item $\forall \mathfrak{T} \in \mathsf{\Pi^M_2} \ (\{\mathfrak{T}\} \leq^N \mathsf{SSP} \implies \{F(\mathfrak{T})\} \leq^N \mathsf{SSP})$.
 \end{itemize}
+
+\blankpage
 
 \part{\texorpdfstring{ References}{References}}
 
