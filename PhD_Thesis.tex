@@ -9152,15 +9152,15 @@ Table \ref{table3} summarises the similarities and differences among the relatio
 \end{table}
 
 \begin{ques}
-\leavevmode
-\begin{enumerate}[label=(\arabic*)]
-    \item Is the set of relations
-    \begin{equation*}
-        \{\leq_{\alpha}, \leq_{w \alpha}, \preceq_{\alpha}, \leq^{P, s}_{\alpha}\}
-    \end{equation*}
-    linearly ordered by inclusion for all admissible ordinals $\alpha$?
-    \item Does $\leq^{P}_{\alpha}$ correspond nicely to some complexity class relativised over $L_{\alpha}$, for all admissible ordinals $\alpha$? If not, how inclusive can it be?
-\end{enumerate}
+Is the set of relations
+\begin{equation*}
+    \{\leq_{\alpha}, \leq_{w \alpha}, \preceq_{\alpha}, \leq^{P, s}_{\alpha}\}
+\end{equation*}
+linearly ordered by inclusion for all admissible ordinals $\alpha$?
+\end{ques}
+
+\begin{ques}
+Does $\leq^{P}_{\alpha}$ correspond nicely to some complexity class relativised over $L_{\alpha}$, for all admissible ordinals $\alpha$? If not, how inclusive can it be?
 \end{ques}
 
 \chapter{Generalised Computation Beyond V}\label{chap7}
@@ -10610,7 +10610,71 @@ Now $\varphi'$ is a $(n+2)$-ary $\Sigma_1$ formula in the L\'{e}vy hierarchy wit
 \end{equation*}
 \end{proof}
 
-\section{Discussion and Questions}
+\section{Open Questions}
+
+Let us first mention some obvious questions pertaining to the relation $\leq^M$ and the local method hierarchy. Naturally, one can also ask a variant of each of the next 6 questions, in which we swop out every (explicit or otherwise) instance of the relation $\leq^M$ for an instance of the relation $\leq^N$.
+
+\begin{ques}\label{q843}
+Is there a local method definition $X$ such that $X \not\leq^M \mathsf{Fg}$?
+\end{ques}
+
+Should Question \ref{q843} be answered in the affirmative, non-trivial separation of the local method hierarchy would become more hopeful. In this case, the following question could serve as our guide towards such a separation.
+
+\begin{ques}\label{q841}
+Are there $m, n < \omega$ for which $\mathsf{\Sigma^M_m} \not\equiv^M \mathsf{\Sigma^M_n}$?
+\end{ques}
+
+\begin{rem}
+By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q841} reduces to the question of whether $\mathsf{\Sigma^M_0} \equiv^N \mathsf{\Sigma^M_1}$ holds.
+\end{rem}
+
+Should Question \ref{q843} be answered in the negative, $\mathsf{Fg}$ would become a greatest local method definition with respect to $\leq^M$, and the local method hierarchy would stop at $\mathsf{\Sigma^M_1}$. In this case, the following question would be key towards fully understanding $\leq^M$.
+
+\begin{ques}\label{q842}
+Is it true that $\mathsf{\Pi^M_1} \leq^M \mathsf{\Sigma^M_0}$?
+\end{ques}
+
+The proof of Corollary \ref{cor356} intimates that it is not hard to find local method definitions strictly simpler than $\mathsf{Fg}$ among those containing only very simple TCIs --- in the case of this proof, TCIs with the empty theory. One might wonder if such simplicity is a necessary condition.
+
+\begin{ques}\label{q357}
+Is there a local method definition $X$ comprising only consistent TCIs, such that
+\begin{enumerate}[label=(\arabic*)]
+    \item $X \cap \mathsf{\Pi_2} = \emptyset$, and
+    \item $X <^M \mathsf{Fg}$?
+\end{enumerate}
+\end{ques}
+
+In case Question \ref{q357} has an affirmative answer, we can ask if the construction of an example can be generalised to higher rungs of the local method hierarchy, in various manners.
+
+\begin{ques}\label{q417}
+Let $n > 2$. Is there a local method definition $X$ comprising only consistent TCIs, such that
+\begin{enumerate}[label=(\arabic*)]
+    \item $X \cap \mathsf{\Pi_n} = \emptyset$, and
+    \item $X <^M \mathsf{Fg}$?
+\end{enumerate}
+\end{ques}
+
+\begin{ques}\label{q418}
+Let $n > 2$. Is there a local method definition $X$ comprising only consistent TCIs, such that
+\begin{enumerate}[label=(\arabic*)]
+    \item $X \cap \mathsf{\Pi_n} = \emptyset$, and
+    \item $X <^M \mathsf{\Pi_n}$?
+\end{enumerate}
+\end{ques}
+
+\begin{rem}
+By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to the $\leq^N$-variant of Question \ref{q417}.
+\end{rem}
+
+Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schemata.
+
+Next, we shall ask questions that relate the theory we have developed with adjacent topics. Two major topics of relevance are
+\begin{enumerate}[label=(\Roman*)]
+    \item the area of set-theoretic geology, and
+    \item recent results by Kasum and Veli\v{c}kovi\'{c}.
+\end{enumerate}
+
+\subsection{An Analogue of the DDG Hypothesis}
 
 As remarked in Section \ref{genmul}, there have been a multitude of investigations into the $\{\leq_F\}$-theory of generic multiverses. Among the most fruitful of these programmes is usually known by the colourful name of \emph{set-theoretic geology}. In set-theoretic geology, the main subject of investigation is the set of \emph{grounds} of a fixed CTM $U$, equipped with the relation $\leq_F$. We can think of $U$ as specifying a neighbourhood within some (any) generic multiverse containing it. From this point of view, set-theoretic geology aims to study the local properties of generic multiverses.
 
@@ -10715,61 +10779,7 @@ Is the downward directed small grounds hypothesis true?
 
 Notice that the counter-example to the naive downward directed small grounds hypothesis constructed in the proof of Proposition \ref{nddgfalse} --- namely, the triple $(L, W, W')$ --- fails to be a counter-example to the downward directed small grounds hypothesis, since obviously $L \subset L \cap W$. So far, it seems that the construction of a counter-example to the downward directed small grounds hypothesis by any means similar to the aforementioned proof, hinges on the ability to amalgamate two universes incomparable with respect to inclusion through a scheme akin to Jensen's coding-the-universe forcing.
 
-Let us now turn our attention to the relation $\leq^M$ and the local method hierarchy. Naturally, one can also ask a variant of each of the next 6 questions, in which we swop out every (explicit or otherwise) instance of the relation $\leq^M$ for an instance of the relation $\leq^N$.
-
-\begin{ques}\label{q843}
-Is there a local method definition $X$ such that $X \not\leq^M \mathsf{Fg}$?
-\end{ques}
-
-Should Question \ref{q843} be answered in the affirmative, non-trivial separation of the local method hierarchy would become more hopeful. In this case, the following question could serve as our guide towards such a separation.
-
-\begin{ques}\label{q841}
-Are there $m, n < \omega$ for which $\mathsf{\Sigma^M_m} \not\equiv^M \mathsf{\Sigma^M_n}$?
-\end{ques}
-
-\begin{rem}
-By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q841} reduces to the question of whether $\mathsf{\Sigma^M_0} \equiv^N \mathsf{\Sigma^M_1}$ holds.
-\end{rem}
-
-Should Question \ref{q843} be answered in the negative, $\mathsf{Fg}$ would become a greatest local method definition with respect to $\leq^M$, and the local method hierarchy would stop at $\mathsf{\Sigma^M_1}$. In this case, the following question would be key towards fully understanding $\leq^M$.
-
-\begin{ques}\label{q842}
-Is it true that $\mathsf{\Pi^M_1} \leq^M \mathsf{\Sigma^M_0}$?
-\end{ques}
-
-The proof of Corollary \ref{cor356} intimates that it is not hard to find local method definitions strictly simpler than $\mathsf{Fg}$ among those containing only very simple TCIs --- in the case of this proof, TCIs with the empty theory. One might wonder if such simplicity is a necessary condition.
-
-\begin{ques}\label{q357}
-Is there a local method definition $X$ comprising only consistent TCIs, such that
-\begin{enumerate}[label=(\arabic*)]
-    \item $X \cap \mathsf{\Pi_2} = \emptyset$, and
-    \item $X <^M \mathsf{Fg}$?
-\end{enumerate}
-\end{ques}
-
-In case Question \ref{q357} has an affirmative answer, we can ask if the construction of an example can be generalised to higher rungs of the local method hierarchy, in various manners.
-
-\begin{ques}\label{q417}
-Let $n > 2$. Is there a local method definition $X$ comprising only consistent TCIs, such that
-\begin{enumerate}[label=(\arabic*)]
-    \item $X \cap \mathsf{\Pi_n} = \emptyset$, and
-    \item $X <^M \mathsf{Fg}$?
-\end{enumerate}
-\end{ques}
-
-\begin{ques}\label{q418}
-Let $n > 2$. Is there a local method definition $X$ comprising only consistent TCIs, such that
-\begin{enumerate}[label=(\arabic*)]
-    \item $X \cap \mathsf{\Pi_n} = \emptyset$, and
-    \item $X <^M \mathsf{\Pi_n}$?
-\end{enumerate}
-\end{ques}
-
-\begin{rem}
-By Remark \ref{rem9414}, the $\leq^N$-variant of Question \ref{q418} reduces to the $\leq^N$-variant of Question \ref{q417}.
-\end{rem}
-
-Note that both Question \ref{q417} and Question \ref{q418} are in actuality, question schemata.
+\subsection{Certain Specific Refinements}
 
 Building on the fact that $\mathsf{\Sigma^M_1} \leq^M \mathsf{Fg}$, we might want to explore possible finer relations between the two local method definitions. In other words, we might want to ask if there interesting local method definitions $X$ and $Y$ such that 
 \begin{itemize}
