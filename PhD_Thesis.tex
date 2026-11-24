@@ -10372,9 +10372,9 @@ More specifically, what stands between Corollary \ref{cor9417} and the collapse 
 
 \begin{lem}\label{lem9421}
 Let $\lambda$ be an infinite cardinal, $1 \leq n < \omega$, and $\Vdash^n_{Col(\omega, \lambda)}$ be as defined in Lemma \ref{lem9419}.
-If for some $k < \omega$, there is an ordinal definable class function $F$ on $\mathsf{\Sigma^M_k}$ such that $ran(F) \subset V^{Col(\omega, \lambda)}$ and 
+For some $\mathsf{Y} \subset \mathsf{\Sigma^M_0}$, if there is a definable (with parameters) class function $F : \mathsf{Y} \longrightarrow V^{\mathbb{P}}$ such that
 \begin{equation}\label{eq944}
-    \forall \mathfrak{T} \in \mathsf{\Sigma^M_k} \ ((\Vdash^n_{Col(\omega, \lambda)} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \implies \Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}) \models^* \check{\mathfrak{T}} \text{''}) \text{,}
+    \forall \mathfrak{T} \in \mathsf{Y} \ ((\Vdash^n_{Col(\omega, \lambda)} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \implies \Vdash^n_{Col(\omega, \lambda)} \text{``} F(\mathfrak{T}) \models^* \check{\mathfrak{T}} \text{''}) \text{,}
 \end{equation}
 then there is an ordinal definable global choice function.
 \end{lem}
@@ -10385,11 +10385,17 @@ Assume $F$ exists for some $\lambda$, $n$ and $k$ in accordance with the hypothe
     \forall \mathfrak{T} \ (\mathfrak{T} \text{ is a TCI} \implies ((\Vdash^n_{Col(\omega, \lambda)} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \iff \mathfrak{T} \text{ is consistent})) \text{.}
 \end{equation*}
 
-As in the proof of Lemma \ref{lem9419}, fix a definable well-ordering $<_{\lambda}$ of (the conditions of) $Col(\omega, \lambda)$. Let $X$ be any non-empty set, and set
+As in the proof of Lemma \ref{lem9419}, fix a definable well-ordering $<_{\lambda}$ of (the conditions of) $Col(\omega, \lambda)$. If $X$ is a non-empty set, define
 \begin{equation*}
     \mathfrak{T}_X := (\emptyset, \ulcorner c \urcorner, \dot{\mathcal{U}}, \{(\dot{\mathcal{U}}, (X, 1)), (\ulcorner c \urcorner, (X, 0))\}) \text{,}
 \end{equation*}
-where $\ulcorner c \urcorner$ is a constant symbol independent of $X$. Obviously, $\dot{\mathcal{U}}$ does not depend on $X$, while $\mathfrak{T}_X \in \mathsf{\Sigma^M_0} \subset \mathsf{\Sigma^M_k}$. Models of $\mathfrak{T}_X$ vary only by their interpretation of $\ulcorner c \urcorner$, and they are allowed to interpret $\ulcorner c \urcorner$ as any member of $X$. Since $X$ is non-empty, $\mathfrak{T}_X$ is consistent, and we have that 
+where $\ulcorner c \urcorner$ is a constant symbol independent of $X$, so that $\dot{\mathcal{U}}$ is independent of $X$ as well. Further define 
+\begin{equation*}
+    \mathsf{Y} := \{\mathfrak{T}_X : X \text{ is a non-empty set}\} \text{.}
+\end{equation*}
+Obviously, $\mathsf{Y} \subset \mathsf{\Sigma^M_0}$. 
+
+Now fix any non-empty set $X$. Models of $\mathfrak{T}_X$ vary only by their interpretation of $\ulcorner c \urcorner$, and they are allowed to interpret $\ulcorner c \urcorner$ as any member of $X$. Since $X$ is non-empty, $\mathfrak{T}_X$ is consistent, and we have that 
 \begin{equation*}
     \Vdash^n_{Col(\omega, \lambda)} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}}_X \text{''}) \text{.}
 \end{equation*}
@@ -10402,14 +10408,14 @@ Then there is a unique $x$ such that $p_X \Vdash^n_{Col(\omega, \lambda)} \text{
 
 We can proceed to conclude the next lemma by modifying the proof of Lemma \ref{lem9421}, the way we proceeded from Lemma \ref{lem9419} to Lemma \ref{lem9420}. The only additional ingredient we need is the realisation that for every forcing notion $\mathbb{P}$, 
 \begin{equation*}
-    \forall \mathfrak{T} \ (\mathfrak{T} \text{ is a TCI} \implies ((\Vdash_{\mathbb{P}} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \iff \mathfrak{T} \text{ is consistent})) \text{.}
+    \forall X \ (X \text{ is non-empty} \implies ((\Vdash_{\mathbb{P}} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}}_X \text{''})) \iff \mathfrak{T}_X \text{ is consistent})) \text{.}
 \end{equation*}
 
 \begin{lem}\label{lem9422}
 Let $\mathbb{P}$ be any forcing notion, $1 \leq n < \omega$, and $\Vdash^n_{\mathbb{P}}$ be as defined in Lemma \ref{lem9420}.
-If for some $k < \omega$, there is a definable (with parameters) class function $F$ on $\mathsf{\Sigma^M_k}$ such that $ran(F) \subset V^{\mathbb{P}}$ and 
+For some $\mathsf{Y} \subset \mathsf{\Sigma^M_0}$, if there is a definable (with parameters) class function $F : \mathsf{Y} \longrightarrow V^{\mathbb{P}}$ such that
 \begin{equation*}
-    \forall \mathfrak{T} \in \mathsf{\Sigma^M_k} \ ((\Vdash^n_{\mathbb{P}} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \implies \Vdash^n_{\mathbb{P}} \text{``} F(\mathfrak{T}) \models^* \check{\mathfrak{T}} \text{''}) \text{,}
+    \forall \mathfrak{T} \in \mathsf{Y} \ ((\Vdash^n_{\mathbb{P}} \exists \mathcal{M} \ (\text{``} \mathcal{M} \models^* \check{\mathfrak{T}} \text{''})) \implies \Vdash^n_{\mathbb{P}} \text{``} F(\mathfrak{T}) \models^* \check{\mathfrak{T}} \text{''}) \text{,}
 \end{equation*}
 then there is a definable (with parameters) global choice function.
 \end{lem}
@@ -10991,8 +10997,6 @@ Even though $\mathsf{\Pi^M_2} \leq^M \mathsf{Pm}$ is immediate from how similar 
     \item $\forall \mathfrak{T} \in \mathsf{\Pi^M_2} \ (\{\mathfrak{T}\} \leq^N \mathsf{SPr} \implies \{F(\mathfrak{T})\} \leq^N \mathsf{SPr})$, and
     \item $\forall \mathfrak{T} \in \mathsf{\Pi^M_2} \ (\{\mathfrak{T}\} \leq^N \mathsf{SSP} \implies \{F(\mathfrak{T})\} \leq^N \mathsf{SSP})$.
 \end{itemize}
-
-\blankpage
 
 \part{\texorpdfstring{ References}{References}}
 
